@@ -1,2 +1,2 @@
-# dotfiles
-My DE (WM) Configuration
+# Dotfiles
+My Openbox Configuration
