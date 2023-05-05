@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+  <menu id="root-menu" label="Меню">
+    <menu id="new_id" label="Меню">
+      <menu id="openbox" label="Openbox" icon="/usr/share/pixmaps/openbox.png">
+        <item label="Обновить" icon="/usr/share/icons/gruvbox-icons/categories/16/reload.svg">
+          <action name="Execute">
+            <command>openbox --reconfigure</command>
+          </action>
+        </item>
+        <item label="Перезапустить">
+          <action name="Execute">
+            <command>openbox --reload</command>
+          </action>
+        </item>
+      </menu>
+      <separator label="- - - - - - -"/>
+      <item label="Меню приложений" icon="/usr/share/icons/gruvbox-icons/actions/16/burst.svg">
+        <action name="Execute">
+          <command>/home/user/.config/openbox/scripts/launcher.sh</command>
+        </action>
+      </item>
+      <item label="Меню питания" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-shutdown.svg">
+        <action name="Execute">
+          <command>/home/user/.config/openbox/scripts/powermenu.sh</command>
+        </action>
+      </item>
+      <separator label="- - - - - - -"/>
+      <item label="Ждущий режим" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-suspend.svg">
+        <action name="Execute">
+          <command>systemctl suspend</command>
+        </action>
+      </item>
+      <item label="Перезагрузка" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-reboot.svg">
+        <action name="Execute">
+          <command>systemctl reboot</command>
+        </action>
+      </item>
+      <item label="Выключение" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-shutdown.svg">
+        <action name="Execute">
+          <command>New Command</command>
+        </action>
+      </item>
+      <separator/>
+    </menu>
+    <separator label="- - - - - - -"/>
+    <menu id="pinned-applications" label="Быстрый доступ" icon="/usr/share/icons/gruvbox-icons/actions/16/burst.svg">
+      <item label="Kotatogram" icon="/usr/share/icons/hicolor/16x16/apps/kotatogram.png">
+        <action name="Execute">
+          <command>kotatogram-desktop</command>
+        </action>
+      </item>
+      <item label="Audacious" icon="/usr/share/icons/gruvbox-icons/categories/24/audacious.svg">
+        <action name="Execute">
+          <command>audacious</command>
+        </action>
+      </item>
+      <item label="Alacritty" icon="/usr/share/icons/gruvbox-icons/categories/16/alacritty.svg">
+        <action name="Execute">
+          <command>alacritty</command>
+        </action>
+      </item>
+      <item label="Armcord" icon="/usr/share/icons/gruvbox-icons/categories/16/com.discordapp.Discord.svg">
+        <action name="Execute">
+          <command>armcord</command>
+        </action>
+      </item>
+      <item label="Dolphin" icon="/usr/share/icons/gruvbox-icons/categories/24/dolphin.svg">
+        <action name="Execute">
+          <command>dolphin</command>
+        </action>
+      </item>
+      <item label="Firefox" icon="/usr/share/icons/gruvbox-icons/categories/32/firefox.svg">
+        <action name="Execute">
+          <command>firefox</command>
+        </action>
+      </item>
+      <item label="VLC" icon="//usr/share/icons/gruvbox-icons/categories/24/vlc.svg">
+        <action name="Execute">
+          <command>vlc</command>
+        </action>
+      </item>
+      <separator/>
+    </menu>
+    <separator label="- - - - - - -"/>
+    <menu id="applications" label="Все программы" execute="/usr/bin/obmenu-generator -i" icon="/usr/share/icons/gruvbox-icons/actions/16/burst.svg"/>
+    <separator/>
+  </menu>
+</openbox_menu>

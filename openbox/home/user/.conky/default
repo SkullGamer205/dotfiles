@@ -1,0 +1,94 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+-- Try this (remove the `--`):
+--
+   print("Loading Conky config")
+--
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    alignment = 'mr',
+    background = true,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = '#999999',
+    default_outline_color = '#000000',
+    default_shade_color = '#000000',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = true,
+    extra_newline = true,
+    font = 'Iosevka:size=10',
+    gap_x = 16,
+    gap_y = -20,
+    minimum_height = 5,
+    minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_argb_visual = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_transparent = true,
+    own_window_type = 'override',
+    show_graph_range = true,
+    show_graph_scale = true,
+    stippled_borders = 0,
+    update_interval = 0.5,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+    color1 = '#787878',
+    color2 = '#e5d7b4'
+}
+
+conky.text = [[
+${font Ubuntu Bold:size=26}${color2}$alignc${time %H:%M:%S}
+${font Iosevka Nerd Font Complete Bold:size=18}$alignc${time %a, %e %B %Y г.}
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}СИСТЕМА ${hr 2} $font
+Версия: $color2}$alignr $sysname $kernel
+${color1}Активен:${alignr}${color2} $uptime
+
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПРОЦЕССОР ${hr 2} $font
+${color1}Частота:${alignr}${color2} $freq MHz
+${color1}CPU:${alignr}${color2} $cpu%
+$cpubar
+
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПАМЯТЬ ${hr 2} $font
+${color1}RAM:${alignr}${color2} $mem / $memmax [$memperc%]
+$membar
+
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПОДКАЧКА ${hr 2} $font
+${color1}SWAP:${alignr}${color2} $swap / $swapmax [$swapperc%]
+$swapbar
+
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}SSD ${hr 2} $font
+${color1}/ ${alignr}${color2}(${fs_used /}/ ${fs_size /}) [${fs_used_perc /}%]
+${fs_bar /}
+
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}СЕТЬ ${hr 2} $font
+${color1}IP адрес:${alignr}${color2} ${curl eth0.me}
+${color1}Сеть: Приём:${color2} ${downspeed wlan0} ${alignr}${color1}Отдача:${color2} ${upspeed wlan0}
+
+${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПРОЦЕССЫ ${hr 2} $font
+${color1}Всего:${alignr}${color2} $processes
+${color1}Запущено:${alignr}${color2} $running_processes
+${color1}$hr
+${color1}   PID:  Имя:                ЦП%   ПМТ%
+${color2} ${top pid 1}${color1} ${top name 1}${color2} ${top cpu 1} ${top mem 1}
+${color2} ${top pid 2}${color1} ${top name 2}${color2} ${top cpu 2} ${top mem 2}
+${color2} ${top pid 3}${color1} ${top name 3}${color2} ${top cpu 3} ${top mem 3}
+${color2} ${top pid 4}${color1} ${top name 4}${color2} ${top cpu 4} ${top mem 4}
+${color2} ${top pid 5}${color1} ${top name 5}${color2} ${top cpu 5} ${top mem 5}
+]]

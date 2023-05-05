@@ -1,2 +1,2 @@
 # Dotfiles
-My Openbox Configuration
+Мой сборник конфигураций рабчего стола Linux

@@ -1,0 +1,4 @@
+Iosevka Nerd Font
+Iosevka Term Nerd Font
+JetBrains Mono
+Jetbrains Mono NL
