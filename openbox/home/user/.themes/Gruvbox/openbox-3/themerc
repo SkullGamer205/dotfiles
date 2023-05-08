@@ -9,11 +9,11 @@ menu.items.justify: left
 menu.items.disabled.text.color: #181818
 
 !! menu separator
-menu.separator.padding.height: 2
+menu.separator.padding.height: 0
 menu.separator.color: #282828
 
 !! menu border
-menu.border.width: 4
+menu.border.width: 2
 menu.border.color: #282828
 
 !! menu headers
@@ -63,8 +63,8 @@ window.inactive.button.close.hover.image.color: #c6586f
 !! borders
 window.active.border.color: #282828
 window.inactive.border.color: #282828
-padding.width: 4
-padding.height: 4
+padding.width: 0
+padding.height: 0
 window.client.padding.width: 0
 window.client.padding.height: 0
 border.width: -16

@@ -15,7 +15,7 @@ My Linux Desktop Configuration Compilation
 #
 ### Steps to apply theme
 
-* Install this packages: `alacritty openbox obmenu obmenu-generator xfce4-panel xfce4-whiskermenu-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-cpufreq-plugin xfce4-clipman-plugin xfce4-xkb-plugin glava picom-ibhagwan-git conky nitrogen pavucontrol pasystray betterlockscreen zsh oh-my-zsh-git`
+* Install this packages: `alacritty openbox obmenu obmenu-generator xfce4-panel xfce4-whiskermenu-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-cpufreq-plugin xfce4-clipman-plugin xfce4-xkb-plugin plank glava picom-ibhagwan-git conky nitrogen pavucontrol pasystray betterlockscreen zsh oh-my-zsh-git`
 * Drop content (exclude `PREVIEWS`) into folders
 * Customize configurations (Change directories `/home/user/` and `/home/skullgamer205/` to your own)
 
