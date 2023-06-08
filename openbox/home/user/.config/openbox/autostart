@@ -1,14 +1,13 @@
 # Autostart
 
 nitrogen --restore &
-conky -c /home/user/.conky/default &
+conky -c $HOME/.conky/default &
 setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle &
 pasystray &
 nm-tray &
-plank &
 glava &
 blueman-tray &
 greenclip daemon &
 syncthing-gtk -m &
-xfce4-panel &
+tint2 -c $HOME/.config/tint2/tint2-panel.tint2rc &
 /home/user/.config/picom/launch.sh &
