@@ -7,6 +7,8 @@
 XKB_DEFAULT_LAYOUT=us,ru
 XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
 
+Xcursor.theme: BloxCursors-Black
+Xcursor.size: 16
 
 BROWSER=librewolf
 EDITOR=helix
