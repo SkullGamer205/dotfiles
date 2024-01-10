@@ -1,0 +1,2 @@
+#!/bin/sh
+/sbin/feh --no-fehbg --bg-fill '/home/USER-NAME-PLACE-HERE/media/wallpapers/AAA_upscayl_4x_realesrgan-x4plus-anime.png'
