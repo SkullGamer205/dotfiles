@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+  <menu id="root-menu" label="SkullGamer205">
+    <menu id="main_menu" label="SkullGamer205" icon="/home/skullgamer205/media/my_avatars/skull2.png">
+      <menu id="openbox" label="Openbox" icon="/usr/share/pixmaps/openbox.png">
+        <item label="Обновить" icon="/usr/share/icons/gruvbox-icons/categories/16/reload.svg">
+          <action name="Execute">
+            <command>openbox --reconfigure</command>
+          </action>
+        </item>
+        <item label="Перезапустить">
+          <action name="Execute">
+            <command>openbox --reload</command>
+          </action>
+        </item>
+      </menu>
+      <separator label="- - - - - - -"/>
+      <item label="Меню приложений" icon="/usr/share/icons/gruvbox-icons/actions/16/burst.svg">
+        <action name="Execute">
+          <command>/home/skullgamer205/.config/openbox/scripts/launcher.sh</command>
+        </action>
+      </item>
+      <item label="Меню питания" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-shutdown.svg">
+        <action name="Execute">
+          <command>/home/skullgamer205/.config/openbox/scripts/powermenu.sh</command>
+        </action>
+      </item>
+      <separator label="- - - - - - -"/>
+      <item label="Ждущий режим" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-suspend.svg">
+        <action name="Execute">
+          <command>systemctl suspend</command>
+        </action>
+      </item>
+      <item label="Перезагрузка" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-reboot.svg">
+        <action name="Execute">
+          <command>systemctl reboot</command>
+        </action>
+      </item>
+      <item label="Выключение" icon="/usr/share/icons/gruvbox-icons/categories/16/xfsm-shutdown.svg">
+        <action name="Execute">
+          <command>New Command</command>
+        </action>
+      </item>
+      <separator/>
+    </menu>
+    <separator label="- - - - - - -"/>
+    <menu id="pinned-applications" label="Быстрый доступ" icon="/usr/share/icons/gruvbox-icons/actions/16/burst.svg">
+      <menu id="browsers" label="Браузеры">
+        <item label="Firefox" icon="/usr/share/icons/gruvbox-icons/categories/32/firefox.svg">
+          <action name="Execute">
+            <command>firefox</command>
+          </action>
+        </item>
+        <item label="Vieb" icon="/usr/share/icons/hicolor/16x16/apps/vieb.png">
+          <action name="Execute">
+            <command>vieb</command>
+          </action>
+        </item>
+        <item label="Lynx">
+          <action name="Execute">
+            <command>alacritty -e lynx</command>
+          </action>
+        </item>
+        <separator/>
+      </menu>
+      <menu id="games" label="Игры">
+        <item label="[N] Steam" icon="/usr/share/icons/gruvbox-icons/categories/22/steam.svg">
+          <action name="Execute">
+            <command>prime-run steam</command>
+          </action>
+        </item>
+        <item label="[N] RocketLauncher" icon="/usr/share/icons/gruvbox-icons/categories/16/doomseeker.svg">
+          <action name="Execute">
+            <command>prime-run rocketlauncher2</command>
+          </action>
+        </item>
+        <item label="MoonDust - Editor " icon="/home/skullgamer205/applications/.icons/moondust-editor.png">
+          <action name="Execute">
+            <command>"/home/skullgamer205/applications/Mario/smbx/MoonDust-Engine/pge_editor"</command>
+          </action>
+        </item>
+        <item label="TheXTech" icon="/home/skullgamer205/applications/Mario/smbx/TheXTech/icon/TheXTech.ico">
+          <action name="Execute">
+            <command>"/home/skullgamer205/applications/Mario/smbx/TheXTech/smbx"</command>
+          </action>
+        </item>
+        <item label="Mindustry" icon="/home/skullgamer205/applications/mindustry/icon.png">
+          <action name="Execute">
+            <command>"/home/skullgamer205/applications/mindustry/Mindustry-mangohud.sh"</command>
+          </action>
+        </item>
+        <separator/>
+      </menu>
+      <menu id="media" label="Медиа">
+        <item label="VLC" icon="//usr/share/icons/gruvbox-icons/categories/24/vlc.svg">
+          <action name="Execute">
+            <command>vlc</command>
+          </action>
+        </item>
+        <item label="Audacious" icon="/usr/share/icons/gruvbox-icons/categories/24/audacious.svg">
+          <action name="Execute">
+            <command>audacious</command>
+          </action>
+        </item>
+        <item label="Cmus">
+          <action name="Execute">
+            <command>alacritty -e cmus</command>
+          </action>
+        </item>
+      </menu>
+      <menu id="talking" label="Общение">
+        <item label="Armcord" icon="/usr/share/icons/gruvbox-icons/categories/16/com.discordapp.Discord.svg">
+          <action name="Execute">
+            <command>armcord</command>
+          </action>
+        </item>
+        <item label="Kotatogram" icon="/usr/share/icons/hicolor/16x16/apps/kotatogram.png">
+          <action name="Execute">
+            <command>kotatogram-desktop</command>
+          </action>
+        </item>
+        <separator/>
+      </menu>
+      <menu id="explorers" label="Проводник">
+        <item label="Dolphin" icon="/usr/share/icons/gruvbox-icons/categories/24/dolphin.svg">
+          <action name="Execute">
+            <command>dolphin</command>
+          </action>
+        </item>
+        <item label="Ranger">
+          <action name="Execute">
+            <command>alacritty -e ranger</command>
+          </action>
+        </item>
+        <item label="MC">
+          <action name="Execute">
+            <command>alacritty -e mc</command>
+          </action>
+        </item>
+        <separator/>
+      </menu>
+      <menu id="text_editors" label="Блокноты">
+        <item label="Kate" icon="/usr/share/icons/gruvbox-icons/categories/22/kate.svg">
+          <action name="Execute">
+            <command>kate</command>
+          </action>
+        </item>
+        <item label="Vim" icon="vim">
+          <action name="Execute">
+            <command>alacritty -e vim</command>
+          </action>
+        </item>
+        <item label="Logseq" icon="logseq">
+          <action name="Execute">
+            <command>logseq</command>
+          </action>
+        </item>
+        <item label="Nano">
+          <action name="Execute">
+            <command>alacritty -e nano</command>
+          </action>
+        </item>
+      </menu>
+      <menu id="utils" label="Утилиты">
+        <item label="Lazygit">
+          <action name="Execute">
+            <command>alacritty -e lazygit</command>
+          </action>
+        </item>
+        <item label="htop" icon="/usr/share/pixmaps/htop.png">
+          <action name="Execute">
+            <command>alacritty -e htop</command>
+          </action>
+        </item>
+        <item label="bpytop">
+          <action name="Execute">
+            <command>alacritty -e bpytop</command>
+          </action>
+        </item>
+        <item label="newsboat" icon="rss">
+          <action name="Execute">
+            <command>alacritty -e newsboat</command>
+          </action>
+        </item>
+        <separator/>
+      </menu>
+      <menu id="other" label="Прочее">
+        <separator label="ls -> exa"/>
+        <separator label="cat -> bat"/>
+        <separator label="find -> fd"/>
+      </menu>
+      <item label="Alacritty" icon="/usr/share/icons/gruvbox-icons/categories/16/alacritty.svg">
+        <action name="Execute">
+          <command>alacritty</command>
+        </action>
+      </item>
+      <separator/>
+    </menu>
+    <separator label="- - - - - - -"/>
+    <menu id="applications" label="Все программы" execute="/usr/bin/obmenu-generator -i" icon="/usr/share/icons/gruvbox-icons/actions/16/burst.svg"/>
+    <separator/>
+  </menu>
+</openbox_menu>

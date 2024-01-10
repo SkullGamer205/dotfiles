@@ -1,0 +1,15 @@
+XXkb.controls.two_state: yes
+XXkb.controls.add_when_start: yes
+XXkb.controls.add_when_create: yes
+XXkb.controls.add_when_change: yes
+XXkb.controls.focusout: no
+XXkb*label.text.1: EN
+XXkb*label.text.2: RU
+XXkb.mainwindow.type: tray
+XXkb.mainwindow.label.enable: yes
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.appicon: no
+XXkb.mainwindow.geometry: 22x22+0+0
+XXkb.mainwindow.label.background: #111133
+XXkb.mainwindow.label.foreground: #fbfbfe
+XXkb.mainwindow.label.font: -misc-*-r-*-18-*

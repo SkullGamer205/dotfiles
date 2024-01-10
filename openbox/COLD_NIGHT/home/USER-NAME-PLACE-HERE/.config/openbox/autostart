@@ -1,0 +1,19 @@
+# Autostart
+
+$HOME/.bin/comp &
+tint2 &
+exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+nitrogen --restore &
+opensnap -d &
+conky -d -c $HOME/.conky/default &
+pasystray &
+mictray & 
+nm-applet &
+xxkb &
+glava &
+easystroke &
+blueman-tray &
+greenclip daemon &
+syncthing-gtk -m &
+# xsnow -nomenu -doublebuffer 1 -cpuload 80 &
+# eww daemon

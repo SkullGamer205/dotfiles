@@ -1,0 +1,109 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+-- Try this (remove the `--`):
+--
+   print("Загрузка конфигурации")
+--
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    alignment = 'top_middle',
+    background = true,
+    border_width = 0,
+    cpu_avg_samples = 1,
+    default_color = '#dfdfd1',
+    default_outline_color = '#dfdfd1',
+    default_shade_color = '#01010a',
+    double_buffer = true,
+    draw_borders = true,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'BigBlueTermPlus Nerd Font:size=10',
+    font2 = 'BigBlueTermPlus Nerd Font:size=18',
+    gap_x = 12,
+    gap_y = 12,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_title = 'conky',
+    own_window_argb_visual = true,
+    own_window_hints = 'undecorated,skip_taskbar,below,skip_pager,sticky',
+    own_window_transparent = true,
+    own_window_type = 'desktop',
+    out_to_wayland = 'false',
+    show_graph_range = true,
+    show_graph_scale = true,
+    stippled_borders = 0,
+    temperature_unit = celsius ,
+    update_interval = 0.5,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+    color1 = '#dfdfd1',
+    color2 = '#dfdfd1'
+}
+
+conky.text = [[
+${color2}${stippled_hr 2}${font2}
+${font BigBlueTermPlus Nerd Font:size=26}${color2}$alignc${time %H:%M:%S}
+${font BigBlueTermPlus Nerd Font:size=18}$alignc${time %a, %e %B %Y г.}
+${stippled_hr 2}
+$font$alignc [ ${scroll left 48 $mpd_smart } ] 
+$alignc$font [ $if_mpd_playing󰐍$else󰏦$endif ]-[ $mpd_elapsed | $mpd_length ]-[ 󰕾 $mpd_vol ]$font2
+${stippled_hr 2}$font
+󰌽 :: $distribution ${goto 192}󰘚 :: [${cpu cpu0}%] ${freq 0} MHz${goto 376}󰖲 :: $processes / $running_threads / $running_processes
+ :: $kernel ${goto 192}󰔐 :: [${nvidia gputemp}°С] ${goto 376}󰜮 :: ${downspeed wlan0}
+󰏖 :: $packages ${goto 192} :: [$memperc%] $mem ${goto 376}󰜷 :: ${upspeed wlan0}
+ :: [${fs_used_perc /}%] ${fs_used /} ${goto 192} :: [$swapperc%] $swap ${goto 376}󰗵 :: ${curl eth0.me}
+${color2}${stippled_hr 2}${font2}
+]]
+
+-- ${font IntelOne Mono Medium:size=26}${color2}$alignc${time %H:%M:%S}
+-- ${font Iosevka Nerd Font Complete Bold:size=18}$alignc${time %a, %e %B %Y г.}
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}СИСТЕМА ${hr 2} $font
+-- Версия: $color2}$alignr $sysname $kernel
+-- ${color1}Активен:${alignr}${color2} $uptime
+--
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПРОЦЕССОР ${hr 2} $font
+-- ${color1}Частота:${alignr}${color2} $freq MHz
+-- ${color1}CPU:${alignr}${color2} $cpu%
+-- $cpubar
+--
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПАМЯТЬ ${hr 2} $font
+-- ${color1}RAM:${alignr}${color2} $mem / $memmax [$memperc%]
+-- $membar
+--
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПОДКАЧКА ${hr 2} $font
+-- ${color1}SWAP:${alignr}${color2} $swap / $swapmax [$swapperc%]
+-- $swapbar
+--
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}SSD ${hr 2} $font
+-- ${color1}/ ${alignr}${color2}(${fs_used /}/ ${fs_size /}) [${fs_used_perc /}%]
+-- ${fs_bar /}
+--
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}СЕТЬ ${hr 2} $font
+-- ${color1}IP адрес:${alignr}${color2} ${curl eth0.me}
+-- ${color1}Сеть: Приём:${color2} ${downspeed wlan0} ${alignr}${color1}Отдача:${color2} ${upspeed wlan0}
+--
+-- ${font Iosevka Nerd Font Complete Bold:size=12}${color1}ПРОЦЕССЫ ${hr 2} $font
+-- ${color1}Всего:${alignr}${color2} $processes
+-- ${color1}Запущено:${alignr}${color2} $running_processes
+-- ${color1}$hr
+-- ${color1}   PID:  Имя:                ЦП%   ПМТ%
+-- ${color2} ${top pid 1}${color1} ${top name 1}${color2} ${top cpu 1} ${top mem 1}
+-- ${color2} ${top pid 2}${color1} ${top name 2}${color2} ${top cpu 2} ${top mem 2}
+-- ${color2} ${top pid 3}${color1} ${top name 3}${color2} ${top cpu 3} ${top mem 3}
+-- ${color2} ${top pid 4}${color1} ${top name 4}${color2} ${top cpu 4} ${top mem 4}
+-- ${color2} ${top pid 5}${color1} ${top name 5}${color2} ${top cpu 5} ${top mem 5}

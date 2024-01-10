@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="root-menu" label="USER-NAME-PLACE-HERE">
+		<menu icon="/home/USER-NAME-PLACE-HERE/.face" id="main_menu" label="USER-NAME-PLACE-HERE">
+			<menu icon="/usr/share/pixmaps/openbox.png" id="openbox" label="Openbox">
+				<item icon="/usr/share/icons/neru-newyear-dark/small/actions/reload.svg" label="Обновить">
+					<action name="Execute">
+						<command>openbox --reconfigure</command>
+					</action>
+				</item>
+				<item label="Перезапустить">
+					<action name="Execute">
+						<command>openbox --reload</command>
+					</action>
+				</item>
+			</menu>
+			<separator label="- - - - - - -"/>
+			<item icon="/usr/share/icons/neru-newyear-dark/small/actions/application-menu.svg" label="Меню приложений">
+				<action name="Execute">
+					<command>/home/USER-NAME-PLACE-HERE/.config/openbox/scripts/launcher.sh</command>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/xfsm-shutdown.svg" label="Меню питания">
+				<action name="Execute">
+					<command>/home/USER-NAME-PLACE-HERE/.config/openbox/scripts/powermenu.sh</command>
+				</action>
+			</item>
+			<separator label="- - - - - - -"/>
+			<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/xfsm-suspend.svg" label="Ждущий режим">
+				<action name="Execute">
+					<command>systemctl suspend</command>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/xfsm-reboot.svg" label="Перезагрузка">
+				<action name="Execute">
+					<command>systemctl reboot</command>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/xfsm-shutdown.svg" label="Выключение">
+				<action name="Execute">
+					<command>systemctl shutdown</command>
+				</action>
+			</item>
+			<separator/>
+		</menu>
+		<separator label="- - - - - - -"/>
+		<menu icon="/usr/share/icons/neru-newyear-dark/small/actions/application-menu.svg" id="pinned-applications" label="Быстрый доступ">
+			<menu id="browsers" icon="/usr/share/icons/neru-newyear-dark/medium/apps/applications-internet.svg" label="Браузеры">
+				<item icon="/usr/share/icons/hicolor/16x16/apps/librewolf.png" label="Librewolf">
+					<action name="Execute">
+						<command>prime librewolf</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/hicolor/16x16/apps/vieb.png" label="Vieb">
+					<action name="Execute">
+						<command>prime vieb</command>
+					</action>
+				</item>
+				<item label="Lynx">
+					<action name="Execute">
+						<command>terminator -e lynx</command>
+					</action>
+				</item>
+				<separator/>
+			</menu>
+			<menu id="games" icon="/usr/share/icons/neru-newyear-dark/medium/apps/applications-games.svg" label="Игры">
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/steam.svg" label="[N] Steam">
+					<action name="Execute">
+						<command>prime steam</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/itch.svg" label="[N] itch.io">
+					<action name="Execute">
+						<command>/home/USER-NAME-PLACE-HERE/.itch/itch</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/Doom/icons8-doom-logo-512.png" label="[N] TWad">
+					<action name="Execute">
+						<command>prime alacritty -e twad</command>
+					</action>
+				</item>
+				<separator label="- - - - - - -"/>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/.icons/moondust-editor.png" label="MoonDust - Editor ">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/MoonDust-Engine/pge_editor&quot;</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/resource-packs/SMBX/graphics/ui/icon/thextech.ico" label="SMBX">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/exec/smbx&quot;</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/resource-packs/A2XT/E0/graphics/ui/icon/thextech.ico" label="A2XT: Ep.0">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/exec/a2xte0&quot;</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/resource-packs/A2XT/E1/graphics/ui/icon/thextech.ico" label="A2XT: Ep.1">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/exec/a2xte1&quot;</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/resource-packs/A2XT/AOD/graphics/ui/icon/thextech.ico" label="Adventure Of Demo">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/exec/aod&quot;</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/resource-packs/LC/graphics/ui/icon/thextech.ico" label="Lowser's Conquest">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/exec/lc&quot;</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/resource-packs/NP/graphics/ui/icon/thextech.ico" label="Nostalgic Paradise">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/Mario/smbx/TheXTech/exec/np&quot;</command>
+					</action>
+				</item>
+				<separator label="- - - - - - -"/>
+				<item icon="/home/USER-NAME-PLACE-HERE/applications/mindustry/icon.png" label="Mindustry">
+					<action name="Execute">
+						<command>&quot;/home/USER-NAME-PLACE-HERE/applications/mindustry/Mindustry-mangohud.sh&quot;</command>
+					</action>
+				</item>
+				<separator/>
+			</menu>
+			<menu id="media" icon="/usr/share/icons/neru-newyear-dark/medium/apps/applications-multimedia.svg" label="Медиа">
+				<item icon="/usr/share/icons/hicolor/128x128/apps/vlc-xmas.png" label="VLC">
+					<action name="Execute">
+						<command>vlc</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/audacious.svg" label="Audacious">
+					<action name="Execute">
+						<command>audacious</command>
+					</action>
+				</item>
+				<item label="ncmpc" icon="/usr/share/icons/neru-newyear-dark/medium/apps/musique.svg">
+					<action name="Execute">
+						<command>alacritty -e ncmpc -C -m --host=127.0.0.1 --port=6600</command>
+					</action>
+				</item>
+			</menu>
+			<menu id="talking" icon="/usr/share/icons/neru-newyear-dark/medium/apps/internet-chat.svg" label="Общение">
+				<item icon="/home/USER-NAME-PLACE-HERE/.icons/oomox-AAA_upscayl_4x_realesrgan-x4plus-anime/16x16-vencord.png" label="Vencord">
+					<action name="Execute">
+						<command>vencord-desktop</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/hicolor/16x16/apps/forkgram.png" label="Forkgram">
+					<action name="Execute">
+						<command>Forkgram</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/electron.svg" label="Element">
+					<action name="Execute">
+						<command>element-desktop</command>
+					</action>
+				</item>
+				<separator/>
+			</menu>
+			<menu id="explorers" icon="/usr/share/icons/neru-newyear-dark/medium/apps/file-manager.svg" label="Проводник">
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/file-manager.svg" label="Dolphin">
+					<action name="Execute">
+						<command>dolphin</command>
+					</action>
+				</item>
+				<item label="Thunar" icon="/usr/share/icons/neru-newyear-dark/medium/apps/thunar.svg" >
+					<action name="Execute">
+						<command>thunar</command>
+					</action>
+				</item>
+				<item label="MC" icon="/usr/share/icons/neru-newyear-dark/medium/apps/mc.svg" >
+					<action name="Execute">
+						<command>alacritty -e mc</command>
+					</action>
+				</item>
+				<item label="LF" icon="/usr/share/icons/neru-newyear-dark/medium/apps/file-manager.svg" >
+					<action name="Execute">
+						<command>alacritty -e lf</command>
+					</action>
+				</item>
+				<separator/>
+			</menu>
+			<menu id="text_editors" icon="/usr/share/icons/neru-newyear-dark/medium/apps/notepad.svg" label="Блокноты">
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/kate.svg" label="Kate">
+					<action name="Execute">
+						<command>kate</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/hicolor/256x256/apps/helix.png" label="Helix">
+					<action name="Execute">
+						<command>alacritty -e helix</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/.icons/oomox-AAA_upscayl_4x_realesrgan-x4plus-anime/16x16-logseq.png" label="Logseq">
+					<action name="Execute">
+						<command>logseq</command>
+					</action>
+				</item>
+				<item label="Micro" icon="/usr/share/icons/hicolor/scalable/apps/micro.svg" >
+					<action name="Execute">
+						<command>alacritty -e micro</command>
+					</action>
+				</item>
+			</menu>
+			<menu id="utils" icon="/usr/share/icons/neru-newyear-dark/medium/apps/applications-utilities.svg" label="Утилиты">
+				<item  icon="/usr/share/icons/neru-newyear-dark/medium/apps/git.svg" label="Lazygit">
+					<action name="Execute">
+						<command>alacritty -e lazygit</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/hicolor/scalable/apps/btop.svg" label="btop">
+					<action name="Execute">
+						<command>alacritty -e btop</command>
+					</action>
+				</item>
+				<item icon="/home/USER-NAME-PLACE-HERE/.icons/oomox-AAA_upscayl_4x_realesrgan-x4plus-anime/16x16/apps/nvtop.svg" label="nvtop">
+					<action name="Execute">
+						<command>alacritty -e nvtop</command>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/hicolor/scalable/apps/newsboat.svg" label="newsboat">
+					<action name="Execute">
+						<command>alacritty -e newsboat</command>
+					</action>
+				</item>
+				<separator/>
+			</menu>
+			<menu id="other" icon="/usr/share/icons/neru-newyear-dark/medium/apps/applications-other.svg" label="Прочее">
+				<item label="ls -&gt; exa"/>
+				<item label="cat -&gt; bat"/>
+				<item label="find -&gt; fd"/>
+			</menu>
+			<menu id="osint" label="OSINT">
+				<item label="Snoop">
+					<action name="Execute">
+						<execute>alacritty -e &quot;$HOME/applications/OSINT/Snoop/snoop_cli&quot;</execute>
+					</action>
+				</item>
+				<item label="MOSINT">
+					<action name="Execute">
+						<execute>alacritty -e &quot;$HOME/applications/OSINT/MOSINT/mosint&quot;</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="personalization" icon="/usr/share/icons/neru-newyear-dark/medium/apps/colorhug-ccmx.svg" label="Персон-ция">
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/colorhug-ccmx.svg" label="Themix">
+					<action name="Execute">
+						<execute>themix-gui</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/colorhug-ccmx.svg" label="Pywal-Telegram">
+					<action name="Execute">
+						<execute>alacritty -e &quot;wal-telegram --wal -r&quot;</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/neru-newyear-dark/medium/apps/colorhug-ccmx.svg" label="Pywal-Discord">
+					<action name="Execute">
+						<execute>alacritty -e pywal-discord</execute>
+					</action>
+				</item>
+			</menu>
+
+			<item icon="/home/USER-NAME-PLACE-HERE/.icons/oomox-AAA_upscayl_4x_realesrgan-x4plus-anime/16x16/categories/Alacritty.svg" label="Alacritty">
+				<action name="Execute">
+					<command>alacritty</command>
+				</action>
+			</item>
+			<separator/>
+		</menu>
+		<separator label="- - - - - - -"/>
+		<menu execute="/usr/bin/obmenu-generator -i" icon="/usr/share/icons/neru-newyear-dark/small/actions/application-menu.svg" id="applications" label="Все программы"/>
+		<separator/>
+	</menu>
+</openbox_menu>

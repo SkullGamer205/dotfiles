@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+	ICON_PATH="$HOME/.local/share/keyboard-layout"
+
+	get_status() {
+	  local code=$(xkbklu status)
+	  local icon="${ICON_PATH}/flag-${code}.png"
+	  if [ -f $icon ]; then
+	    echo $icon
+	  else
+	    echo "${ICON_PATH}/no-flag.png"
+	  fi
+	}
+
+	switch_layout() {
+	  xkbklu switch
+	}
+
+	case "$1" in
+	  'switch')
+	    switch_layout
+	    ;;
+
+	  'status')
+	    get_status
+	    ;;
+
+	  *)
+	    # do nothing
+	    ;;
+	esac
+
+	exit 0

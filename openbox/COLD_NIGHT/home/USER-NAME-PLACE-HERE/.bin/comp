@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Start a composition manager.
+# (xcompmgr in this case)
+
+comphelp() {
+    echo "Composition Manager:"
+    echo "   (re)start: COMP"
+    echo "   stop:      COMP -s"
+    echo "   query:     COMP -q"
+    echo "              returns 0 if composition manager is running, else 1"
+    exit
+}
+
+checkcomp() {
+    pgrep picom
+}
+
+stopcomp() {
+    checkcomp && killall picom
+}
+
+startcomp() {
+    stopcomp
+    picom -b --animations --animation-window-mass 0.5 --animation-stiffness-in-tag 500  --animation-for-open-window zoom --detect-rounded-corners --fading --inactive-opacity 0.9 --frame-opacity 1 --mark-wmwin-focused --detect-client-opacity --use-damage &
+    exit
+}
+
+case "$1" in
+    "")   startcomp ;;
+    "-q") checkcomp ;;
+    "-s") stopcomp; exit ;;
+    *)    comphelp ;;
+esac
