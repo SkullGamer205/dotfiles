@@ -79,6 +79,7 @@ Theme created with Pywalfox
 	{Tools}
 		* flameshot (Screenshoter)
 		* easystroke (Use mouse gestures to initiate commands and hotkeys)
+		* betterlockscreen (A simple, minimal lockscreen)
 	{Other}
 		* [ FONT ] ttf-terminus-nerd
 		* [ ICONS ] neru-icon-newyear-theme
