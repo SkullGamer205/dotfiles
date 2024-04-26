@@ -1,4 +1,4 @@
-[🔙 Вернуться](https://github.com/SkullGamer205/dotfiles)
+[🔙 Вернуться](https://github.com/SkullGamer205/dotfiles/blob/main/README-ru.md#dark-gray)
 
 [🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 
