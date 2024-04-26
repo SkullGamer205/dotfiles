@@ -23,21 +23,21 @@
 
 # Галерея
 
-[Рабочий стол](.preview/screenshot-1.png)
-[Центр уведомлений](.preview/screenshot-2.png)
-[fetch](.preview/screenshot-3.png)
-[Терминалы](.preview/screenshot-4.png)
-[emacs, thunar](.preview/screenshot-5.png)
-[Комбинации клавиш](.preview/screenshot-6.png)
-[ПКМ-Меню](.preview/screenshot-7.png)
-[ROFI: Меню питания](.preview/screenshot-8.png)
-[ROFI: Меню программ](.preview/screenshot-9.png)
-[Better Lock Screen](.preview/screenshot-10.png)
+![Рабочий стол](.preview/screenshot-1.png)
+![Центр уведомлений](.preview/screenshot-2.png)
+![fetch](.preview/screenshot-3.png)
+![Терминалы](.preview/screenshot-4.png)
+![emacs, thunar](.preview/screenshot-5.png)
+![Комбинации клавиш](.preview/screenshot-6.png)
+![ПКМ-Меню](.preview/screenshot-7.png)
+![ROFI: Меню питания](.preview/screenshot-8.png)
+![ROFI: Меню программ](.preview/screenshot-9.png)
+![Better Lock Screen](.preview/screenshot-10.png)
 
 # Источники
 
 Источник вдохновления (Внешний вид; правильная организация скриптов; центр уведомлений (Да, центр уведомлений написал не я, ибо я не совсем понял, как его написать))
--  [Дотфайлы HoNamDuong](https://github.com/HoNamDuong/.dotfiles)
+-  ![Дотфайлы HoNamDuong](https://github.com/HoNamDuong/.dotfiles)
 
 Документация AwesomeWM
--  [Тут](https://awesomewm.org/apidoc/index.html)
+-  ![Тут](https://awesomewm.org/apidoc/index.html)
