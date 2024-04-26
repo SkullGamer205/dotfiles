@@ -1,6 +1,6 @@
-[🔙 Вернуться](https://github.com/SkullGamer205/dotfiles) 
+[🔙 Back](https://github.com/SkullGamer205/dotfiles) 
 
-[Русский](openbox/COLD_NIGHT/README-ru.md) | [English](openbox/COLD_NIGHT/README.md)
+[🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 
 ### Cold Night
 Тема создана с помощью Pywalfox

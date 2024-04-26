@@ -1,4 +1,4 @@
-[🔙 Ифсл](https://github.com/SkullGamer205/dotfiles)
+[🔙 Back](https://github.com/SkullGamer205/dotfiles)
 
 [🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 
