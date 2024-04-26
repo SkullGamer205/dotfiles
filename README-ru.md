@@ -14,7 +14,7 @@
 ## Cold Night
 ### Предпросмотр
 ![Main Screen](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-1.png)
-<div align="right"><a href="openbox/COLD_NIGHT/README.md">Подробнее...</a></div>
+<div align="right"><a href="openbox/COLD_NIGHT/README-ru.md">Подробнее...</a></div>
 
 
 # [NEW!] Awesome
