@@ -23,7 +23,6 @@
 
 # Галерея
 
-<p align="center">
 [Рабочий стол](.preview/screenshot-1.png)
 [Центр уведомлений](.preview/screenshot-2.png)
 [fetch](.preview/screenshot-3.png)
@@ -34,7 +33,6 @@
 [ROFI: Меню питания](.preview/screenshot-8.png)
 [ROFI: Меню программ](.preview/screenshot-9.png)
 [Better Lock Screen](.preview/screenshot-10.png)
-</p>
 
 # Источники
 
@@ -42,4 +40,4 @@
 -  [Дотфайлы HoNamDuong](https://github.com/HoNamDuong/.dotfiles)
 
 Документация AwesomeWM
--  [Тут])(https://awesomewm.org/apidoc/index.html)
+-  [Тут](https://awesomewm.org/apidoc/index.html)
