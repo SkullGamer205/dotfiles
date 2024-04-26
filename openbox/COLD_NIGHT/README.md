@@ -1,28 +1,6 @@
-[Вернуться](README-ru.md) | [Back](README.md) 
+[🔙 Back](README.md) 
 
-[Русский](openbox/README-ru.md) | [English](openbox/README.md)
-
-# Dotfiles
-My Linux Desktop Configuration Compilation
-
-# OpenBox
-### Gruvbox
-#### Preview
-
-![Main Screen](openbox/GRUVBOX/PREVIEWS/preview-1.png)
-![BetterLockScreen](openbox/GRUVBOX/PREVIEWS/preview-4.png)
-![OB Menu](openbox/GRUVBOX/PREVIEWS/preview-6.png) ![Rofi: Applications menu](openbox/GRUVBOX/PREVIEWS/preview-7.png)
-![Rofi: Power menu](openbox/GRUVBOX/PREVIEWS/preview-8.png)
-
-#### Steps to apply theme
-
-* Install this packages: `alacritty openbox obmenu obmenu-generator xfce4-battery-plugin glava compton conky nitrogen pavucontrol pasystray betterlockscreen zsh oh-my-zsh-git`
-* Drop content (exclude `PREVIEWS`) into folders
-* Customize configurations (Change directories `/home/user/` and `/home/skullgamer205/` to your own)
-
-Profit.
-
-
+[🇷🇺 Русский](openbox/COLD_NIGHT/README-ru.md) | [🇺🇲 English](openbox/COLD_NIGHT/README.md)
 
 ### Cold Night
 Theme created with Pywalfox
@@ -94,4 +72,3 @@ Theme created with Pywalfox
 6) Apply custom theme with(-out) GUI.
 
 **PROFIT.**
-
