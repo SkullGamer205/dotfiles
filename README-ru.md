@@ -1,6 +1,7 @@
 [🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 
-<p align="center"><a href="https://github.com/SkullGamer205/dotfiles"><img src="Link_0" alt="Дотфайлы SkullGamer205"></a></p>
+<p align="center"><a href="https://github.com/SkullGamer205/dotfiles"><img src="https://raw.githubusercontent.com/SkullGamer205/dotfiles/main/logo.png" alt="SkullGamer205's Dotfiles"></a></p>
+
 # <div align="center">Дотфайлы SkullGamer205</div>
 ### <div align="center">Репозиторий с моими рисами</div>
 
