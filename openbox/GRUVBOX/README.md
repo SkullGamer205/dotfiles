@@ -9,10 +9,10 @@ My Linux Desktop Configuration Compilation
 ### Gruvbox
 #### Preview
 
-![Main Screen](openbox/GRUVBOX/PREVIEWS/preview-1.png)
-![BetterLockScreen](openbox/GRUVBOX/PREVIEWS/preview-4.png)
-![OB Menu](openbox/GRUVBOX/PREVIEWS/preview-6.png) ![Rofi: Applications menu](openbox/GRUVBOX/PREVIEWS/preview-7.png)
-![Rofi: Power menu](openbox/GRUVBOX/PREVIEWS/preview-8.png)
+![Main Screen](PREVIEWS/preview-1.png)
+![BetterLockScreen](PREVIEWS/preview-4.png)
+![OB Menu](PREVIEWS/preview-6.png) ![Rofi: Applications menu](GRUVBOX/PREVIEWS/preview-7.png)
+![Rofi: Power menu](PREVIEWS/preview-8.png)
 
 #### Steps to apply theme
 

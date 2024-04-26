@@ -6,19 +6,19 @@
 Тема создана с помощью Pywalfox
 #### Preview
 
-![Main Screen](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-1.png)
-![OB-Menu: Первый каталог](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-4.png)
-![OB-Menu: Второй каталог](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-2.png)
-![OB-Menu: Трерий каталог](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-3.png)
-![Rofi: Меню питания](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-5.png)
-![Rofi: Меню приложений](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-6.png)
-![Dolphin & Thunar](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-7.png)
-![Alacritty: Unifetch и cmatrix & tmux: nvtop and htop	](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-8.png)
-![Alacritty: lf, bat, helix, mc](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-9.png)
-![Vieb & Librewolf (Тема создана с помощью Pywalfox) ](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-10.png)
-![Vencord & Forkgram (Тема создана с помощью Pywalfox) ](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-11.png)
-![BetterLockScreen](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-12.png)
-![WIP / ALPHA --- eww оверлей](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-12.png)
+![Main Screen](.PREVIEWS/SCREENSHOT-1.png)
+![OB-Menu: Первый каталог](.PREVIEWS/SCREENSHOT-4.png)
+![OB-Menu: Второй каталог](.PREVIEWS/SCREENSHOT-2.png)
+![OB-Menu: Трерий каталог](.PREVIEWS/SCREENSHOT-3.png)
+![Rofi: Меню питания](.PREVIEWS/SCREENSHOT-5.png)
+![Rofi: Меню приложений](.PREVIEWS/SCREENSHOT-6.png)
+![Dolphin & Thunar](.PREVIEWS/SCREENSHOT-7.png)
+![Alacritty: Unifetch и cmatrix & tmux: nvtop and htop	](.PREVIEWS/SCREENSHOT-8.png)
+![Alacritty: lf, bat, helix, mc](.PREVIEWS/SCREENSHOT-9.png)
+![Vieb & Librewolf (Тема создана с помощью Pywalfox) ](.PREVIEWS/SCREENSHOT-10.png)
+![Vencord & Forkgram (Тема создана с помощью Pywalfox) ](.PREVIEWS/SCREENSHOT-11.png)
+![BetterLockScreen](.PREVIEWS/SCREENSHOT-12.png)
+![WIP / ALPHA --- eww оверлей](.PREVIEWS/SCREENSHOT-12.png)
 #### Steps to apply theme
 
 1) **Установить пакеты ниже** (Я искал пакеты через `yay` в **Arch.** Другие дисьрибутивы **должны**  (но **не обязаны**) иметь те же имена пакетов...

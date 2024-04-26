@@ -20,6 +20,6 @@
 # [NEW!] Awesome
 ## Dark Gray
 ### Preview
-![Main Screen](/awesome/DARK_GRAY/.preview/screenshot-1.png)
+![Main Screen](awesome/DARK_GRAY/.preview/screenshot-1.png)
 <div align="right"><a href="awesome/README.md">Detailed...</a> | <a href="awesome/README-ru.md">Подробнее</a></div>
 

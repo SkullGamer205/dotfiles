@@ -6,19 +6,19 @@
 Theme created with Pywalfox
 #### Preview
 
-![Main Screen](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-1.png)
-![OB-Menu: First Catalog](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-4.png)
-![OB-Menu: Second Catalog](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-2.png)
-![OB-Menu: Third Catalog](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-3.png)
-![Rofi: Power menu](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-5.png)
-![Rofi: Applications menu](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-6.png)
-![Dolphin & Thunar](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-7.png)
-![Alacritty: Unifetch and cmatrix & tmux: nvtop and htop	](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-8.png)
-![Alacritty: lf, bat, helix, mc](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-9.png)
-![Vieb & Librewolf (Theme created with pywalfox) ](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-10.png)
-![Vencord & Forkgram (Theme created with pywalfox) ](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-11.png)
-![BetterLockScreen](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-12.png)
-![WIP / ALPHA --- eww overlay](openbox/COLD_NIGHT/.PREVIEWS/SCREENSHOT-12.png)
+![Main Screen](.PREVIEWS/SCREENSHOT-1.png)
+![OB-Menu: First Catalog](.PREVIEWS/SCREENSHOT-4.png)
+![OB-Menu: Second Catalog](.PREVIEWS/SCREENSHOT-2.png)
+![OB-Menu: Third Catalog](.PREVIEWS/SCREENSHOT-3.png)
+![Rofi: Power menu](.PREVIEWS/SCREENSHOT-5.png)
+![Rofi: Applications menu](.PREVIEWS/SCREENSHOT-6.png)
+![Dolphin & Thunar](.PREVIEWS/SCREENSHOT-7.png)
+![Alacritty: Unifetch and cmatrix & tmux: nvtop and htop	](.PREVIEWS/SCREENSHOT-8.png)
+![Alacritty: lf, bat, helix, mc](.PREVIEWS/SCREENSHOT-9.png)
+![Vieb & Librewolf (Theme created with pywalfox) ](.PREVIEWS/SCREENSHOT-10.png)
+![Vencord & Forkgram (Theme created with pywalfox) ](.PREVIEWS/SCREENSHOT-11.png)
+![BetterLockScreen](.PREVIEWS/SCREENSHOT-12.png)
+![WIP / ALPHA --- eww overlay](.PREVIEWS/SCREENSHOT-12.png)
 #### Steps to apply theme
 
 1) **Install packages below** (I found these packages through `yay` in **Arch.** Other distributions **should**  (but are **not required**) to have similar ones...

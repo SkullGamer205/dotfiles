@@ -9,10 +9,10 @@
 ## Gruvbox
 ### Предпросмотр
 
-![Рабочий стол](openbox/GRUVBOX/PREVIEWS/preview-1.png)
-![BetterLockScreen](openbox/GRUVBOX/PREVIEWS/preview-4.png)
-![OB Меню](openbox/GRUVBOX/PREVIEWS/preview-6.png) ![Rofi: Меню приложений](openbox/GRUVBOX/PREVIEWS/preview-7.png)
-![Rofi: Меню питания](openbox/GRUVBOX/PREVIEWS/preview-8.png)
+![Рабочий стол](PREVIEWS/preview-1.png)
+![BetterLockScreen](PREVIEWS/preview-4.png)
+![OB Меню](PREVIEWS/preview-6.png) ![Rofi: Меню приложений](PREVIEWS/preview-7.png)
+![Rofi: Меню питания](PREVIEWS/preview-8.png)
 
 ### Шаги установки темы
 
