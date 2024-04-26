@@ -1,4 +1,4 @@
-[🔙 Вернуться](README-ru.md)
+[🔙 Вернуться](https://github.com/SkullGamer205/dotfiles)
 
 [🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 

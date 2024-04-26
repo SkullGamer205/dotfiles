@@ -1,4 +1,4 @@
-[🔙 Вернуться](README.md) 
+[🔙 Вернуться](https://github.com/SkullGamer205/dotfiles) 
 
 [Русский](openbox/COLD_NIGHT/README-ru.md) | [English](openbox/COLD_NIGHT/README.md)
 
