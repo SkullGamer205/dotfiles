@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient gradientTransform="matrix(-2.54182 0 0 2.58531 185.47-277.37)" id="1" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#fcc733" fill-rule="evenodd" rx="5.575"/><path d="m17.628 22.07c3.891-1.414 7.095-2.59 7.12-2.613.058-.054-.293-.996-.506-1.36-.348-.594-.682-.863-1.355-1.092-.65-.221-1.148-.586-1.501-1.098-.189-.274-.657-1.356-1.208-2.792-.7-1.822-1.195-2.624-2.062-3.337-.951-.781-1.827-1.09-3.268-1.15l-.864-.036-.202-.412c-.244-.499-.305-.573-.585-.716-.742-.379-1.698.277-1.578 1.083.021.138.077.345.124.459.125.3.065.434-.339.758-1.464 1.173-2.138 2.639-2.041 4.437.046.859.095 1.053.782 3.113.683 2.048.718 2.198.688 2.896-.025.573-.076.715-.58 1.633-.179.326-.188.372-.188.951 0 .56.018.657.222 1.228.122.341.232.619.244.619.012 0 3.205-1.157 7.096-2.57m.738 2.308c.621-.171 1.257-.715 1.581-1.351.188-.37.304-.749.228-.749-.079 0-4.224 1.507-4.278 1.555-.061.055.442.375.769.491.545.192 1.131.211 1.7.054" fill="#fff"/>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-3.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path fill="#00000f" fill-opacity="0" d="m0 0h32v32h-32z" id="0"/><path d="m7.354 6.111c-2.995 2.684-1.381 7.817-3.674 8.291-2.031.613-3.541-1.385-3.66-4.503-.35-8.627 3.911-9.427 6.879-9.524 28.342-2.047 1.762 4.92.455 5.736" fill="url(#1)"/><use xlink:href="#0"/></svg>

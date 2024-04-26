@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><clipPath><circle cx="286" cy="26" r="10" fill="none"/></clipPath><clipPath><circle cx="286" cy="26" r="10" fill="none"/></clipPath></defs><g fill-rule="evenodd"><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#68ba32" rx="5.575"/><path d="m16 30.1v-28.2h-8.527c-3.089 0-5.574 2.486-5.574 5.574v17.05c0 3.089 2.486 5.574 5.574 5.574h8.527" fill="#70c836"/></g><g transform="translate(.068 2.78)"><path d="m15.932 4.801c-2.639 0-4.678 2.146-4.678 4.811v1.737h-1.038c-.461 0-.833.443-.833.908v8.54c0 .466.372.842.833.842h11.43c.461 0 .834-.376.834-.842v-8.54c0-.466-.373-.938-.834-.908h-1.038v-1.737c0-2.666-2.039-4.811-4.678-4.811m0 1.871c1.649 0 2.807 1.274 2.807 2.94v1.737h-5.613v-1.737c0-1.666 1.157-2.94 2.807-2.94" fill="#fff"/><text y="18.364" x="10.672" font-family="sans-serif" fill="#68ba32" word-spacing="0" line-height="1.25" letter-spacing="0" font-size="5.131"><tspan y="18.364" x="10.672" font-weight="bold">SSL</tspan></text></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="star-mime-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <g transform="translate(152.47 194.05)" fill="#fff"><path d="m-125.38-193.25l-.077 3.548 3.072 1.831-3.548-.077-3.135 6.791 1.38-7.268-3.072-1.831 3.548.077z"/><path d="m-125.41-183.04l.042-1.955-1.692-1.01 1.955.042 1.727-3.741-.76 4 1.692 1.01-1.955-.042z"/></g></svg>

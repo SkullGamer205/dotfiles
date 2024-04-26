@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.54182 0 0 2.58531-153.47-277.37)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#f2f2f2" fill-rule="evenodd" rx="5.575"/><g transform="translate(43.86.224)"><path d="m-22.643 10.559v2.608c0 1.445-1.163 2.608-2.608 2.608h-5.217c0 0-2.608 0-2.608 2.608v4.565c0 1.807 2.036 3.26 4.565 3.26h1.304c2.528 0 4.565-1.454 4.565-3.26v-1.956h1.956c1.807 0 3.26-2.036 3.26-4.565v-1.304c0-2.528-1.454-4.565-3.26-4.565z" fill="#ffc851"/><path d="m-25.25175 22.731935a.869464 .869464 0 0 1 .869464 .869464 .869464 .869464 0 0 1 -.869464 .869464 .869464 .869464 0 0 1 -.869464 -.869464 .869464 .869464 0 0 1 .869464 -.869464" fill="#fff"/><path d="m-28.512 5.343c-2.528 0-4.565 1.454-4.565 3.26v1.956h-1.956c-1.806 0-3.26 2.036-3.26 4.565v1.304c0 2.528 1.454 4.565 3.26 4.565h1.956v-2.608c0-1.445 1.163-2.608 2.608-2.608h5.217c0 0 2.608 0 2.608-2.608v-4.565c0-1.806-2.036-3.26-4.565-3.26z" fill="#4795d1"/><path d="m-30.468532 7.081585a.869464 .869464 0 0 1 .869464 .869464 .869464 .869464 0 0 1 -.869464 .869464 .869464 .869464 0 0 1 -.869463 -.869464 .869464 .869464 0 0 1 .869463 -.869464" fill="#fff"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m24.646 6.111c2.995 2.684 1.381 7.817 3.674 8.291 2.031.613 3.541-1.385 3.66-4.503.35-8.627-3.911-9.427-6.879-9.524-28.342-2.047-1.762 4.92-.455 5.736" fill="url(#0)"/></svg>

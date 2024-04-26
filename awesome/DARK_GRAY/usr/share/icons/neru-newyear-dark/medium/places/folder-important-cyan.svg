@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><radialGradient id="0" cx="8.848" cy="12.522" r="6.171" gradientTransform="matrix(1.48261-1.12238 1.22255 1.61493-17.06 2.508)" gradientUnits="userSpaceOnUse"><stop stop-color="#999"/><stop offset="1" stop-color="#fff"/></radialGradient></defs><path d="m27.904 6.727c1.169-.001 2.11.941 2.11 2.11v17.611c0 1.169-.941 2.11-2.11 2.11h-23.807c-1.169 0-2.11-.941-2.11-2.11v-16.245-5.067c0-.938.755-1.693 1.693-1.693h9.09c.938 0 1.705.371 2.3 1.096l1.802 2.195" fill="#289ea1"/><path d="m16 12.898c-2.761 0-5 2.239-5 5 0 2.761 2.239 5 5 5 2.761 0 5-2.239 5-5 0-2.761-2.239-5-5-5m-1 2h2v4h-2zm1 5c.552 0 1 .448 1 1 0 .552-.448 1-1 1-.552 0-1-.448-1-1 0-.552.448-1 1-1" fill-opacity=".651"/>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-places.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m5.587 6.624c-1.88 1.927-.867 5.611-2.306 5.951-1.275.44-1.817-.775-2.391-2.951-1.142-5.885 3.111-7.48 4.884-7.763 3.276-.389 5.472.482 6.79.995 3.09 1.204 3.119 2.329.603 2.367-1.678.025-4.36-.143-5.683.132-.918.191-1.685 1.042-1.897 1.268" fill="url(#0)"/><path fill="#00000f" fill-opacity="0" d="m0 0h32v32h-32z"/></svg>

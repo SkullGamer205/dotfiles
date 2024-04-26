@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.54182 0 0 2.58531-153.47-277.37)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#83b8c0" fill-rule="evenodd" rx="5.575"/><g transform="translate(50.669 22.644)"><path d="m-43.42381-10.660496a1.126736 .97309 75 0 0 -.648247 1.340064l3.11 11.608a1.126736 .97309 75 0 0 1.231429 .836406c3.276-.878 5.122-4.694 4.106-8.487-1.016-3.794-4.523-6.175-7.799-5.297" fill="#9fdb5f" stroke-width=".7"/><path d="m-35.25834-16.44a1.199713 1.277957 0 0 0 -1.160545 1.276997V1.875a1.199713 1.277957 0 0 0 1.199593 1.277829h8.797a1.199713 1.277957 0 0 0 1.051206 -1.893449L-34.17-15.779A1.199713 1.277957 0 0 0 -35.25834 -16.44" fill="#fff"/><path d="m-30.821-5.594c0 0-3.149.07-3.149 1.05 0 .98 2.799 3.289 2.799 4.269 0 .98-3.149.98-3.149.98" fill="none" stroke="#83b8c0" stroke-linejoin="round" fill-opacity=".667" stroke-width="2.099"/><path d="m-41.524-8.664c-.065.007-.131.016-.197.01l2.463 9.19c1.395-.996 2.223-3.045 1.605-5.355-.571-2.13-2.102-3.512-3.675-3.843-.066-.014-.13-.008-.195-.001" fill="#83b8c0"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m24.646 6.111c2.995 2.684 1.381 7.817 3.674 8.291 2.031.613 3.541-1.385 3.66-4.503.35-8.627-3.911-9.427-6.879-9.524-28.342-2.047-1.762 4.92-.455 5.736" fill="url(#0)"/></svg>

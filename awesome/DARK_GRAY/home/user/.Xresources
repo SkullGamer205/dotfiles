@@ -1,0 +1,63 @@
+
+*background:  #222222
+*cursorColor:  #d2d2d2
+*foreground:  #c2c2c2
+*color0:  #555555
+*color1:  #993366
+*color2:  #669933
+*color3:  #996633
+*color4:  #336699
+*color5:  #663399
+*color6:  #339966
+*color7:  #c2c2c2
+*color8:  #888888
+*color9:  #cc6699
+*color10:  #99cc66
+*color11:  #cc9966
+*color12:  #6699cc
+*color13:  #9966cc
+*color14:  #66cc99
+*color15:  #f5f5f5
+
+XTerm*locale: true
+XTerm.vt100.locale: true
+XTerm*utf8Title: true
+xterm*faceName: TerminessNerdFont
+xterm*faceSize: 12
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 8
+XTerm.vt100.geometry: 80x32
+XTerm.vt100.bellIsUrgent: true
+xterm*termName: xterm-256color
+xretm*backarrowKeyIsErase: true
+
+
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,tabbedex,fullscreen
+URxvt.iconFile: /usr/share/icons/hicolor/16x16/apps/org.xfce.terminal.png
+URxvt.icon: /usr/share/icons/hicolor/16x16/apps/org.xfce.terminal.png
+URxvt*iconFile: /usr/share/icons/hicolor/16x16/apps/org.xfce.terminal.png
+URxvt*icon: /usr/share/icons/hicolor/16x16/apps/org.xfce.terminal.png
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt*font: xft:Terminess Nerd Font Mono:size=12:antialias=false
+URxvt*boldFont: xft:Terminess Nerd Font Mono:bold:size=12:antialias=false
+URxvt*lineSpace: -4
+URxvt.perl-ext-commoni: 1
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+URxvt.color12: rgb:5c/5c/ff
+URxvt.clipboard.autocopy: true
+URxvt.keysym.S-C-c: perl:clipboard:copy
+URxvt.keysym.S-C-v: perl:clipboard:paste
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.tabbedex.tabbar-fg: 1
+URxvt.tabbedex.tabbar-bg: 0
+URxvt.tabbedex.tab-fg: 9
+URxvt.tabbedex.tab-bg: 0
+URxvt*skipBuiltinGlyphs: true
+
+Xcursor.theme: BreezeX-RosePineDawn-Linux
+Xcursor.size: 16

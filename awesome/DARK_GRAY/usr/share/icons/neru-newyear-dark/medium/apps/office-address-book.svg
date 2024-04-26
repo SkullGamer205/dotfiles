@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#2095f2" fill-rule="evenodd" rx="5.575"/><path d="m16 8c-4.418 0-8 3.582-8 8 0 4.418 3.582 8 8 8h5c0 0 .938 0 1-1 0-1-1-1-1-1h-5c-3.314 0-6-2.686-6-6 0-3.314 2.686-6 6-6 3.314 0 6 2.686 6 6v1c0 .552-.448 1-1 1-.552 0-1-.448-1-1v-1c0-2.209-1.791-4-4-4-2.209 0-4 1.791-4 4 0 2.209 1.791 4 4 4 1.046 0 1.99-.411 2.703-1.068.57.677 1.411 1.068 2.297 1.068 1.657 0 3-1.343 3-3v-1c0-4.418-3.582-8-8-8m0 6c1.105 0 2 .895 2 2 0 1.105-.895 2-2 2-1.105 0-2-.895-2-2 0-1.105.895-2 2-2" fill="#fff"/>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="star-mime-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <g transform="translate(152.47 194.05)" fill="#fff"><path d="m-125.38-193.25l-.077 3.548 3.072 1.831-3.548-.077-3.135 6.791 1.38-7.268-3.072-1.831 3.548.077z"/><path d="m-125.41-183.04l.042-1.955-1.692-1.01 1.955.042 1.727-3.741-.76 4 1.692 1.01-1.955-.042z"/></g></svg>

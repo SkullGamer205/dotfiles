@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#ccc" fill-rule="evenodd" rx="5.575"/><path d="M16 5.29078A4.589666 4.589666 0 0 0 12.329033 7.134449 4.589666 4.589666 0 0 0 8.426746 8.426746 4.589666 4.589666 0 0 0 7.135902 12.327503 4.589666 4.589666 0 0 0 5.29078 16 4.589666 4.589666 0 0 0 7.134449 19.672497 4.589666 4.589666 0 0 0 8.426746 23.572948 4.589666 4.589666 0 0 0 12.327503 24.864174 4.589666 4.589666 0 0 0 16 26.70922 4.589666 4.589666 0 0 0 19.670968 24.865704 4.589666 4.589666 0 0 0 23.572948 23.572948 4.589666 4.589666 0 0 0 24.864174 19.672497 4.589666 4.589666 0 0 0 26.70922 16 4.589666 4.589666 0 0 0 24.865704 12.327503 4.589666 4.589666 0 0 0 23.572948 8.426746 4.589666 4.589666 0 0 0 19.672498 7.135902 4.589666 4.589666 0 0 0 16 5.29078" fill="#fff"/><g transform="translate(.005)"><g fill="#d09e73"><rect x="-21.43" y=".27" width="4.684" height="9.368" rx="2.342" transform="matrix(-.70711-.70711-.70711.70711 0 0)"/><circle r="6" cx="16" cy="16"/><rect x="1.19" y="22.89" width="4.684" height="9.368" transform="matrix(.70711-.70711.70711.70711 0 0)" rx="2.342"/></g><g fill="#4d4d4d"><circle r="1.5" cx="13.5" cy="14.5"/><circle r="1.5" cx="18.5" cy="14.5"/></g></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="star-mime-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <g transform="translate(152.47 194.05)" fill="#fff"><path d="m-125.38-193.25l-.077 3.548 3.072 1.831-3.548-.077-3.135 6.791 1.38-7.268-3.072-1.831 3.548.077z"/><path d="m-125.41-183.04l.042-1.955-1.692-1.01 1.955.042 1.727-3.741-.76 4 1.692 1.01-1.955-.042z"/></g></svg>

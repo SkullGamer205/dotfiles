@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.62891 0 0 2.71269-160.16-291.42)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#5f7c8a" fill-rule="evenodd" rx="5.575"/><path d="m13.794 5.224c-.228.025-.43.212-.471.438l-.455 2.307c-.816.319-1.583.758-2.256 1.297l-2.239-.758c-.233-.08-.515.024-.64.236l-2.155 3.738c-.121.215-.069.513.118.674l1.785 1.566c-.063.42-.101.842-.101 1.28 0 .437.038.86.101 1.28l-1.785 1.566c-.187.161-.239.459-.118.674l2.155 3.738c.125.212.407.316.64.236l2.239-.758c.673.539 1.44.977 2.256 1.297l.455 2.307c.046.241.276.434.522.438h4.31c.246-.003.476-.196.522-.438l.455-2.307c.816-.319 1.583-.758 2.256-1.297l2.239.758c.233.08.515-.024.64-.236l2.155-3.738c.121-.215.069-.513-.118-.674l-1.785-1.566c.063-.42.101-.842.101-1.28 0-.437-.038-.86-.101-1.28l1.785-1.566c.187-.161.239-.459.118-.674l-2.155-3.738c-.125-.212-.407-.316-.64-.236l-2.239.758c-.674-.539-1.441-.978-2.257-1.297l-.455-2.307c-.046-.241-.276-.434-.522-.438h-4.31c-.017 0-.034 0-.05 0" fill="#fff"/><path d="m11.382 12.1v3.079h3.079v6.158h3.079v-6.158h3.079v-3.079z" fill="#5f7c8a"/>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-1.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m7.288.009c-8.276-.356-9.36 9.992-4.02 9.973.679.003 1.604-.207 2.97-1.543 7.256-10.531 14.706 3.573 17.53.919 1.71-1.912 3.496-.418 4.448.115 2.1.643 3.662.041 3.785-3.231.188-3.321-1.889-6.344-5.923-6.223-5.914.14-12.989-.047-18.787-.01" fill="url(#0)"/><path fill="#f00" fill-opacity="0" d="m0 0h32v32h-32z"/></svg>

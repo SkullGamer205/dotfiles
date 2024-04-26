@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.59244 0 0 2.58531-157.93-277.73)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#ff7d00" fill-rule="evenodd" rx="5.575"/><g transform="translate(44.643 1.455)"><g fill-rule="evenodd"><path d="m-16.17 2.073c-1.01-1.01-2.401-1.629-3.945-1.629h-17.05c-3.089 0-5.576 2.486-5.576 5.574v17.05c0 3.089 2.488 5.576 5.576 5.576h8.525v-14.1" fill="#ff7d00"/><path d="m-16.17 2.073l-12.473 12.473v14.1h8.527c3.089 0 5.574-2.488 5.574-5.576v-17.05c0-1.544-.621-2.938-1.629-3.945" fill="#ff9025"/></g><path d="m-21.08 6.489l-8.06 7.563.988.988 7.563-8.06-.493-.493" fill="#5e5e5e" stroke-width=".344"/><path d="m-28.986 14.547v11h.688v-11z" shape-rendering="auto" mix-blend-mode="normal" isolation="auto" color-interpolation-filters="linearRGB" white-space="normal" fill="#fff" solid-opacity="1" image-rendering="auto" solid-color="#000000" color="#000" color-rendering="auto" vector-effect="none" shape-padding="0" color-interpolation="sRGB"/><g fill="#3f3f3f"><path d="m-33.891 8.796l-.494.494 5.249 5.751.988-.988z" stroke-width=".344"/><circle cy="14.547" cx="-28.642" r=".688" stroke-width=".688"/></g></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-4.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m7.196.009c-8.161-.339-9.231 9.523-3.968 9.505.669.003 1.581-.197 2.929-1.471 3.773-4.147 9.01 4.479 14.696-1.042.61-.911 1.804-1.135 2.455-.627 1.045.677 2.87 2.991 3.88 3 2.359.513 4.095-.198 4.816-3.188.185-3.165-2.303-6.286-6.281-6.17-5.832.133-12.809-.045-18.527-.01" fill="url(#0)"/></svg>

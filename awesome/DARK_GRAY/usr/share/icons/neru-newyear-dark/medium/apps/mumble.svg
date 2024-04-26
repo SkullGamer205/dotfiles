@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.62891 0 0 2.71269-160.16-291.42)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#4f4f4f" fill-rule="evenodd" rx="5.575"/><path d="m16 6.404c-2.421 0-4.629.757-6.258 2.026-1.629 1.269-2.688 3.085-2.688 5.105v.73c-1.617.82-2.738 2.969-2.738 5.488 0 3.225 1.835 5.842 4.199 5.842v-12.06c0-1.513.782-2.907 2.127-3.955 1.344-1.048 3.245-1.716 5.358-1.716 2.113 0 4.01.668 5.358 1.716 1.344 1.048 2.127 2.442 2.127 3.955v11.226h-.548v-10.667c-.365 0-.729.183-.912.365v10.302h-2.081c.143-.246.23-.528.23-.835v-.835c0-.925-.744-1.669-1.669-1.669h-3.338c-.925 0-1.669.744-1.669 1.669v.835c0 .925.744 1.669 1.669 1.669h8.346v-.002c2.352-.019 4.173-2.627 4.173-5.84 0-2.52-1.121-4.669-2.738-5.488v-.73c0-2.02-1.059-3.836-2.688-5.105-1.629-1.269-3.837-2.026-6.258-2.026m-6.938 7.691v11.501c.365 0 .73-.183.913-.547v-10.589c-.183-.182-.548-.365-.913-.365" fill="#f9f9f9"/>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-1.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m7.288.009c-8.276-.356-9.36 9.992-4.02 9.973.679.003 1.604-.207 2.97-1.543 7.256-10.531 14.706 3.573 17.53.919 1.71-1.912 3.496-.418 4.448.115 2.1.643 3.662.041 3.785-3.231.188-3.321-1.889-6.344-5.923-6.223-5.914.14-12.989-.047-18.787-.01" fill="url(#0)"/><path fill="#f00" fill-opacity="0" d="m0 0h32v32h-32z"/></svg>

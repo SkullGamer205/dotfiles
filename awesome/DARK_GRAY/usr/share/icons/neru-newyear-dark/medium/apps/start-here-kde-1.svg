@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(-2.54182 0 0 2.58531 185.47-277.37)" id="1" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#2c9bff" fill-rule="evenodd" rx="5.575"/><path d="m17.999 5.5l-4 .605v14.469l4-1.074v-5.59l4 6.59 4-1.5-5-6 5-6.498-3.881-1-4.121 6.559zm-8.145 3.924c-.095 0-.189.037-.262.109l-1.572 1.572c-.145.145-.11.352 0 .525l1.627 2.555c-.121.25-.225.508-.313.771-.004.011-.01.022-.014.033l-2.951.656c-.2.045-.371.166-.371.371v.982.982c0 .205.171.327.371.371l2.951.656c.007.019.017.037.023.057.085.256.186.507.303.75l-1.627 2.553c-.11.173-.145.38 0 .525l1.572 1.572c.145.145.378.145.523 0l2.551-1.625c.251.122.509.228.773.316.017.006.033.016.051.021l.654 2.949c0 .205.166.371.371.371h2.221c.205 0 .327-.171.371-.371l.654-3.039c.301-.113.592-.248.873-.404l2.49 1.781c.145.145.378.145.523 0l1.572-1.572c.145-.145.11-.352 0-.525l-.947-1.438-.1.037c-.225.085-.479-.003-.604-.209l-.996-1.641c-.83 1.985-2.79 3.381-5.076 3.381-3.038 0-5.5-2.462-5.5-5.5 0-2.331 1.453-4.318 3.5-5.119v-1.096l-.008.035c-.022.008-.042.02-.064.027-.261.087-.516.19-.764.309l-2.547-1.623c-.073-.073-.167-.109-.262-.109" fill="#fff"/>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-3.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path fill="#00000f" fill-opacity="0" d="m0 0h32v32h-32z" id="0"/><path d="m7.354 6.111c-2.995 2.684-1.381 7.817-3.674 8.291-2.031.613-3.541-1.385-3.66-4.503-.35-8.627 3.911-9.427 6.879-9.524 28.342-2.047 1.762 4.92.455 5.736" fill="url(#1)"/><use xlink:href="#0"/></svg>

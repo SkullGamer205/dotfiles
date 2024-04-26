@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.62891 0 0 2.71269-160.16-291.42)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><g transform="translate(37.26-.404)"><g fill-rule="evenodd"><path d="m-17.442 18.98v11.525h4.709c3.089 0 5.574-2.486 5.574-5.574v-5.951z" fill="#808080"/><path d="m-23.565 12.759h-11.797v12.172c0 3.089 2.488 5.574 5.576 5.574h12.344v-11.525h-6.123z" fill="#ccc"/><path d="m-29.786 2.302c-3.089 0-5.576 2.488-5.576 5.576v4.881h11.797v-10.457" fill="#808080"/></g><text y="26.18" x="-30.849" font-family="sans-serif" fill="#a3a3a3" word-spacing="0" line-height="1.25" letter-spacing="0" font-size="10.338"><tspan y="26.18" x="-30.849" stroke-width=".258">Я</tspan></text><path d="m-23.565 2.302v16.678h16.406v-11.1c0-3.089-2.486-5.576-5.574-5.576z" fill="#2095f2" fill-rule="evenodd"/><path d="m-16.808 11.915l.25-.937c.281-1.015.547-2.203.797-3.281h.063c.266 1.062.547 2.265.828 3.281l.234.937h-2.172m3.266 4.218h2.437l-3.187-10.186h-2.765l-3.187 10.186h2.344l.625-2.422h3.109l.625 2.422" fill="#fff" stroke-width=".926"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-1.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m7.288.009c-8.276-.356-9.36 9.992-4.02 9.973.679.003 1.604-.207 2.97-1.543 7.256-10.531 14.706 3.573 17.53.919 1.71-1.912 3.496-.418 4.448.115 2.1.643 3.662.041 3.785-3.231.188-3.321-1.889-6.344-5.923-6.223-5.914.14-12.989-.047-18.787-.01" fill="url(#0)"/><path fill="#f00" fill-opacity="0" d="m0 0h32v32h-32z"/></svg>

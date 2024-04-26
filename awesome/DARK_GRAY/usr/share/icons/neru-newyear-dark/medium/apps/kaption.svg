@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.62891 0 0 2.71269-160.16-291.42)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><g transform="translate(43.525 14.441)"><g fill-rule="evenodd"><g fill="#5b5b5b"><rect y="-12.542" x="-41.627" height="28.2" width="28.2" rx="5.575"/><path d="m-36.26-12.501c-2.988.112-5.371 2.517-5.371 5.533v17.05c0 3.089 2.486 5.574 5.574 5.574h17.05c3.089 0 5.576-2.486 5.576-5.574v-17.05c0-3.089-2.488-5.574-5.576-5.574h-13.256v1.563c0 .277-.112.526-.293.707-.181.181-.43.293-.707.293h-2c-.277 0-.528-.112-.709-.293-.181-.181-.291-.43-.291-.707z"/></g><path d="m-36.26-12.501v1.521c0 .277.11.526.291.707.181.181.432.293.709.293h2c.277 0 .526-.112.707-.293.181-.181.293-.43.293-.707v-1.563h-3.797c-.072 0-.132.038-.203.041" fill="#373737"/></g><g fill="#373737"><circle r="1" cy="-7.143" cx="-17.664"/><circle r="8" cy="1.559" cx="-27.525"/></g><circle transform="scale(1-1)" r="6" cy="-1.559" cx="-27.525" fill="#009587"/><circle r="4" cy="1.559" cx="-27.525" fill="#66bfb7"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-1.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m7.288.009c-8.276-.356-9.36 9.992-4.02 9.973.679.003 1.604-.207 2.97-1.543 7.256-10.531 14.706 3.573 17.53.919 1.71-1.912 3.496-.418 4.448.115 2.1.643 3.662.041 3.785-3.231.188-3.321-1.889-6.344-5.923-6.223-5.914.14-12.989-.047-18.787-.01" fill="url(#0)"/><path fill="#f00" fill-opacity="0" d="m0 0h32v32h-32z"/></svg>

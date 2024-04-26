@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="folder-templates-symbolic.svg"
+   inkscape:version="0.92.1 r">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="769"
+     inkscape:window-height="480"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="10.727273"
+     inkscape:cx="11"
+     inkscape:cy="11"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4" />
+  <path
+     style="fill:#d3dae3"
+     d="M 9,3 V 5 H 8 C 7.45,5 7,5.45 7,6 v 4 L 7.54,10.54 4.13,16.5 4,19 5.87,17.5 6.59,16.23 C 7.66,16.73 8.82,17 10,17 c 1.18,0 2.34,-0.27 3.41,-0.77 L 14.13,17.5 16,19 15.87,16.5 15.1,15.16 C 16.94,13.64 18,11.38 18,9 h -2 c 0,1.66 -0.69,3.25 -1.91,4.38 L 12.46,10.54 13,10 V 6 C 13,5.45 12.55,5 12,5 H 11 V 3 Z m 1,4 c 0.55,0 1,0.45 1,1 0,0.55 -0.45,1 -1,1 C 9.45,9 9,8.55 9,8 9,7.45 9.45,7 10,7 Z m -0.99,5 c 0.63,0.31 1.26,0.54 1.98,0 l 1.42,2.49 C 11.65,14.82 10.83,15 10,15 9.17,15 8.35,14.82 7.59,14.49 Z"
+     id="path2"
+     inkscape:connector-curvature="0" />
+</svg>

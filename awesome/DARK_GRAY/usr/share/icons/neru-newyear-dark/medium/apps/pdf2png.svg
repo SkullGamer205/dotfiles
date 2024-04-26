@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.54182 0 0 2.58531-153.47-277.37)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><g fill-rule="evenodd"><rect width="28.2" height="28.2" x="1.898" y="1.763" fill="#6787c3" rx="5.575"/><path d="m28.471 28.472l-24.941-24.943c0 0-.08-.06-.08-.06-1.063 1.01-1.551 2.473-1.551 4.01v17.05c0 3.089 2.488 5.576 5.576 5.576h17.05c1.544 0 2.936-.624 3.943-1.631" fill="#d51f33"/><path d="m28.473 28.472c1.01-1.01 1.629-2.401 1.629-3.945v-17.05c0-3.089-2.486-5.576-5.574-5.576h-17.05c-1.544 0-2.938.624-3.945 1.631l24.941 24.943c0 0 .002 0 .002 0" fill="#6787c3"/></g><path d="m22.668 8.353c2.562 2.565 4.659 4.678 4.659 4.697 0 .042-9.306 9.352-9.348 9.352-.016 0-.03-1.389-.03-3.086v-3.086h-.491c-4.141.002-6.985 1.242-8.192 3.574-.747 1.443-.886 3.362-.391 5.393.219.901.692 2.177 1.103 2.977.194.377.241.481.218.481-.047 0-.896-1.045-1.218-1.498-.199-.28-.768-1.141-.768-1.161 0-.008-.093-.174-.207-.37-1.04-1.795-1.691-4.02-1.78-6.088-.098-2.279.599-4.499 1.937-6.166.355-.443.521-.614.999-1.032 1.939-1.697 4.757-2.597 8.139-2.601h.651v-3.03c0-1.664.014-3.03.03-3.02.016.001 2.127 2.1 4.689 4.665" fill="#fff" stroke-width=".04"/><g font-family="sans-serif" word-spacing="0" line-height="1.25" letter-spacing="0"><text x="12.895" y="14.85" fill="#6787c3" font-size="4.496"><tspan x="12.895" y="14.85" font-weight="bold" stroke-width=".112">PNG</tspan></text><text x="10.03" y="28.578" fill="#fff" font-weight="normal" font-size="6.06"><tspan x="10.03" y="28.578" fill="#fff" font-weight="bold" stroke-width=".152">PDF</tspan></text></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m24.646 6.111c2.995 2.684 1.381 7.817 3.674 8.291 2.031.613 3.541-1.385 3.66-4.503.35-8.627-3.911-9.427-6.879-9.524-28.342-2.047-1.762 4.92-.455 5.736" fill="url(#0)"/></svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(-2.65552 0 0 2.58531 193.77-277.73)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#43c4c4" fill-rule="evenodd" rx="5.575"/><g transform="matrix(.74186 0 0 .74186 4.131 3.763)"><path d="m6.2 6c-.72.263 1.732 4.8 1.14 5.131-1.031.411-2.34.869-2.34.869v7c0 0 4.562.592 8 1 .689.082-11 7-11 7 3.464.001 38.715-9.296 24.735-15.88-2.401-1.278-5.927-2.115-9.856-2.115-1.974 0-3.788.233-5.396.598-.774.176-4.61-3.848-5.283-3.603" fill="#fff"/><g fill="#a9dde4"><path d="m5 12v-1h-3v9h3v-1c6.01-1.011 9.07-2.279 9-3.543-.069-1.235-3.133-2.468-9-3.457"/><path d="m23.04 9.75c-.02.159-.04.325-.041.449.002 2.29 3.042 3.588 6.928 3.795-.257-.989-1.248-1.959-3.193-2.875-.272-.145-.562-.281-.861-.414-.212-.093-.435-.181-.66-.268-.077-.03-.152-.061-.23-.09-.297-.109-.603-.213-.92-.311-.331-.102-.672-.198-1.021-.287"/></g><path d="m2 11v1h3v-1zm3 1v1c5.134.865 8.121 1.917 8.834 2.994.116-.179.176-.357.166-.537-.069-1.235-3.133-2.468-9-3.457" opacity=".1" fill="#fff"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-3.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m24.627.009c8.36-.339 9.455 9.523 4.064 9.505-.686.003-1.62-.197-3-1.471-14.665-10.216-14.549 2.967-17.708.875-1.727-1.822-1.743 4.653-4.139 5.127-2.122.613-3.699-1.385-3.824-4.503-.366-8.627 4.086-9.427 7.187-9.524 5.974.133 11.562-.045 17.419-.01" fill="url(#0)"/></svg>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="32"
+   viewBox="0 0 8.47 8.47"
+   version="1.1"
+   id="svg21"
+   sodipodi:docname="devdocs.svg"
+   inkscape:version="0.92.1 r"><metadata
+   id="metadata25">
+  <rdf:RDF>
+    <cc:Work
+       rdf:about="">
+      <dc:format>image/svg+xml</dc:format>
+      <dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    </cc:Work>
+  </rdf:RDF>
+</metadata>
+<sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1680"
+   inkscape:window-height="966"
+   id="namedview23"
+   showgrid="false"
+   inkscape:zoom="3.6875"
+   inkscape:cx="-8.4291927"
+   inkscape:cy="7.0593978"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg21" />
+<defs
+   id="defs7">
+  <linearGradient
+     gradientTransform="matrix(-2.65552 0 0 2.58531 193.77-277.73)"
+     id="0"
+     x1="67.894"
+     y1="108.69"
+     x2="67.854"
+     y2="113.11"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       stop-color="#f9f9f9"
+       id="stop2" />
+    <stop
+       offset="1"
+       stop-color="#999"
+       id="stop4" />
+  </linearGradient>
+  <linearGradient
+     gradientTransform="matrix(0.69583962,0,0,0.71801513,-42.392975,-77.135237)"
+     id="0-3"
+     x1="67.893997"
+     y1="108.69"
+     x2="67.853996"
+     y2="113.11"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       stop-color="#f9f9f9"
+       id="stop2-6" />
+    <stop
+       offset="1"
+       stop-color="#999"
+       id="stop4-7" />
+  </linearGradient>
+</defs>
+<g
+   transform="translate(12.585-1.261)"
+   id="g17">
+  <g
+     fill-rule="evenodd"
+     transform="scale(.26469)"
+     id="g13">
+    <path
+       d="m-17.445 24.686l-10.182 10.182h4.607c3.089 0 5.574-2.486 5.574-5.574z"
+       fill="#4b4b4b"
+       id="path9" />
+    <path
+       d="m-40.07 6.664c-3.089 0-5.576 2.488-5.576 5.576v17.05c0 3.089 2.488 5.574 5.576 5.574h12.445l10.182-10.182v-12.445c0-3.089-2.486-5.576-5.574-5.576z"
+       fill="#ffa234"
+       id="path11" />
+  </g>
+  <path
+     d="m-9.5543 4.164806a1.322917 1.322917 0 0 0 -1.211812 .79375h.098 1.114v1.058h-1.114-.097a1.322917 1.322917 0 0 0 1.210778 .79375 1.322917 1.322917 0 0 0 1.210778 -.79375h2.493V4.959H-8.342A1.322917 1.322917 0 0 0 -9.554295 4.164806"
+     fill="#4b4b4b"
+     id="path15" />
+</g>
+
+
+   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+   xmlns:cc=&quot;http://creativecommons.org/ns#&quot;
+   xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+   xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+   xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+   xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+   version=&quot;1&quot;
+   width=&quot;32&quot;
+   height=&quot;32&quot;
+   id=&quot;svg12&quot;
+   sodipodi:docname=&quot;snow-top-3.svg&quot;
+   inkscape:version=&quot;0.92.1 r&quot;&gt;
+  <path
+   inkscape:connector-curvature="0"
+   style="fill:url(#0-3);stroke-width:0.26468751"
+   d="M 1.9284177,0.00237673 C -0.26213596,-0.09185197 -0.54905726,2.6471341 0.86437404,2.6421052 1.0440968,2.6428992 1.2889327,2.5873149 1.6504959,2.2336924 c 1.9205724,-2.78742407 3.8924943,0.9457283 4.6399718,0.2432478 0.4526156,-0.5060825 0.9253475,-0.1106394 1.17733,0.030439 0.5558441,0.170194 0.9692851,0.010852 1.0018421,-0.8552053 0.049761,-0.87902717 -0.499995,-1.67917747 -1.567744,-1.64715027 -1.5653619,0.0370562 -3.438026,-0.0124403 -4.972684,-0.0026469"
+   id="path47" />
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.54182 0 0 2.58531-153.47-277.37)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#3f5979" fill-rule="evenodd" rx="5.575"/><g transform="translate(51.03-.093)"><path d="m-34.649 7.594c-.073.002-.148.01-.23.021-.914.123-1.165.347-1.724 1.534-.377.801-.566.899-1.051 1-2.271-1.674-2.271.881-2.718 1.59-.613-.544-1.409-1.721-2.196-2.378-.704-.588-1.4-.944-1.952-.573-.438.311-.809.977-.945 2.506-.185 2.088.002 3.264 1.313 4.994 1.482 1.956 3.69 3.912 7.186 6.368 1.514 1.064 2.783 1.934 2.821 1.934.21 0-2.027-2.94-3.381-4.444-2.024-2.248-2.398-3.047-2.441-4.057-.039-.912.346-1.516.864-1.516.188 0 1.039.646 1.977 1.723.782.855 1.296 2.057 1.92 2.937 1.322 1.67 2.855 1.884 3.425.476.552-1.37.192-3.775-1.07-5.451-.142-.613.126-.706.746-.706.784.001 2.274.54 3.169 1.324 1.106.969 1.293.965 2.524 3.436.727 1.459 1.448 2.819 1.602 3.02.275.363.281.361.286-.093-.232-3.776-1.527-7.369-4.327-9.948-.474-.419-1.863-1.441-3.088-2.27-1.785-1.209-2.198-1.45-2.708-1.433" fill="#8d8069"/><ellipse transform="matrix(.41803-.90843.66936.74294 0 0)" ry="2.058" rx="1.419" cy="-26.1" cx="-39.608" opacity=".966" fill="#fff" stroke-linejoin="round" stroke-linecap="round" stroke-width="6.836"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m24.646 6.111c2.995 2.684 1.381 7.817 3.674 8.291 2.031.613 3.541-1.385 3.66-4.503.35-8.627-3.911-9.427-6.879-9.524-28.342-2.047-1.762 4.92-.455 5.736" fill="url(#0)"/></svg>

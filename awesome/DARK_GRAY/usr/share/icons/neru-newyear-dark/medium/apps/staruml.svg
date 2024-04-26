@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(-2.54182 0 0 2.58531 185.47-277.37)" id="1" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#f2f2f2" fill-rule="evenodd" rx="5.575"/><g transform="translate(46.18 5.263)"><path d="m-30.18.105c.993.014 1.701.612 2.033 1.602l-.012-.045 1.56 4.518h5.26c.011 0 .022 0 .034 0 .628.02 1.194.389 1.594.875l-10.467 3.682z" fill="#f74545"/><path d="m-23.274 20.812c.005-.004.01-.008.014-.012.617-.568.847-1.398.602-2.203-.002-.006-.003-.011-.005-.017l-1.605-4.986 4.135-3.02c1.096-.739 1.279-2.526.416-3.516l-10.467 3.682c0 0 6.924 10.06 6.91 10.08" fill="#707070"/><path d="m-37.11 20.8c.005.004.01.008.014.012.741.659 1.783.743 2.62.197.016-.01.032-.021.047-.032l4.243-3.03 4.243 3.03c.015.011.031.022.047.032.837.545 1.878.462 2.62-.197.005-.004.01-.008.014-.012l-6.924-10.06z" fill="#7b4188"/><path d="m-30.18.105c-.993.014-1.701.612-2.033 1.602l.012-.045-1.56 4.518h-5.26c-.011 0-.022 0-.034 0-.628.02-1.194.389-1.594.875l10.467 3.682z" fill="#ff9d45"/><path d="m-37.09 20.812c-.005-.004-.01-.008-.014-.012-.617-.568-.847-1.398-.602-2.203.002-.006.003-.011.005-.017l1.605-4.986-4.135-3.02c-1.096-.739-1.279-2.526-.416-3.516l10.467 3.682c0 0-6.924 10.06-6.91 10.08" fill="#ffd945"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="snow-top-3.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path fill="#00000f" fill-opacity="0" d="m0 0h32v32h-32z" id="0"/><path d="m7.354 6.111c-2.995 2.684-1.381 7.817-3.674 8.291-2.031.613-3.541-1.385-3.66-4.503-.35-8.627 3.911-9.427 6.879-9.524 28.342-2.047 1.762 4.92.455 5.736" fill="url(#1)"/><use xlink:href="#0"/></svg>

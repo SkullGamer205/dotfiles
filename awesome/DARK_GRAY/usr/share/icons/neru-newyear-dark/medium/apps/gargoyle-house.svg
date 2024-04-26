@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(2.62891 0 0 2.71269-160.16-291.42)" id="0" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#956a42" fill-rule="evenodd" rx="5.575"/><path d="m24.801 25.56v-11.349l-1.434-1.446c-.352-.355-2.528-2.288-3.01-2.381l-4.226-3.146-4.769 3.292c-.407.281-2.483 2.01-2.823 2.381l-1.341 1.446v11.203c0 .512.393.924.88.924h15.841c.488 0 .88-.412.88-.924" fill="#ccc"/><path fill="#808080" d="m7.199 14h17.602v.734h-17.602z"/><rect width="2.934" height="5.139" x="7.933" y="7.397" rx=".523" ry=".562" fill="#4f4f4f"/><g fill="#956a42"><rect width="5.134" height="8.08" x="8.666" y="16.94" rx=".77" ry=".757"/><path d="m18.11 16.94c-.752 0-1.375.623-1.375 1.376v3.854c0 .753.623 1.376 1.375 1.376h3.85c.752 0 1.375-.623 1.375-1.376v-3.854c0-.753-.623-1.376-1.375-1.376z"/></g><path d="m18.429 18.408c-.135 0-.229.094-.229.229v3.212c0 .135.094.229.229.229h3.209c.135 0 .229-.094.229-.229v-3.212c0-.135-.094-.229-.229-.229z" fill="#c2eeff"/><ellipse cx="12.333" cy="20.611" rx=".733" ry=".734" fill="#fff"/><path d="m8.821 12.658c-.3.249-.546.46-.644.561l-1.407 1.446v-.5h2.051z" opacity=".05"/><path d="m10.866 10.874c-.509.35-1.485 1.068-2.2 1.623v1.507h2.2z" fill="#808080"/><path d="m13.07 9.502l-1.915 1.175c-.051.031-.192.133-.285.196v3.13h2.2z" fill="#ccc"/><path d="m15.267 8.152l-2.2 1.35v4.501h2.2z" fill="#808080"/><path d="m16.516 7.385l-1.249.767v5.852h2.2v-5.989" fill="#ccc"/><path d="m17.467 8.01v5.989h2.2v-4.534" fill="#808080"/><path d="m19.667 9.47v4.534h2.2v-3.173c-.259-.161-.478-.278-.596-.299z" fill="#ccc"/><path d="m21.867 10.831v3.173h2.2v-1.573c-.624-.496-1.555-1.2-2.2-1.6" fill="#808080"/><path d="m23.18 12.591v1.573h2.051v.355l-1.504-1.447c-.087-.084-.294-.266-.547-.481" opacity=".05"/><g fill="none" stroke="#5d5d5d" stroke-linejoin="round" stroke-linecap="round" stroke-width="3"><path d="m16 7.03l-9.167 7.341"/><path d="m16 7.03l9.167 7.341"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-1.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m7.288.009c-8.276-.356-9.36 9.992-4.02 9.973.679.003 1.604-.207 2.97-1.543 7.256-10.531 14.706 3.573 17.53.919 1.71-1.912 3.496-.418 4.448.115 2.1.643 3.662.041 3.785-3.231.188-3.321-1.889-6.344-5.923-6.223-5.914.14-12.989-.047-18.787-.01" fill="url(#0)"/><path fill="#f00" fill-opacity="0" d="m0 0h32v32h-32z"/></svg>

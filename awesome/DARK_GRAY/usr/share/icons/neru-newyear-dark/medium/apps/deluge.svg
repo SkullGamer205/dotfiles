@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   viewBox="0 0 9.03 9.03"
+   width="32"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="deluge.svg"
+   inkscape:version="0.92.1 r"><metadata
+   id="metadata21">
+  <rdf:RDF>
+    <cc:Work
+       rdf:about="">
+      <dc:format>image/svg+xml</dc:format>
+      <dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    </cc:Work>
+  </rdf:RDF>
+</metadata>
+<sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1680"
+   inkscape:window-height="966"
+   id="namedview19"
+   showgrid="false"
+   inkscape:zoom="7.375"
+   inkscape:cx="16"
+   inkscape:cy="16"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg17" />
+<defs
+   id="defs7">
+  <linearGradient
+     gradientTransform="matrix(2.62891 0 0 2.71269-160.16-291.42)"
+     id="0"
+     x1="67.894"
+     y1="108.69"
+     x2="67.854"
+     y2="113.11"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       stop-color="#f9f9f9"
+       id="stop2" />
+    <stop
+       offset="1"
+       stop-color="#999"
+       id="stop4" />
+  </linearGradient>
+  <linearGradient
+     gradientTransform="matrix(0.74184554,0,0,0.76548721,-45.195816,-82.235087)"
+     id="0-3"
+     x1="67.893997"
+     y1="108.69"
+     x2="67.853996"
+     y2="113.11"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       stop-color="#f9f9f9"
+       id="stop2-6" />
+    <stop
+       offset="1"
+       stop-color="#999"
+       id="stop4-7" />
+  </linearGradient>
+</defs>
+<rect
+   width="7.959"
+   height="7.959"
+   x=".536"
+   y=".536"
+   fill="#f2f2f2"
+   fill-rule="evenodd"
+   rx="1.573"
+   id="rect9" />
+<path
+   d="m4.482 1.845c-.596.835-2.622 3.189-1.759 4.549.668 1.053 2.937 1.058 3.597 0 .858-1.376-1.33-3.714-1.838-4.549"
+   fill="#6591c2"
+   id="path11" />
+
+
+   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+   xmlns:cc=&quot;http://creativecommons.org/ns#&quot;
+   xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+   xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+   xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+   xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+   version=&quot;1&quot;
+   width=&quot;32&quot;
+   height=&quot;32&quot;
+   id=&quot;svg12&quot;
+   sodipodi:docname=&quot;snow-top-1.svg&quot;
+   inkscape:version=&quot;0.92.1 r&quot;&gt;
+  <path
+   fill="#f00"
+   fill-opacity="0"
+   d="m0 0h32v32h-32z"
+   id="path15" />
+<path
+   inkscape:connector-curvature="0"
+   style="fill:url(#0-3);stroke-width:0.28218749"
+   d="M 2.0559164,0.00253387 C -0.27946728,-0.09792483 -0.58535858,2.8221514 0.92152267,2.8167899 1.113128,2.8176365 1.3741514,2.7583771 1.7596195,2.3813746 3.807172,-0.59034203 5.9094688,3.3896304 6.7063663,2.6407049 7.188907,2.1011623 7.6928938,2.5227505 7.9615363,2.6731565 8.5541301,2.8546029 8.994907,2.6847262 9.029616,1.7614086 9.0826673,0.82426391 8.4965638,-0.02878893 7.3582195,0.00535577 5.6893626,0.04486177 3.692886,-0.00790723 2.056763,0.00253577"
+   id="path47" />
+</svg>

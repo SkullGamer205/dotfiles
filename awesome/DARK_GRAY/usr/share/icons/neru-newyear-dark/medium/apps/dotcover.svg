@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g stroke-width=".7"><path d="m30 6.969c-.054-.579-.12-1.157-.336-1.67-.281-.667-.69-1.268-1.193-1.771-.504-.504-1.104-.912-1.771-1.193-.512-.216-1.089-.28-1.666-.334h-9.03v14h14z" fill="#cf4f8c"/><g fill="#ff8c2a"><path d="m6.965 2c-.577.054-1.154.118-1.666.334-.667.281-1.268.69-1.771 1.193-.504.504-.912 1.104-1.193 1.771-.216.512-.28 1.089-.334 1.666v9.04h14v-14"/><path d="m25.04 30c.577-.054 1.154-.118 1.666-.334.667-.281 1.268-.69 1.771-1.193.504-.504.912-1.104 1.193-1.771.216-.512.28-1.089.334-1.666v-9.04h-14v14z"/></g><path d="m2 25.03c.054.579.12 1.157.336 1.67.281.667.69 1.268 1.193 1.771.504.504 1.104.912 1.771 1.193.512.216 1.089.28 1.666.334h9.03v-14h-14" fill="#6655e4"/></g><rect width="21.424" height="21.424" x="5.288" y="5.288" fill="#3f3f3f" fill-rule="evenodd" rx="4.235"/><g transform="translate(3.041 32.824)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.695"><path d="m7.879-10.882h6.781"/><g stroke-linejoin="bevel"><path d="m7.879-15.967c0 0 3.428.297 3.391-3.391-.037-3.688-3.391-3.391-3.391-3.391m-.012 6.776v-6.781"/><path d="m18.05-16.815c0 0 0 .848-1.695.848-1.695 0-1.695-1.695-1.695-3.391 0-1.695 0-3.391 1.695-3.391 1.695 0 1.695.848 1.695.848"/></g></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="star-mime-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <g transform="translate(152.47 194.05)" fill="#fff"><path d="m-125.38-193.25l-.077 3.548 3.072 1.831-3.548-.077-3.135 6.791 1.38-7.268-3.072-1.831 3.548.077z"/><path d="m-125.41-183.04l.042-1.955-1.692-1.01 1.955.042 1.727-3.741-.76 4 1.692 1.01-1.955-.042z"/></g></svg>

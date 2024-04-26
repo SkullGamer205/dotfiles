@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#333" fill-rule="evenodd" rx="5.575"/><g transform="matrix(.92057 0 0 .92057 1.271 1.271)" stroke-width="1.086"><g fill="#933333"><path d="m4 24h4v2h-4"/><path d="m4 21h4v2h-4"/><path d="m4 18h4v2h-4"/></g><g fill="#f88383"><path d="m4 15h4v2h-4"/><path d="m4 12h4v2h-4"/></g><g fill="#e8aa34"><path d="m9 24h4v2h-4"/><path d="m9 21h4v2h-4"/><path d="m9 18h4v2h-4"/></g><g fill="#76185e"><path d="m14 24h4v2h-4z"/><path d="m14 21h4v2h-4z"/><path d="m14 18h4v2h-4z"/></g><g fill="#e272c5"><path d="m14 15h4v2h-4z"/><path d="m14 12h4v2h-4z"/><path d="m14 9h4v2h-4z"/></g><g fill="#4ab225"><path d="m19 24h4v2h-4z"/><path d="m19 21h4v2h-4z"/><path d="m19 18h4v2h-4z"/></g><g fill="#98e97b"><path d="m19 15h4v2h-4z"/><path d="m19 12h4v2h-4z"/></g><g fill="#0f3b95"><path d="m24 24h4v2h-4z"/><path d="m24 21h4v2h-4z"/><path d="m24 18h4v2h-4z"/></g><g fill="#4fc2e1"><path d="m24 15h4v2h-4z"/><path d="m24 12h4v2h-4z"/><path d="m24 9.133h4v1.867h-4z"/><path d="m24 6h4v2h-4z"/></g></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="32"
+   width="32"
+   version="1"
+   id="svg8"
+   sodipodi:docname="star-mime-2.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <g transform="translate(152.47 194.05)" fill="#fff"><path d="m-125.38-193.25l-.077 3.548 3.072 1.831-3.548-.077-3.135 6.791 1.38-7.268-3.072-1.831 3.548.077z"/><path d="m-125.41-183.04l.042-1.955-1.692-1.01 1.955.042 1.727-3.741-.76 4 1.692 1.01-1.955-.042z"/></g></svg>

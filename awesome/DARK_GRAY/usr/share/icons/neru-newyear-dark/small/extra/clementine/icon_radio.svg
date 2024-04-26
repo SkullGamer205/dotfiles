@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3049"
+   height="22"
+   width="22"
+   version="1.1"
+   sodipodi:docname="icon_radio.svg"
+   inkscape:version="0.92.1 r">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="749"
+     inkscape:window-height="480"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="10.727273"
+     inkscape:cx="11"
+     inkscape:cy="11"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3049" />
+  <defs
+     id="defs8">
+    <style
+       type="text/css"
+       id="current-color-scheme">
+   .ColorScheme-Text { color:#d3dae3; } .ColorScheme-Highlight { color:#5294e2; }
+  </style>
+  </defs>
+  <path
+     d="M 2.6,4 C 1.8244,4 1.2,4.6244 1.2,5.4 v 11.2 c 0,0.7756 0.6244,1.4 1.4,1.4 h 16.8 c 0.7756,0 1.4,-0.6244 1.4,-1.4 V 5.4 C 20.8,4.6244 20.1756,4 19.4,4 Z m 5.6,2.8 c 2.31952,0 4.2,1.88048 4.2,4.2 0,2.31952 -1.88048,4.2 -4.2,4.2 C 5.88048,15.2 4,13.31952 4,11 4,8.68048 5.88048,6.8 8.2,6.8 Z m 0,1.4 A 2.8,2.8 0 0 0 5.4,11 2.8,2.8 0 0 0 8.2,13.8 2.8,2.8 0 0 0 11,11 2.8,2.8 0 0 0 8.2,8.2 Z m 5.6,0 h 5.6 v 1.4 h -5.6 z m 0,2.8 h 5.6 v 1.4 h -5.6 z m 0,2.8 h 5.6 v 1.4 h -5.6 z"
+     id="path4151"
+     style="color:#d3dae3;fill:currentColor;stroke-width:1.39999998"
+     class="ColorScheme-Text"
+     inkscape:connector-curvature="0" />
+</svg>

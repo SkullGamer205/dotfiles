@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient gradientTransform="matrix(-2.65552 0 0 2.58531 193.77-277.73)" id="1" x1="67.894" y1="108.69" x2="67.854" y2="113.11" gradientUnits="userSpaceOnUse"><stop stop-color="#f9f9f9"/><stop offset="1" stop-color="#999"/></linearGradient><radialGradient id="0" cx="-45.629" cy="27.14" r="23.443" gradientTransform="matrix(1 0 0 .98887 0 .302)" gradientUnits="userSpaceOnUse"><stop stop-color="#c3d77f"/><stop offset="1" stop-color="#c3d77f" stop-opacity="0"/></radialGradient></defs><rect width="28.2" height="28.2" x="1.898" y="1.898" fill="#28c66a" fill-rule="evenodd" rx="5.575"/><g transform="matrix(.48529 0 0 .48529 37.29 2.761)" stroke-width="2.061"><path d="m-62.1 32.814c-13.776-5.111-4.856-22.805 7.119-15.864 2.041-1.46 4.185-2.859 8-3.254 2.325-14.701 18.834-11.582 17.763 1.492 7.208.621 7.474 7.633 6.78 10.847-2.08 10.59-5.057 14.827-5.831 16.407-6.469 9.24-11.11 8.584-16.14 6.78l-12.07-5.424c-7.841-5.65-5.899-9.455-5.627-10.983" fill="#0e6f40"/><path d="m-62.1 32.814c-13.776-5.111-4.856-22.805 7.119-15.864 2.041-1.46 4.185-2.859 8-3.254 2.325-14.701 18.834-11.582 17.763 1.492 7.208.621 7.474 7.633 6.78 10.847-2.08 10.59-5.057 14.827-5.831 16.407-6.469 9.24-11.11 8.584-16.14 6.78l-12.07-5.424c-7.841-5.65-5.899-9.455-5.627-10.983" fill="url(#0)"/><path d="m-59.12 37.943c5.04-3.103 6.02-7.252 17.203-7.476 6.741-1.552 9.908-5.096 14.25-9.05-5.96 22.11-14.713 27.381-31.453 16.523" fill="#d0d873"/><path d="m-57.966 37.831c4.398-2.706 6.585-6.449 16.339-6.644 5.879-1.353 9.434-5.03 13.22-8.475-5.197 19.277-14.961 24.587-29.559 15.12" fill="#0c0d0c"/><g fill="#0e6f40"><ellipse ry="1.085" rx=".814" cy="29.02" cx="-54.712"/><ellipse ry=".847" rx=".78" cy="22.746" cx="-41.25"/></g><g transform="translate(-88.41-1.763)" stroke-width="2.061"><circle cx="50" cy="15.08" r="5.05" fill="#d0d873"/><ellipse cx="49.661" cy="14.847" rx="3.22" ry="3.051" fill="#0c0d0c"/><ellipse cx="48.41" cy="14.24" rx=".949" ry=".952" fill="#fff"/></g><circle r="5.05" cy="23.864" cx="-60.678" fill="#d0d873"/><ellipse ry="3.051" rx="3.22" cy="23.627" cx="-61.02" fill="#0c0d0c"/><ellipse ry=".952" rx=".949" cy="23.02" cx="-62.27" fill="#fff"/><path d="m-43.43 44.56c6.217.325 10.02-2.371 11.122-8.437-3.183 5.959-7.201 6.907-11.122 8.437" fill="#0e6f40"/></g>
+
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="32"
+   height="32"
+   id="svg12"
+   sodipodi:docname="snow-top-3.svg"
+   inkscape:version="0.92.1 r"&gt;
+  <path d="m24.627.009c8.36-.339 9.455 9.523 4.064 9.505-.686.003-1.62-.197-3-1.471-14.665-10.216-14.549 2.967-17.708.875-1.727-1.822-1.743 4.653-4.139 5.127-2.122.613-3.699-1.385-3.824-4.503-.366-8.627 4.086-9.427 7.187-9.524 5.974.133 11.562-.045 17.419-.01" fill="url(#1)"/></svg>
