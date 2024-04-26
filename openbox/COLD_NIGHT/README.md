@@ -1,6 +1,6 @@
 [🔙 Back](README.md) 
 
-[🇷🇺 Русский](openbox/COLD_NIGHT/README-ru.md) | [🇺🇲 English](openbox/COLD_NIGHT/README.md)
+[🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 
 ### Cold Night
 Theme created with Pywalfox

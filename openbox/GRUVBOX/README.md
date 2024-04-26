@@ -1,6 +1,6 @@
 [🔙 Back](README.md) 
 
-[🇷🇺 Русский](openbox/GRUVBOX/README-ru.md) | [🇺🇲 English](openbox/GRUVBOX/README.md)
+[🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
 
 # Dotfiles
 My Linux Desktop Configuration Compilation
