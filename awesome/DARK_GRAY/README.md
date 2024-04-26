@@ -6,7 +6,7 @@
 <a href="https://awesomewm.org/"><img src="https://awesomewm.org/images/awesome-dark-1.svg" alt="AwesomeWM"></a>
 </p>
 
-**<p align="center">SkullGamer205's configuration'</p>**
+**<p align="center">SkullGamer205's configuration</p>**
 
 # Introdution
 
@@ -41,7 +41,7 @@
 # Sources
 
 Source of inspiration (Appearance; correct organization of scripts; notification center (Yes, I didn’t write the notification center, because I didn’t quite understand how to write it))
--  [HoNamDuong's dotfiles'](https://github.com/HoNamDuong/.dotfiles)
+-  [HoNamDuong's dotfiles](https://github.com/HoNamDuong/.dotfiles)
 
 AwesomeWM Documentation
--  [Тут](https://awesomewm.org/apidoc/index.html)
+-  [Here](https://awesomewm.org/apidoc/index.html)
