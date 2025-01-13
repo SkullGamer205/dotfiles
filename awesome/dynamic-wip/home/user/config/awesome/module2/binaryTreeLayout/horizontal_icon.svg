@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <g class="icon" transform="matrix(.061538 0 0 .061538 2.7692 2.7692)">
+  <path d="m140 20h20v260h-20z"/>
+  <path d="m180 140 36-36h20l-36 36h80v20h-80l36 36h-20l-36-36z"/>
+  <path d="m120 140-36-36h-20l36 36h-80v20h80l-36 36h20l36-36z"/>
+  <path d="m165 40h5v220h-5z"/>
+  <path d="m130 40h5v220h-5z"/>
+ </g>
+</svg>

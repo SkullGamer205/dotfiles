@@ -1,0 +1,4 @@
+[submodule "utils"]
+	path = utils
+	branch = main
+	url = git@github.com:ShadowKing345/awesome-utils.git
