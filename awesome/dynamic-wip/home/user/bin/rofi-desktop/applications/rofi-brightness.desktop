@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Brightness
+Comment=
+Exec=rofi-brightness.sh
+Icon=video-display
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Settings;

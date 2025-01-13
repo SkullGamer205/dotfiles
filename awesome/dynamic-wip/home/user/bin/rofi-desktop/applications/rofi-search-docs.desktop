@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Documents
+Comment=
+Exec=rofi-search.sh "Documents"
+Icon=office-document
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Filesystem;

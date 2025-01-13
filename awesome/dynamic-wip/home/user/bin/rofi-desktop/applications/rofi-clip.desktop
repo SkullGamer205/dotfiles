@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Clipboard
+Comment=
+Exec=rofi-clip.sh
+Icon=edit-paste
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;

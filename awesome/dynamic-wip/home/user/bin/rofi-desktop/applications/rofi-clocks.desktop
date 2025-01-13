@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Clocks
+Comment=
+Exec=rofi-clocks.sh
+Icon=preferences-system-time
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;Clock;

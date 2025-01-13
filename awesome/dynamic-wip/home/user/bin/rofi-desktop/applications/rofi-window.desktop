@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Select Window
+Comment=
+Exec=rofi-window.sh
+Icon=preferences-system-windows
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;

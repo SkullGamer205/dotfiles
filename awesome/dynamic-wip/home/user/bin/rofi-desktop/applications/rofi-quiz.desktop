@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Trivia
+Comment=
+Exec=rofi-quiz.py
+Icon=dialog-question
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Utility;Games;

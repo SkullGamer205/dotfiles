@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Videos
+Comment=
+Exec=rofi-search.sh "Videos"
+Icon=multimedia-video-player
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Search;Filesystem;

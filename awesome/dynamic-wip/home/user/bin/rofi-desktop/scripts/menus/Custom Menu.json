@@ -1,0 +1,42 @@
+[
+  {
+    "name": "journalctl -xeaf",
+    "command": "urxvt -e bash -c 'journalctl -xeaf'"
+  },
+  {
+    "name": "udevadm monitor",
+    "command": "xterm -e bash -c 'udevadm monitor --kernel --udev'"
+  },
+  {
+    "name": "dmesg --ctime -w",
+    "command": "xterm -e bash -c 'dmesg --ctime -w'"
+  },
+  {
+    "name": "neofetch",
+    "command": "xterm -e bash -c 'neofetch;read'"
+  },
+  {
+    "name": "edit /etc/fstab",
+    "command": "xdg-open /etc/fstab"
+  },
+  {
+    "name": "edit /efi/EFI/ubuntu/grub.cfg",
+    "command": "xdg-open /efi/EFI/ubuntu/grub.cfg"
+  },
+  {
+    "name": "edit /etc/X11/xorg.conf",
+    "command": "xdg-open /etc/X11 /etc/X11/xorg.conf"
+  },
+  {
+    "name": "edit /usr/share/applications",
+    "command": "xdg-open /usr/share/applications"
+  },
+  {
+    "name": "edit ~/.config/rofi",
+    "command": "xdg-open ~/.config/rofi"
+  },
+  {
+    "name": "open /usr/share/applications",
+    "command": "xdg-open /usr/share/applications"
+  }
+]

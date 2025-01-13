@@ -1,7 +1,11 @@
 [🔙 Вернуться](https://github.com/SkullGamer205/dotfiles/blob/main/README-ru.md#dark-gray)
 
-[🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)
+|[🇷🇺 Русский](README-ru.md) | [🇺🇲 English](README.md)|
+|-|-|
 
+**<p align="center">Конфигурация потеряна!!!</p>**
+<p align="center">Автор - малолетний дЭбил</p>
+****
 <p align="center">
 <a href="https://awesomewm.org/"><img src="https://awesomewm.org/images/awesome-dark-1.svg" alt="AwesomeWM"></a>
 </p>

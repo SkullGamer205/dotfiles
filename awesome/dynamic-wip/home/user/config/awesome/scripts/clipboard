@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Custom Rofi Script
+
+# Launch Rofi
+rofi -no-lazy-grab -theme ~/.config/rofi/rofi.rasi -modi "clipboard:greenclip print" -show clipboard \
+-display-drun "Буфер обмена" -drun-display-format "{name}" \
+-hide-scrollbar false \
+-show-icons -icon-theme "Papirus" \
+-font "Iosevka Nerd Font 10" \
+
+# More Options
+# -fullscreen \
+
+# Theming help
+# color window = background, border, separator
+# color normal = background, foreground, background-alt, highlight-background, highlight-foreground
+# color active = background, foreground, background-alt, highlight-background, highlight-foreground
+# color urgent = background, foreground, background-alt, highlight-background, highlight-foreground

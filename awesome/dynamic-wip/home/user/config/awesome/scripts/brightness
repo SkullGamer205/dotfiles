@@ -1,0 +1,17 @@
+#!/bin/bash
+# Brightness Control
+# Made by SkullGamer205
+
+brightness_icon="$XDG_DATA_HOME/icons/oomox-gruvbox/16x16/categories/brightness.svg"
+brightness_get()      { calc -C "$(brightnessctl get) / $(brightnessctl max) * 100"; }
+brightness_increase() { brightnessctl set +5% ; }
+brightness_decrease() { brightnessctl set 5%- ; }
+brightness_notify()   { notify-send --app-name=brightnessctl 'Brightness' --icon="$brightness_icon" --urgency=normal --category='Brightness' $(brightness_get)% ; }
+
+case "$1" in
+    "-I")         brightness_increase; brightness_notify; exit ;;
+    "--increase") brightness_increase; brightness_notify; exit ;;
+    "-D")         brightness_decrease; brightness_notify; exit ;;
+    "--decrease") brightness_decrease; brightness_notify; exit ;;
+    *)    echo 'Incorrect command. '                    ; exit ;;
+esac

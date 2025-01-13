@@ -1,0 +1,111 @@
+* {
+    bg-col:  #1c111b;
+    bg-col-light: #1c111b;
+    border-col: #1c111b;
+    selected-col: #1c111b;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    grey: #6c7086;
+
+    width: 400;
+    font: "Terminess Nerd Font Regular 10";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 50px;
+    border: 0px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 2px;
+    text-color: @bg-col;
+    border-radius: 0px;
+    margin: 10px 0px 0px 10px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    columns: 2;
+    lines: 5;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 2px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element selected {
+    background-color:  @selected-col ;
+    text-color: @fg-col2  ;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 2px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+textbox {
+    padding: 2px;
+    margin: 10px 0px 0px 10px;
+    text-color: @blue;
+    background-color: @bg-col-light;
+}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Default Applications
+Comment=
+Exec=rofi-mime.sh
+Icon=preferences-desktop-default-applications
+Terminal=false
+Type=Application
+Categories=Rofi;Desktop;Settings;
