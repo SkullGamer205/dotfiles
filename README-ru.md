@@ -26,4 +26,4 @@
 ## Dynamic [W.I.P]
 ### Предпросмотр
 ![Главный экран](/awesome/dynamic-wip/home/user/media/screenshots/2025-01-13--18-44-49.png)
-<div align="right"><a href="awesome/dynamic-wip/README-ru.md">Подробнее...</a></div>
+<div align="right"><a href="awesome/dynamic-wip/README-RU.md">Подробнее...</a></div>

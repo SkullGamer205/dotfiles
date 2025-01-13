@@ -27,4 +27,4 @@
 ## Dynamic [W.I.P]
 ### Preview
 ![Main Screen](awesome/dynamic-wip/home/user/media/screenshots/2025-01-13--18-44-49.png)
-<div align="right"><a href="awesome/dynamic-wip/README-ru.md">Details...</a></div>
+<div align="right"><a href="awesome/dynamic-wip/README.md">Details...</a></div>
