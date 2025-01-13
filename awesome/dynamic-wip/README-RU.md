@@ -30,17 +30,28 @@
     awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui
 	
 # Галерея
+
 <details open>
 <summary>Gallery</summary>
+
 ![Рабочий стол](home/user/media/screenshots/2025-01-13--18-44-49.png)
+
 ![Открытые терминалы / Leaved Layout](home/user/media/screenshots/2025-01-13--18-46-25.png)
+
 ![Vesktop / ForkGram](home/user/media/screenshots/2025-01-13--18-47-50.png)
+
 ![Dashboard {W.I.P}](home/user/media/screenshots/2025-01-13--18-48-01.png)
+
 ![Меню выхода](home/user/media/screenshots/2025-01-13--18-48-29.png)
+
 ![Emacs](home/user/media/screenshots/2025-01-13--18-49-08.png)
+
 ![Rofi](home/user/media/screenshots/2025-01-13--18-50-03.png)
+
 ![Prompt меню](home/user/media/screenshots/2025-01-13--18-50-53.png)
+
 ![ПКМ Меню](home/user/media/screenshots/2025-01-13--18-51-17.png)
+
 </details>
 
 # Источники
