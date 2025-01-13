@@ -1,4 +1,4 @@
-[🔙 Вернуться](https://github.com/SkullGamer205/dotfiles/blob/main/README-ru.md#dynamic-wip)
+[🔙 Back](https://github.com/SkullGamer205/dotfiles/blob/main/README-ru.md#dynamic-wip)
 
 |[🇷🇺 Русский](README-RU.md) | [🇺🇲 English](README.md)|
 |-|-|
