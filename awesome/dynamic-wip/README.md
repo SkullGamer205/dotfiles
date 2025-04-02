@@ -11,6 +11,7 @@
 **<p align="center">SkullGamer205's configuration</p>**
 <p align="center">Currently, dotfiles under construction</p>
 <p align="center">Final result can be different from current</p>
+<p align="center">Last Edit: 2025.04.03</p>
 
 # Introdution
 
@@ -23,11 +24,11 @@
 |**Launcher**|[Rofi](https://github.com/davatorium/rofi/)|
 |**Terminal**|[Urxvt](https://github.com/exg/rxvt-unicode)|
 |**Shell**|[Zsh](https://www.zsh.org/)|
-|**Editor**|[Emacs](https://github.com/emacs-mirror/emacs) & [Vim](https://github.com/vim/vim)|
+|**Editor**|[Vim](https://github.com/vim/vim)|
 
 # List of software
 
-    awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui
+    awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui, lua, lua-cjson, lua-lgi, lua-pam, lua53, luajit, luarocks
 	
 # Gallery
 
@@ -67,6 +68,7 @@ Used Sources
 * [Awesome Retain](https://github.com/Veratil/awesome-retain)
 * [Smart Borders](https://github.com/intrntbrn/smart_borders)
 * [Layout Machi](https://github.com/xinhaoyuan/layout-machi)
+* [Calla Lockscreen](https://github.com/Stardust-kyun/calla)
 
 AwesomeWM Documentation
 -  [Here](https://awesomewm.org/apidoc/index.html)

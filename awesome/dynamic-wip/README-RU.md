@@ -11,6 +11,7 @@
 **<p align="center">Конфигурация от SkullGamer205</p>**
 <p align="center">Конфигурация находится в разработке</p>
 <p align="center">финальный результат может отличаться от текущего</p>
+<p align="center">Последняя правка: 2025.04.03</p>
 
 # Вступление
 
@@ -23,11 +24,11 @@
 |**Лаунчер**|[Rofi](https://github.com/davatorium/rofi/)|
 |**Терминал**|[Urxvt](https://github.com/exg/rxvt-unicode)|
 |**Оболочка**|[Zsh](https://www.zsh.org/)|
-|**Редактор**|[Emacs](https://github.com/emacs-mirror/emacs) & [Vim](https://github.com/vim/vim)|
+|**Редактор**|[Vim](https://github.com/vim/vim)|
 
 # Список софта
 
-    awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui
+    awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui, lua, lua-cjson, lua-lgi, lua-pam, lua53, luajit, luarocks
 	
 # Галерея
 
@@ -67,6 +68,7 @@
 * [Awesome Retain](https://github.com/Veratil/awesome-retain)
 * ["Умные" границы](https://github.com/intrntbrn/smart_borders)
 * [Layout Machi](https://github.com/xinhaoyuan/layout-machi)
+* [Calla Lockscreen](https://github.com/Stardust-kyun/calla)
 
 Документация AwesomeWM
 -  [Тут](https://awesomewm.org/apidoc/index.html)
