@@ -1,9 +1,0 @@
-#!/bin/bash
-
-cd "$(dirname "$0")"
-
-set -ex
-
-conky -q -c ./widgets/clock.lua -d &>/dev/null
-# conky -q -c ./widgets/music/info.lua -d &>/dev/null
-# conky -q -c ./widgets/music/art.lua -d &>/dev/null

@@ -55,15 +55,12 @@ require('themes')
 
 -- Load module directory
 module_dir = (gears.filesystem.get_configuration_dir() .. 'module')
-require('module.calla-lockscreen')
 -- Treat all signals. Bear in mind this implies creating all tags, attaching
 -- their layouts, setting client behavior and loading UI.
 require('signal')
 
 -- Set all keybinds.
-require('binds.mouse')
-require('binds.modal')
-
+require('binds')
 
 -- Load all client rules.
 require('config.rules')

@@ -1,5 +1,0 @@
-    default_color = '#{{base06-hex}}',
-    default_outline_color = '#{{base00-hex}}',
-    default_shade_color = '#{{base00-hex}}',
-    color1 = '#{{base06-hex}}',	
-    color2 = '#{{base06-hex}}',

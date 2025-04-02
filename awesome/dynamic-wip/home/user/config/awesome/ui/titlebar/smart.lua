@@ -7,7 +7,6 @@ require("module.awesome-smart-borders"){
 	buttons = { "close", "maximize", "minimize", "floating" },
 	border_width = 2,
 	button_size = 24,
-	-- rounded_corner = 4,
 	layout = "fixed",
 	stealth = true,
 	align_horizontal = "center",

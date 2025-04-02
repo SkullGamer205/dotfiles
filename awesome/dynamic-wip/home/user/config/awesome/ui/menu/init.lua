@@ -46,10 +46,12 @@ suspend = "loginctl suspend"
 reboot = "loginctl reboot"
 poweroff = "loginctl poweroff"
 home_dir = string.format("%s/", os.getenv("HOME"))
-desktop_dir = string.format("%s/applications/", os.getenv("XDG_DATA_HOME"))
-icon_1_dir = string.format("%s/icons/oomox-gruvbox-dark-hard/", os.getenv("XDG_DATA_HOME"))
-icon_2_dir = string.format("%s/icons/oomox-xresources/", os.getenv("XDG_DATA_HOME"))
+desktop_dir = string.format("%s/.local/share/applications/", os.getenv("HOME"))
+icon_1_dir = string.format("/home/skullgamer205/.local/share/icons/oomox-gruvbox-dark-hard/")
+icon_2_dir = string.format("/home/skullgamer205/.local/share/icons/oomox-gruvbox/")
 icon_3_dir = string.format("/usr/share/icons/hicolor/")
+icon_4_dir = string.format("%s/.icons/oomox-Crux-Midnight/", os.getenv("HOME"))
+icon_5_dir = string.format("/usr/share/icons/SE98/")
 close = function (c) c:kill() end
 -- {{{ Menu
  beautiful.menu_width = 112
@@ -79,20 +81,19 @@ MainMenu = freedesktop.menu.build( { before = { {  string.format("%s", os.getenv
                                        }, beautiful.awesome_icon},
                                       { "- - - - - -"},
                                       { "Меню приложений", app_menu, icon_2_dir ..'16x16/actions/format-justify-fill.svg'},
-                                      { "Меню питания", power_menu, icon_1_dir ..'16x16/apps/system-shutdown.svg'},
+                                      { "Меню питания", power_menu, icon_1_dir ..'apps/scalable/system-shutdown.svg'},
                                       { "- - - - - -"},
                                       { "Ждущий режим", suspend, icon_1_dir ..'/apps/scalable/system-hibernate.svg'},
                                       { "Перезагрузка", reboot, icon_1_dir ..'/apps/scalable/system-reboot.svg'},
                                       { "Выключение", poweroff, icon_1_dir ..'apps/scalable/system-shutdown.svg'},
                                   }, beautiful.avatar_icon},
-					{ "- - - - - -"},					
+                                  { "- - - - - -"},
                                   { "быстрый доступ", {
                                       { "Браузеры" , {
-					   { "Librewolf" , 'prime librewolf' ,icon_3_dir ..'/16x16/apps/librewolf.png'},
-					   { "Zen Browser" , 'prime zen-browser' ,icon_3_dir ..'/16x16/apps/zen-browser.png'},
+                                          { "Librewolf" , 'prime librewolf' ,icon_3_dir ..'/16x16/apps/librewolf.png'},
 --                                          { "Vieb", 'prime vieb', icon_3_dir ..'16x16/apps/vieb.png' },
 --                                          { "Lynx", terminal .. " -e lynx"},
-                                      } , icon_2_dir ..'16x16/categories/applications-webbrowsers.svg' },
+                                      } , icon_1_dir ..'categories/scalable/applications-webbrowsers.svg' },
                                       { "Игры" , {
                                           {" | itch.io",home_dir ..'/.itch/itch',icon_3_dir ..'128x128/apps/itch.png'},
                                           {" | TWad",'prime twad -rofi',home_dir ..'/Doom/icons8-doom-logo-512.png'},
@@ -109,52 +110,50 @@ MainMenu = freedesktop.menu.build( { before = { {  string.format("%s", os.getenv
                                           {"  | Mindustry",home_dir ..'/applications/mindustry/Mindustry-mangohud.sh',home_dir ..'/applications/mindustry/icon.png'},
                                           {" | OSU! Lazer" , 'prime-run osu-lazer' , home_dir ..'/applications/OSU/osu.svg'},
                                           {" | Steam" , 'prime-run steam' , icon_2_dir ..'16x16/apps/steam.svg'},
-                                          {" | [GAMESCOPE] Steam" , 'prime gamescope --backend wayland -w 1920 -h 1080 -W 1920 -H 1080 --force-windows-fullscreen -f -b --adaptive-sync --disable-layers --disable-xres  --synchronous-x11 --default-touch-mode 3 --force-grab-cursor --mangoapp -r 75 steam-native' , icon_2_dir ..'16x16/apps/steam.svg'},
-                                      } , icon_2_dir ..'16x16/categories/applications-games.svg' },
+                                          {" | [GAMESCOPE] Steam" , 'prime gamescope --backend wayland -w 1920 -h 1080 -W 1920 -H 1080 --force-windows-fullscreen -f -b --adaptive-sync -e --disable-layers --disable-xres  --synchronous-x11 --default-touch-mode 3 --force-grab-cursor --mangoapp -r 75 steam-native' , icon_2_dir ..'16x16/apps/steam.svg'},
+                                      } , icon_1_dir ..'categories/scalable/applications-games.svg' },
                                       { "Медиа" , {
                                           {"VLC",'vlc',icon_3_dir ..'128x128/apps/vlc-xmas.png'},
                                           {"Audacious",'audacious',icon_1_dir ..'apps/scalable/audacious.svg'},
-                                          {"ncmpc", terminal .. ' -e ncmpc -C -m --host=127.0.0.1 --port=6600',icon_2_dir ..'16x16/apps/mpd.svg'},
+                                          {"ncmpc", terminal .. ' -e ncmpc -C -m --host=127.0.0.1 --port=6600',icon_2_dir ..'actions/scalable/music-library.svg'},
                                           {"MPV",'mpv',icon_2_dir ..'32x32/apps/mpv.svg'},
-                                      } , icon_2_dir .."16x16/categories/multimedia.svg" },
+                                      } , icon_1_dir .."categories/scalable/multimedia_section.svg" },
                                       { "Общение" , {
-					   {"Vesktop", function() awful.spawn(string.format("%s/.bin/vesktop-full.sh", os.getenv("HOME"))) end, icon_3_dir ..'16x16/apps/vesktop.png'},
+                                          {"Vesktop",'prime vesktop', icon_3_dir ..'16x16/apps/vesktop.png'},
                                           {"Forkgram",'forkgram',icon_2_dir ..'16x16/apps/forkgram.svg'},
                                           {"Element",'element-desktop',icon_2_dir ..'16x16/apps/element-desktop.svg'},
-                                      } , icon_2_dir .."16x16/categories/google-chat.svg" },
+                                      } , icon_1_dir .."categories/scalable/applications-chat.svg" },
                                       { "Проводник" , {
                                           {"Thunar",'thunar',icon_2_dir ..'16x16/apps/thunar.svg'},
                                           {"MC", terminal .. ' -e mc',icon_2_dir ..'16x16/apps/mc.svg'},
                                           {"LF", terminal .. ' -e lf',icon_2_dir ..'symbolic/apps/system-file-manager-symbolic.svg'},
-                                      } , icon_2_dir .."16x16/categories/system-file-manager.svg" },
+                                      } , icon_1_dir .."actions/scalable/fileopen.svg" },
                                       { "Блокноты" , {
                                           {"Emacs",'emacs',icon_2_dir ..'32x32/apps/emacs.svg'},
 --                                          {"Helix",terminal .. ' -e helix',icon_3_dir ..'256x256/apps/helix.png'},
                                           {"Micro",terminal .. ' -e micro',icon_3_dir ..'scalable/apps/micro.svg'},
                                           {"QOwnNotes",'QOwnNotes', icon_2_dir ..'16x16/apps/QOwnNotes.svg'},
-                                      } , icon_2_dir .."16x16/categories/mypaint.svg" },
+                                      } , icon_1_dir .."categories/scalable/applications-drawing.svg" },
                                       { "Утилиты" , {
                                           {"Glances", terminal .. ' -e glances',icon_2_dir ..'16x16/apps/bashtop.svg'},
                                           {"btop", terminal .. ' -e btop',icon_2_dir ..'16x16/apps/btop.svg'},
                                           {"nvtop", terminal .. ' -e nvtop', icon_2_dir ..'16x16/apps/nvtop.svg'},
                                           {"newsboat", terminal .. ' -e newsboat',icon_2_dir ..'16x16/apps/akregator.svg'},
                                           {"Windows 7 x64",'prime ' .. home_dir ..'.bin/qemu-win7x64' ,icon_2_dir ..'16x16/categories/windows95.svg'},
-                                      } , icon_2_dir .."16x16/categories/applications-utilities.svg" },
+                                      } , icon_1_dir .."categories/scalable/xfce-utils.svg" },
                                       { "Прочее" , {
                                           {"ls -> exa"},
                                           {"cat -> bat"},
                                           {"find -> fd"},
-                                      } , icon_2_dir .."16x16/categories/applications-other.svg" },
+                                      } , icon_1_dir .."categories/scalable/applications-other.svg" },
                                       { "OSINT" , {
                                           {"Snoop",terminal .. '-e /home/skullgamer205/applications/OSINT/Snoop/snoop_cli',''},
                                           {"MOSINT", terminal .. ' -e /home/skullgamer205/applications/OSINT/MOSINT/mosint',''},
                                       }},
                                       { "Персонализация", {
-					   {"Themix",'themix-gui',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
-                                          { "- - COLORIFY - -"},
-                                          {"Из палитры",home_dir .. '/.bin/colorify.sh -f',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
-                                          {"Из обоев (Н)",home_dir .. '/.bin/colorify.sh -gd',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
-                                          {"Из обоев (Д)",home_dir .. '/.bin/colorify.sh -gl',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
+                                          {"Themix",'themix-gui',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
+                                          {"Pywal-Telegram", terminal .. ' -e wal-telegram --wal -r',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
+                                          {"Pywal-Discord",'',icon_1_dir ..'medium/apps/colorhug-ccmx.svg'},
                                       }, icon_1_dir .."medium/apps/colorhug-ccmx.svg" },
                                       { "urxvt", terminal, icon_1_dir .."apps/scalable/terminal.svg" },
                                   }, beautiful.star_icon },

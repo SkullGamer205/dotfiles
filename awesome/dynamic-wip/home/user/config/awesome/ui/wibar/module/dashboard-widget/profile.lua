@@ -88,7 +88,7 @@ local logout = wibox.widget({
 		     awesome.emit_signal("dashboard::toggle")
 		     logout_popup.launch{
 			text_color = beautiful.fg_focus,
-			onlock = function() awesome.emit_signal("widget::lockscreen")  end,
+			onlock = function() awful.spawn.with_shell("xtrlock-pam") end,
 			onreboot = function() awful.spawn.with_shell("loginctl reboot") end ,
 			onsuspend = function() awful.spawn.with_shell("loginctl suspend") end ,
 			onpoweroff = function() awful.spawn.with_shell("loginctl poweroff") end ,

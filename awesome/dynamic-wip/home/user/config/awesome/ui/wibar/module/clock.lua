@@ -8,7 +8,7 @@ return function(s)
    return wibox.widget({
 	 {
        widget = wibox.widget.textclock,
-       format = " %Y年%m月%d日 | %H:%M:%S ",
+       format = " %y.%m.%d | %H:%M:%S ",
        fg = xrdb.color3,
        refresh = "0.5",
 --       font = "Ark Pixel 10px Monospaced latin 14",

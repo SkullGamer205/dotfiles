@@ -15,7 +15,7 @@ mpc_playing_cmd() { mpc current
 		    mpc status | grep -E "playing" | cut -c 11-48; }
 mpc_volume()      { mpc status | grep -E "volume:" | cut -c 8-12; }
 
-mpc_notify()      { notify-send --replace-id=1 --app-name=mpd 'Music Player Daemon' --icon="$HOME"/.local/share/icons/oomox-gruvbox/16x16/categories/mpd.svg --urgency=normal --category='Music Player Daemon' "$@"; }
+mpc_notify()      { notify-send --app-name=mpd 'Music Player Daemon' --icon="$HOME"/.local/share/icons/oomox-gruvbox/16x16/categories/mpd.svg --urgency=normal --category='Music Player Daemon' "$@"; }
 
 mpdc_help() { echo '
 Music Player Daemon Controller

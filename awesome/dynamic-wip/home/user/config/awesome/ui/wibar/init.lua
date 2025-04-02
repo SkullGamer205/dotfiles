@@ -33,9 +33,6 @@ local net_widgets = require(... .. ".module.net_widgets")
 local dashboard  = require(... .. ".module.dashboard-widget")
 local notify_history  = require(... .. ".module.dashboard-widget.notify_history")
 
-local modalawesome = require("module.modalawesome")
-
-
 return function(s)
    s.mypromptbox = awful.widget.prompt() -- Create a promptbox.
    
@@ -57,9 +54,7 @@ return function(s)
             spacing_widget = wibox.widget.separator,
         { -- Left widgets
 	   layout = wibox.layout.fixed.horizontal,
-	   my_module.layoutbox(),
-	   -- modalawesome.active_mode,
-	   -- modalawesome.sequence,
+            my_module.layoutbox(),
             my_module.taglist(s),
             my_module.tasklist(s),
             s.mypromptbox
@@ -82,8 +77,8 @@ return function(s)
             spacing_widget = wibox.widget.separator,
         { -- Right widgets
 	   layout = wibox.layout.fixed.horizontal,
-	   my_module.weather({api_key='f6c43462242d4e7196a144455242210', coordinates = {48.5357, 135.1730}, time_format_12h = false, units = 'C', both_units_widget = true, show_hourly_forecast = true, show_daily_forecast = true, }),
-	   wibox.widget({awful.widget.keyboardlayout(), fg = xrdb.foreground, widget = wibox.container.background}), -- Keyboard map indicator and switcher.
+	   my_module.weather({api_key='PLACE YOUR KEY', coordinates = {'PLACE X CORD.', 'PLACE Y CORD'}, time_format_12h = false, units = 'C', both_units_widget = true, show_hourly_forecast = true, show_daily_forecast = true, }),
+	   awful.widget.keyboardlayout(), -- Keyboard map indicator and switcher.
 	   wibox.widget.systray(),
 	   net_widgets.wireless({
 		 interfaces  = {"wlan0", "lo", "eth0"},

@@ -27,7 +27,7 @@ local function worker(user_args)
     local args = user_args or {}
 
     local font = args.font or 'Play 8'
-    local path_to_icons = args.path_to_icons or "/home/skullgamer205/.local/share/icons/oomox-xresources/16x16/panel/"
+    local path_to_icons = args.path_to_icons or "/home/skullgamer205/.local/share/icons/oomox-gruvbox/symbolic/status/"
     local show_current_level = args.show_current_level or false
     local margin_left = args.margin_left or 0
     local margin_right = args.margin_right or 0
@@ -172,17 +172,17 @@ local function worker(user_args)
 
                 show_battery_warning()
             end
-        elseif (charge >= 1 and charge < 5) then batteryType = "battery-000"
-        elseif (charge >= 5 and charge < 15) then batteryType = "battery-010"
-        elseif (charge >= 15 and charge < 25) then batteryType = "battery-020"
-        elseif (charge >= 25 and charge < 35) then batteryType = "battery-030"
-        elseif (charge >= 35 and charge < 45) then batteryType = "battery-040"	   
-        elseif (charge >= 45 and charge < 55) then batteryType = "battery-050"
-        elseif (charge >= 55 and charge < 65) then batteryType = "battery-060"
-        elseif (charge >= 65 and charge < 75) then batteryType = "battery-070"	   
-        elseif (charge >= 75 and charge < 85) then batteryType = "battery-080"
-        elseif (charge >= 85 and charge <= 95) then batteryType = "battery-090"	   
-        elseif (charge >= 95 and charge <= 100) then batteryType = "battery-100"
+        elseif (charge >= 1 and charge < 5) then batteryType = "battery-level-0%s-symbolic"
+        elseif (charge >= 5 and charge < 15) then batteryType = "battery-level-10%s-symbolic"
+        elseif (charge >= 15 and charge < 25) then batteryType = "battery-level-20%s-symbolic"
+        elseif (charge >= 25 and charge < 35) then batteryType = "battery-level-30%s-symbolic"
+        elseif (charge >= 35 and charge < 45) then batteryType = "battery-level-40%s-symbolic"	   
+        elseif (charge >= 45 and charge < 55) then batteryType = "battery-level-50%s-symbolic"
+        elseif (charge >= 55 and charge < 65) then batteryType = "battery-level-60%s-symbolic"
+        elseif (charge >= 65 and charge < 75) then batteryType = "battery-level-70%s-symbolic"	   
+        elseif (charge >= 75 and charge < 85) then batteryType = "battery-level-80%s-symbolic"
+        elseif (charge >= 85 and charge <= 95) then batteryType = "battery-level-90%s-symbolic"	   
+        elseif (charge >= 95 and charge <= 100) then batteryType = "battery-level-100%s-symbolic"
         end
 
         if status == 'Charging' then

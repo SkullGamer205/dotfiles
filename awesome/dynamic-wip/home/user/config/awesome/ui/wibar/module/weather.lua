@@ -13,8 +13,6 @@ local naughty = require("naughty")
 local wibox = require("wibox")
 local gears = require("gears")
 local beautiful = require("beautiful")
-local xresources = require("beautiful.xresources")
-local xrdb = xresources.get_current_theme()
 
 local HOME_DIR = os.getenv("HOME")
 local WIDGET_DIR = HOME_DIR .. '/.config/awesome/ui/wibar/module/weather-widget'
@@ -212,7 +210,6 @@ local function worker(user_args)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-	fg = xrdb.foreground,
         widget = wibox.container.background,
         set_image = function(self, path)
             self:get_children_by_id('icon')[1].image = path
@@ -258,7 +255,6 @@ local function worker(user_args)
                 {
                     id = 'temp',
                     font = font_name .. ' 36',
-
                     widget = wibox.widget.textbox
                 },
                 {

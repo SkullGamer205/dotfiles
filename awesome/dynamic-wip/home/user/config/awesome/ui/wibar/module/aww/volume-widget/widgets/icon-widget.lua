@@ -24,18 +24,18 @@ function widget.get_widget(widgets_args)
             else
                 local new_value_num = tonumber(new_value)
                 if (new_value_num >= 0 and new_value_num < 33) then
-                    volume_icon_name="audio-volume-low"
+                    volume_icon_name="audio-volume-low-symbolic"
                 elseif (new_value_num < 66) then
-                    volume_icon_name="audio-volume-medium"
+                    volume_icon_name="audio-volume-medium-symbolic"
                 else
-                    volume_icon_name="audio-volume-high"
+                    volume_icon_name="audio-volume-high-symbolic"
                 end
             end
             self:get_children_by_id('icon')[1]:set_image(icon_dir .. volume_icon_name .. '.svg')
         end,
         mute = function(self)
             self.is_muted = true
-            self:get_children_by_id('icon')[1]:set_image(icon_dir .. 'audio-volume-muted.svg')
+            self:get_children_by_id('icon')[1]:set_image(icon_dir .. 'audio-volume-muted-symbolic.svg')
         end,
         unmute = function(self)
             self.is_muted = false
