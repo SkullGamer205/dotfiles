@@ -3,12 +3,11 @@ local gears  = require("gears")
 local mod    = require('binds.mod')
 local leaved = require('module.awesome-leaved')
 local modkey = mod.modkey
-
-if leaved.layout.suit.tile.right == layout then
+if awful.screen.focused().selected_tag.layout.name == "leaved.layout.suit.tile.right" then
    awful.keyboard.append_global_keybindings({
-	 awful.key({ modkey, mod.shift }, "t", function () leaved.keys.shiftStyle() end,
-	    {description = "Switch shift style", group = "Планировка: Leaved"}),
-	    
+	    awful.key({ modkey, mod.shift }, "t", function () leaved.keys.shiftStyle() end,
+	       {description = "Switch shift style", group = "Планировка: Leaved"}),
+	       
 	    awful.key({ modkey,           }, "o", function () leaved.keys.shiftOrder() end,
 	       {description = "shift order", group = "Планировка: Leaved"}),
 	    awful.key({ modkey, mod.shift }, "h", function () leaved.keys.splitH() end,
@@ -40,7 +39,6 @@ if leaved.layout.suit.tile.right == layout then
 	       {description = "Select container", group = "Планировка: Leaved"}),
    })
 end
-
 -- client.connect_signal('request::default_mousebindings', function()
 --    awful.mouse.append_client_mousebindings({
 -- 	 awful.button({ modkey }, 1, function () leaved.mouse.move() end),

@@ -1,7 +1,7 @@
 local awful = require('awful')
 local beautiful = require('beautiful')
 local wibox = require('wibox')
-local mod    = require('binds.mod')
+local mod    = require('binds.mouse.mod')
 local modkey = mod.modkey
 
 return function(s)

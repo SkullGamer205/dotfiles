@@ -1,1 +1,1 @@
-../../../bin/rofi-desktop/drun.sh
+/home/skullgamer205/.bin/rofi-desktop/drun.sh

@@ -27,7 +27,7 @@ local function worker(user_args)
     local args = user_args or {}
 
     local font = args.font or 'Play 8'
-    local path_to_icons = args.path_to_icons or "/home/skullgamer205/.icons/oomox-DarkGray/16x16/panel/"
+    local path_to_icons = args.path_to_icons or "/home/skullgamer205/.icons/oomox-xresources/16x16/panel/"
     local show_current_level = args.show_current_level or false
     local margin_left = args.margin_left or 0
     local margin_right = args.margin_right or 0

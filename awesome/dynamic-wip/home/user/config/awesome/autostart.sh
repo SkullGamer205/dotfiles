@@ -31,15 +31,18 @@ run() {
 rpicom(){
   prime picom
 }
-# setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle 
+rfeh(){
+    feh --bg-scale "$(cat $HOME/.lastwal)"
+}
 
+# setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle 
 exec "$HOME/.bin/mpd-launch" &
 run mpd-mpris
 run lxqt-policykit-agent
 run greenclip daemon
 run syncthing-gtk -m
-run nitrogen --restore
-run conky -d -c $HOME/.config/conky/default
+run rfeh
+run conky -q -d -c "$HOME/.config/conky/widgets/clock.lua"
 run easystroke --config-dir "/home/$(whoami)/.config/easystroke/"
 run rpicom
 

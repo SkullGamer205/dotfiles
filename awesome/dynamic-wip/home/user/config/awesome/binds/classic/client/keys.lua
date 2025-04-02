@@ -4,6 +4,7 @@ local mod    = require('binds.mod')
 local lain   = require('module.lain')
 local retain = require('module.awesome-retain')
 local machi  = require('module.layout-machi')
+local binaryTreeLayoutBuilder = require('module.binaryTreeLayout')
 local modkey = mod.modkey
 
 --- Client keybindings.
@@ -78,6 +79,13 @@ awful.keyboard.append_global_keybindings({
                {description = "[ Machi ] Edit the current layout if it is a machi layout", group = "Планировка"}),
     awful.key({ modkey,           }, "/",    function () machi.switcher.start(client.focus) end,
                {description = "[ Machi ] Switch between windows for a machi layout", group = "Планировка"}),
+})
+
+-- BTL
+
+awful.keyboard.append_global_keybindings({
+    awful.key({ modkey,           }, "e",    function () binaryTreeLayoutBuilder.toggleDirection() end,
+               {description = "[ BTL ] Change Direction", group = "Планировка"}),
 })
 
 -- Retain

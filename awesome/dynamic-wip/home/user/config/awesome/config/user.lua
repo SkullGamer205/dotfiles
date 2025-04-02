@@ -3,6 +3,7 @@ local lain   =  require('module.lain')
 local machi  =  require('module.layout-machi')
 local leaved =  require('module.awesome-leaved')
 local retain = require('module.awesome-retain')
+local binaryTreeLayoutBuilder = require('module.binaryTreeLayout')
 -- Specify user preferences for Awesome's behavior.
 return {
    -- Default modkey.
@@ -24,6 +25,7 @@ return {
       awful.layout.suit.floating,
       awful.layout.suit.max.fullscreen,
       leaved.layout.suit.tile.right,
+      -- binaryTreeLayoutBuilder({send_notifications=true}),
       awful.layout.suit.tile,
      -- awful.layout.suit.tile.left,
      -- awful.layout.suit.tile.bottom,
