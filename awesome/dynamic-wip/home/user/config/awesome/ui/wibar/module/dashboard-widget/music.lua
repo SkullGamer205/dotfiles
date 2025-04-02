@@ -172,7 +172,12 @@ local next_track_btn = wibox.widget({
       widget = wibox.container.place,
 })
 
-
+next_track_btn:connect_signal("mouse::enter", function()
+	wibox.widget({
+		bg = beautiful.cyan_bright,
+		widget = wibox.container.background,
+	})
+end)
 track_main_info.point = {x = music_pic.widget.widget.widget.forced_width + 2 * CValues.padding, y = dpi(CValues.max_dpi - music_pic.widget.widget.widget.forced_height - CValues.padding)}
 music_pic.point = {x = dpi(2), y = dpi(CValues.max_dpi - music_pic.widget.widget.widget.forced_height - CValues.padding)}
 next_track_btn.point = {x = dpi(CValues.max_dpi - next_track_btn.widget.widget.forced_width), y = dpi(CValues.max_dpi - next_track_btn.widget.widget.forced_width)}

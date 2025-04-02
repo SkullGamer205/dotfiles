@@ -1,19 +1,21 @@
 /**
- * Base16 oomox-wallpaper ROFI Color theme
+ * Base16 oomox-xresources ROFI Color theme
  *
  * Authors
- *  Scheme: oomox-wallpaper
+ *  Scheme: oomox-xresources
  *  Template: Jordi Pakey-Rodriguez (https://github.com/0xdec), Andrea Scarpino (https://github.com/ilpianista)
  */
 
 * {
-    red:                         rgba ( 251, 73, 52, 100 % );
-    blue:                        rgba ( 131, 165, 152, 100 % );
-    lightfg:                     rgba ( 168, 153, 138, 100 % );
-    lightbg:                     rgba ( 29, 32, 33, 100 % );
-    foreground:                  rgba ( 235, 219, 178, 100 % );
-    background:                  rgba ( 40, 40, 40, 100 % );
-    background-color:            rgba ( 40, 40, 40, 0 % );
+/* Flavours Start */
+    red:                         #e67e80;
+    blue:                        #446460;
+    lightfg:                     #d3c6aa;
+    lightbg:                     #343f44;
+    foreground:                  #d3c6aa;
+    background:                  #1e2326;
+    background-color:            #00000000;
+/* Flavours End */
     separatorcolor:              @foreground;
     border-color:                @foreground;
     selected-normal-foreground:  @lightbg;
@@ -38,8 +40,8 @@
     show-icons:			 true;
     icon-theme:			"Papirus";
 
-    width: 512;
-    font: "Terminess Nerd Font Mono 10";
+    width: 396;
+    font: "Terminess Nerd Font Regular 10";
 }
 window {
     background-color: @background;

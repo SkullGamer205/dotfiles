@@ -1,0 +1,68 @@
+!---- Start flavours
+*background:  #282828
+*cursorColor:  #ebdbb2
+*foreground:  #ebdbb2
+*color0:  #1d2021
+*color1:  #cc241d
+*color2:  #98971a
+*color3:  #d79921
+*color4:  #458588
+*color5:  #b16286
+*color6:  #689d6a
+*color7:  #a8998a
+
+*color8:  #626258
+*color9:  #fb4934
+*color10:  #b8bb26
+*color11:  #fabd2f
+*color12:  #83a598
+*color13:  #d3869b
+*color14:  #8ec07c
+*color15:  #ebdbb2
+!---- End flavours
+
+XTerm*locale: true
+XTerm.vt100.locale: true
+XTerm*utf8Title: true
+xterm*faceName: Terminess Nerd Font
+xterm*faceSize: 12
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 8
+XTerm.vt100.geometry: 80x32
+XTerm.vt100.bellIsUrgent: true
+xterm*termName: xterm-256color
+xretm*backarrowKeyIsErase: true
+
+
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,tabbedex,fullscreen,keyboard-select,resize-font,clipboard
+URxvt.keysym.M-Escape: keyboard-select:activate
+URxvt.iconFile:    /usr/share/icons/hicolor/scalable/apps/Terminal.svg
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt*font: xft:Terminess Nerd Font Mono:size=12:antialias=false
+URxvt*boldFont: xft:Terminess Nerd Font Mono:bold:size=12:antialias=false
+URxvt*lineSpace: -4
+URxvt.perl-ext-commoni: 1
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+URxvt.color12: rgb:5c/5c/ff
+URxvt.clipboard.autocopy: true
+URxvt.keysym.S-C-c: clipboard:copy
+URxvt.keysym.S-C-v: clipboard:paste
+URxvt.keysym.F11: fullscreen:switch
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.tabbedex.tabbar-fg: 1
+URxvt.tabbedex.tabbar-bg: 0
+URxvt.tabbedex.tab-fg: 9
+URxvt.tabbedex.tab-bg: 0
+URxvt*skipBuiltinGlyphs: true
+URxvt.keyboard-select.clipboard: true
+
+Xcursor.theme: Mita Cursor
+Xcursor.size: 16

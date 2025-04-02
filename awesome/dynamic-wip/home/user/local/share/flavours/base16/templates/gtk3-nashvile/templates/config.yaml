@@ -1,0 +1,4 @@
+schemes:
+    extension: -gtk.css
+    output: schemes
+
