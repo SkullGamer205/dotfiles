@@ -1,7 +1,7 @@
 # DO NOT EDIT! This file will be overwritten by LXAppearance.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
-include "/home/skullgamer205/.local/share/themes/oomox-xresources/gtk-2.0/gtkrc"
+include "/home/skullgamer205/.config/gtk-2.0/gtkrc"
 gtk-theme-name="oomox-xresources"
 gtk-icon-theme-name="oomox-xresources"
 gtk-font-name="Terminess Nerd Font 10.125"

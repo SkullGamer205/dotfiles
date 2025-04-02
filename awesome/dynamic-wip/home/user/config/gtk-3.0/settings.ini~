@@ -1,14 +1,14 @@
 
 # Created by lxqt-config-appearance (DO NOT EDIT!)
 [Settings]
-gtk-theme-name=oomox-xresources
-gtk-icon-theme-name=oomox-xresources
+gtk-theme-name=oomox-gruvbox
+gtk-icon-theme-name=oomox-gruvbox
 # GTK3 ignores bold or italic attributes.
-gtk-font-name=Terminess Nerd Font 10.125
+gtk-font-name=Terminess Nerd Font 9
 gtk-menu-images=1
-gtk-button-images=0
+gtk-button-images=1
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
-gtk-cursor-theme-name=Mita Cursor
+gtk-cursor-theme-name=breeze_cursors
 gtk-cursor-theme-size=0
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
 gtk-enable-event-sounds=1
