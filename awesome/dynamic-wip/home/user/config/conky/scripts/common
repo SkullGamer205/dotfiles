@@ -1,0 +1,87 @@
+#!/bin/bash
+
+function _load_config {
+  local scripts_dir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+  local config_path="$scripts_dir/../config.env"
+  if [ -f "$config_path" ]; then
+    source "$config_path"
+  fi
+}
+_load_config
+unset _load_config
+
+function get_active_player {
+  local player="$(playerctl status -a -f "{{playerName}} {{status}}" | grep "Playing" | awk '{print $1}')"
+  if [ -z "$player" ]; then
+    return
+  fi
+  # ty pnpm for teaching me this pattern. its great. i luv it
+  case ",$NOW_CLOCKING_IGNORED_PLAYERCTL_SOURCES," in
+    # exit early if player is ignored
+    *",$player,"*) return ;;
+    *) ;;
+  esac
+
+  local domain="$(playerctl -p "$player" metadata xesam:url | awk -F[/:] '{print $4}')"
+  if [ -n "$domain" ]; then
+    case ",$NOW_CLOCKING_IGNORED_PLAYERCTL_DOMAINS," in
+      *",$domain,"*) return ;;
+      *) ;;
+    esac
+  fi
+
+  # sometimes players kinda break and wont respond to metadata requests. break gracefully if that happens <3
+  if playerctl -p "$player" metadata &>/dev/null && [ -n "$(playerctl -p "$player" metadata xesam:artist)" ]; then
+    echo "$player"
+  fi
+}
+
+function active_playerctl {
+  local active_player="$(get_active_player)"
+  test -n "$active_player" && playerctl -p "$(get_active_player)" "$@"
+}
+
+function get_platform {
+  if command -v cmus-remote >/dev/null && cmus-remote -Q &>/dev/null; then
+    echo cmus
+  elif [ -n "$(get_active_player)" ]; then
+    echo playerctl
+  fi
+}
+
+function playerctl_get_source {
+  get_active_player
+}
+function playerctl_get_art {
+  # hack to make spotify images load
+  active_playerctl metadata mpris:artUrl | sed 's;https://open.spotify.com;http://i.scdn.co;g'
+}
+function playerctl_get_artist {
+  active_playerctl metadata artist
+}
+function playerctl_get_title {
+  active_playerctl metadata title
+}
+
+function cmus_get_source {
+  echo cmus
+}
+function cmus_get_art {
+  local file="$(cmus-remote -Q | grep 'file' | cut -d " " -f 2-)" 
+  mkdir -p ./data
+  local extracted="$(realpath ./data)/cmus_extracted.png"
+  if ffmpeg -y -i "$file" -an -vcodec copy "$extracted" &>/dev/null; then
+    echo "$extracted"
+  else
+    local dir="$(dirname "$file")"
+    # inspired by https://github.com/TiredSounds/cmus-conky/blob/master/cmus-conky-art.sh
+    find "$dir" -maxdepth 1 -regex '.*/\(cover\|folder\|front\)\.\(png\|jpe?g\)' | head -n1
+  fi
+}
+function cmus_get_artist {
+  cmus-remote -Q | grep 'tag artist' | cut -d " " -f 3-
+}
+function cmus_get_title {
+  cmus-remote -Q | grep title | cut -d " " -f 3- 
+}
+
