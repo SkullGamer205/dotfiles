@@ -1,0 +1,55 @@
+shell = "bash -c '{}'"
+
+[[item]]
+file = "~/.config/X11/xresources"
+template = "xresources"
+rewrite = false
+start = "!---- Start flavours"
+end = "!---- End flavours"
+hook = "xrdb -load ~/.config/X11/xresources"
+
+[[item]]
+file = "~/.config/nvim/colors/base16.vim"
+template = "vim"
+rewrite = true
+hook = "reloadnvim"
+
+[[item]]
+file = "~/.config/vesktop/themes/simple.css"
+template = "vencord-simple"
+rewrite = false
+start= "/* Start flavours */"
+end = "/* End flavours */"
+
+[[item]]
+file = "~/.local/share/themes/FlatColor/colors2"
+template = "gtk-flatcolor"
+subtemplate = "gtk-2"
+rewrite = true
+
+[[item]]
+file = "~/.local/share/themes/FlatColor/colors3"
+template = "gtk-flatcolor"
+subtemplate = "gtk-3"
+rewrite = true
+
+[[item]]
+file = "~/.local/share/themes/Nashville96-Dynamic/gtk-2.0/gtkrc"
+template = "gtk2-nashvile"
+rewrite = false
+start = "### Base colors START ###"
+end = "### Base colors End ###"
+
+[[item]]
+file = "~/.local/share/themes/Nashville96-Dynamic/gtk-3.0/gtk.css"
+template = "gtk3-nashvile"
+rewrite = false
+start = "/* Start Flavours */"
+end = "/* End Flavours */"
+
+[[item]]
+file = "~/.config/rofi/config.rasi"
+template = "rofi"
+rewrite = false
+start = "/* Flavours Start */"
+end = "/* Flavours End */"
