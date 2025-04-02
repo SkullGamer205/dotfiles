@@ -1,0 +1,193 @@
+/***********************
+ ! Check and Radio items
+************************/
+
+@mixin toggle($type) {
+    background-image: none;
+
+    //-gtk-icon-source: url("../assets/#{$type}-unchecked.svg");
+
+    &:disabled { -gtk-icon-source: url("../assets/#{$type}-unchecked-insensitive.svg"); }
+
+    &:checked, &:active {
+        -gtk-icon-source: url("../assets/#{$type}-checked.svg");
+
+        &:disabled { -gtk-icon-source: url("../assets/#{$type}-checked-insensitive.svg"); }
+    }
+
+    &:indeterminate {
+        -gtk-icon-source: url("../assets/#{$type}-mixed.svg");
+
+        &:disabled { -gtk-icon-source: url("../assets/#{$type}-mixed-insensitive.svg"); }
+    }
+
+    menuitem &, modelbutton & {
+        -gtk-icon-source: url("../assets/menuitem-#{$type}-unchecked.svg");
+
+        &:disabled {
+            -gtk-icon-source: url("../assets/menuitem-#{$type}-checked-insensitive.svg");
+        }
+
+        &:checked, &:active {
+            -gtk-icon-source: url("../assets/menuitem-#{$type}-checked.svg");
+
+            &:hover { -gtk-icon-source: url("../assets/menuitem-#{$type}-checked-hover.svg"); }
+
+            &:disabled { -gtk-icon-source: url("../assets/menuitem-#{$type}-checked-insensitive.svg"); }
+        }
+
+        &:indeterminate {
+            -gtk-icon-source: url("../assets/menuitem-#{$type}-mixed.svg");
+
+            &:hover { -gtk-icon-source: url("../assets/menuitem-#{$type}-mixed-hover.svg"); }
+
+            &:disabled { -gtk-icon-source: url("../assets/menuitem-#{$type}-mixed-insensitive.svg"); }
+        }
+    }
+}
+
+@include exports("checkradio") {
+    $checkradio_border: mix($bg_color, $fg_color, .3);
+    $disabled_checkradio_border: mix($bg_color, $fg_color, .15);
+
+    radio {
+        @include toggle("radio");
+        min-width: 10px + $spacing * 2;
+        min-height: 10px + $spacing * 2;
+        margin-right: $spacing;
+    }
+
+    check {
+        @include toggle("checkbox");
+        min-width: 10px + $spacing * 2;
+        min-height: 10px + $spacing * 2;
+        margin-right: $spacing;
+    }
+
+    check, radio {
+        box-shadow: -1px 0   $checkradio_border inset,
+                     1px 0   $checkradio_border inset,
+                     0  -1px $checkradio_border inset,
+                     0   1px $checkradio_border inset;
+        border-radius: if($roundness > 7px + $spacing, 7px + $spacing, $roundness) / 2;
+        background-color: $base_color;
+
+        &:disabled {
+            box-shadow: -1px 0   $disabled_checkradio_border inset,
+                         1px 0   $disabled_checkradio_border inset,
+                         0  -1px $disabled_checkradio_border inset,
+                         0   1px $disabled_checkradio_border inset;
+            background-color: rgba($base_color, .25);
+            //background-color: transparent;
+        }
+
+        menuitem &:disabled, modelbutton &:disabled,
+        menuitem &, modelbutton & {
+            box-shadow: none;
+            border-radius: 0;
+            background-color: transparent;
+            border: 0;
+        }
+
+        textview &:focus, .view &:focus, view &:focus, treeview &:focus {
+            background-color: $base_color;
+        }
+
+    }
+
+    radio {
+        border-radius: 999px;
+    }
+
+    radio:dir(rtl), check:dir(rtl) {
+        margin-right: 0;
+        margin-left: $spacing;
+    }
+
+    //selection-mode
+    @each $s,$as in ("", "-unchecked"),
+                  (":hover", "-unchecked"),
+                  (":active", "-checked"),
+                  (":backdrop", "-unchecked"),
+                  (":checked", "-checked"),
+                  (":checked:hover", "-checked"),
+                  (":checked:active", "-checked"),
+                  (":backdrop:checked", "-checked") {
+        .view.content-view.check#{$s}:not(list) {
+            -gtk-icon-shadow: none;
+            -gtk-icon-source: url("../assets/grid-selection#{$as}.svg");
+            background-color: transparent;
+        }
+    }
+}
+
+
+/********
+ ! Switch
+*********/
+
+@include exports("switch") {
+    switch {
+        border-radius: $roundness;
+        padding: if($spacing > 1px, $spacing, 1px) - 1px;
+        border: 0;
+        outline: none;
+        transition: background-color .3s linear;
+        //min-width: 88px;
+        min-width: 66px + $spacing * 4;
+        min-height: 18px + $spacing * 2;
+        background-color: $switch_bg_color;
+        color: $switch_fg_color;
+        box-shadow: inset 1px -1px 0 alpha($dark_shadow, .06), inset -1px 1px 0 alpha($dark_shadow, .06);
+        font-size: 90%;
+
+        slider {
+            background-color: $switch_slider_bg_color;
+            transition: all .3s ease-in;
+            box-shadow: 0 1px 2px 0 alpha($dark_shadow, .07), 1px 0 2px 0 alpha($dark_shadow, .07);
+            border-radius: $roundness;
+        }
+
+        &:checked {
+            background-color: $selected_bg_color;
+            background-image: none;
+            border-color: $selected_bg_color;
+            color: $base_color;
+
+            slider {
+                background-color: $white;
+                box-shadow: 0 1px 3px 0 alpha($dark_shadow, .1);
+            }
+        }
+
+        &:disabled {
+            background-color: $switch_disabled_bg_color;
+            background-image: none;
+            border-color: $switch_disabled_border_color;
+            color: $switch_disabled_fg_color;
+            box-shadow: none;
+
+            slider {
+                background-color: $switch_disabled_slider_bg_color;
+            }
+        }
+
+        list row:selected & {
+            background-color: $switch_disabled_slider_bg_color;
+            color: $switch_disabled_bg_color;
+
+            slider {
+                background-color: mix($switch_disabled_bg_color, $base_color, .4);
+            }
+
+            &:checked {
+                color: $selected_bg_color;
+                background-color: $switch_slider_bg_color;
+
+                slider {
+                    background-color: $selected_bg_color;
+                }
+            }
+        }
+    }
+}
