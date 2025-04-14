@@ -3,6 +3,7 @@ local gears  = require("gears")
 local lain   = require('module.lain')
 local retain = require('module.awesome-retain')
 local machi  = require('module.layout-machi')
+local cyclefocus  = require('module.awesome-cyclefocus')
 local grect = require("gears.geometry").rectangle
 local gfind = require("gears.table").find_keys
 
@@ -30,7 +31,7 @@ end
 
 local tag_commands = {
   {
-    description = "Сменить фокус",
+    description = " │ Сменить фокус",
     pattern = {'%d*', '[hjkl]'},
     handler = function(_, count, movement)
       local directions = {h = 'left', j = 'down', k = 'up', l = 'right'}
@@ -42,7 +43,12 @@ local tag_commands = {
     end
   },
   {
-    description = "Переключиться на пред. / след. экран",
+    description = " │ Сменить фокус",
+    pattern = {'Tab'},
+    handler = function(mode) mode.stop() end, function(c) cyclefocus.cycle({modifier=alt}) end
+  },
+  {
+    description = "   │ Переключиться на пред. / след. экран",
     pattern = {'%d*', '[ey]'},
     handler = function(_, count, movement)
       count = count == '' and 1 or tonumber(count)
@@ -55,7 +61,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Поменять окна местами",
+    description = "│ Поменять окна местами",
     pattern = {'m', '%d*', '[hjkl]'},
     handler = function(_, _, count, movement)
       local directions = {h = 'left', j = 'down', k = 'up', l = 'right'}
@@ -87,22 +93,22 @@ local tag_commands = {
     end
   },
   {
-    description = "Перейти к важному окну",
+    description = "         │ Перейти к важному окну",
     pattern = {'x'},
     handler = function() awful.client.urgent.jumpto() end
   },
   {
-    description = "Перемеситься к тегу",
+    description = "  │ Перемеситься к тегу",
     pattern = {'%d*', '[gfb]'},
     handler = find_tag(awful.tag.object.view_only)
   },
   {
-    description = "Переключить тег",
+    description = " │ Переключить тег",
     pattern = {'t', '%d*', '[gfb]'},
     handler = find_tag(awful.tag.viewtoggle)
   },
   {
-    description = "Переместить активное окно в тег",
+    description = " │ Переместить активное окно в тег",
     pattern = {'m', '%d*', '[gfb]'},
     handler = find_tag(function(tag)
       local c = client.focus
@@ -112,7 +118,7 @@ local tag_commands = {
     end)
   },
   {
-    description = "Переключить активное окно в теге",
+    description = " │ Переключить активное окно в теге",
     pattern = {'c', '%d*', '[gfb]'},
     handler = find_tag(function(tag)
       local c = client.focus
@@ -122,7 +128,7 @@ local tag_commands = {
     end)
   },
   {
-    description = "Переместить на главный план",
+    description = "        │ Переместить на главный план",
     pattern = {'m', 'm'},
     handler = function()
       local c, m = client.focus, awful.client.getmaster()
@@ -132,7 +138,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Переместить окно на пред. след. экран",
+    description = "  │ Переместить окно на пред. след. экран",
     pattern = {'m', '%d*', '[ey]'},
     handler = function(_, _, count, movement)
       local c = client.focus
@@ -148,7 +154,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Закрыть окно",
+    description = "         │ Закрыть окно",
     pattern = {'q'},
     handler = function()
       local c = client.focus
@@ -158,7 +164,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Переключить плавающий режим",
+    description = "        │ Переключить плавающий режим",
     pattern = {'p', 'h'},
     handler = function()
       local c = client.focus
@@ -168,7 +174,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Переключить режим \"Поверх всех окон\"",
+    description = "        │ Переключить режим \"Поверх всех окон\"",
     pattern = {'p', 'o'},
     handler = function()
       local c = client.focus
@@ -178,7 +184,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Переключить \"липкий\" режим",
+    description = "        │ Переключить \"липкий\" режим",
     pattern = {'p', 's'},
     handler = function()
       local c = client.focus
@@ -188,7 +194,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Переключить полноэкранный режим",
+    description = "        │ Переключить полноэкранный режим",
     pattern = {'p', 'f'},
     handler = function()
       local c = client.focus
@@ -199,7 +205,7 @@ local tag_commands = {
     end
   },
   {
-    description = "(Раз-)вернуть",
+    description = "        │ (Раз-)вернуть",
     pattern = {'p', 'm'},
     handler = function()
       local c = client.focus
@@ -210,7 +216,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Свернуть",
+    description = "         │ Свернуть",
     pattern = {'n'},
     handler = function()
       local c = client.focus
@@ -220,7 +226,7 @@ local tag_commands = {
     end
   },
   {
-    description = "Вернуть окно",
+    description = "         │ Вернуть окно",
     pattern = {'u'},
     handler = function()
         local c = awful.client.restore()
@@ -231,14 +237,14 @@ local tag_commands = {
     end,
   },
   {
-    description = "Вернуться на прошлый тег",
+    description = "        │ Вернуться на прошлый тег",
     pattern = {'z', 't'},
     handler = function()
       awful.tag.history.restore()
     end
   },
   {
-    description = "Вернуться на прошлое окно",
+    description = "        │ Вернуться на прошлое окно",
     pattern = {'z', 'c'},
     handler = function()
       awful.client.focus.history.previous()
@@ -250,23 +256,23 @@ local tag_commands = {
 
   -- Lain Tags
   {
-    description = "Добавить тег",
+    description = "         │ Добавить тег",
     pattern = {'a'},
     handler = function(mode) lain.util.add_tag(mylayout) end
   },
   {
-    description = "Удалить тег",
+    description = "         │ Удалить тег",
     pattern = {'d'},
     handler = function(mode) lain.util.delete_tag() end
   },
   {
-    description = "Переименновать тег",
+    description = "         │ Переименновать тег",
     pattern = {'e'},
     handler = function(mode) lain.util.rename_tag() end
   },
 
   {
-    description = "Переместить тег влево/вправо",
+    description = "  │ Переместить тег влево/вправо",
     pattern = {'s', '%d*', '[fb]'},
     handler = function(movement)
     if movement == 'f' then
@@ -279,22 +285,22 @@ local tag_commands = {
 
   -- Change mode
   {
-    description = "Перейти в client mode",
+    description = "         │ Перейти в client mode",
     pattern = {'i'},
     handler = function(mode) mode.stop() end
   },
   {
-    description = "Перейти в launcher mode",
+    description = "         │ Перейти в launcher mode",
     pattern = {'r'},
     handler = function(mode) mode.start("launcher") end
   },
   {
-    description = "Перейти в layout mode",
+    description = "         │ Перейти в layout mode",
     pattern = {'v'},
     handler = function(mode) mode.start("layout") end
   },
   {
-    description = "Перейти в Player Mode",
+    description = "         │ Перейти в Player Mode",
     pattern = {'P'},
     handler = function(mode) mode.start("player") end
   },

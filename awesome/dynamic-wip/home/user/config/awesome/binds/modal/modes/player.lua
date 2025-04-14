@@ -2,67 +2,67 @@ local awful = require('awful')
 local gears = require("gears")
 local player_commands = {
    {
-      description = "Текущий трек",
+      description = "  │ Текущий трек",
       pattern = {'n'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --now") end
    },
    {
-      description = "Перключить проигрывание",
+      description = "  │ Перключить проигрывание",
       pattern = {'p'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --toggle") end
    },
    {
-      description = "Остановить плеер",
+      description = "  │ Остановить плеер",
       pattern = {'S'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --stop") end
    },
    {
-      description = "Предыдущий трек",
+      description = "  │ Предыдущий трек",
       pattern = {'h'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --prev") end
    },
    {
-      description = "Следующий трек",
+      description = "  │ Следующий трек",
       pattern = {'l'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --next") end
    },
    {
-      description = "Переключить режим повтора",
+      description = "  │ Переключить режим повтора",
       pattern = {'r'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --repeat") end
    },
    {
-      description = "Переключить случайный режим",
+      description = "  │ Переключить случайный режим",
       pattern = {'d'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --random") end
    },
    {
-      description = "Переключить одиночный режим",
+      description = "  │ Переключить одиночный режим",
       pattern = {'s'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --single") end
    },
    {
-      description = "Переключить режим удаления после проигрывания",
+      description = "  │ Переключить режим очистки",
       pattern = {'e'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --consume") end
    },
    {
-      description = "Уменьшить громкость",
+      description = "  │ Уменьшить громкость",
       pattern = {'j'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --voldown") end
    },
    {
-      description = "Увеличить громкость",
+      description = "  │ Увеличить громкость",
       pattern = {'k'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --volup") end
    },
    {
-      description = "[ROFI] Список текущих треков",
+      description = "  │ [ROFI] Список текущих треков",
       pattern = {'i'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --currenttracks") end
    },
    {
-      description = "[ROFI] Список всех треков",
+      description = "  │ [ROFI] Список всех треков",
       pattern = {'o'},
       handler = function () awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/mpc/mpd.sh --alltracks") end
    },

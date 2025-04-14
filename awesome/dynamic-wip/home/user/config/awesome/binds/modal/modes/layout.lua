@@ -2,7 +2,7 @@ local awful = require("awful")
 
 local layout_commands = {
   {
-    description = "change client height factor",
+    description = "    │ Изменить высоту окна",
     pattern = {'[jk]'},
     handler = function(_, movement)
       if movement == 'j' then
@@ -13,7 +13,7 @@ local layout_commands = {
     end
   },
   {
-    description = "change master width factor",
+    description = "    │ Изменить ширину главного окна",
     pattern = {'[hl]'},
     handler = function(_, movement)
       if movement == 'h' then
@@ -24,7 +24,7 @@ local layout_commands = {
     end
   },
   {
-    description = "change number of master clients",
+    description = "│ Изменить количество главных окон",
     pattern = {'m', '%d*', '[fb]'},
     handler = function(_, _, count, movement)
       count = count == '' and 1 or tonumber(count)
@@ -39,7 +39,7 @@ local layout_commands = {
     end
   },
   {
-    description = "change number of columns",
+    description = "│ Изменить колиество столбцов",
     pattern = {'c', '%d*', '[fb]'},
     handler = function(_, _, count, movement)
       count = count == '' and 1 or tonumber(count)
@@ -52,7 +52,7 @@ local layout_commands = {
     end
   },
   {
-    description = "change layout",
+    description = " │ Изменить планировку окон",
     pattern = {'%d*', '[fb]'},
     handler = function(_, count, movement)
       count = count == '' and 1 or tonumber(count)
@@ -65,7 +65,7 @@ local layout_commands = {
     end
   },
   {
-    description = "change useless gap",
+    description = "│ Изменить размер зазоров",
     pattern = {'g', '%d*', '[fb]'},
     handler = function(_, _, count, movement)
       count = count == '' and 1 or tonumber(count)
@@ -78,7 +78,7 @@ local layout_commands = {
     end
   },
   {
-    description = "enter client mode",
+    description = "       │ Перейти в client modeш",
     pattern = {'i'},
     handler = function(mode) mode.stop() end
   },
