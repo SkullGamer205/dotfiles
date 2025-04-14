@@ -28,7 +28,7 @@
 
 # Список софта
 
-    awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui, lua, lua-cjson, lua-lgi, lua-pam, lua53, luajit, luarocks
+    awesomewm, picom, rofi, urxvt, zsh, emacs, vim, conky, pavucontrol, mate-policy-kit, easystroke, mpd, mpd-mpris, playerctl, bluetuith, nmtui, lua, lua-cjson, lua-lgi, lua-pam, lua53, luajit, luarocks, fastfetch
 	
 # Галерея
 

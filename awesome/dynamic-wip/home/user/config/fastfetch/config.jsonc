@@ -1,0 +1,61 @@
+{
+	"logo": {
+		"type": "none"
+	},
+	"display": {
+		"separator": ":: "
+	},
+	"modules": [
+		{
+			"type": "custom",
+			"format": "┌────────────────────────────────────────────┐"
+		},
+		{
+		        "type": "kernel",
+		        "key": "   ",
+        		"keyColor": "1;37"
+		},
+		{
+			"type": "packages",
+			"key":	"  󰮯 ",
+			"keyColor": "31"
+		},
+		{
+			"type": "wm",
+			"key":	"   ",
+			"keyColor": "36",
+			"format": "{pretty-name}"
+		},
+		{
+			"type":	"terminal",
+			"key":	"   ",
+			"format": "{exe}"
+		},
+		{
+			"type":	"cpu",
+			"key": "   ",
+			"format": "{name}"
+		},
+		{
+			"type":	"gpu",
+			"key": "  󰡀 ",
+			"keyColor": "32",
+			"format": "{vendor} {name}"
+		},
+		{
+			"type": "memory",
+			"key":	"   ",
+			"keyColor": "35",
+			"format": "{used} / {total}"
+		},
+		{
+			"type": "disk",
+			"key":	"   ",
+			"format": "({mountpoint}): {size-used} / {size-total}"
+		},
+		{
+			"type": "custom",
+			"format": "└─────────────────────── {#90} {#31} {#32} {#33} {#34} {#35} {#36} {#37} {#38} {#39} {#90}┘"
+		}
+	]
+}

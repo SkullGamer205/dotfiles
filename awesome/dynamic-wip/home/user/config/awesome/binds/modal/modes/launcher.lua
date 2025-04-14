@@ -7,12 +7,12 @@ local run_shell = require('module.run-shell')
 
 local launcher_commands = {
   {
-    description = "| Отобразить \"Шпаргалку\"",
+    description = "  │ Отобразить \"Шпаргалку\"",
     pattern = {'h'},
     handler = function() hotkeys_popup.show_help() end
   },
   {
-    description = "| Перезагрузить AwesomeWM",
+    description = "  │ Перезагрузить AwesomeWM",
     pattern = {'r'},
     handler = function() awesome.restart() end
   },
@@ -22,7 +22,7 @@ local launcher_commands = {
 --    handler = function() awesome.quit() end
 --  },
   {
-    description = "| Запустить Lua код:",
+    description = "  │ Запустить Lua код:",
     pattern = {'x'},
     handler = function()
       awful.prompt.run {
@@ -34,32 +34,32 @@ local launcher_commands = {
     end,
   },
   {
-    description = "| Открыть терминал",
+    description = "  │ Открыть терминал",
     pattern = {'t'},
     handler = function() awful.spawn(apps.terminal) end
   },
   {
-    description = "| Запустить менюбар",
+    description = "  │ Запустить менюбар",
     pattern = {'m'},
     handler = function() run_shell.launch()  end
   },
   {
-    description = "| Запустить Rofi-Desktop",
+    description = "  │ Запустить Rofi-Desktop",
     pattern = {'M'},
     handler = function() awful.spawn(gears.filesystem.get_configuration_dir() .."scripts/rofi-desktop/rofi-desktop.sh")end
   },
   {
-    description = "| Запустить браузер",
+    description = "  │ Запустить браузер",
     pattern = {'f','f'},
     handler = function() awful.spawn(apps.browser)  end
   },
   {
-    description = "| Запустить LibreOffice",
+    description = " │ Запустить LibreOffice",
     pattern = {'l', 'o'},
     handler = function() awful.spawn(apps.office)  end
   },
   {
-    description = "| Запустить текстовый редактор",
+    description = "  │ Запустить текстовый редактор",
     pattern = {'e'},
     handler = function() awful.spawn(apps.editor_cmd)  end
   },
