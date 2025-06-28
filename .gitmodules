@@ -4,3 +4,6 @@
 [submodule "awesome/DARK_GRAY/home/user/media/wallpapers"]
 	path = awesome/DARK_GRAY/home/user/media/wallpapers
 	url = https://codeberg.org/SkullGamer205/skully-wallpapers-collection
+[submodule "awesome/dynamic-wip/home/user/bin/rofi-desktop"]
+	path = awesome/dynamic-wip/home/user/bin/rofi-desktop
+	url = https://github.com/giomatfois62/rofi-desktop
