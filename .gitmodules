@@ -10,3 +10,6 @@
 [submodule "awesome/dynamic-wip/home/user/local/share/base16-templates/icons/papirus/papirus-icon-theme"]
 	path = awesome/dynamic-wip/home/user/local/share/base16-templates/icons/papirus/papirus-icon-theme
 	url = https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
+[submodule "awesome/dynamic-wip/home/user/local/share/base16-templates/themes/oomox"]
+	path = awesome/dynamic-wip/home/user/local/share/base16-templates/themes/oomox
+	url = https://github.com/themix-project/oomox-gtk-theme
