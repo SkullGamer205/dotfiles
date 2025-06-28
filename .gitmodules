@@ -19,3 +19,6 @@
 [submodule "openbox/GRUVBOX/usr/share/icons"]
 	path = openbox/GRUVBOX/usr/share/icons
 	url = https://github.com/SylEleuth/gruvbox-plus-icon-pack
+[submodule "awesome/DARK_GRAY/usr/share/icons"]
+	path = awesome/DARK_GRAY/usr/share/icons
+	url = https://github.com/chistota/neru-icon-classic-theme
