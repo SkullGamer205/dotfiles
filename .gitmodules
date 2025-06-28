@@ -13,3 +13,6 @@
 [submodule "awesome/dynamic-wip/home/user/local/share/base16-templates/themes/oomox"]
 	path = awesome/dynamic-wip/home/user/local/share/base16-templates/themes/oomox
 	url = https://github.com/themix-project/oomox-gtk-theme
+[submodule "awesome/dynamic-wip/home/user/media/wallpapers"]
+	path = awesome/dynamic-wip/home/user/media/wallpapers
+	url = https://codeberg.org/SkullGamer205/skully-wallpapers-collection
