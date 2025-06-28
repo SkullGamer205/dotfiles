@@ -1,0 +1,10 @@
+[Settings]
+gtk-application-prefer-dark-theme=true
+gtk-cursor-theme-name=Future-dark-cursors
+gtk-cursor-theme-size=16
+gtk-decoration-layout=close,maximize,minimize:icon
+gtk-enable-animations=true
+gtk-font-name=Terminess Nerd Font, 9
+gtk-icon-theme-name=Fluent-grey-dark
+gtk-primary-button-warps-slider=false
+gtk-theme-name=Breeze
