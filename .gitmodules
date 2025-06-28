@@ -1,6 +1,6 @@
 [submodule "openbox/COLD_NIGHT/home/USER-NAME-PLACE-HERE/media/wallpapers/wallpapers"]
 	path = openbox/COLD_NIGHT/home/USER-NAME-PLACE-HERE/media/wallpapers/wallpapers
-	url = git@github.com:SkullGamer205/wallpapers.git
+	url = https://codeberg.org/SkullGamer205/skully-wallpapers-collection
 [submodule "awesome/DARK_GRAY/home/user/media/wallpapers"]
 	path = awesome/DARK_GRAY/home/user/media/wallpapers
 	url = https://codeberg.org/SkullGamer205/skully-wallpapers-collection
