@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Tmux Sessions
-Comment=
-Exec=rofi-tmux.sh
-Icon=utilities-terminal
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Utility;

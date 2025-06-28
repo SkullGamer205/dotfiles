@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=FlatHub
-Comment=
-Exec=rofi-flathub.sh
-Icon=application-gzip
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Search;Network;System;PackageManager;

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Media Controls
-Comment=
-Exec=rofi-playerctl.sh
-Icon=applications-multimedia
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;AudioVideo;Audio;Video;

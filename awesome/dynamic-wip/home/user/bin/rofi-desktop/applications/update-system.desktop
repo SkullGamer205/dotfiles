@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Update System
-Comment=
-Exec=update-system.sh
-Icon=system-software-update
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;System;PackageManager;

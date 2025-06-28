@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Timezone
-Comment=
-Exec=rofi-clocks.sh
-Icon=preferences-system-time
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Settings;Clock;

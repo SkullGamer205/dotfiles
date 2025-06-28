@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Calendar
-Comment=
-Exec=rofi-calendar.sh
-Icon=x-office-calendar
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Utility;

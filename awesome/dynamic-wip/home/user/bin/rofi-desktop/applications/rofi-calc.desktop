@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Calculator
-Comment=
-Exec=rofi -modi calc -show calc
-Icon=accessories-calculator
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Utility;Calculator;

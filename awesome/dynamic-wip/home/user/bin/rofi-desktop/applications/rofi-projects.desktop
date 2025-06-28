@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Projects
-Comment=
-Exec=rofi-projects.sh
-Icon=applications-development
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Development;

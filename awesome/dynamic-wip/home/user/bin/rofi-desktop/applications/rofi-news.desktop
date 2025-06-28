@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Latest News
-Comment=
-Exec=rofi-news.sh
-Icon=application-rss+xml
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Utility;News;

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Torrents (bitsearch)
-Comment=
-Exec=rofi-bitsearch.sh
-Icon=application-x-bittorrent
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Search;Network;P2P

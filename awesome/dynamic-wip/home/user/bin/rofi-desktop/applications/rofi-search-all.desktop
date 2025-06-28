@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Name=All Files
-Comment=
-Exec=rofi-search.sh "All Files"
-Icon=system-file-manager
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Search;Filesystem;

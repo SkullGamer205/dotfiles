@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Color Picker
-Comment=
-Exec=rofi-color-picker.sh
-Icon=preferences-color
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Utility;

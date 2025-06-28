@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Keyboard Layout
-Comment=
-Exec=rofi-keyboard-layout.sh
-Icon=input-keyboard
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Settings;

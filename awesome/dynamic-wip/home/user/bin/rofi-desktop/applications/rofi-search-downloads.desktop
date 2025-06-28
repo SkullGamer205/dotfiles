@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Name=Downloads
-Comment=
-Exec=rofi-search.sh "Downloads"
-Icon=folder-download
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;Search;Filesystem;

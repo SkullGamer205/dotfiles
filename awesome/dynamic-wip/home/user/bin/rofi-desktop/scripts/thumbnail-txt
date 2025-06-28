@@ -1,3 +1,0 @@
-#!/bin/bash
-
-magick -font Dejavu-Sans-Mono -size $3x text:$1[0] $2

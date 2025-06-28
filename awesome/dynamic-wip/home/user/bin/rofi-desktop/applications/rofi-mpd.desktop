@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Music Player
-Comment=
-Exec=rofi-mpd.sh
-Icon=gmusicbrowser
-Terminal=false
-Type=Application
-Categories=Rofi;Desktop;AudioVideo;Audio;Music;Player;
