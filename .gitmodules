@@ -16,3 +16,6 @@
 [submodule "awesome/dynamic-wip/home/user/media/wallpapers"]
 	path = awesome/dynamic-wip/home/user/media/wallpapers
 	url = https://codeberg.org/SkullGamer205/skully-wallpapers-collection
+[submodule "openbox/GRUVBOX/usr/share/icons"]
+	path = openbox/GRUVBOX/usr/share/icons
+	url = https://github.com/SylEleuth/gruvbox-plus-icon-pack
