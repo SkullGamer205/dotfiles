@@ -22,3 +22,6 @@
 [submodule "awesome/DARK_GRAY/usr/share/icons"]
 	path = awesome/DARK_GRAY/usr/share/icons
 	url = https://github.com/chistota/neru-icon-classic-theme
+[submodule "river/unnamed/home/user/.local/share/base16-templates/themes/oomox"]
+	path = river/unnamed/home/user/.local/share/base16-templates/themes/oomox
+	url = https://github.com/themix-project/oomox-gtk-theme
