@@ -25,7 +25,7 @@ local river_options = {
   -- Theme options
   ['border-width'] = 2,
   ['border-color-focused'] = '0x9DA9A0',
-  ['border-color-unfocused'] = '0x343f44',
+  ['border-color-unfocused'] = '0x4f5b58',
   ['border-color-urgent'] = '0xe67e80',
   ['xcursor-theme'] = { 'Mita Cursor', 14 },
   ['background-color'] = '0x1e2326',
