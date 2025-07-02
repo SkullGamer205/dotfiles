@@ -23,5 +23,5 @@ require('config.user')
 require('config.rules')
 
 local AstalBar = addRelPath("modules/AstalWidgets")
-require('barinit')
+require('main')
 
