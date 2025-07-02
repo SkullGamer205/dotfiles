@@ -1,0 +1,11 @@
+$ac-red: #{'@error_color'};
+$ac-green: #{'@sucsess_bg_color'};
+$ac-yellow: #{'@warning_bg_color'};
+$ac-blue: #{'link_color'};
+
+$bg: #{'@theme_bg_color'};
+$bg-alt: #{'@dark_bg_color'};
+$bg-urg: #{'@warning_bg_color'};
+$fg-alt: #{'@dark_fg_color'};
+$fg: #{'@theme_fg_color'};
+$ac: $fg;
