@@ -4,6 +4,7 @@ local astal = require("astal")
 local App = require("astal.gtk3").App
 local Bar = require("TopBar.Bar")
 local Notif = require("Notifications.init")
+local Launcher = require("Launcher.init")
 
 local scss = src("style.scss")
 local css = "/tmp/astal-style.css"
@@ -15,5 +16,6 @@ App:start {
     main = function()
             Bar(monitor)
             Notif(monitor)
+            Launcher()
     end
 }
