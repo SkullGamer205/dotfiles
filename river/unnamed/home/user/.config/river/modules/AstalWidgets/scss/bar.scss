@@ -1,0 +1,51 @@
+@use "sass:string";
+@import "themes/default";
+
+@function gtkalpha($c, $a) {
+  @return string.unquote("alpha(#{$c},#{$a})");
+}
+
+$fg-color: #{'@theme_fg_color'};
+$bg-color: #{'@theme_bg_color'};
+$clean: #00000000;
+
+window#TopBar {
+  // all: unset
+  background-color: #00000000;
+  centerbox {
+    margin: 8px 8px 0 8px;
+    box#LeftBox {
+      border-radius: 0 0 1em 0; 
+      background-color: $bg-color;
+      border: 2px solid $fg-color;
+      button#LauncherButton {
+        border: 0px;
+        background-color: $clean;
+      }
+    }
+    box#CenterBox {
+      background-color: $bg-color;
+      border-radius: 0 0 1em 1em;
+      padding: 0 0.5em 0 0.5em;
+      border: 2px solid $fg-color;
+      button#Player {
+        border: 0px;
+        background-color: $clean;
+      }
+    }
+    box#RightBox { 
+      background-color: $bg-color;
+      border: 2px solid $fg-color;
+      border-radius: 0 0 0 1em;
+      padding: 0 0 0 0.5em;
+      box#systray {
+        button#TrayReveal {
+          border: 0px;
+          background-color: $clean;
+          color: $clean;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,60 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+window#MediaPlayer {
+    all: unset;
+}
+
+box.MediaPlayer {
+    padding: .6rem;
+    background-color: $bg-color;
+    border: 2px solid $fg-color;
+    margin: 8px 0 0 0;
+
+    box.cover-art {
+        min-width: 128px;
+        min-height: 128px;
+        border: 2px solid $fg-color;
+        border-radius: 0px;
+        margin-right: .6rem;
+        background-size: contain;
+        background-position: center;
+    }
+
+    box.title {
+        label {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    }
+
+    scale {
+        padding: 0;
+        margin: .4rem 0;
+
+        trough {
+            min-height: 8px;
+        }
+
+        highlight {
+            background-color: $fg-color;
+        }
+
+        slider {
+            all: unset;
+        }
+    }
+
+    centerbox.actions {
+        min-width: 220px;
+
+        button {
+            min-width: 0;
+            min-height: 0;
+            padding: .4rem;
+            margin: 0 .2rem;
+            border: 0px;
+        }
+    }
+}
