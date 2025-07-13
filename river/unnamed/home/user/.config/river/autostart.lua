@@ -32,6 +32,13 @@ local startup_commands = {
   {
     'artix-pipewire-loader',
   },
+  {
+    'mpd',
+  },
+  {
+    'mpd-mpris',
+    '-no-instance',
+  },
 }
 
 -- Run startup commands
