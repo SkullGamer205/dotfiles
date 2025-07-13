@@ -45,6 +45,26 @@ window#TopBar {
           color: $clean;
         }
       }
+      eventbox#Batery_EventBox {
+        box#Battery {
+          icon#BatteryIcon {
+              margin-right: 4px,
+          }
+        }
+      }
+      eventbox#Wi-Fi_EventBox {
+        button#Wi-Fi_Button {
+          border: 0px;
+          background-color: $clean;
+          box#Wi-Fi {
+            box#Wi-Fi_Box {
+              icon#Wi-Fi_Icon {
+                margin-right: 4px,
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
