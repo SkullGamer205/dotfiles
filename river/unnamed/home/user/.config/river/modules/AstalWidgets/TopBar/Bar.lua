@@ -4,6 +4,7 @@ local MyButton = require("TopBar.MyButton")
 local Tray = require("TopBar.Tray")
 local Time = require("TopBar.Time")
 local Battery = require("TopBar.Battery") 
+local Wifi = require("TopBar.Wifi")
 local FocusedClient = require("TopBar.client")
 -- local Workspaces = require("widget.Workspaces")
 local Player = require("TopBar.Player")
@@ -36,6 +37,7 @@ return function(monitor)
                 name = "RightBox",
                 halign = "END",
                 Tray(),
+                Wifi(),
                 Battery(),
                 Time(" %Y年%m月%d日 │ %H:%M:%S "),
             }),
