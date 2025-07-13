@@ -33,8 +33,10 @@ return function()
 	local tray_visibility = Variable()
 
 	return Widget.Box({
+            name = "systray",
 		class_name = "systray",
 		Widget.Button({
+                    name = "TrayReveal",
 			class_name = "reveal-button",
 			on_clicked = function()
 				tray_visibility:set(not tray_visibility:get())
