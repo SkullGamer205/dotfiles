@@ -89,7 +89,7 @@ return function()
 					width_request = 500,
 					class_name = "Applauncher",
 					Widget.Entry({
-						placeholder_text = "Search",
+						placeholder_text = "Искать",
 						text = text(),
 						on_changed = function(self) text:set(self.text) end,
 						on_activate = on_enter,
@@ -105,7 +105,7 @@ return function()
 						vertical = true,
 						visible = list:as(function(l) return #l == 0 end),
 						Widget.Icon({ icon = "system-search-symbolic" }),
-						Widget.Label({ label = "No match found" }),
+						Widget.Label({ label = "Не найдено" }),
 					}),
 				}),
 				Widget.EventBox({ expand = true, on_click = hide }),
