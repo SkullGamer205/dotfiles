@@ -3,9 +3,11 @@ local Widget = require("astal.gtk3.widget")
 local MyButton = require("TopBar.MyButton")
 local Tray = require("TopBar.Tray")
 local Time = require("TopBar.Time")
+local Battery = require("TopBar.Battery") 
 local FocusedClient = require("TopBar.client")
 -- local Workspaces = require("widget.Workspaces")
 local Player = require("TopBar.Player")
+local LauncherButton = require("TopBar.LauncherButton")
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 return function(monitor)
@@ -17,20 +19,25 @@ return function(monitor)
         exclusivity = "EXCLUSIVE",
         Widget.CenterBox({
             Widget.Box({
-                halign = "START",
-                MyButton("Пуск"),
+                name = "LeftBox",
+                halign = "START", 
+                LauncherButton(),
+                -- MyButton("Пуск"),
                 -- Workspaces(),
                 -- FocusedClient(),
             }),
         
             Widget.Box({
+                name = "CenterBox",
                 Player(), 
             }),
         
             Widget.Box({
+                name = "RightBox",
                 halign = "END",
                 Tray(),
-                Time("%Y.%m.%d | %H:%M:%S "),
+                Battery(),
+                Time(" %Y年%m月%d日 │ %H:%M:%S "),
             }),
         }),
 })
