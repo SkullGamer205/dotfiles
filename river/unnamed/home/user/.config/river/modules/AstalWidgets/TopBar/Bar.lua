@@ -11,11 +11,11 @@ local Player = require("TopBar.Player")
 local LauncherButton = require("TopBar.LauncherButton")
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
-return function(monitor)
+return function(gdkmonitor)
     return Widget.Window({
         name = "TopBar",
         application = App, 
-        monitor = monitor,
+        gdkmonitor = gdkmonitor,
         anchor = Anchor.TOP + Anchor.LEFT + Anchor.RIGHT,
         exclusivity = "EXCLUSIVE",
         Widget.CenterBox({

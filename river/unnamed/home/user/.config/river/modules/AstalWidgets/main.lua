@@ -1,7 +1,7 @@
 pcall(require, "luarocks.loader")
 local src = require("lib").src
 local astal = require("astal")
-local App = require("astal.gtk3").App
+local App = require("astal.gtk3.app")
 local Bar = require("TopBar.Bar")
 local Notif = require("Notifications.init")
 local Launcher = require("Launcher.init")
@@ -15,8 +15,10 @@ App:start {
     class_name = "astal-river",
     css = css,
     main = function()
-            Bar(monitor)
-            Notif(monitor)
+        for _, mon in pairs (App.monitors) do
+            Bar(mon)
+            Notif(mon)
+        end
             Launcher()
             PlayerPopup()
     end
