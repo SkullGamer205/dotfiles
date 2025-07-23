@@ -1,0 +1,336 @@
+From 9a27040bdc614b3b476fcea5240172398e12d82a Mon Sep 17 00:00:00 2001
+From: SkullGamer205 <skullgamer205@disroot.org>
+Date: Wed, 23 Jul 2025 23:51:56 +1000
+Subject: [PATCH] Add 'keyboard-layout-current' command for querying current
+ keyboard layout.
+
+---
+ build.zig                             |  2 +-
+ protocol/river-status-unstable-v1.xml | 25 ++++++++++++--
+ river/InputDevice.zig                 | 14 ++++++--
+ river/Keyboard.zig                    | 48 +++++++++++++++++++++++----
+ river/SeatStatus.zig                  | 19 +++++++++++
+ river/StatusManager.zig               |  2 +-
+ river/command.zig                     |  1 +
+ river/command/keyboard.zig            | 37 +++++++++++++++++++++
+ 8 files changed, 134 insertions(+), 14 deletions(-)
+
+diff --git a/build.zig b/build.zig
+index 6280f65..b8e8f2c 100644
+--- a/build.zig
++++ b/build.zig
+@@ -122,7 +122,7 @@ pub fn build(b: *Build) !void {
+     scanner.generate("wp_tearing_control_manager_v1", 1);
+ 
+     scanner.generate("zriver_control_v1", 1);
+-    scanner.generate("zriver_status_manager_v1", 4);
++    scanner.generate("zriver_status_manager_v1", 5);
+     scanner.generate("river_layout_manager_v3", 2);
+ 
+     scanner.generate("zwlr_layer_shell_v1", 4);
+diff --git a/protocol/river-status-unstable-v1.xml b/protocol/river-status-unstable-v1.xml
+index e9629dd..c124f0d 100644
+--- a/protocol/river-status-unstable-v1.xml
++++ b/protocol/river-status-unstable-v1.xml
+@@ -16,7 +16,7 @@
+     OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   </copyright>
+ 
+-  <interface name="zriver_status_manager_v1" version="4">
++  <interface name="zriver_status_manager_v1" version="5">
+     <description summary="manage river status objects">
+       A global factory for objects that receive status information specific
+       to river. It could be used to implement, for example, a status bar.
+@@ -47,7 +47,7 @@
+     </request>
+   </interface>
+ 
+-  <interface name="zriver_output_status_v1" version="4">
++  <interface name="zriver_output_status_v1" version="5">
+     <description summary="track output tags and focus">
+       This interface allows clients to receive information about the current
+       windowing state of an output.
+@@ -100,7 +100,7 @@
+     </event>
+   </interface>
+ 
+-  <interface name="zriver_seat_status_v1" version="3">
++  <interface name="zriver_seat_status_v1" version="5">
+     <description summary="track seat focus">
+       This interface allows clients to receive information about the current
+       focus of a seat. Note that (un)focused_output events will only be sent
+@@ -143,6 +143,25 @@
+         is entered (e.g. with riverctl enter-mode foobar).
+       </description>
+       <arg name="name" type="string" summary="name of the mode"/>
++      </event>
++
++    <event name="keyboard_layout" since="5">
++      <description summary="the name of currently active keyboard layout">
++        Sent whenever the name of active keyboard layout changes. Either this
++        or keyboard_layout_clear event is sent on binding the interface for
++        each keyboard.
++      </description>
++      <arg name="device" type="string" summary="the identifier of keyboard device"/>
++      <arg name="layout" type="string" summary="name of the layout"/>
++    </event>
++
++    <event name="keyboard_layout_clear" since="5">
++      <description summary="the name of currently active keyboard layout">
++        Sent whenever the name of active keyboard layout becomes unavailable.
++        Either this or keyboard_layout event is sent on binding the interface
++        for each keyboard.
++      </description>
++      <arg name="device" type="string" summary="the identifier of keyboard device"/>
+     </event>
+   </interface>
+ </protocol>
+diff --git a/river/InputDevice.zig b/river/InputDevice.zig
+index 48c5a44..a52b829 100644
+--- a/river/InputDevice.zig
++++ b/river/InputDevice.zig
+@@ -15,6 +15,7 @@
+ // along with this program. If not, see <https://www.gnu.org/licenses/>.
+ 
+ const InputDevice = @This();
++const Self = @This();
+ 
+ const std = @import("std");
+ const mem = std.mem;
+@@ -43,7 +44,7 @@ destroy: wl.Listener(*wlr.InputDevice) = wl.Listener(*wlr.InputDevice).init(hand
+ /// Careful: The identifier is not unique! A physical input device may have
+ /// multiple logical input devices with the exact same vendor id, product id
+ /// and name. However identifiers of InputConfigs are unique.
+-identifier: []const u8,
++identifier: [:0]const u8,
+ 
+ config: struct {
+     scroll_factor: f32 = 1.0,
+@@ -61,7 +62,7 @@ pub fn init(device: *InputDevice, seat: *Seat, wlr_device: *wlr.InputDevice) !vo
+         product = c.libinput_device_get_id_product(@ptrCast(d));
+     }
+ 
+-    const identifier = try std.fmt.allocPrint(
++    const identifier = try std.fmt.allocPrintZ(
+         util.gpa,
+         "{s}-{}-{}-{s}",
+         .{
+@@ -154,3 +155,12 @@ fn handleDestroy(listener: *wl.Listener(*wlr.InputDevice), _: *wlr.InputDevice)
+         .tablet_pad => unreachable,
+     }
+ }
++
++pub fn notifyKbdLayoutChanged(self: *Self) void {
++    std.debug.assert(self.wlr_device.type == .keyboard);
++    const wlr_keyboard = self.wlr_device.toKeyboard();
++    const layout = Keyboard.getActiveLayoutName(wlr_keyboard);
++
++    var it = self.seat.status_trackers.first;
++    while (it) |node| : (it = node.next) node.data.sendKeyboardLayout(self, layout);
++}
+diff --git a/river/Keyboard.zig b/river/Keyboard.zig
+index 9f2b92b..bca74d8 100644
+--- a/river/Keyboard.zig
++++ b/river/Keyboard.zig
+@@ -85,12 +85,15 @@ device: InputDevice,
+ /// Pressed keys along with where their press event has been sent
+ pressed: Pressed = .{},
+ 
++effective_layout: u32,
++
+ key: wl.Listener(*wlr.Keyboard.event.Key) = wl.Listener(*wlr.Keyboard.event.Key).init(handleKey),
+ modifiers: wl.Listener(*wlr.Keyboard) = wl.Listener(*wlr.Keyboard).init(handleModifiers),
+ 
+ pub fn init(keyboard: *Keyboard, seat: *Seat, wlr_device: *wlr.InputDevice, virtual: bool) !void {
+     keyboard.* = .{
+         .device = undefined,
++        .effective_layout = undefined,
+     };
+     try keyboard.device.init(seat, wlr_device);
+     errdefer keyboard.device.deinit();
+@@ -108,6 +111,8 @@ pub fn init(keyboard: *Keyboard, seat: *Seat, wlr_device: *wlr.InputDevice, virt
+         }
+     }
+ 
++    keyboard.effective_layout = wlr_keyboard.modifiers.group;
++
+     wlr_keyboard.setRepeatInfo(server.config.repeat_rate, server.config.repeat_delay);
+ 
+     wlr_keyboard.events.key.add(&keyboard.key);
+@@ -246,17 +251,46 @@ fn handleModifiers(listener: *wl.Listener(*wlr.Keyboard), _: *wlr.Keyboard) void
+     const wlr_keyboard = keyboard.device.wlr_device.toKeyboard();
+ 
+     // If the keyboard is in a group, this event will be handled by the group's Keyboard instance.
+-    if (wlr_keyboard.group != null) return;
++    // if (wlr_keyboard.group != null) return;
++//
++//    if (keyboard.getInputMethodGrab()) |keyboard_grab| {
++//        keyboard_grab.setKeyboard(keyboard_grab.keyboard);
++//        keyboard_grab.sendModifiers(&wlr_keyboard.modifiers);
++//    } else {
++//        keyboard.device.seat.wlr_seat.setKeyboard(keyboard.device.wlr_device.toKeyboard());
++//        keyboard.device.seat.wlr_seat.keyboardNotifyModifiers(&wlr_keyboard.modifiers);
++//    }
++    if (wlr_keyboard.group == null) {
++        if (keyboard.getInputMethodGrab()) |keyboard_grab| {
++            keyboard_grab.setKeyboard(keyboard_grab.keyboard);
++            keyboard_grab.sendModifiers(&wlr_keyboard.modifiers);
++        } else {
++            keyboard.device.seat.wlr_seat.setKeyboard(keyboard.device.wlr_device.toKeyboard());
++            keyboard.device.seat.wlr_seat.keyboardNotifyModifiers(&wlr_keyboard.modifiers);
++        }
++    }
+ 
+-    if (keyboard.getInputMethodGrab()) |keyboard_grab| {
+-        keyboard_grab.setKeyboard(keyboard_grab.keyboard);
+-        keyboard_grab.sendModifiers(&wlr_keyboard.modifiers);
+-    } else {
+-        keyboard.device.seat.wlr_seat.setKeyboard(keyboard.device.wlr_device.toKeyboard());
+-        keyboard.device.seat.wlr_seat.keyboardNotifyModifiers(&wlr_keyboard.modifiers);
++    if (wlr_keyboard.modifiers.group != keyboard.effective_layout) {
++        keyboard.effective_layout = wlr_keyboard.modifiers.group;
++        keyboard.device.notifyKbdLayoutChanged();
+     }
+ }
+ 
++pub fn getActiveLayoutName(wlr_keyboard: *wlr.Keyboard) ?[*:0]const u8 {
++    const keymap = wlr_keyboard.keymap orelse return null;
++    const num_layouts = keymap.numLayouts();
++
++    var index: u32 = 0;
++    while (index < num_layouts) : (index += 1) {
++        const xkb_state = wlr_keyboard.xkb_state orelse continue;
++        if (xkb_state.layoutIndexIsActive(index, @enumFromInt(xkb.State.Component.layout_effective)) != 0) {
++            return keymap.layoutGetName(index);
++        }
++    }
++
++    return null;
++}
++
+ /// Handle any builtin, harcoded compsitor mappings such as VT switching.
+ /// Returns true if the keysym was handled.
+ fn handleBuiltinMapping(keysym: xkb.Keysym) bool {
+diff --git a/river/SeatStatus.zig b/river/SeatStatus.zig
+index 0c8b3eb..add5f9e 100644
+--- a/river/SeatStatus.zig
++++ b/river/SeatStatus.zig
+@@ -27,6 +27,8 @@ const util = @import("util.zig");
+ const Seat = @import("Seat.zig");
+ const Output = @import("Output.zig");
+ const View = @import("View.zig");
++const Keyboard = @import("Keyboard.zig");
++const InputDevice = @import("InputDevice.zig");
+ 
+ seat: *Seat,
+ seat_status_v1: *zriver.SeatStatusV1,
+@@ -40,6 +42,13 @@ pub fn init(seat_status: *SeatStatus, seat: *Seat, seat_status_v1: *zriver.SeatS
+     seat_status.sendMode(server.config.modes.items[seat.mode_id].name);
+     if (seat.focused_output) |output| seat_status.sendOutput(output, .focused);
+     seat_status.sendFocusedView();
++
++    var it = server.input_manager.devices.iterator(.forward);
++    while (it.next()) |device| {
++        if (device.wlr_device.type != .keyboard) continue;
++        const wlr_keyboard = device.wlr_device.toKeyboard();
++        seat_status.sendKeyboardLayout(device, Keyboard.getActiveLayoutName(wlr_keyboard));
++    }
+ }
+ 
+ fn handleRequest(seat_status_v1: *zriver.SeatStatusV1, request: zriver.SeatStatusV1.Request, _: *SeatStatus) void {
+@@ -78,3 +87,13 @@ pub fn sendMode(seat_status: SeatStatus, mode: [*:0]const u8) void {
+         seat_status.seat_status_v1.sendMode(mode);
+     }
+ }
++
++pub fn sendKeyboardLayout(seat_status: SeatStatus, device: *InputDevice, opt_layout: ?[*:0]const u8) void {
++    if (seat_status.seat_status_v1.getVersion() < 5) return;
++
++    if (opt_layout) |layout| {
++        seat_status.seat_status_v1.sendKeyboardLayout(device.identifier, layout);
++    } else {
++        seat_status.seat_status_v1.sendKeyboardLayoutClear(device.identifier);
++    }
++}
+diff --git a/river/StatusManager.zig b/river/StatusManager.zig
+index b18dd17..8733fc9 100644
+--- a/river/StatusManager.zig
++++ b/river/StatusManager.zig
+@@ -39,7 +39,7 @@ server_destroy: wl.Listener(*wl.Server) = wl.Listener(*wl.Server).init(handleSer
+ 
+ pub fn init(status_manager: *StatusManager) !void {
+     status_manager.* = .{
+-        .global = try wl.Global.create(server.wl_server, zriver.StatusManagerV1, 4, ?*anyopaque, null, bind),
++        .global = try wl.Global.create(server.wl_server, zriver.StatusManagerV1, 5, ?*anyopaque, null, bind),
+     };
+ 
+     server.wl_server.addDestroyListener(&status_manager.server_destroy);
+diff --git a/river/command.zig b/river/command.zig
+index 85a5247..797eda1 100644
+--- a/river/command.zig
++++ b/river/command.zig
+@@ -66,6 +66,7 @@ const command_impls = std.StaticStringMap(
+         .{ "keyboard-group-remove",     @import("command/keyboard_group.zig").keyboardGroupRemove },
+         .{ "keyboard-layout",           @import("command/keyboard.zig").keyboardLayout },
+         .{ "keyboard-layout-file",      @import("command/keyboard.zig").keyboardLayoutFile },
++        .{ "keyboard-layout-current",   @import("command/keyboard.zig").keyboardLayoutCurrent },
+         .{ "list-input-configs",        @import("command/input.zig").listInputConfigs},
+         .{ "list-inputs",               @import("command/input.zig").listInputs },
+         .{ "list-rules",                @import("command/rule.zig").listRules},
+diff --git a/river/command/keyboard.zig b/river/command/keyboard.zig
+index c09db1f..00ccac3 100644
+--- a/river/command/keyboard.zig
++++ b/river/command/keyboard.zig
+@@ -26,6 +26,8 @@ const util = @import("../util.zig");
+ const Error = @import("../command.zig").Error;
+ const Seat = @import("../Seat.zig");
+ 
++const Keyboard = @import("../Keyboard.zig");
++
+ pub fn keyboardLayout(
+     _: *Seat,
+     args: []const [:0]const u8,
+@@ -104,5 +106,40 @@ fn applyLayout(new_keymap: *xkb.Keymap) void {
+         // wlroots will log an error if this fails and there's unfortunately
+         // nothing we can really do in the case of failure.
+         _ = wlr_keyboard.setKeymap(new_keymap);
++
++        device.notifyKbdLayoutChanged();
++    }
++}
++
++pub fn keyboardLayoutCurrent(
++    _: *Seat,
++    args: []const [:0]const u8,
++    out: *?[]const u8
++) Error!void {
++    if (args.len != 1) return Error.TooManyArguments;
++
++    var output = std.ArrayList(u8).init(util.gpa);
++    defer output.deinit();
++    var keyboard_found = false;
++
++    var it = server.input_manager.devices.iterator(.forward);
++    while (it.next()) |device| {
++        if (device.wlr_device.type != .keyboard) continue;
++
++        keyboard_found = true;
++        const wlr_keyboard = device.wlr_device.toKeyboard();
++        const layout_name = Keyboard.getActiveLayoutName(wlr_keyboard);
++
++        if (layout_name) |layout| {
++            // output.writer().print("Device: {s}, Layout: {s}", .{ device.identifier, layout }) catch return Error.OutOfMemory;
++            output.writer().print("{s}", .{ layout }) catch return Error.OutOfMemory;
++        } else {
++            output.writer().print("unknown", .{}) catch return Error.OutOfMemory;
++        }
++    }
++
++    if (!keyboard_found) {
++        output.writer().print("No keyboard devices found", .{}) catch return Error.OutOfMemory;
+     }
++    out.* = try output.toOwnedSlice();
+ }
+-- 
+2.50.0
+
