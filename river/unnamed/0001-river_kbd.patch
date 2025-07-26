@@ -1,8 +1,8 @@
-From 9a27040bdc614b3b476fcea5240172398e12d82a Mon Sep 17 00:00:00 2001
+From 426cd2a4007c2945b4747e240943700c4a1b9199 Mon Sep 17 00:00:00 2001
 From: SkullGamer205 <skullgamer205@disroot.org>
-Date: Wed, 23 Jul 2025 23:51:56 +1000
+Date: Sat, 26 Jul 2025 21:11:44 +1000
 Subject: [PATCH] Add 'keyboard-layout-current' command for querying current
- keyboard layout.
+ keyboard layout
 
 ---
  build.zig                             |  2 +-
@@ -12,8 +12,8 @@ Subject: [PATCH] Add 'keyboard-layout-current' command for querying current
  river/SeatStatus.zig                  | 19 +++++++++++
  river/StatusManager.zig               |  2 +-
  river/command.zig                     |  1 +
- river/command/keyboard.zig            | 37 +++++++++++++++++++++
- 8 files changed, 134 insertions(+), 14 deletions(-)
+ river/command/keyboard.zig            | 38 +++++++++++++++++++++
+ 8 files changed, 135 insertions(+), 14 deletions(-)
 
 diff --git a/build.zig b/build.zig
 index 6280f65..b8e8f2c 100644
@@ -278,7 +278,7 @@ index 85a5247..797eda1 100644
          .{ "list-inputs",               @import("command/input.zig").listInputs },
          .{ "list-rules",                @import("command/rule.zig").listRules},
 diff --git a/river/command/keyboard.zig b/river/command/keyboard.zig
-index c09db1f..00ccac3 100644
+index c09db1f..b2f4949 100644
 --- a/river/command/keyboard.zig
 +++ b/river/command/keyboard.zig
 @@ -26,6 +26,8 @@ const util = @import("../util.zig");
@@ -290,7 +290,7 @@ index c09db1f..00ccac3 100644
  pub fn keyboardLayout(
      _: *Seat,
      args: []const [:0]const u8,
-@@ -104,5 +106,40 @@ fn applyLayout(new_keymap: *xkb.Keymap) void {
+@@ -104,5 +106,41 @@ fn applyLayout(new_keymap: *xkb.Keymap) void {
          // wlroots will log an error if this fails and there's unfortunately
          // nothing we can really do in the case of failure.
          _ = wlr_keyboard.setKeymap(new_keymap);
@@ -324,6 +324,7 @@ index c09db1f..00ccac3 100644
 +        } else {
 +            output.writer().print("unknown", .{}) catch return Error.OutOfMemory;
 +        }
++        break;
 +    }
 +
 +    if (!keyboard_found) {
