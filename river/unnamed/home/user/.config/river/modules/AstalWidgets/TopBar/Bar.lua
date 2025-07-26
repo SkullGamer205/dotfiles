@@ -3,6 +3,7 @@ local Widget = require("astal.gtk3.widget")
 local MyButton = require("TopBar.MyButton")
 local Tray = require("TopBar.Tray")
 local Time = require("TopBar.Time")
+local Kbd_Layout = require("TopBar.Kbd_Layout")
 local Battery = require("TopBar.Battery") 
 local Wifi = require("TopBar.Wifi")
 local FocusedClient = require("TopBar.client")
@@ -39,6 +40,7 @@ return function(gdkmonitor)
                 Tray(),
                 Wifi(),
                 Battery(),
+                Kbd_Layout(),
                 Time(" %Y年%m月%d日 │ %H:%M:%S "),
             }),
         }),
