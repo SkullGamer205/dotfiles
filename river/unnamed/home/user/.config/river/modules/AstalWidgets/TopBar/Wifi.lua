@@ -9,6 +9,24 @@ return function()
     local wifi = bind(network, "wifi")
     local wifi_visibility = Variable()
 
+    local wifi_icon = function(w)
+        return Widget.Icon({
+            -- tooltip_text = bind(w, "ssid"):as(tostring),
+            name = "Wi-Fi_Icon",
+            class_name = "wifi-icon",
+            css = "margin-left: 2px",
+            icon = bind(w, "icon-name"),
+        })
+    end
+
+    local wifi_label = function(w)
+        return Widget.Label({
+            name = "Wi-Fi_Label",
+            class_name = "wifi-label",
+            label = bind(w, "ssid"):as(tostring),
+        })
+    end
+
     return Widget.EventBox({
         name = "Wi-Fi_EventBox",
         class_name = "wifi-eventbox",
@@ -38,22 +56,12 @@ return function()
                         return Widget.Box({
                             name = "Wi-Fi_Box",
                             class_name = "wifi-box",
-                            Widget.Icon({
-                                -- tooltip_text = bind(w, "ssid"):as(tostring),
-                                name = "Wi-Fi_Icon",
-                                class_name = "wifi-icon",
-                                css = "margin-right: 4px",
-                                icon = bind(w, "icon-name"),
-                            }),
                             Widget.Revealer({
                                 reveal_child = bind(wifi_visibility),
-                                transition_type = "SLIDE_RIGHT",
-                                Widget.Label({
-                                    name = "Wi-Fi_Label",
-                                    class_name = "wifi-label",
-                                    label = bind(w, "ssid"):as(tostring),
-                                }),
+                                transition_type = "SLIDE_LEFT",
+                                wifi_label(w),
                             }),
+                            wifi_icon(w),
                         })
                     end
                 ),
