@@ -17,7 +17,7 @@ return function()
     local kbd_layout = Variable(kbd_s):poll(
         1000,
         function()
-            local kbd_c = "riverctl keyboard-layout-current | cut -c 1-3"
+            local kbd_c = "riverctl keyboard-layout-current | cut -c 1-2"
             local kbd_h = io.popen(kbd_c, 'r')
             local kbd_s = kbd_h:read("*l")
             kbd_h:close()
@@ -26,8 +26,20 @@ return function()
         end
     )
     -- local kbd_layout = io.popen('riverctl keyboard-layout-current | cut -c 1-3')
-	return Widget.Label({
-		class_name = "Kbd_Layout",
+	return Widget.Box({
+            name = "KbdLayout_Box",
+            class_name = "kbd-layout-box",
+            css = "margin-left: 4px",
+            Widget.Icon({
+                name = "KbdLayout_Icon",
+                class_name = "kbd-layout-icon",
+                css = "margin-right: 4px",
+                icon = "indicator-keyboard",
+            }),
+            Widget.Label({
+                name = "KbdLayout_Label",
+	        class_name = "kbd-layout-Label",
 		label = kbd_layout(),
-	})
+	    }),
+        })
 end
