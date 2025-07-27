@@ -111,3 +111,153 @@ window.notifications {
     }
   }
 }
+
+window.notif-window {
+  box.notif-window-box {
+    background-color: $bg;
+    margin: 8px 8px 0 0;
+    border: 2px solid $fg;
+    padding: 10px;
+    box.notification-list {
+      scrollable > viewport {
+        all: unset;
+      }
+
+      .header {
+        .title {
+          color: $fg;
+          padding-left: 8px;
+        }
+
+        .clear-button {
+          // all: unset;
+          color: $ac-red;
+          background-color: transparent;
+          padding: 4px;
+          border: 0px;
+          transition: 100ms;
+
+          &:hover {
+            color: $bg;
+            background-color: $ac-red;
+          }
+
+          &:active {
+            color: $bg;
+            // background-color: color.adjust($ac-red, $alpha: -0.4);
+          }
+        }
+      }
+
+      .empty-massage {
+        label {
+          font-size: 18pt;
+          // color: color.adjust($fg, $alpha: -0.5);
+          color: $fg;
+        }
+      }
+
+      
+  .notification {
+    background-color: $bg;
+    border: 2px solid $fg;
+    border-radius: 0px;
+    padding: 2px;
+    margin-right: 8px;
+    margin-top: 2px;
+
+    &:first-child {
+      margin-top: 8px;
+    }
+
+    &.critical {
+      .header .app-name {
+        color: $ac-red;
+      }
+    }
+
+    .header {
+      color: gtkalpha($fg, 0.5);
+      margin: 5px;
+
+      .app-icon {
+        margin-right: 4px;
+      }
+
+      .app-name {
+        font-weight: bold;
+      }
+
+      .time {
+        margin-right: 5px;
+      }
+
+      .dismiss-button {
+        all: unset;
+        min-width: 0;
+        min-height: 0;
+        color: $ac-red;
+        background-color: transparent;
+        padding: 2px;
+        border-radius: 0px;
+        transition: 100ms;
+
+        &:hover {
+          color: $bg;
+          background-color: $ac-red;
+        }
+      }
+    }
+
+    .content {
+      margin: 5px;
+
+      .summary {
+        color: $fg;
+        font-size: 13pt;
+      }
+
+      .body {
+        color: gtkalpha($fg, 0.8);
+      }
+
+      .image {
+        min-width: 64px;
+        min-height: 64px;
+        background-size: cover;
+        background-position: center;
+        margin-right: 4px;
+      }
+    }
+
+    .actions {
+      margin: 4px;
+
+      .action-button {
+        all: unset;
+        color: $fg;
+        background-color: $bg-alt;
+        margin: 0 2px;
+        padding: 4px;
+        border-radius: 0px; 
+        transition: 100ms;
+
+        &:hover {
+          color: $bg;
+          background-color: $ac;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+    }
+  }
+}

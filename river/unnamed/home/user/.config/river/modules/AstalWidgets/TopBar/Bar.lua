@@ -12,6 +12,7 @@ local FocusedClient = require("TopBar.client")
 -- local Workspaces = require("widget.Workspaces")
 local Player = require("TopBar.Player")
 local LauncherButton = require("TopBar.LauncherButton")
+local NotificationButton = require("TopBar.NotificationButton")
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 return function(gdkmonitor)
@@ -46,6 +47,7 @@ return function(gdkmonitor)
                 Battery(),
                 Kbd_Layout(),
                 Time(" %Y年%m月%d日 │ %H:%M:%S "),
+                NotificationButton(),
             }),
         }),
 })

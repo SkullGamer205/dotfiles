@@ -4,6 +4,7 @@ local astal = require("astal")
 local App = require("astal.gtk3.app")
 local Bar = require("TopBar.Bar")
 local Notif = require("Notifications.init")
+local Notif_list = require("Notifications.notification_list")
 local Launcher = require("Launcher.init")
 local PlayerPopup = require("PlayerPopup.init")
 
@@ -21,5 +22,6 @@ App:start {
         end
             Launcher()
             PlayerPopup()
+            Notif_list()
     end
 }
