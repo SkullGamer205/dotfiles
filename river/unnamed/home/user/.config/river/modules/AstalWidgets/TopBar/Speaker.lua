@@ -5,18 +5,19 @@ local Widget = require("astal.gtk3.widget")
 local Wp = astal.require("AstalWp")
 
 return function()
-    local speaker = Wp.get_default().audio.default_speaker
+    local WpAudio = Wp.get_default()
+    local speaker = WpAudio:get_default_speaker()
     local speaker_visibility = Variable()
 
     local speaker_icon = Widget.Icon({
-        css = "margin-right: 4px",
+        css = "margin-left: 4px",
         icon = bind(speaker, "volume-icon"),
     })
 
     local speaker_label = Widget.Label({ 
-        css = "margin-right: 4px",
+        css = "margin-left: 4px",
         label = bind(speaker, "volume"):as(
-            function(p) return tostring(math.floor(p * 100)) .. "%" end
+            function(p) return string.format("%.0f%%", tostring(p * 100)) end
         ),
     })
 
@@ -30,12 +31,12 @@ return function()
         end,
         
         Widget.Box({
-            speaker_icon,
             Widget.Revealer({
                 reveal_child = bind(speaker_visibility),
-                transition_type = "SLIDE_RIGHT",
+                transition_type = "SLIDE_LEFT",
                 speaker_label,
             }),
+            speaker_icon,
         })
     })
 end

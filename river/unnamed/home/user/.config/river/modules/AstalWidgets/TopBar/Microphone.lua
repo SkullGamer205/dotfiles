@@ -5,16 +5,17 @@ local Widget = require("astal.gtk3.widget")
 local Wp = astal.require("AstalWp")
 
 return function()
-    local microphone = Wp.get_default().audio.default_microphone
+    local WpAudio = Wp.get_default()
+    local microphone = WpAudio:get_default_microphone()
     local microphone_visibility = Variable()
 
     local microphone_icon = Widget.Icon({
-        css = "margin-right: 4px",
+        css = "margin-left: 4px",
         icon = bind(microphone, "volume-icon"),
     })
 
     local microphone_label = Widget.Label({ 
-        css = "margin-right: 4px",
+        css = "margin-left: 4px",
         label = bind(microphone, "volume"):as(
             function(p) return tostring(math.floor(p * 100)) .. "%" end
         ),
@@ -30,12 +31,12 @@ return function()
         end,
         
         Widget.Box({
-            microphone_icon,
             Widget.Revealer({
                 reveal_child = bind(microphone_visibility),
-                transition_type = "SLIDE_RIGHT",
+                transition_type = "SLIDE_LEFT",
                 microphone_label,
             }),
+            microphone_icon,
         })
     })
 end
