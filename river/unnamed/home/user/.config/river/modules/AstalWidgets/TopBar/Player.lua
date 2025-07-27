@@ -12,6 +12,7 @@ return function()
 	return Widget.Button({
             name = "Player",
             class_name = "player-button",
+            css = "border: 0px",
             on_clicked = function()
                 local player_popup = App:get_window("MediaPlayerWindow")
                 if player_popup then

@@ -6,6 +6,8 @@ local Time = require("TopBar.Time")
 local Kbd_Layout = require("TopBar.Kbd_Layout")
 local Battery = require("TopBar.Battery") 
 local Wifi = require("TopBar.Wifi")
+local Speaker = require("TopBar.Speaker")
+local Microphone = require("TopBar.Microphone")
 local FocusedClient = require("TopBar.client")
 -- local Workspaces = require("widget.Workspaces")
 local Player = require("TopBar.Player")
@@ -38,6 +40,8 @@ return function(gdkmonitor)
                 name = "RightBox",
                 halign = "END",
                 Tray(),
+                Speaker(),
+                Microphone(),
                 Wifi(),
                 Battery(),
                 Kbd_Layout(),

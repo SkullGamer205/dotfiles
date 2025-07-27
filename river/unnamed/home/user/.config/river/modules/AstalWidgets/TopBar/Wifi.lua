@@ -42,6 +42,7 @@ return function()
                                 -- tooltip_text = bind(w, "ssid"):as(tostring),
                                 name = "Wi-Fi_Icon",
                                 class_name = "wifi-icon",
+                                css = "margin-right: 4px",
                                 icon = bind(w, "icon-name"),
                             }),
                             Widget.Revealer({

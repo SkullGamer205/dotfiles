@@ -11,6 +11,7 @@ return function()
     return Widget.EventBox({
         name = "Battery_EventBox",
         class_name = "battery_eventbox",
+        css = "margin-right: 4px",
         on_hover = function()
              battery_visibility:set(true)
         end,
@@ -27,9 +28,11 @@ return function()
             Widget.Icon({
                 name = "BattryIcon",
                 class_name = "battery-icon",
+                css = "margin-right: 4px",
                 icon = bind(bat, "battery-icon-name"),
             }),
             Widget.Revealer({
+                class_name = "battery-label-revealer",
                 reveal_child = bind(battery_visibility),
                 transition_type = "SLIDE_RIGHT",
                 Widget.Label({
