@@ -29,7 +29,6 @@ window#TopBar {
       padding: 0 0.5em 0 0.5em;
       border: 2px solid $fg-color;
       button#Player {
-        border: 0px;
         background-color: $clean;
       }
     }
@@ -45,24 +44,10 @@ window#TopBar {
           color: $clean;
         }
       }
-      eventbox#Batery_EventBox {
-        box#Battery {
-          icon#BatteryIcon {
-              margin-right: 4px,
-          }
-        }
-      }
       eventbox#Wi-Fi_EventBox {
         button#Wi-Fi_Button {
           border: 0px;
           background-color: $clean;
-          box#Wi-Fi {
-            box#Wi-Fi_Box {
-              icon#Wi-Fi_Icon {
-                margin-right: 4px,
-              }
-            }
-          }
         }
       }
     }
