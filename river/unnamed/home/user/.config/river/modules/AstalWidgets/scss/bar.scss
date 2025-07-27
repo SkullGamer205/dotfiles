@@ -44,8 +44,8 @@ window#TopBar {
           color: $clean;
         }
       }
-      eventbox#Wi-Fi_EventBox {
-        button#Wi-Fi_Button {
+      eventbox.wifi-eventbox {
+        button.wifi-btn {
           border: 0px;
           background-color: $clean;
         }
