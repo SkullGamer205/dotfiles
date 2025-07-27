@@ -7,15 +7,29 @@ local Battery = astal.require("AstalBattery")
 return function()
     local bat = Battery.get_default()
     local battery_visibility = Variable()
-    
+   
+    local bat_icon = Widget.Icon({
+        name = "BattryIcon",
+        class_name = "battery-icon",
+        icon = bind(bat, "battery-icon-name"),
+    })
+
+    local bat_label = Widget.Label({
+        name = "BatteryLabel",
+        class_name = "battery-label",
+        css = "margin-right: 2px",
+        label = bind(bat, "percentage"):as(
+            function(p) return tostring(math.floor(p * 100)).."%" end
+        ),
+    })
+
     return Widget.EventBox({
         name = "Battery_EventBox",
         class_name = "battery_eventbox",
-        css = "margin-right: 4px",
+        -- css = "margin-right: 4px",
         on_hover = function()
              battery_visibility:set(true)
         end,
-
 
         on_hover_lost = function()
              battery_visibility:set(false)
@@ -25,24 +39,13 @@ return function()
             name = "Battery",
             class_name = "battery",
             visible = bind(bat, "is-present"),
-            Widget.Icon({
-                name = "BattryIcon",
-                class_name = "battery-icon",
-                css = "margin-right: 4px",
-                icon = bind(bat, "battery-icon-name"),
-            }),
             Widget.Revealer({
                 class_name = "battery-label-revealer",
                 reveal_child = bind(battery_visibility),
-                transition_type = "SLIDE_RIGHT",
-                Widget.Label({
-                    name = "BatteryLabel",
-                    class_name = "battery-label",
-                    label = bind(bat, "percentage"):as(
-                        function(p) return tostring(math.floor(p * 100)).."%" end
-                    ),
-                }),
-            })
+                transition_type = "SLIDE_LEFT",
+                bat_label,
+            }),
+            bat_icon,
         })
     })
 end
