@@ -2,7 +2,7 @@ local App = require("astal.gtk3.app")
 local Widget = require("astal.gtk3.widget")
 local MyButton = require("TopBar.MyButton")
 local Tray = require("TopBar.Tray")
-local Time = require("TopBar.Time")
+local Clock = require("TopBar.Clock")
 local Kbd_Layout = require("TopBar.Kbd_Layout")
 local Battery = require("TopBar.Battery") 
 local Wifi = require("TopBar.Wifi")
@@ -34,20 +34,24 @@ return function(gdkmonitor)
         
             Widget.Box({
                 name = "CenterBox",
+                -- Time("%H:%M"),
                 Player(), 
+                Clock(),
+                NotificationButton(),
             }),
         
             Widget.Box({
                 name = "RightBox",
                 halign = "END",
                 Tray(),
+                Kbd_Layout(),
                 Speaker(),
                 Microphone(),
                 Wifi(),
                 Battery(),
-                Kbd_Layout(),
-                Time(" %Y年%m月%d日 │ %H:%M:%S "),
-                NotificationButton(),
+                MyButton("ПИТАНИЕ"),
+                -- Time(" %Y年%m月%d日 │ %H:%M:%S "),
+                -- NotificationButton(),
             }),
         }),
 })
