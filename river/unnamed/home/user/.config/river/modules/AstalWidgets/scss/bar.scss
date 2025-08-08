@@ -8,46 +8,92 @@
 $fg-color: #{'@theme_fg_color'};
 $bg-color: #{'@theme_bg_color'};
 $clean: #00000000;
+$margin-default: 8px;
+$b-width: 2px;
+$b-rad: 0.5em;
 
-window#TopBar {
+window.bar {
   // all: unset
-  background-color: #00000000;
+  color: $fg-color ;
+  background-color: $clean;
   centerbox {
-    margin: 8px 8px 0 8px;
-    box#LeftBox {
-      border-radius: 0 0 1em 0; 
-      background-color: $bg-color;
-      border: 2px solid $fg-color;
-      button#LauncherButton {
-        border: 0px;
-        background-color: $clean;
+    margin: $margin-default $margin-default 0 $margin-default;
+    box.bar-leftbox {
+      button.btn-launcher {
+        background-color: $bg-color;
+        border: $b-width solid $fg-color;
+        border-radius: $b-rad 0 0 $b-rad; 
+        margin: 0 0 0 0;
       }
     }
-    box#CenterBox {
-      background-color: $bg-color;
-      border-radius: 0 0 1em 1em;
-      padding: 0 0.5em 0 0.5em;
-      border: 2px solid $fg-color;
-      button#Player {
-        background-color: $clean;
+    box.bar-middlebox {
+      eventbox.ebx-player {
+        box.box-player {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: $b-rad 0 0 $b-rad;
+          eventbox.ebx-player {
+            background-color: $clean;
+          }
+        }
+      }
+      eventbox.ebx-clock {
+        box.box-clock {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 0 0 0;
+          // padding: 0 0.5em 0 0.5em;
+          margin: 0 $margin-default 0 $margin-default;
+        }
+      }
+      box.box-notif {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 $b-rad $b-rad 0;
+          button.btn-notif {
+            background-color: $clean;
+          }
       }
     }
-    box#RightBox { 
-      background-color: $bg-color;
-      border: 2px solid $fg-color;
-      border-radius: 0 0 0 1em;
-      padding: 0 0 0 0.5em;
-      box#systray {
-        button#TrayReveal {
+    box.bar-rightbox { 
+      box.box-tray {
+        background-color: $bg-color;
+        border: $b-width solid $fg-color;
+        border-radius: $b-rad 0 0 $b-rad;
+        button.btn-tray-revealer {
           border: 0px;
           background-color: $clean;
           color: $clean;
         }
       }
-      eventbox.wifi-eventbox {
-        button.wifi-btn {
-          border: 0px;
-          background-color: $clean;
+      box.box-kbd {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 0 0 0;
+          margin: 0 0 0 $margin-default;
+      }
+      eventbox.ebx-audio {
+        box.box-audio {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 0 0 0;
+          margin: 0 0 0 $margin-default;
+        }
+      }
+      eventbox.ebx-wireless {
+        box.box-wireless {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 0 0 0;
+          margin: 0 0 0 $margin-default;
+        }
+      }
+      eventbox.ebx-battery {
+        box.box-battery {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 0 0 0;
+          margin: 0 0 0 $margin-default;
         }
       }
     }

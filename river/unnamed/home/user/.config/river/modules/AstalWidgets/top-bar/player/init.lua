@@ -12,6 +12,7 @@ return function()
         local player_visibility = Variable()
 
             return Widget.EventBox({
+                class_name = "ebx-player",
                 on_hover = function()
                     player_visibility:set(true)
                 end,
@@ -20,13 +21,13 @@ return function()
                 end,
 
                 Widget.Box({
-                    class_name = "Media",
+                    class_name = "box-player",
 		    visible = bind(player, "available"), 
-                        Widget.Button({
-                            name = "Player",
-                            class_name = "player-button",
+                        Widget.EventBox({
+                            name = "PlayerButton",
+                            class_name = "ebx-player",
                             css = "border: 0px",
-                            on_clicked = function()
+                            on_click_release = function()
                                 local player_popup = App:get_window("MediaPlayerWindow")
                                 if player_popup then
                                     if not player_popup:get_visible() then
@@ -42,6 +43,7 @@ return function()
                                     reveal_child = bind(player_visibility),
                                     transition_type = "SLIDE_LEFT",
                                     Widget.Label({
+                                        css = "margin-right: 2px",
                                         label = bind(player, "metadata"):as(
                                             function()
 			    		        return (player.title or "")

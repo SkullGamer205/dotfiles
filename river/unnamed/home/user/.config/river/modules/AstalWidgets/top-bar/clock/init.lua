@@ -18,7 +18,7 @@ end
 return function()
     local time_visibility = Variable()
         return Widget.EventBox({
-            class_name = "time_eventbox",
+            class_name = "ebx-clock",
             on_hover = function()
                 time_visibility:set(true)
             end,
@@ -28,7 +28,8 @@ return function()
             end,
 
             Widget.Box({
-		class_name = "Time",
+		class_name = "box-clock",
+                css = "padding: 0 0.5em 0 0.5em",
                 Widget.Revealer({
                     reveal_child = bind(time_visibility),
                     transition_type = "SLIDE_LEFT",
@@ -38,7 +39,7 @@ return function()
                 Widget.Revealer({
                     reveal_child = bind(time_visibility),
                     transition_type = "SLIDE_RIGHT",
-                Time(":%S "),
+                Time(":%S"),
                 })
             })
         })

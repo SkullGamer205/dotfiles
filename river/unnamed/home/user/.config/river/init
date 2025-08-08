@@ -22,6 +22,6 @@ require('config.binds')
 require('config.user')
 require('config.rules')
 
-local AstalBar = addRelPath("modules/AstalWidgets")
+local AstalWidgets = addRelPath("modules/AstalWidgets")
 require('main')
 

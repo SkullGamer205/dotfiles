@@ -21,7 +21,7 @@ end
 return function()
 	return Widget.Button({
             name = "LauncherButton",
-            class_name = "launcher-button",
+            class_name = "btn-launcher",
 		on_clicked = function()
 			local launcher = App:get_window("Launcher")
 			if launcher then

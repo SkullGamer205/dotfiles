@@ -3,14 +3,14 @@
 local outputs = {
   ['eDP-1'] = {
     ['custom-mode'] = '1920x1080@75',
-    pos = '1920,0',
+    pos = '0,0',
     transform = 'normal',
     scale = '1.000000',
     preferred = false,
   },
     ['HDMI-A-1'] = {
     ['custom-mode'] = '1920x1080@75',
-    pos = '0,0',
+    pos = '1920,0',
     transform = 'normal',
     scale = '1.000000',
     preferred = false,

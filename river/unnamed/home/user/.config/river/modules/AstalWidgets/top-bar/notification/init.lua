@@ -5,7 +5,7 @@ local Widget = require("astal.gtk3").Widget
 local Astal = require("astal.gtk3").Astal
 local Anchor = Astal.WindowAnchor
 local varlist = require("lib").varlist
-local Notification = require("Notifications.notification")
+local Notification = require("top-bar.notification.notification")
 
 local TIMEOUT_DELAY = 5000
 

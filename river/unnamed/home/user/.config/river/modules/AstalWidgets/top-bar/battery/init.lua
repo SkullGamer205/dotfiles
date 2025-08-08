@@ -10,13 +10,11 @@ return function()
    
     local bat_icon = Widget.Icon({
         name = "BattryIcon",
-        class_name = "battery-icon",
         icon = bind(bat, "battery-icon-name"),
     })
 
     local bat_label = Widget.Label({
         name = "BatteryLabel",
-        class_name = "battery-label",
         css = "margin-right: 2px",
         label = bind(bat, "percentage"):as(
             function(p) return tostring(math.floor(p * 100)).."%" end
@@ -25,7 +23,7 @@ return function()
 
     return Widget.EventBox({
         name = "Battery_EventBox",
-        class_name = "battery_eventbox",
+        class_name = "ebx-battery",
         -- css = "margin-right: 4px",
         on_hover = function()
              battery_visibility:set(true)
@@ -37,7 +35,8 @@ return function()
 
         Widget.Box({
             name = "Battery",
-            class_name = "battery",
+            class_name = "box-battery",
+            css = "padding: 0 0.5em 0 0.5em",
             visible = bind(bat, "is-present"),
             Widget.Revealer({
                 class_name = "battery-label-revealer",

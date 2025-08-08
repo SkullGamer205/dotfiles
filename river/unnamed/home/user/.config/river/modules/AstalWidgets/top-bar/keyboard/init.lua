@@ -25,21 +25,22 @@ return function()
             return tostring(kbd_s)
         end
     )
+    local ico_kbd = Widget.Icon({
+        name = "KbdLayout_Icon",
+        css = "margin-left: 4px",
+        icon = "indicator-keyboard",
+    })
+
+    local str_kbd = Widget.Label({
+        label = kbd_layout(),
+    })
     -- local kbd_layout = io.popen('riverctl keyboard-layout-current | cut -c 1-3')
-	return Widget.Box({
-            name = "KbdLayout_Box",
-            class_name = "kbd-layout-box",
-            css = "margin-left: 4px",
-            Widget.Icon({
-                name = "KbdLayout_Icon",
-                class_name = "kbd-layout-icon",
-                css = "margin-right: 4px",
-                icon = "indicator-keyboard",
-            }),
-            Widget.Label({
-                name = "KbdLayout_Label",
-	        class_name = "kbd-layout-Label",
-		label = kbd_layout(),
-	    }),
-        })
+    return Widget.Box({
+        name = "KbdLayout_Box",
+        class_name = "box-kbd",
+        css = "padding: 0 0.5em 0 0.5em",
+        -- css = "margin-left: 4px",
+        str_kbd,
+        ico_kbd,
+    })
 end

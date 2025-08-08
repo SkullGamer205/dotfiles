@@ -10,12 +10,11 @@ return function()
     local speaker_visibility = Variable()
 
     local speaker_icon = Widget.Icon({
-        css = "margin-left: 4px",
         icon = bind(speaker, "volume-icon"),
+        css = "margin-left: 4px",
     })
 
     local speaker_label = Widget.Label({ 
-        css = "margin-left: 4px",
         label = bind(speaker, "volume"):as(
             function(p) return string.format("%.0f%%", tostring(p * 100)) end
         ),

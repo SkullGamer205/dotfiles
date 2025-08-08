@@ -13,8 +13,7 @@ return function()
         return Widget.Icon({
             -- tooltip_text = bind(w, "ssid"):as(tostring),
             name = "Wi-Fi_Icon",
-            class_name = "wifi-icon",
-            css = "margin-left: 2px",
+            class_name = "ico-wifi",
             icon = bind(w, "icon-name"),
         })
     end
@@ -22,14 +21,15 @@ return function()
     local wifi_label = function(w)
         return Widget.Label({
             name = "Wi-Fi_Label",
-            class_name = "wifi-label",
+            class_name = "str-wifi",
+            css = "margin-right: 2px",
             label = bind(w, "ssid"):as(tostring),
         })
     end
 
     return Widget.EventBox({
         name = "Wi-Fi_EventBox",
-        class_name = "wifi-eventbox",
+        class_name = "ebx-wifi",
         on_hover = function()
             wifi_visibility:set(true)
         end,
@@ -38,9 +38,9 @@ return function()
             wifi_visibility:set(false)
         end,
         
-        Widget.Button({
+        Widget.EventBox({
             name = "Wi-Fi_Button",
-            class_name = "wifi-btn",
+            class_name = "ebx-wifi",
             on_click_release = function(_, event)
                 if event.button == "SECONDARY" then
                     os.execute("foot -T \"Network Manager TUI\" -a \"nm-tui\" -e \"nmtui\" &")
@@ -49,13 +49,13 @@ return function()
 
             Widget.Box({
                 name = "Wi-Fi",
-                class_name = "wifi",
+                class_name = "box-wifi",
                 visible = wifi:as(function(v) return v ~= nil end),
                 wifi:as(
                     function(w)
                         return Widget.Box({
                             name = "Wi-Fi_Box",
-                            class_name = "wifi-box",
+                            class_name = "box-wifi",
                             Widget.Revealer({
                                 reveal_child = bind(wifi_visibility),
                                 transition_type = "SLIDE_LEFT",

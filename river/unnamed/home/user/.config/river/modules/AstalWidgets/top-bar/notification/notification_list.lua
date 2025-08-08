@@ -7,7 +7,7 @@ local Widget = require("astal.gtk3").Widget
 local Anchor = Astal.WindowAnchor
 local Gdk = require("astal.gtk3").Gdk
 local Gtk = require("astal.gtk3").Gtk
-local Notification = require("Notifications.notification")
+local Notification = require("top-bar.notification.notification")
 
 return function()
     local notifd = AstalNotifd.get_default()

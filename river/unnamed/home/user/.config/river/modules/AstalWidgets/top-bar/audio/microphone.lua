@@ -10,12 +10,11 @@ return function()
     local microphone_visibility = Variable()
 
     local microphone_icon = Widget.Icon({
-        css = "margin-left: 4px",
         icon = bind(microphone, "volume-icon"),
     })
 
     local microphone_label = Widget.Label({ 
-        css = "margin-left: 4px",
+        css = "margin-right: 4px",
         label = bind(microphone, "volume"):as(
             function(p) return tostring(math.floor(p * 100)) .. "%" end
         ),

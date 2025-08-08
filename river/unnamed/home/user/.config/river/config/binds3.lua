@@ -22,8 +22,39 @@ local run_menu = 'rofi -show run'
 local modes = {
   {
     name = 'passthrough',
-    mod = 'Super',
-    key = 'F11',
+    from = 'normal',
+    mod = 'None',
+    key = 'Escape',
+  },
+  {
+    name = 'passthrough',
+    from = 'launcher',
+    mod = 'None',
+    key = 'Escape',
+  },
+  {
+    name = 'passthrough',
+    from = 'layout',
+    mod = 'None',
+    key = 'Escape',
+  },
+  {
+    name = 'normal',
+    from = 'passthrough',
+    mod = 'None',
+    key = 'Super_L',
+  },
+  {
+    name = 'launcher',
+    from = 'normal',
+    mod = 'None',
+    key = 'R',
+  },
+  {
+    name = 'layout',
+    from = 'normal',
+    mod = 'None',
+    key = 'V',
   },
 }
 
@@ -37,44 +68,6 @@ local mappings = {
   -- Key bindings
   map = {
     normal = {
-      -- Terminal emulators
-      {
-        mod = 'Super',
-        key = 'Return',
-        command = { 'spawn', 'foot' },
-      },
-      {
-        mod = { 'Super', 'Shift' },
-        key = 'Return',
-        command = { 'spawn', 'alacritty' },
-      },
-      -- Application launcher
-      {
-        mod = 'Super',
-        key = 'D',
-        command = { 'spawn', string.format([['%s']], drun_menu) },
-      },
-      {
-        mod = { 'Super', 'Shift' },
-        key = 'D',
-        command = { 'spawn', string.format([['%s']], run_menu) },
-      },
-      {
-        mod = { 'Super', 'Alt' },
-        key = 'T',
-        command = { 'spawn', [['rofi -show calc']] },
-      },
-      {
-        mod = { 'Super', 'Alt' },
-        key = 'F',
-        command = { 'spawn', [['rofi -show file-browser-extended']] },
-      },
-      -- Launch Emacs
-      {
-        mod = { 'Super', 'Alt' },
-        key = 'E',
-        command = { 'spawn', [['emacsclient -c -a emacs']] },
-      },
       -- Super+Q to close the focused view
       {
         mod = 'Super',
@@ -143,49 +136,6 @@ local mappings = {
         key = 'E',
         command = 'zoom',
       },
-      -- Super+{H,L} to decrease/increase the main_factor value of filtile by 0.02
-      {
-        mod = 'Super',
-        key = 'H',
-        command = { 'send-layout-cmd', 'filtile', [['main-ratio -0.02']] },
-      },
-      {
-        mod = 'Super',
-        key = 'L',
-        command = { 'send-layout-cmd', 'filtile', [['main-ratio +0.02']] },
-      },
-      -- Super+Shift+{H,L} to increment/decrement the main_count value of filtile
-      {
-        mod = { 'Super', 'Shift' },
-        key = 'H',
-        command = { 'send-layout-cmd', 'filtile', [['main-count +1']] },
-      },
-      {
-        mod = { 'Super', 'Shift' },
-        key = 'L',
-        command = { 'send-layout-cmd', 'filtile', [['main-count -1']] },
-      },
-      -- Control+Alt+{H,J,K,L} to change layout orientation
-      {
-        mod = { 'Control', 'Alt' },
-        key = 'H',
-        command = { 'send-layout-cmd', 'filtile', [['main-location left']] },
-      },
-      {
-        mod = { 'Control', 'Alt' },
-        key = 'J',
-        command = { 'send-layout-cmd', 'filtile', [['main-location bottom']] },
-      },
-      {
-        mod = { 'Control', 'Alt' },
-        key = 'K',
-        command = { 'send-layout-cmd', 'filtile', [['main-location top']] },
-      },
-      {
-        mod = { 'Control', 'Alt' },
-        key = 'L',
-        command = { 'send-layout-cmd', 'filtile', [['main-location right']] },
-      },
       -- Super+Alt+{H,J,K,L} to move views (floating)
       {
         mod = { 'Super', 'Alt' },
@@ -206,27 +156,6 @@ local mappings = {
         mod = { 'Super', 'Alt' },
         key = 'L',
         command = { 'move', 'right', 100 },
-      },
-      -- Super+Control+{H,J,K,L} to resize views
-      {
-        mod = { 'Super', 'Control' },
-        key = 'H',
-        command = { 'resize', 'horizontal', -100 },
-      },
-      {
-        mod = { 'Super', 'Control' },
-        key = 'J',
-        command = { 'resize', 'vertical', 100 },
-      },
-      {
-        mod = { 'Super', 'Control' },
-        key = 'K',
-        command = { 'resize', 'vertical', -100 },
-      },
-      {
-        mod = { 'Super', 'Control' },
-        key = 'L',
-        command = { 'resize', 'horizontal', 100 },
       },
       -- Super+Alt+Control+{H,J,K,L} to snap views to screen edges
       {
@@ -264,9 +193,94 @@ local mappings = {
       {
       mod = { 'Super', 'Shift' },
       key = 'R',
-      command = { 'spawn', string.format([['lua %s/.config/river/init &']], os.getenv("HOME") ) }, 
+      command = { 'spawn', string.format([['%s/.config/river/init']], os.getenv("$HOME") ) }, 
       },
   },
+  launcher = {
+      -- Terminal emulator
+      {
+        mod = 'None',
+        key = 'T',
+        command = { 'spawn', 'foot' },
+      },
+      -- Application launcher
+      {
+        mod = 'None',
+        key = 'M',
+        command = { 'spawn', string.format([['%s']], drun_menu) },
+      },
+      {
+        mod = 'None',
+        key = 'R',
+        command = { 'spawn', string.format([['lua %s/.config/river/init']], os.getenv("HOME") ) }, 
+      },
+  },
+  layout = {
+      -- Super+{H,L} to decrease/increase the main_factor value of rivertile by 0.02
+      {
+        mod = 'None',
+        key = 'H',
+        command = { 'send-layout-cmd', 'rivertile', [['main-ratio -0.02']] },
+      },
+      {
+        mod = 'None',
+        key = 'L',
+        command = { 'send-layout-cmd', 'rivertile', [['main-ratio +0.02']] },
+      },
+      -- M+{H,L} to increment/decrement the main_count value of rivertile
+      {
+        mod = 'Shift',
+        key = 'H',
+        command = { 'send-layout-cmd', 'rivertile', [['main-count +1']] },
+      },
+      {
+        mod = 'Shift',
+        key = 'L',
+        command = { 'send-layout-cmd', 'rivertile', [['main-count -1']] },
+      },
+      -- Control+Alt+{H,J,K,L} to change layout orientation
+      {
+        mod = 'Control',
+        key = 'H',
+        command = { 'send-layout-cmd', 'rivertile', [['main-location left']] },
+      },
+      {
+        mod = 'Control',
+        key = 'J',
+        command = { 'send-layout-cmd', 'rivertile', [['main-location bottom']] },
+      },
+      {
+        mod = 'Control',
+        key = 'K',
+        command = { 'send-layout-cmd', 'rivertile', [['main-location top']] },
+      },
+      {
+        mod = 'Control',
+        key = 'L',
+        command = { 'send-layout-cmd', 'rivertile', [['main-location right']] },
+      },
+       -- Super+Control+{H,J,K,L} to resize views
+      {
+        mod = { 'Shift', 'Control' },
+        key = 'H',
+        command = { 'resize', 'horizontal', -100 },
+      },
+      {
+        mod = { 'Shift', 'Control' },
+        key = 'J',
+        command = { 'resize', 'vertical', 100 },
+      },
+      {
+        mod = { 'Shift', 'Control' },
+        key = 'K',
+        command = { 'resize', 'vertical', -100 },
+      },
+      {
+        mod = { 'Shift', 'Control' },
+        key = 'L',
+        command = { 'resize', 'horizontal', 100 },
+      },
+ },
     locked = {
       -- Eject optical drives
       {
@@ -365,7 +379,7 @@ local function tag_mappings()
     local tag_num = 1 << (i - 1)
 
     -- Super+[1-9] to focus tag [0-8]
-    os.execute(string.format('riverctl map normal Super %s set-focused-tags %s', i, tag_num))
+    os.execute(string.format('riverctl map normal None %s set-focused-tags %s', i, tag_num))
 
     -- Super+Shift+[1-9] to tag focused view with tag [0-8]
     os.execute(string.format('riverctl map normal Super+Shift %s set-view-tags %s', i, tag_num))
@@ -392,8 +406,7 @@ for _, mode in ipairs(modes) do
   os.execute('riverctl declare-mode ' .. mode_name)
 
   -- Setup key bindings to enter/exit the mode
-  os.execute(string.format('riverctl map normal %s %s enter-mode %s', modifiers, mode.key, mode_name))
-  os.execute(string.format('riverctl map %s %s %s enter-mode normal', mode_name, modifiers, mode.key))
+  os.execute(string.format('riverctl map %s %s %s enter-mode %s', mode.from , modifiers, mode.key, mode_name))
 end
 
 -- Keyboard and mouse bindings

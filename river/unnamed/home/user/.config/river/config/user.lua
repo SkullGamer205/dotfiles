@@ -27,20 +27,20 @@ local river_options = {
   ['border-color-focused'] = '0x9DA9A0',
   ['border-color-unfocused'] = '0x4f5b58',
   ['border-color-urgent'] = '0xe67e80',
-  ['xcursor-theme'] = { 'Mita Cursor', 14 },
+  ['xcursor-theme'] = { '\'Bibata-Original-Classic\'', 22 },
   ['background-color'] = '0x1e2326',
   -- Other options
   ['set-repeat'] = { 50, 300 },
   ['focus-follows-cursor'] = 'normal',
   ['set-cursor-warp'] = 'on-output-change',
   ['attach-mode'] = 'bottom',
-  ['default-layout'] = 'rivertile',
+  ['default-layout'] = 'filtile',
   ['keyboard-layout'] = '-options grp:caps_toggle,grp_led:caps us,ru',
 }
 
 local gsettings = {
   ['org.gnome.desktop.interface'] = {
-    ['gtk-theme'] = 'oomox-xresources',
+    ['gtk-theme'] = 'FlatColor2',
     ['icon-theme'] = 'oomox-xresources',
     ['cursor-theme'] = river_options['xcursor-theme'][1],
     ['cursor-size'] = river_options['xcursor-theme'][2],
@@ -67,5 +67,5 @@ end
 -- SIGTERM to the group on exit. Therefore, keep the main init
 -- process running (replace it with the layout generator process).
 
-os.execute(string.format('rivertile -view-padding 4 -outer-padding 4 -main-location left -main-count 1 -main-ratio 0.66 &'))
+os.execute(string.format('filtile -view-padding 4 -outer-padding 4 -main-location left -main-count 1 -main-ratio 0.66 &'))
 

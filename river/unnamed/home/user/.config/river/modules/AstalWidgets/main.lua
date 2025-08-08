@@ -1,12 +1,14 @@
 pcall(require, "luarocks.loader")
+
+-- local currentd = addRelPath("")
 local src = require("lib").src
 local astal = require("astal")
 local App = require("astal.gtk3.app")
-local Bar = require("TopBar.Bar")
-local Notif = require("Notifications.init")
-local Notif_list = require("Notifications.notification_list")
-local Launcher = require("Launcher.init")
-local PlayerPopup = require("PlayerPopup.init")
+local bar = require("top-bar.main")
+local notif = require("top-bar.notification.init")
+local w_notif = require("top-bar.notification.notification_list")
+local w_launcher = require("top-bar.launcher.widget")
+local w_player = require("top-bar.player.widget")
 
 local scss = src("style.scss")
 local css = "/tmp/astal-style.css"
@@ -17,11 +19,11 @@ App:start {
     css = css,
     main = function()
         for _, mon in pairs (App.monitors) do
-            Bar(mon)
-            Notif(mon)
+            bar(mon)
+            notif(mon)
         end
-            Launcher()
-            PlayerPopup()
-            Notif_list()
+            w_launcher()
+            w_player()
+            w_notif()
     end
 }
