@@ -3,6 +3,7 @@ local App    = Astal.App
 local Widget = require("astal.gtk3.widget")
 
 local w_wifi   = require("top-bar.wireless.wifi")
+local w_bt     = require("top-bar.wireless.bluetooth")
 
 return function()
     return Widget.EventBox({
@@ -18,6 +19,7 @@ return function()
             class_name = "box-wireless",
             css = "padding: 0 0.5em 0 0.5em",
         w_wifi(),
+        w_bt(),
         })
     })
 end
