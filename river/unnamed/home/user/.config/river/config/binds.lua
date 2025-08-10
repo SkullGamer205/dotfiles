@@ -264,7 +264,7 @@ local mappings = {
       {
       mod = { 'Super', 'Shift' },
       key = 'R',
-      command = { 'spawn', string.format([['lua %s/.config/river/init &']], os.getenv("HOME") ) }, 
+      command = { 'spawn', string.format([['astal -q || lua %s/.config/river/init &']], os.getenv("HOME") ) }, 
       },
   },
     locked = {

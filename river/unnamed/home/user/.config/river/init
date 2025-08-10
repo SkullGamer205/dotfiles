@@ -1,4 +1,4 @@
-#!/usr/bin/lua5.4
+#!/usr/bin/lua5.4 -W
 
 function addRelPath(dir)
     local spath =

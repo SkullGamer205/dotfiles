@@ -42,9 +42,20 @@ local startup_commands = {
 }
 
 -- Run startup commands
-
 -- 'riverctl spawn ...' always returns (even when the child process is a daemon)
 -- so we don't need to resort to posix.unistd.spawn()
-for _, cmd in ipairs(startup_commands) do
-  os.execute(string.format([[riverctl spawn '%s']], concat(cmd, ' ')))
+local filename = "/tmp/river-autostart"
+local f_lock = io.open(filename, "r")
+
+if f_lock then
+    io.close(f_lock)
+    print("[ERROR]: ", filename, "exists. Autostart will abort.")
+    return 0
+else
+    f_lock = io.open(filename, "w")
+    print("[DONE]: ", filename, "hook created.")
+    for _, cmd in ipairs(startup_commands) do
+        os.execute(string.format([[riverctl spawn '%s']], concat(cmd, ' ')))
+    end
+    io.close(f_lock)
 end
