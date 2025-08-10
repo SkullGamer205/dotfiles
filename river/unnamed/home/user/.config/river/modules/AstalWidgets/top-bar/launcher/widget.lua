@@ -7,8 +7,8 @@ local Gdk = require("astal.gtk3").Gdk
 local Variable = astal.Variable
 local Widget = require("astal.gtk3.widget")
 
-local slice = require("lib").slice
-local map = require("lib").map
+local slice = require("lib.common").slice
+local map = require("lib.common").map
 
 local MAX_ITEMS = 6
 

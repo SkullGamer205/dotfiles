@@ -1,6 +1,6 @@
 local astal = require("astal")
 local Astal = require("astal.gtk3").Astal
-local varlist = require("lib").varlist
+local varlist = require("lib.common").varlist
 local AstalNotifd = astal.require("AstalNotifd")
 local App = require("astal.gtk3").App
 local Widget = require("astal.gtk3").Widget

@@ -1,4 +1,3 @@
-local lgi = require("lgi")
 
 local astal = require("astal")
 local bind = astal.bind
@@ -8,33 +7,36 @@ local Bluetooth = astal.require("AstalBluetooth")
 
 return function()
     local bluetooth = Bluetooth.get_default()
-    local btb = bind(bluetooth, "adapter")
-    local btd = bind(bluetooth, "devices")
+    local bt_adapter = bind(bluetooth, "adapter")
+    local bt_devices = bind(bluetooth, "devices")
     local bt_visibility = Variable()
-
+   
+    --[[
+    local bt_icon_func = function(b)    
+        local is_powered = bind(b, "powered"):as(tostring)
+        local is_pairable = bind(b, "is-connected"):as(tostring)
+        if string.find(is_powered, 'false') then
+            return "bluetooth-disabled-symbolic"
+        elseif string.find(is_connected, 'true') then
+            return "bluetooth-paired-symbolic"
+        elseif string.find(is_powered, 'true') then 
+            return "bluetooth-active-symbolic"
+        else
+            return is_powered
+        end
+    end
+    --]]
     local bt_icon = function(b)
         return Widget.Icon({
-            -- tooltip_text = bind(w, "ssid"):as(tostring),
             name = "Bluetooth_Icon",
             class_name = "ico-bt",
-            icon = "bluetooth-symbolic",
-
-            --[[
-            icon = function()
-                    local powered = bind(b, "powered")
-                    local pairable  = bind(b, "pairable")
-
-                    if powered == true then
-                        if pairable == true then
-                            return tostring("bluetooth-paired")
-                        else
-                            return tostring("bluetooth-active")
-                        end
-                        return tostring("bluetooth-disabled")
-                    end
-                end
-            --]]
+            icon = "bluetooth-active",
         })
+        --[[
+        return Widget.Label({
+            label = bt_icon_func(b),
+        })
+        --]]
     end
 
     local bt_label = function(b)
@@ -42,7 +44,7 @@ return function()
             name = "Bluetooth_Label",
             class_name = "str-bt",
             css = "margin-right: 2px",
-            label = bind(b, "name"):as(tostring),
+            label = bind(b, "powered"):as(tostring),
         })
     end
 
@@ -69,8 +71,8 @@ return function()
             Widget.Box({
                 name = "Bluetooth",
                 class_name = "box-bt",
-                visible = btb:as(function(v) return v ~= nil end),
-                btb:as(
+                visible = bt_adapter:as(function(v) return v ~= nil end),
+                bt_adapter:as(
                     function(b)
                         return Widget.Box({
                             name = "WBluetooth_Box",

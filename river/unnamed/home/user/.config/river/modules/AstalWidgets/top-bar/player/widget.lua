@@ -1,13 +1,11 @@
 local astal = require("astal")
-
 local Astal = astal.require("Astal", "3.0")
 local App = require("astal.gtk3").App
 local Anchor = Astal.WindowAnchor
 local bind = astal.bind
+local map = require("lib.common").map
 local Widget = require("astal.gtk3.widget")
 local lookup_icon = Astal.Icon.lookup_icon
-
-local map = require("lib").map
 
 local Mpris = astal.require("AstalMpris")
 

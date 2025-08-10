@@ -1,4 +1,5 @@
 local astal = require("astal")
+local App = require("astal.gtk3").App
 local bind = astal.bind
 local Variable = require("astal").Variable
 local Widget = require("astal.gtk3.widget")
@@ -31,6 +32,17 @@ return function()
 
         on_hover_lost = function()
              battery_visibility:set(false)
+        end,
+
+        on_click_release = function()
+            local w_battery = App:get_window("BatteryWindow")
+            if w_battery then
+                if not w_battery:get_visible() then
+                    w_battery:show()
+                else
+                    w_battery:hide()
+                end
+            end
         end,
 
         Widget.Box({

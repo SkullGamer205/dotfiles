@@ -3,7 +3,7 @@ local App = require("astal.gtk3").App
 local Widget = require("astal.gtk3.widget")
 local bind = astal.bind
 local Mpris = astal.require("AstalMpris")
-local map = require("lib").map
+local map = require("lib.common").map
 local Variable = astal.Variable
 
 
@@ -22,11 +22,11 @@ return function()
 
                 Widget.Box({
                     class_name = "box-player",
+                    css = "padding: 0 0.5em 0 0.5em",
 		    visible = bind(player, "available"), 
                         Widget.EventBox({
                             name = "PlayerButton",
                             class_name = "ebx-player",
-                            css = "border: 0px",
                             on_click_release = function()
                                 local player_popup = App:get_window("MediaPlayerWindow")
                                 if player_popup then

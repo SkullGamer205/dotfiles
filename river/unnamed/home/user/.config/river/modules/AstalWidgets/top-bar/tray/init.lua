@@ -2,7 +2,7 @@ local astal = require("astal")
 local Widget = require("astal.gtk3.widget")
 local Tray = astal.require("AstalTray")
 local Variable = require("astal").Variable
-local map = require("lib").map
+local map = require("lib.common").map
 local bind = astal.bind
 
 --[[

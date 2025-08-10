@@ -2,9 +2,9 @@ local Widget = require("astal.gtk3").Widget
 local Gtk = require("astal.gtk3").Gtk
 local Astal = require("astal.gtk3").Astal
 
-local map = require("lib").map
-local time = require("lib").time
-local file_exists = require("lib").file_exists
+local map = require("lib.common").map
+local time = require("lib.common").time
+local file_exists = require("lib.common").file_exists
 
 local function is_icon(icon)
 	return Astal.Icon.lookup_icon(icon) ~= nil
