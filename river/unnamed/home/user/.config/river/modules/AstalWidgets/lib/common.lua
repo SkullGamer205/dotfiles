@@ -92,7 +92,7 @@ function M.file_exists(path)
 end
 
 function M.time(time, format)
-	format = format or "%H:%M:%S"
+	format = format or "%H:%M"
 	return GLib.DateTime.new_from_unix_local(time):format(format)
 end
 
