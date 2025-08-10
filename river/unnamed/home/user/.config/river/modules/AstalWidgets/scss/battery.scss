@@ -1,0 +1,28 @@
+@use "sass:string";
+@import "themes/default";
+
+@function gtkalpha($c, $a) {
+  @return string.unquote("alpha(#{$c},#{$a})");
+}
+
+$fg-color: #{'@theme_fg_color'};
+$bg-color: #{'@theme_bg_color'};
+$clean: #00000000;
+$margin-default: 8px;
+$b-width: 2px;
+$b-rad: 0.5em;
+
+window#BatteryWindow {
+  // all: unset;
+    color: $fg-color;
+    background-color: $clean;
+  box.box_bat {
+    background-color: $bg-color;
+    border: $b-width solid $fg-color;
+    box.boy_bat_l {
+    }
+    box.boy_bat_r {}
+  }
+}
+
+
