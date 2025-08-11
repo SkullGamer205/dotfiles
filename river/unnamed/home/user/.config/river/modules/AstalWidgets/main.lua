@@ -8,6 +8,7 @@ local bar = require("top-bar.main")
 local notif = require("top-bar.notification.init")
 local w_notif = require("top-bar.notification.notification_list")
 local w_launcher = require("top-bar.launcher.widget")
+local w_audio = require("top-bar.audio.widget")
 local w_player = require("top-bar.player.widget")
 local w_battery = require("top-bar.battery.widget")
 
@@ -24,6 +25,7 @@ App:start {
             notif(mon)
         end
             w_launcher()
+            w_audio()
             w_player()
             w_notif()
             w_battery()
