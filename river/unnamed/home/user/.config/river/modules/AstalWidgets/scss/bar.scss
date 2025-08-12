@@ -23,6 +23,12 @@ window.bar {
         background-color: $bg-color;
         border: $b-width solid $fg-color;
         border-radius: $b-rad 0 0 $b-rad; 
+        margin: 0 $margin-default 0 0;
+      }
+      eventbox.ebx-tags {
+        background-color: $bg-color;
+        border: $b-width solid $fg-color;
+        border-radius: 0 0 0 0; 
         margin: 0 0 0 0;
       }
     }
