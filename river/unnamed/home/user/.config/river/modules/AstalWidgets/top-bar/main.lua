@@ -8,7 +8,7 @@ local Battery = require("top-bar.battery.init")
 local box_wireless = require("top-bar.wireless.box")
 local box_audio = require("top-bar.audio.box")
 -- local FocusedClient = require("TopBar.client")
--- local Workspaces = require("widget.Workspaces")
+local box_tags = require("top-bar.workspaces.init")
 local box_player = require("top-bar.player.init")
 local btn_Menu = require("top-bar.launcher.button")
 local btn_Notif = require("top-bar.notification.button")
@@ -28,6 +28,7 @@ return function(gdkmonitor)
                 class_name = "bar-leftbox",
                 halign = "START", 
                 btn_Menu(),
+                box_tags(),
                 -- Workspaces(),
                 -- FocusedClient(),
             }),
