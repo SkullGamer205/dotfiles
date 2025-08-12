@@ -3,15 +3,15 @@ local Widget = require("astal.gtk3.widget")
 local MyButton = require("top-bar.button.init")
 local tray = require("top-bar.tray.init")
 local clock = require("top-bar.clock.init")
-local Kbd_Layout = require("top-bar.keyboard.init")
-local Battery = require("top-bar.battery.init") 
+local box_kbd = require("top-bar.keyboard.init")
+local box_battery = require("top-bar.battery.init") 
 local box_wireless = require("top-bar.wireless.box")
 local box_audio = require("top-bar.audio.box")
--- local FocusedClient = require("TopBar.client")
 local box_tags = require("top-bar.workspaces.init")
 local box_player = require("top-bar.player.init")
 local btn_Menu = require("top-bar.launcher.button")
 local btn_Notif = require("top-bar.notification.button")
+local btn_power = require("top-bar.power.init")
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 return function(gdkmonitor)
@@ -46,11 +46,11 @@ return function(gdkmonitor)
                 class_name = "bar-rightbox",
                 halign = "END",
                 tray(),
-                Kbd_Layout(),
+                box_kbd(),
                 box_audio(),
                 box_wireless(),
-                Battery(),
-                MyButton("ПИТАНИЕ"),
+                box_battery(),
+                btn_power(),
             }),
         }),
 })
