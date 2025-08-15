@@ -1,0 +1,22 @@
+#window-box {
+    padding: 32px;
+    background-color: #1e2326;
+    border: 2px solid #9DA9A0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+}
+
+window#HDMI-A-1 {
+    background-image: url("/tmp/gtklock-HDMI-A-1.png")
+}
+
+window#eDP-1 {
+    background-image: url("/tmp/gtklock-eDP-1.png")
+}
+
+#powerbar {
+    padding: 32px;
+    background-color: #1e2326;
+    border: 2px solid #9DA9A0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+}
+

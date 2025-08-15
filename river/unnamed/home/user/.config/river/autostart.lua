@@ -27,7 +27,7 @@ local startup_commands = {
   -- Startup programs
   {
     'swayidle',
-    'timeout 300 "gtklock"',
+    'timeout 300 "$XDG_CONFIG_HOME/river/scripts/gtklock.sh"',
   },
   {
     'artix-pipewire-loader',
