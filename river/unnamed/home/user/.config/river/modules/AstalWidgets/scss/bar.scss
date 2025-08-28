@@ -7,7 +7,6 @@
 
 $fg-color: #{'@theme_fg_color'};
 $bg-color: #{'@theme_bg_color'};
-$clean: #00000000;
 $margin-default: 8px;
 $b-width: 2px;
 $b-rad: 0.5em;
@@ -15,7 +14,7 @@ $b-rad: 0.5em;
 window.bar {
   // all: unset
   color: $fg-color ;
-  background-color: $clean;
+  background-color: transparent;
   centerbox {
     margin: $margin-default $margin-default 0 $margin-default;
     box.bar-leftbox {
@@ -26,10 +25,24 @@ window.bar {
         margin: 0 $margin-default 0 0;
       }
       eventbox.ebx-tags {
-        background-color: $bg-color;
-        border: $b-width solid $fg-color;
-        border-radius: 0 0 0 0; 
-        margin: 0 0 0 0;
+        box.box-tags {
+          box.box-ico-tags {
+            background-color: $bg-color;
+            border: $b-width solid $fg-color;
+            border-radius: 0 0 0 0; 
+            margin: 0 0 0 0;
+          }
+          revealer.rev-tags {
+            box.box-reveal-tags {
+              button.btn-tag {
+                background-color: $bg-color;
+                border: $b-width solid $fg-color;
+                border-radius: 0 0 0 0; 
+                margin: 0 0 0 $margin-default;
+              }
+            }
+          }
+        }
       }
     }
     box.bar-middlebox {
@@ -39,7 +52,7 @@ window.bar {
           border: $b-width solid $fg-color;
           border-radius: $b-rad 0 0 $b-rad;
           eventbox.ebx-player {
-            background-color: $clean;
+            background-color: transparent;
           }
         }
       }
@@ -57,7 +70,7 @@ window.bar {
           border: $b-width solid $fg-color;
           border-radius: 0 $b-rad $b-rad 0;
           button.btn-notif {
-            background-color: $clean;
+            background-color: transparent;
           }
       }
     }
@@ -68,8 +81,8 @@ window.bar {
         border-radius: $b-rad 0 0 $b-rad;
         button.btn-tray-revealer {
           border: 0px;
-          background-color: $clean;
-          color: $clean;
+          background-color: transparent;
+          color: transparent;
         }
       }
       box.box-kbd {
@@ -101,6 +114,12 @@ window.bar {
           border-radius: 0 0 0 0;
           margin: 0 0 0 $margin-default;
         }
+      }
+      button.btn-power {
+          background-color: $bg-color;
+          border: $b-width solid $fg-color;
+          border-radius: 0 $b-rad $b-rad 0; 
+          margin: 0 0 0 $margin-default;
       }
     }
   }

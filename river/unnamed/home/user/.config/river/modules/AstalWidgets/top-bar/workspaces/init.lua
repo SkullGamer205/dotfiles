@@ -6,7 +6,7 @@ local bind = astal.bind
 
 local function tag_button(props)
     return Widget.Button({
-
+        class_name = "btn-tag",
         on_click_release = function(_, event)
             if event.button == "PRIMARY" then
                 os.execute(string.format('riverctl set-focused-tags %s', props.tag_bin))
@@ -19,8 +19,9 @@ local function tag_button(props)
 
         Widget.Box({
             name = "TagButton_" .. props.tag,
-            class_name = "btn-tag",
+            class_name = "box-tag",
             Widget.Label({
+                class_name = "str-tag-name",
                 label = string.format('%s', props.tag_name)
             })
         })
@@ -64,17 +65,20 @@ return function()
 
         Widget.Box({
             class_name = "box-tags",
-            Widget.Icon({
-                class_name = "ico-tags",
-                icon = "workspaces-symbolic",
-                css = "font-size: 16px; padding: 0 0.5em 0 0.5em",
+            Widget.Box({
+                class_name = "box-ico-tags",
+                Widget.Icon({
+                    class_name = "ico-tags",
+                    icon = "workspaces-symbolic",
+                    css = "font-size: 16px; padding: 0 0.5em 0 0.5em",
+                }),
             }),
             Widget.Revealer({
                 class_name = "rev-tags",
                 reveal_child = bind(tags_visibility),
                 transition_type = "SLIDE_RIGHT",
                 Widget.Box({
-                    class_name = "box-revtags",
+                    class_name = "box-reveal-tags",
                     table.unpack(tag_buttons),
                 })
             })
