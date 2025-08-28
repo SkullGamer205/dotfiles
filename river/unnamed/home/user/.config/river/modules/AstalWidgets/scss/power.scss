@@ -1,0 +1,26 @@
+@use "sass:string";
+@import "themes/default";
+
+@function gtkalpha($c, $a) {
+  @return string.unquote("alpha(#{$c},#{$a})");
+}
+
+$fg-color: #{'@theme_fg_color'};
+$bg-color: #{'@theme_bg_color'};
+$margin-default: 8px;
+$b-width: 2px;
+$b-rad: 0.5em;
+
+window#PowerWindow {
+  color: transparent;
+  background-color: transparent;
+  box.box_power {
+    padding: 16px;
+    color: $fg-color;
+    background-color:$bg-color;
+    border: $b-width solid $fg-color;
+    label.str_power {
+      font-size: 250%;
+    }
+  }
+}

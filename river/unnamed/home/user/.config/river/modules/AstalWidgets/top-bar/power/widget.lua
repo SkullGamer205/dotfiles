@@ -21,6 +21,7 @@ Icons:
 local function box_rand_label(t)
     if #t > 0 then
         return Widget.Label({
+            class_name = "str_power",
             label = string.format('%s', t[math.random(#t)])
         })
     else
@@ -38,6 +39,7 @@ end
 
 local function btn_power(props)
     return Widget.Button({
+        css = "margin: 0 4px 0 4px",
         expand = false,
         on_click_release = function(_, event)
             local w_power = App:get_window("PowerWindow")
@@ -104,6 +106,7 @@ return function()
        Widget.Box({
            vertical = true,
            valign = "CENTER",
+           class_name = "box_power",
            box_rand_label(str_exit_labels),
            box_power(buttons),
        }) 

@@ -4,6 +4,7 @@ local Debug     = require("lib.debug")
 
 return function()
     return Widget.Button({
+        class_name = "btn-power",
         on_click_release = function(_, event)
             local w_power = App:get_window("PowerWindow")
             if event.button == "PRIMARY" then
