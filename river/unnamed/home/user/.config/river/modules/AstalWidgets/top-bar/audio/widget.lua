@@ -80,10 +80,18 @@ end
 
 local function btn_audio_type(type, name)
     return Widget.Button({
-        label = name,
+        hexpand = true,
         on_click_release = function(_, event)
             current_page:set(name)
         end,
+        Widget.Box({
+            Widget.Icon({
+                icon = bind(type, "volume-icon"),
+            }),
+            Widget.Label({
+                label = name,
+            })
+        })
     })
 end
 
