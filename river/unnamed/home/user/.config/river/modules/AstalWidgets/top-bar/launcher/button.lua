@@ -33,7 +33,8 @@ return function()
 			end
 		end,
 		Widget.Icon({
-			icon = "search-symbolic"
+			icon = "search-symbolic",
+                        css = "font-size: 16px; padding: 0 0.125em 0 0.125em",
 		}),
 	})
 end
