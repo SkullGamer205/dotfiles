@@ -2,5 +2,5 @@
 ^\.github
 \.swp$
 \.bak$
-^\.readme_d
+^\.readme.d
 README.md
