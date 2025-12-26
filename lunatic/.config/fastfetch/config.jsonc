@@ -1,0 +1,60 @@
+{
+    "logo" : {
+        "type"	    : "file",
+	"source"    : "$XDG_CONFIG_HOME/fastfetch/snowflake.txt",
+	"color"	    : {
+	    "1"		: "blue"
+	  	}
+	},
+
+    "display" : {
+	"separator" : ":: "
+	 },
+
+ 
+
+  "modules": [
+	  {"type"    : "title",
+	   "key"     : " ",
+	   "format"  : ":: {#1;32}{user-name}{#}@{#3;32}{host-name}{#} ::"
+	  },
+
+	  {"type": "custom"},
+	  {"type": "custom"},
+	  {"type": "custom"},
+	  {"type": "custom"},
+	  {"type": "custom"},
+	  {"type": "custom"},
+	  {"type": "custom"},
+	  {"type": "custom"}
+//    "title",
+//  "separator",
+//  "os",
+//  "host",
+//  "kernel",
+//  "uptime",
+//  "packages",
+//  "shell",
+//  "display",
+//  "de",
+//  "wm",
+//  "wmtheme",
+//  "theme",
+//  "icons",
+//  "font",
+//  "cursor",
+//  "terminal",
+//  "terminalfont",
+//  "cpu",
+//  "gpu",
+//  "memory",
+//  "swap",
+//  "disk",
+//  "localip",
+//  "battery",
+//  "poweradapter",
+//  "locale",
+//  "break",
+//  "colors"
+  ]
+}
