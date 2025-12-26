@@ -8,18 +8,29 @@
 	},
 
     "display" : {
-	"separator" : ":: "
+	"separator" : " :: "
 	 },
 
  
 
   "modules": [
-	  {"type"    : "title",
-	   "key"     : " ",
-	   "format"  : ":: {#1;32}{user-name}{#}@{#3;32}{host-name}{#} ::"
+	  {
+		"type"    : "title",
+		"key"     : " ",
+	   	"format"  : ":: {#1;32}{user-name}{#}@{#3;32}{host-name}{#} ::"
+	  },
+	  
+	  {
+		"type"    : "custom",
+		"key"	  : " "
 	  },
 
-	  {"type": "custom"},
+	  {
+		"type"    : "kernel",
+		"key"     : "KRN",
+		"format"  : "{release}, arch: {arch}"
+	  },
+	  
 	  {"type": "custom"},
 	  {"type": "custom"},
 	  {"type": "custom"},
