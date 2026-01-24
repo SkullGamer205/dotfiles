@@ -70,62 +70,72 @@ return require('packer').startup(function(use)
         end,
         requires = {'nvim-tree/nvim-web-devicons'}
     }
-    
+   
     -- Scrollview
     use {'dstein64/nvim-scrollview'}
-    
+   
+
     -- Smart collumn
     use {
         'm4xshen/smartcolumn.nvim',
-        config = require("smartcolumn").setup {
-            colorcolumn = {"80", "100"},
-            disabled_filetypes = { "help", "text", "markdown", "typst",
-            "asciidoc", "NvimTree", "lazy", "mason", "help", "checkhealth",
-            "lspinfo", "noice", "Trouble", "fish", "zsh" },
-        },
+        config = function()
+            require("smartcolumn").setup {
+                colorcolumn = {"80", "100"},
+                disabled_filetypes = { "help", "text", "markdown", "typst",
+                "asciidoc", "NvimTree", "lazy", "mason", "help", "checkhealth",
+                "lspinfo", "noice", "Trouble", "fish", "zsh" },
+            }
+        end,
     }
 
+--[[
     -- Center view
     use {
         'shortcuts/no-neck-pain.nvim',
-        require("no-neck-pain").setup({
-            autocmds = {
-                enableOnVimEnter = false,
-                reloadOnColorSchemeChange = true,
-                skipEnteringNoNeckPainBuffer = true,
-            },
-            width = 140,
-            buffers = {
-                scratchpad = {
-                    enabled = true,
+        function()
+            require("no-neck-pain").setup({
+                autocmds = {
+                    enableOnVimEnter = false,
+                    reloadOnColorSchemeChange = true,
+                    skipEnteringNoNeckPainBuffer = true,
                 },
-                bo = {
-                    filetype = "md"
+                width = 140,
+                buffers = {
+                    scratchpad = {
+                        enabled = true,
+                    },
+                    bo = {
+                        filetype = "md"
+                    }
                 }
-            }
-        }),
+            })
+        end,
         -- vim.cmd("NoNeckPain")
     }
 
 -- Code highlight
     -- Tree Sitter
-    use 'nvim-treesitter/nvim-treesitter'
-        require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "asm", "bash", "c", "c_sharp", "cmake", "cpp",
-                "css", "desktop", "diff", "elm", "git_config", "git_rebase", 
-                "gitattributes", "gitcommit", "gitignore", "glsl", "gpg", 
-                "http", "ini", "lua", "luadoc", "luap", "luau", "cmake",
-                "meson", "regex", "java", "json", "tmux", "todotxt",
-                "xml", "vim" },
-            -- ignore_install = { 'org' },
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-	    sync_install = false,
-	    auto_install = true,
-	    highlight = {
-		enable = true,
-	    },
-        }
-
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        function()
+            require 'nvim-treesitter.configs'.setup {
+                ensure_installed = { "asm", "bash", "c", "c_sharp", "cmake", "cpp",
+                    "css", "desktop", "diff", "elm", "git_config", "git_rebase", 
+                    "gitattributes", "gitcommit", "gitignore", "glsl", "gpg", 
+                    "http", "ini", "lua", "luadoc", "luap", "luau", "cmake",
+                    "meson", "regex", "java", "json", "tmux", "todotxt",
+                    "xml", "vim" },
+                -- ignore_install = { 'org' },
+                -- Install parsers synchronously (only applied to `ensure_installed`)
+    	        sync_install = true,
+    	        auto_install = true,
+    	        highlight = {
+    		    enable = true,
+	        },
+            }
+      end,
+    }
+--]]
 -- Markup highlight
 
     -- ASCIIDoc
@@ -208,10 +218,12 @@ return require('packer').startup(function(use)
                 },
             })
             require("telescope").load_extension("orgmode")
+--[[
             require('nvim-treesitter.configs').setup({
                 ignore_install = { 'org' },
             })
-    end,
+--]]
+        end,
     }
 
     -- Sounds
