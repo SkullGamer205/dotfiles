@@ -2,7 +2,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # unifetch --config "$HOME/.config/unifetch/config-mini.conf"
-fastfetch -c "${XDG_CONFIG_HOME:-${HOME}/.config}/fastfetch/config-mini.jsonc"
+fastfetch -c "${XDG_CONFIG_HOME:-${HOME}/.config}/fastfetch/config.jsonc"
 export LAMBDA_MOD_N_DIR_LEVELS=1
 
 # Environment
