@@ -2,7 +2,9 @@
 *.zcompdump
 *.old
 *.bak
+
 *.viminfo
+*.netrwhist
 
 **/.config/vifm/scripts/README.md
 **/.config/vifm/*.txt
