@@ -1,0 +1,9 @@
+*.log
+*.zcompdump
+*.old
+*.bak
+
+**/.config/vifm/scripts/README.md
+**/.config/vifm/*.txt
+**/.config/vifm/vifmi*
+
