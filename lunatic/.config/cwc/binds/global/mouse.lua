@@ -5,29 +5,30 @@ local gears = require("gears")
 local cwc = cwc
 
 local enum = cful.enum
-local mod = enum.modifier
+local mod = require('binds.mod')
 local button = enum.mouse_btn
 local direction = enum.direction
 
-local MODKEY = mod.LOGO
-local TERMINAL = "kitty"
 local kbd = cwc.kbd
 
--- prevent hotkey conflict on nested session
+local TERMINAL = "foot"
+
 if cwc.is_nested() then
-    MODKEY = mod.ALT
+    modkey = mod.alt
+else
+    modkey = mod.super
 end
 
 ------------------- pointer/mouse binding ---------------------
 local pointer = cwc.pointer
 
 -- client interactive mode
-pointer.bind(MODKEY, button.LEFT, pointer.move_interactive)
-pointer.bind(MODKEY, button.RIGHT, pointer.resize_interactive)
-pointer.bind(MODKEY, button.SCROLL_UP, function()
+pointer.bind(modkey, button.LEFT, pointer.move_interactive)
+pointer.bind(modkey, button.RIGHT, pointer.resize_interactive)
+pointer.bind(modkey, button.SCROLL_UP, function()
     cful.tag.viewprev()
 end)
-pointer.bind(MODKEY, button.SCROLL_DOWN, function()
+pointer.bind(modkey, button.SCROLL_DOWN, function()
     cful.tag.viewnext()
 end)
 
@@ -52,7 +53,7 @@ local mouse_map = kbd.create_bindmap()
 mouse_map.active = false
 
 -- toggle this submap by pressing MOD + z
-kbd.bind({ MODKEY }, "z", function()
+kbd.bind({ modkey }, "z", function()
     mouse_map.active = not mouse_map.active
 end, { description = "activate mouse submap", group = "keymap" })
 
@@ -88,40 +89,40 @@ mouse_map:bind({}, "j", function()
     main_ptr:move(0, PTR_SPEED)
 end, { description = "move pointer down", group = "pointer", repeated = true })
 
-mouse_map:bind({ mod.SHIFT }, "h", function()
+mouse_map:bind({ mod.shift }, "h", function()
     main_ptr:move(-PTR_SPEED * MULTIPLIER, 0)
 end, { description = "long move pointer to the left", group = "pointer", repeated = true })
-mouse_map:bind({ mod.SHIFT }, "l", function()
+mouse_map:bind({ mod.shift }, "l", function()
     main_ptr:move(PTR_SPEED * MULTIPLIER, 0)
 end, { description = "long move pointer to the right", group = "pointer", repeated = true })
-mouse_map:bind({ mod.SHIFT }, "k", function()
+mouse_map:bind({ mod.shift }, "k", function()
     main_ptr:move(0, -PTR_SPEED * MULTIPLIER)
 end, { description = "long move pointer up", group = "pointer", repeated = true })
-mouse_map:bind({ mod.SHIFT }, "j", function()
+mouse_map:bind({ mod.shift }, "j", function()
     main_ptr:move(0, PTR_SPEED * MULTIPLIER)
 end, { description = "long move pointer down", group = "pointer", repeated = true })
 
 -- mouse axis
 local last_mod_state = 0
-mouse_map:bind({ mod.CTRL }, "h", function()
+mouse_map:bind({ mod.ctrl }, "h", function()
     last_mod_state = main_kbd.modifiers
     main_kbd:update_modifiers(0, 0, 0)
     main_ptr:send_axis(-AXIS_DELTA, -DELTA_DISCRETE, true)
     main_kbd:update_modifiers(last_mod_state, 0, 0)
 end, { description = "scroll left", group = "pointer", repeated = true })
-mouse_map:bind({ mod.CTRL }, "l", function()
+mouse_map:bind({ mod.ctrl }, "l", function()
     last_mod_state = main_kbd.modifiers
     main_kbd:update_modifiers(0, 0, 0)
     main_ptr:send_axis(AXIS_DELTA, DELTA_DISCRETE, true)
     main_kbd:update_modifiers(last_mod_state, 0, 0)
 end, { description = "scroll right", group = "pointer", repeated = true })
-mouse_map:bind({ mod.CTRL }, "k", function()
+mouse_map:bind({ mod.ctrl }, "k", function()
     last_mod_state = main_kbd.modifiers
     main_kbd:update_modifiers(0, 0, 0)
     main_ptr:send_axis(-AXIS_DELTA, -DELTA_DISCRETE)
     main_kbd:update_modifiers(last_mod_state, 0, 0)
 end, { description = "scroll up", group = "pointer", repeated = true })
-mouse_map:bind({ mod.CTRL }, "j", function()
+mouse_map:bind({ mod.ctrl }, "j", function()
     last_mod_state = main_kbd.modifiers
     main_kbd:update_modifiers(0, 0, 0)
     main_ptr:send_axis(AXIS_DELTA, DELTA_DISCRETE)

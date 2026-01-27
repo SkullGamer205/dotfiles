@@ -3,8 +3,7 @@
 local cwc = cwc
 
 -- autostart app
-cwc.spawn_with_shell("swaybg --output '*' --color '#222222'")
-cwc.spawn_with_shell("waybar")
+cwc.spawn_with_shell("swww-daemon")
 cwc.spawn_with_shell("playerctld daemon")
 
 local idle_cmd = "playerctl pause; cwctl screen --filter '*' set dpms false"
@@ -16,7 +15,6 @@ cwc.spawn_with_shell(swayidle_cmd)
 cwc.timer.new(3, function()
     cwc.spawn { "copyq" }
     cwc.spawn { "aria2tray", "--hide-window" }
-    cwc.spawn { "foot" }
 end, { one_shot = true })
 
 -- env var

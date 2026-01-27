@@ -7,33 +7,33 @@ local gears = require("gears")
 local cwc = cwc
 
 local enum = cful.enum
-local mod = enum.modifier
+local mod = require('binds.mod')
 local direction = enum.direction
 
-local MODKEY = mod.LOGO
 local TERMINAL = "foot"
 
--- prevent hotkey conflict on nested session
 if cwc.is_nested() then
-    MODKEY = mod.ALT
+    modkey = mod.alt
+else
+    modkey = mod.alt
 end
 
 ------------------- keyboard binding --------------------
 local kbd = cwc.kbd
 
 ---------------- compositor lifecycle
-kbd.bind({ MODKEY, mod.CTRL }, "Delete", cwc.quit, { description = "exit cwc", group = "cwc" })
-kbd.bind({ MODKEY, mod.CTRL }, "r", cwc.reload, { description = "reload configuration", group = "cwc" })
-kbd.bind({ MODKEY }, "Delete", function()
+kbd.bind({ modkey, mod.ctrl }, "Delete", cwc.quit, { description = "exit cwc", group = "cwc" })
+kbd.bind({ modkey, mod.ctrl }, "r", cwc.reload, { description = "reload configuration", group = "cwc" })
+kbd.bind({ modkey }, "Delete", function()
     collectgarbage("collect")
 end, { description = "trigger lua garbage collection", group = "cwc" })
 
-kbd.bind({ MODKEY }, "Escape", function()
+kbd.bind({ modkey }, "Escape", function()
     cwc.container.reset_mark();
 end, { description = "reset leftover server state", group = "cwc" })
 
 for i = 1, 12 do
-    kbd.bind({ mod.CTRL, mod.ALT }, "F" .. i, function()
+    kbd.bind({ mod.ctrl, mod.alt }, "F" .. i, function()
         cwc.chvt(i)
     end)
 end
@@ -41,99 +41,99 @@ end
 ----------------- CLIENT COMMANDS ------------------------
 
 ------------------ general
-kbd.bind({ MODKEY, mod.SHIFT }, "q", function()
+kbd.bind({ modkey, mod.shift }, "q", function()
     local c = cwc.client.focused()
     if c then c:close() end
 end, { description = "close client respectfully", group = "client" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "q", function()
+kbd.bind({ modkey, mod.ctrl }, "q", function()
     local c = cwc.client.focused()
     if c then c:kill() end
 end, { description = "close client forcefully", group = "client" })
 
-kbd.bind(MODKEY, "f", function()
+kbd.bind(modkey, "f", function()
     local c = cwc.client.focused()
     if c then c.fullscreen = not c.fullscreen end
 end, { description = "toggle fullscreen", group = "client" })
 
-kbd.bind(MODKEY, "m", function()
+kbd.bind(modkey, "m", function()
     local c = cwc.client.focused()
     if c then c.maximized = not c.maximized end
 end, { description = "toggle maximize", group = "client" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "m", function()
+kbd.bind({ modkey, mod.shift }, "m", function()
     cful.client.maximize_vertical()
 end, { description = "maximize vertically", group = "client" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "m", function()
+kbd.bind({ modkey, mod.ctrl }, "m", function()
     cful.client.maximize_horizontal()
 end, { description = "maximize horizontally", group = "client" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "space", function()
+kbd.bind({ modkey, mod.shift }, "space", function()
     local c = cwc.client.focused()
     if c then c.floating = not c.floating end
 end, { description = "toggle floating", group = "client" })
 
-kbd.bind(MODKEY, "n", function()
+kbd.bind(modkey, "n", function()
     local c = cwc.client.focused()
     if c then c.minimized = true end
 end, { description = "minimize client", group = "client" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "n", function()
+kbd.bind({ modkey, mod.ctrl }, "n", function()
     local c = cful.client.restore(true)
     if c then c:focus() end
 end, { description = "restore minimized client", group = "client" })
 
-kbd.bind({ MODKEY }, "o", function()
+kbd.bind({ modkey }, "o", function()
     local c = cwc.client.focused()
     if c then c.ontop = not c.ontop end
 end, { description = "toggle client always on top", group = "client" })
 
-kbd.bind({ MODKEY }, "i", function()
+kbd.bind({ modkey }, "i", function()
     local c = cwc.client.focused()
     if c then c.above = not c.above end
 end, { description = "toggle client above normal toplevel", group = "client" })
 
-kbd.bind({ MODKEY }, "u", function()
+kbd.bind({ modkey }, "u", function()
     local c = cwc.client.focused()
     if c then c.below = not c.below end
 end, { description = "toggle client under normal toplevel", group = "client" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "0", function()
+kbd.bind({ modkey, mod.ctrl }, "0", function()
     local c = cwc.client.focused()
     if c then c.sticky = not c.sticky end
 end, { description = "toggle client always visible", group = "client" })
 
 --------------------- stack based
-kbd.bind({ MODKEY, mod.CTRL }, "j", function()
+kbd.bind({ modkey, mod.ctrl }, "j", function()
     cful.client.focusidx(1)
 end, { description = "focus next client relative by index", group = "client" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "k", function()
+kbd.bind({ modkey, mod.ctrl }, "k", function()
     cful.client.focusidx(-1)
 end, { description = "focus previous client by index", group = "client" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "j", function()
+kbd.bind({ modkey, mod.shift }, "j", function()
     cful.client.swapidx(1)
 end, { description = "swap with next client by index", group = "client" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "k", function()
+kbd.bind({ modkey, mod.shift }, "k", function()
     cful.client.swapidx(-1)
 end, { description = "swap with previous client by index", group = "client" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "Return", function()
+kbd.bind({ modkey, mod.ctrl }, "Return", function()
     local c = cwc.client.focused()
     if c then cful.client.set_master(c, true) end
 end, { description = "promote focused client to master", group = "client" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "bracketleft", function()
+kbd.bind({ modkey, mod.shift }, "bracketleft", function()
     local c = cwc.client.focused()
     local new_screen = cful.screen.idx(-1, c.screen)
     c:move_to_screen(new_screen)
     new_screen:focus()
 end, { description = "cycle move focused client to previous screen", group = "client" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "bracketright", function()
+kbd.bind({ modkey, mod.shift }, "bracketright", function()
     local c = cwc.client.focused()
     local new_screen = cful.screen.idx(1, c.screen)
     c:move_to_screen(new_screen)
@@ -141,7 +141,7 @@ kbd.bind({ MODKEY, mod.SHIFT }, "bracketright", function()
 end, { description = "cycle move focused client to next screen", group = "client" })
 
 --------------------- direction based
-kbd.bind(MODKEY, "j", function()
+kbd.bind(modkey, "j", function()
     local c = cwc.client.focused()
     if c then
         local near = c:get_nearest(direction.DOWN)
@@ -149,7 +149,7 @@ kbd.bind(MODKEY, "j", function()
     end
 end, { description = "focus down", group = "client" })
 
-kbd.bind(MODKEY, "k", function()
+kbd.bind(modkey, "k", function()
     local c = cwc.client.focused()
     if c then
         local near = c:get_nearest(direction.UP)
@@ -157,7 +157,7 @@ kbd.bind(MODKEY, "k", function()
     end
 end, { description = "focus up", group = "client" })
 
-kbd.bind(MODKEY, "h", function()
+kbd.bind(modkey, "h", function()
     local c = cwc.client.focused()
     if c then
         local near = c:get_nearest(direction.LEFT)
@@ -165,7 +165,7 @@ kbd.bind(MODKEY, "h", function()
     end
 end, { description = "focus left", group = "client" })
 
-kbd.bind(MODKEY, "l", function()
+kbd.bind(modkey, "l", function()
     local c = cwc.client.focused()
     if c then
         local near = c:get_nearest(direction.RIGHT)
@@ -174,28 +174,28 @@ kbd.bind(MODKEY, "l", function()
 end, { description = "focus right", group = "client" })
 
 -------------------- container operation
-kbd.bind(MODKEY, "t", function()
+kbd.bind(modkey, "t", function()
     local c = cwc.client.focused()
     if c then c.container.insert_mark = true end
 end, { description = "mark insert container from the focused client", group = "client" })
 
-kbd.bind(mod.LOGO, "Tab", function()
+kbd.bind(mod.super, "Tab", function()
     local c = cwc.client.focused()
     if c then c.container:focusidx(1) end
 end, { description = "cycle next to toplevel inside container", group = "client" })
 
-kbd.bind({ mod.LOGO, mod.SHIFT }, "Tab", function()
+kbd.bind({ mod.super, mod.shift }, "Tab", function()
     local c = cwc.client.focused()
     if c then c.container:focusidx(-1) end
 end, { description = "cycle prev to toplevel inside container", group = "client" })
 
 -------------------------------- appearance
-kbd.bind({ MODKEY, mod.SHIFT }, "minus", function()
+kbd.bind({ modkey, mod.shift }, "minus", function()
     local c = cwc.client.focused()
     if c then c.opacity = c.opacity - 0.1 end
 end, { description = "decrease opacity", group = "client", repeated = true })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "equal", function()
+kbd.bind({ modkey, mod.shift }, "equal", function()
     local c = cwc.client.focused()
     if c then c.opacity = c.opacity + 0.1 end
 end, { description = "increase opacity", group = "client", repeated = true })
@@ -242,10 +242,10 @@ local move_right_opt = { description = "move client to the right", group = "clie
 local move_up_opt = { description = "move client upward", group = "client", repeated = true }
 local move_down_opt = { description = "move client downward", group = "client", repeated = true }
 
-kbd.bind(MODKEY, "Left", move_left, move_left_opt)
-kbd.bind(MODKEY, "Right", move_right, move_right_opt)
-kbd.bind(MODKEY, "Up", move_up, move_up_opt)
-kbd.bind(MODKEY, "Down", move_down, move_down_opt)
+kbd.bind(modkey, "Left", move_left, move_left_opt)
+kbd.bind(modkey, "Right", move_right, move_right_opt)
+kbd.bind(modkey, "Up", move_up, move_up_opt)
+kbd.bind(modkey, "Down", move_down, move_down_opt)
 
 --------------------- client resize
 local size_interval = 20
@@ -289,41 +289,41 @@ local resize_right_opt = { description = "increase client width", group = "clien
 local resize_up_opt = { description = "reduce client height", group = "client", repeated = true }
 local resize_down_opt = { description = "increase client height", group = "client", repeated = true }
 
-kbd.bind({ MODKEY, mod.SHIFT }, "Left", resize_left, resize_left_opt)
-kbd.bind({ MODKEY, mod.SHIFT }, "Right", resize_right, resize_right_opt)
-kbd.bind({ MODKEY, mod.SHIFT }, "Up", resize_up, resize_up_opt)
-kbd.bind({ MODKEY, mod.SHIFT }, "Down", resize_down, resize_down_opt)
+kbd.bind({ modkey, mod.shift }, "Left", resize_left, resize_left_opt)
+kbd.bind({ modkey, mod.shift }, "Right", resize_right, resize_right_opt)
+kbd.bind({ modkey, mod.shift }, "Up", resize_up, resize_up_opt)
+kbd.bind({ modkey, mod.shift }, "Down", resize_down, resize_down_opt)
 
 --------------------- SCREEN LAYOUT ------------------------
 
-kbd.bind({ MODKEY }, "bracketright", function()
+kbd.bind({ modkey }, "bracketright", function()
     cful.screen.focus_relative(1)
 end, { description = "focus the next screen", group = "screen" })
-kbd.bind({ MODKEY }, "bracketleft", function()
+kbd.bind({ modkey }, "bracketleft", function()
     cful.screen.focus_relative(-1)
 end, { description = "focus the previous screen", group = "screen" })
 
 ----------------- tag
 for i = 1, 9 do
     local i_str = tostring(i)
-    kbd.bind(MODKEY, i_str, function()
+    kbd.bind(modkey, i_str, function()
         local t = cwc.screen.focused():get_tag(i)
         t:view_only()
     end, { description = "view tag #" .. i_str, group = "tag" })
 
-    kbd.bind({ MODKEY, mod.CTRL }, i_str, function()
+    kbd.bind({ modkey, mod.ctrl }, i_str, function()
         local t = cwc.screen.focused():get_tag(i)
         t:toggle()
     end, { description = "toggle tag #" .. i_str, group = "tag" })
 
-    kbd.bind({ MODKEY, mod.SHIFT }, i_str, function()
+    kbd.bind({ modkey, mod.shift }, i_str, function()
         local c = cwc.client.focused()
         if not c then return end
 
         c:move_to_tag(i_str)
     end, { description = "move focused client to tag #" .. i_str, group = "tag" })
 
-    kbd.bind({ MODKEY, mod.SHIFT, mod.CTRL }, i_str, function()
+    kbd.bind({ modkey, mod.shift, mod.ctrl }, i_str, function()
         local c = cwc.client.focused()
         if not c then return end
 
@@ -331,43 +331,43 @@ for i = 1, 9 do
     end, { description = "toggle focused client on tag #" .. i_str, group = "tag" })
 end
 
-kbd.bind(MODKEY, "0", function()
+kbd.bind(modkey, "0", function()
     local scrs = cwc.screen.get()
     for _, s in pairs(scrs) do
         cful.tag.viewnone(s)
     end
 end, { description = "deactivate all tag on all screen", group = "tag" })
 
-kbd.bind(MODKEY, "comma", function()
+kbd.bind(modkey, "comma", function()
     cful.tag.viewprev()
 end, { description = "view next workspace/tag", group = "tag" })
 
-kbd.bind(MODKEY, "period", function()
+kbd.bind(modkey, "period", function()
     cful.tag.viewnext()
 end, { description = "view prev workspace/tag", group = "tag" })
 
 -- backtick/tilde key
-kbd.bind(MODKEY, "grave", cful.tag.history.restore,
+kbd.bind(modkey, "grave", cful.tag.history.restore,
     { description = "activate last activated tags", group = "tag" })
 
 -------------------- tag config
-kbd.bind(MODKEY, "equal", function()
+kbd.bind(modkey, "equal", function()
     cful.tag.incgap(1)
 end, { description = "increase gaps", group = "layout", repeated = true })
 
-kbd.bind(MODKEY, "minus", function()
+kbd.bind(modkey, "minus", function()
     cful.tag.incgap(-1)
 end, { description = "decrease gaps", group = "layout", repeated = true })
 
 ----------------------- bsp hotkey
-kbd.bind(MODKEY, "e", function()
+kbd.bind(modkey, "e", function()
     local c = cwc.client.focused()
     if not c then return end
 
     c:toggle_split()
 end, { description = "toggle bsp split", group = "layout" })
 
-kbd.bind({ mod.LOGO, mod.ALT }, "l", function()
+kbd.bind({ mod.super, mod.alt }, "l", function()
     local s = cwc.screen.focused()
     local c = cwc.client.focused()
     if s.selected_tag.layout_mode == enum.layout_mode.BSP and c.bspfact then
@@ -377,7 +377,7 @@ kbd.bind({ mod.LOGO, mod.ALT }, "l", function()
     end
 end, { description = "increase master/bsp width factor", group = "layout", repeated = true })
 
-kbd.bind({ mod.LOGO, mod.ALT }, "h", function()
+kbd.bind({ mod.super, mod.alt }, "h", function()
     local s = cwc.screen.focused()
     local c = cwc.client.focused()
     if s.selected_tag.layout_mode == enum.layout_mode.BSP and c.bspfact then
@@ -388,61 +388,61 @@ kbd.bind({ mod.LOGO, mod.ALT }, "h", function()
 end, { description = "decrease master/bsp width factor", group = "layout", repeated = true })
 
 --------------- layout commands
-kbd.bind(MODKEY, "space", function()
+kbd.bind(modkey, "space", function()
     local tag = cwc.screen.focused().selected_tag
     tag.layout_mode = (tag.layout_mode + 1) % enum.layout_mode.LENGTH
 end, { description = "cycle to next layout mode in focused screen", group = "layout" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "space", function()
+kbd.bind({ modkey, mod.ctrl }, "space", function()
     local tag = cwc.screen.focused().selected_tag
     tag:strategy_idx(1)
 end, { description = "cycle to next strategy in focused screen", group = "layout" })
 
-kbd.bind({ MODKEY, mod.CTRL, mod.SHIFT }, "space", function()
+kbd.bind({ modkey, mod.ctrl, mod.shift }, "space", function()
     local tag = cwc.screen.focused().selected_tag
     tag:strategy_idx(-1)
 end, { description = "cycle to previous strategy in focused screen", group = "layout" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "h", function()
+kbd.bind({ modkey, mod.shift }, "h", function()
     cful.tag.incnmaster(1)
 end, { description = "increase the number of master clients", group = "layout" })
 
-kbd.bind({ MODKEY, mod.SHIFT }, "l", function()
+kbd.bind({ modkey, mod.shift }, "l", function()
     cful.tag.incnmaster(-1)
 end, { description = "decrease the number of master clients", group = "layout" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "h", function()
+kbd.bind({ modkey, mod.ctrl }, "h", function()
     cful.tag.incncol(1)
 end, { description = "increase the number of columns", group = "layout" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "l", function()
+kbd.bind({ modkey, mod.ctrl }, "l", function()
     cful.tag.incncol(-1)
 end, { description = "decrease the number of columns", group = "layout" })
 
 ---------------- launcher
-kbd.bind(MODKEY, "t", function()
-    cwc.spawn_with_shell("kitty || alacritty || wezterm || xterm || st")
+kbd.bind(modkey, "t", function()
+    cwc.spawn_with_shell("foot")
 end, { description = "open a terminal", group = "launcher" })
-kbd.bind({ MODKEY }, "F1", function()
+kbd.bind({ modkey }, "F1", function()
     cwc.spawn_with_shell("firefox")
 end, { description = "open a web browser", group = "launcher" })
-kbd.bind(MODKEY, "p", function()
+kbd.bind(modkey, "p", function()
     cwc.spawn_with_shell(
         'rofi -show drun -font "Hack Nerd Font 10" -icon-theme "Papirus-dark" -show-icons')
 end, { description = "application launcher", group = "launcher" })
 
 ------------------- utility
-kbd.bind({ MODKEY }, "Print", function()
+kbd.bind({ modkey }, "Print", function()
     cwc.spawn_with_shell("flameshot full")
 end, { description = "screenshot entire screen", group = "launcher" })
-kbd.bind({ MODKEY, mod.SHIFT }, "s", function()
+kbd.bind({ modkey, mod.shift }, "s", function()
     cwc.spawn_with_shell("flameshot gui")
     -- cwc.spawn_with_shell('slurp | grim -g - - | copyq write image/png - && copyq select 0')
 end, { description = "snipping tool", group = "launcher" })
-kbd.bind(MODKEY, "v", function()
+kbd.bind(modkey, "v", function()
     cwc.spawn_with_shell("copyq toggle")
 end, { description = "clipboard history", group = "launcher" })
-kbd.bind({ MODKEY }, "b", function()
+kbd.bind({ modkey }, "b", function()
     cwc.spawn_with_shell("kill -s USR1 `pgrep waybar`")
 end, { description = "toggle waybar", group = "launcher" })
 
@@ -540,15 +540,15 @@ end)
 
 ---------------- PLUGINS -------------------
 
-kbd.bind({ mod.ALT }, "Tab", function() --
+kbd.bind({ mod.alt }, "Tab", function() --
     if not cwc.cwcle then return end
 
-    cwc.cwcle.next(mod.ALT)
+    cwc.cwcle.next(mod.alt)
 end, { description = "cycle next client", group = "client", repeated = true })
-kbd.bind({ mod.ALT, mod.SHIFT }, "Tab", function() --
+kbd.bind({ mod.alt, mod.shift }, "Tab", function() --
     if not cwc.cwcle then return end
 
-    cwc.cwcle.prev(mod.ALT)
+    cwc.cwcle.prev(mod.alt)
 end, { description = "cycle previous client", group = "client", repeated = true })
 
 ----------------------------- CLIENT MANAGEMENT SUBMAP ---------------------------------
@@ -558,7 +558,7 @@ local client_map = kbd.create_bindmap()
 client_map.active = false
 
 -- enter this submap by pressing MOD + W in the default map
-kbd.bind({ MODKEY }, "w", function()
+kbd.bind({ modkey }, "w", function()
     client_map:active_only()
 end, { description = "activate client vim movement keymap", group = "keymap" })
 
@@ -572,18 +572,18 @@ client_map:bind({}, "j", move_down, move_down_opt)
 client_map:bind({}, "k", move_up, move_up_opt)
 client_map:bind({}, "l", move_right, move_right_opt)
 
-client_map:bind({ mod.SHIFT }, "h", resize_left, resize_left_opt)
-client_map:bind({ mod.SHIFT }, "j", resize_down, resize_down_opt)
-client_map:bind({ mod.SHIFT }, "k", resize_up, resize_up_opt)
-client_map:bind({ mod.SHIFT }, "l", resize_right, resize_right_opt)
+client_map:bind({ mod.shift }, "h", resize_left, resize_left_opt)
+client_map:bind({ mod.shift }, "j", resize_down, resize_down_opt)
+client_map:bind({ mod.shift }, "k", resize_up, resize_up_opt)
+client_map:bind({ mod.shift }, "l", resize_right, resize_right_opt)
 
 -------------------- DEV ------------------------
-kbd.bind({ MODKEY }, "F11", function() --
+kbd.bind({ modkey }, "F11", function() --
     cwc.create_output(2)
     print(#cwc.screen.get())
 end, { description = "Create output", group = "dev" })
 
-kbd.bind({ MODKEY, mod.CTRL }, "slash", function()
+kbd.bind({ modkey, mod.ctrl }, "slash", function()
     local s = cwc.screen.focused()
     local c = cwc.client.focused()
     local pos = pointer.get_position()
