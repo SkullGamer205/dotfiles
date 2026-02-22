@@ -82,6 +82,12 @@ require('pckr').add{
         end,
     };
 
+    -- Completion Engine
+    {
+        'hrsh7th/nvim-cmp'
+    };
+
+
     -- Markups
     -- -- AsciiDoc
     { 'marioortizmanero/adoc-pdf-live.nvim',
