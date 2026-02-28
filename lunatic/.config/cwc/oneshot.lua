@@ -9,12 +9,12 @@ cwc.spawn_with_shell("playerctld daemon")
 local idle_cmd = "playerctl pause; cwctl screen --filter '*' set dpms false"
 local resume_cmd = "playerctl play; cwctl screen --filter='*' set dpms true"
 local swayidle_cmd = string.format('swayidle -w timeout 3600 "%s" resume "%s"', idle_cmd, resume_cmd)
-cwc.spawn_with_shell(swayidle_cmd)
-
+local astalbar = ((os.getenv('XDG_CONFIG_HOME')) or (os.getenv('HOME') .. "/.config")) .. "/cwc/module/astal-widgets/init.lua"
 -- for app that use tray better to wait for the bar to load
 cwc.timer.new(3, function()
-    cwc.spawn { "copyq" }
-    cwc.spawn { "aria2tray", "--hide-window" }
+--    cwc.spawn { "copyq" }
+--    cwc.spawn { "aria2tray", "--hide-window" }
+    cwc.spawn_with_shell("lua " .. astalbar)
 end, { one_shot = true })
 
 -- env var
