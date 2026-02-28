@@ -7,7 +7,7 @@ local clock = require(... .. '.clock')
 return function(gdkmonitor)
     return Widget.Window({
         name = "AstalBar",
-        class_name = "astal_bar",
+        class_name = "bar",
         application = App,
         gdkmonitor = gdkmonitor,
         anchor = Anchor.TOP + Anchor.RIGHT + Anchor.BOTTOM,

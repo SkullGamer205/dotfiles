@@ -8,25 +8,19 @@ package.path = package.path .. ";" .. cwcDir .. "/?.lua;" .. cwcDir .. "/?/init.
 
 pcall(require, "luarocks.loader")
 
-local M = {}
-
--- local addRelPath = require("lib.common").addRelPath
--- addRelPath("module")
 local src = require("lib.common").src
 local astal = require("astal")
 local App = require("astal.gtk3.app")
 local AstalBar = require("statusbar")
 
--- local scss = src("style.scss")
--- local css = "/tmp/astal-style.css"
--- astal.exec("sass ".. scss .. " " .. css)
-
--- function M.start()
+local scss = src("style.scss")
+local css = "/tmp/astal-style.css"
+os.execute("sass ".. scss .. " " .. css)
 
 App:start {
     instance_name = "astal",
-    class_name = "astal-cwc",
-    -- css = css,
+    class_name = "astal-cwc" ,
+    css = css,
     -- hold = false,
     on_second_instance = function()
         print("Another instance attempted to start")
@@ -43,7 +37,3 @@ App:start {
        end
     end
 }
-
--- end
-
--- return M
