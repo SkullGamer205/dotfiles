@@ -3,6 +3,7 @@ local Widget = require("astal.gtk3").Widget
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 local clock = require(... .. '.clock')
+local battery = require(... .. '.battery')
 
 return function(gdkmonitor)
     return Widget.Window({
@@ -14,6 +15,7 @@ return function(gdkmonitor)
         exclusivity = "EXCLUSIVE",
 
         Widget.CenterBox({
+            vertical = true,
             Widget.Box({
                 name = "LeftBox",
                 class_name = "box-left",
@@ -30,6 +32,7 @@ return function(gdkmonitor)
                 name = "RightBox",
                 class_name = "box-right",
                 halign = "END",
+                battery(),
             })
         })
     })
