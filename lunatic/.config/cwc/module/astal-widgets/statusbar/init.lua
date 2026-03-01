@@ -4,6 +4,7 @@ local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 local clock = require(... .. '.clock')
 local battery = require(... .. '.battery')
+local wireless = require(... .. '.wireless')
 
 return function(gdkmonitor)
     return Widget.Window({
@@ -32,6 +33,7 @@ return function(gdkmonitor)
                 name = "RightBox",
                 class_name = "box-right",
                 halign = "END",
+                wireless(),
                 battery(),
             })
         })
