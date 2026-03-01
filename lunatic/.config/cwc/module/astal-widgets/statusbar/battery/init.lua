@@ -1,9 +1,9 @@
 local astal = require('astal')
-local App = require('astal.gtk3').App
+-- local App = require('astal.gtk3').App
 local Widget = require('astal.gtk3').Widget
 local Battery = astal.require("AstalBattery")
 local bind = astal.bind
-local Variable = astal.Variable
+-- local Variable = astal.Variable
 
 return function()
     local bat = Battery.get_default()
