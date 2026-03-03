@@ -6,7 +6,10 @@ local bind = Astal.bind
 
 local function Time(format)
     local time = Variable.new(""):poll(1000, function()
-        return GLib.DateTime.new_now_local():format(format)
+        local success, time = pcall (function()
+            return GLib.DateTime.new_now_local():format(format)
+        end)
+        return success and time or ""
     end)
 
     return Widget.Label({
