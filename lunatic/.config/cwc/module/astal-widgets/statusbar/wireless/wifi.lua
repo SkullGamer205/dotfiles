@@ -3,10 +3,12 @@ local Widget = require('astal.gtk3').Widget
 local Network = astal.require("AstalNetwork")
 local bind = astal.bind
 
+local Variable = astal.Variable
+
 return function()
     local network = Network.get_default()
     local wifi = {
-        wifi = bind(network, "wifi"),
+        state = bind(network, "wired"),
         icon = function(w)
             return Widget.Icon({
                 name = "Wi-FiIcon",
@@ -19,15 +21,16 @@ return function()
     return Widget.Box({
         name = "Wi-Fi",
         class_name = "box-wifi",
-        visible = wifi.wifi:as(function(v) return v ~= nil end),
-        wifi.wifi:as(
-            function(w)
-                return Widget.Box({
-                    name = "Wi-FiBox",
-                    class_name = "box-wifi",
-                    wifi.icon(w),
-                })
-            end
-        ),
+        visible = bind(wifi.state):as(function(v) return v ~= nil end),
+        bind(wifi.state):as(function(w)
+            wifi.icon(w)
+        end),
+        
+        setup = function(self)
+            self:hook(self, "destroy", function()
+                wifi.state:drop()
+            end)
+        end,
+
     })
 end

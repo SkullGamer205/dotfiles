@@ -34,7 +34,7 @@ return function(gdkmonitor)
                 name = "RightBox",
                 class_name = "box-right",
                 halign = "END",
-                audio(),
+                -- audio(),
                 wireless(),
                 battery(),
             })
