@@ -8,6 +8,9 @@ local bind = astal.bind
 return function()
     local bat = Battery.get_default()
     local bat_icon = Widget.Icon({
+        tooltip_text = bind(bat, "percentage"):as(function(p)
+            return tostring(math.floor(p * 100)).."%"
+        end),
         name = "BatteryIcon",
         icon = bind(bat, "battery-icon-name"),
     })
