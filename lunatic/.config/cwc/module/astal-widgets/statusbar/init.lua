@@ -6,6 +6,7 @@ local clock = require(... .. '.clock')
 local battery = require(... .. '.battery')
 local wireless = require(... .. '.wireless')
 local audio = require(... .. '.audio')
+local tags = require(... .. '.tags')
 
 return function(gdkmonitor)
     return Widget.Window({
@@ -22,6 +23,7 @@ return function(gdkmonitor)
                 name = "LeftBox",
                 class_name = "box-left",
                 halign = "START",
+                tags(),
             }),
             
             Widget.Box({
