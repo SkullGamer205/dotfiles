@@ -2,6 +2,7 @@ local App = require("astal.gtk3").App
 local Widget = require("astal.gtk3").Widget
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
+local launcher = require(... .. '.launcher')
 local tags = require(... .. '.tags')
 local player = require(... .. '.player')
 local clock = require(... .. '.clock')
@@ -27,6 +28,7 @@ return function(gdkmonitor)
                 class_name = "box-left",
                 halign = "START",
                 vertical = true,
+                launcher(),
                 tags(),
             }),
             
