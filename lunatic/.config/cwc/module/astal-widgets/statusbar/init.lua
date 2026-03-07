@@ -7,6 +7,7 @@ local battery = require(... .. '.battery')
 local wireless = require(... .. '.wireless')
 local audio = require(... .. '.audio')
 local tags = require(... .. '.tags')
+local power = require(... .. '.power')
 
 return function(gdkmonitor)
     return Widget.Window({
@@ -23,12 +24,14 @@ return function(gdkmonitor)
                 name = "LeftBox",
                 class_name = "box-left",
                 halign = "START",
+                vertical = true,
                 tags(),
             }),
             
             Widget.Box({
                 name = "MiddleBox",
                 class_name = "box-right",
+                vertical = true,
                 clock(),
             }),
 
@@ -36,9 +39,11 @@ return function(gdkmonitor)
                 name = "RightBox",
                 class_name = "box-right",
                 halign = "END",
+                vertical = true,
                 -- audio(),
                 wireless(),
                 battery(),
+                power(),
             })
         })
     })
