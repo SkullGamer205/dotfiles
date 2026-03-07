@@ -2,11 +2,12 @@ local App = require("astal.gtk3").App
 local Widget = require("astal.gtk3").Widget
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
+local tags = require(... .. '.tags')
 local clock = require(... .. '.clock')
+local notif = require(... .. '.notification')
 local battery = require(... .. '.battery')
 local wireless = require(... .. '.wireless')
 local audio = require(... .. '.audio')
-local tags = require(... .. '.tags')
 local power = require(... .. '.power')
 
 return function(gdkmonitor)
@@ -33,6 +34,7 @@ return function(gdkmonitor)
                 class_name = "box-right",
                 vertical = true,
                 clock(),
+                notif(),
             }),
 
             Widget.Box({
