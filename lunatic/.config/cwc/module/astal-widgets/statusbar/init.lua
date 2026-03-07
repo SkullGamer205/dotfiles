@@ -3,6 +3,7 @@ local Widget = require("astal.gtk3").Widget
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 local tags = require(... .. '.tags')
+local player = require(... .. '.player')
 local clock = require(... .. '.clock')
 local notif = require(... .. '.notification')
 local battery = require(... .. '.battery')
@@ -33,6 +34,7 @@ return function(gdkmonitor)
                 name = "MiddleBox",
                 class_name = "box-right",
                 vertical = true,
+                player(),
                 clock(),
                 notif(),
             }),
