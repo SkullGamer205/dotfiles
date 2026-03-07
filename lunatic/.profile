@@ -6,3 +6,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 ## XDeb
 export XDEB_PKGROOT="$XDG_CONFIG_HOME"/xdeb
+
+## I-Bus
+export GTK_IM_MODULE=wayland
+export XMODIFIERS=@im=ibus
