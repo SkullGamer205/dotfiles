@@ -56,7 +56,12 @@ cwc.connect_signal("client::focus", function(client)
     -- by default when a client got focus it's not raised so we raise it.
     -- should've been hardcoded to the compositor since that's the intuitive behavior
     -- but it's nice to have option I guess.
+    client.opacity = 1
     client:raise()
+end)
+
+cwc.connect_signal("client::unfocus", function(client)
+    client.opacity = 0.9
 end)
 
 -- sloppic focus only in tiled client
