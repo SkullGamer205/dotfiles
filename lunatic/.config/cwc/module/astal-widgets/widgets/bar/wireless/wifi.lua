@@ -8,12 +8,12 @@ local Variable = astal.Variable
 return function()
     local network = Network.get_default()
     local wifi = {
-        state = bind(network, "wired"),
+        state = bind(network, "wifi"),
         icon = function(w)
             return Widget.Icon({
                 name = "Wi-FiIcon",
                 class_name = "icon-wifi",
-                icon = bind(w, "icon-name"),
+--                 icon = bind(w, "icon-name"),
             })
         end
     }

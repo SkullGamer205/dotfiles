@@ -1,16 +1,19 @@
 local Widget = require("astal.gtk3").Widget
 
-return function()
+return function(label, icon, leftclick, rightclick)
     return Widget.Button({
         on_click_release = function(_, event)
             if event.button == "PRIMARY" then
-                print("PRIMARY")
+                leftclick()
             elseif event.button == "SECONDARY" then
-                print("SECONDARY") 
+                rightclick()
             end
         end,
+        Widget.Label({
+            label = label,
+        }),
         Widget.Icon({
-            icon = "emblem-music-symbolic",
+            icon = icon,
         }),
     })
 end

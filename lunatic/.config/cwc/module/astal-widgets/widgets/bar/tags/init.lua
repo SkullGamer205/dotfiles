@@ -8,9 +8,9 @@ local function tag_button(tag)
         on_click_release = function(_, event)
         local t = string.format('cwc.screen.focused():get_tag(%s)', tag)
             if event.button == "PRIMARY" then
-                os.execute('cwctl -c \"' .. t .. ':view_only()\"')
+                os.execute('cwctl -c \"' .. t .. ':view_only()\" > /dev/null 2>&1')
             elseif event.button == "SECONDARY" then
-                os.execute('cwctl -c \"' .. t .. ':toggle()\"')
+                os.execute('cwctl -c \"' .. t .. ':toggle()\" > /dev/null 2>&1')
             else
                 print("NOTHING")
             end

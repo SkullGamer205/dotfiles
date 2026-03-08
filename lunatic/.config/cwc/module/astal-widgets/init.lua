@@ -17,7 +17,7 @@ Debug.info("App", "Starting astal-bar")
 
 local astal = require("astal")
 local App = require("astal.gtk3.app")
-local AstalBar = require("statusbar")
+local AstalBar = require("windows.bar")
 
 Debug.info("App", "Components loaded successfully")
 
@@ -27,7 +27,7 @@ Debug.set_config({
     log_level = Debug.LEVELS.DEBUG,
 })
 
-local scss = src("style.scss")
+local scss = src("scss/style.scss")
 local css = "/tmp/astal-style.css"
 os.execute("sass ".. scss .. " " .. css)
 
@@ -35,7 +35,8 @@ Debug.info("App", "Sass loaded successfully")
 
 -- Main function
 App:start {
-    instance_name = "lunatic",
+--    instance_name = "lunatic",
+    instance_name = "astal",
     class_name = "astal-cwc" ,
     css = css,
     on_second_instance = function()
