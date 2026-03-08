@@ -1,0 +1,5 @@
+@use "sass:string";
+
+@function gtkalpha($color, $alpha) {
+  @return string.unquote("alpha(#{$color},#{$alpha})");
+}

@@ -1,9 +1,7 @@
-@use "sass:string";
-@use "themes/default";
+@use "sass:color";
+@use "../abstracts" as *;
+@use "../themes/default";
 
-@function gtkalpha($c, $a) {
-  @return string.unquote("alpha(#{$c},#{$a})");
-}
 
 $fg_color: #{'@theme_fg_color'};
 $bg_color: #{'@theme_bg_color'};
