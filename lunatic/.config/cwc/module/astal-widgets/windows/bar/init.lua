@@ -23,6 +23,7 @@ return function(gdkmonitor)
         exclusivity = "EXCLUSIVE",
 
         Widget.CenterBox({
+            class_name = "centerbox",
             vertical = true,
             Widget.Box({
                 name = "LeftBox",
@@ -45,6 +46,7 @@ return function(gdkmonitor)
             Widget.Box({
                 name = "RightBox",
                 class_name = "box-right",
+                valign = "END",
                 halign = "END",
                 vertical = true,
                 -- audio(),
