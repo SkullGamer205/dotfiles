@@ -31,10 +31,16 @@ $border-radius: 0.5em;
   
   .box-clock {
     @include box;
+    font-weight: bold;
   }
 
   .button-notification {
     @include button;
+  }
+
+  .box-xkb {
+    @include box;
+    font-weight: bold;
   }
 
   .box-wireless {
