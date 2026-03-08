@@ -20,6 +20,7 @@ end
 
 return function()
     return Widget.Box({
+        class_name = "box-clock",
         Time("%H\n%M"),
     })
 end
