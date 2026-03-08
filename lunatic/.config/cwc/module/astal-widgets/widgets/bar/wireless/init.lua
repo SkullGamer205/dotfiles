@@ -7,6 +7,7 @@ local blue = require(... .. '.bluetooth')
 
 return function()
     return Widget.Box({
+        class_name = "box-wireless",
         vertical = true,
         wifi(),
         blue(),

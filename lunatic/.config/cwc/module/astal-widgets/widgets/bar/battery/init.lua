@@ -16,6 +16,7 @@ return function()
     })
 
     return Widget.Box({
+        class_name = "box-battery",
         bat_icon,
     })
 end
