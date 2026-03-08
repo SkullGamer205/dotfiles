@@ -1,15 +1,10 @@
 @use "sass:color";
 @use "../abstracts" as *;
-@use "../themes/default";
-
-
-$fg_color: #{'@theme_fg_color'};
-$bg_color: #{'@theme_bg_color'};
 
 $border-width: 2px;
 $border-radius: 1em;
 
 window.bar {
-  color: $fg_color; 
-  background-color: $bg_color; 
+  color: $foreground; 
+  background-color: $background; 
 }
