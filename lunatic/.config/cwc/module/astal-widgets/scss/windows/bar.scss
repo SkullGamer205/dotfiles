@@ -1,10 +1,40 @@
 @use "sass:color";
 @use "../abstracts" as *;
+@use "../components/button" as *;
+@use "../components/box" as *;
 
 $border-width: 2px;
 $border-radius: 1em;
 
-window.bar {
+.bar {
   color: $foreground; 
-  background-color: $background; 
+
+  .centerbox {
+    background-color: $background; 
+    margin: 120px 4px;
+  }
+
+  .button-launcher {
+    @include button;
+  }
+
+  .button-tag {
+    @include button;
+  }
+
+  .button-player {
+    @include button;
+  }
+  
+  .box-clock {
+    @include box;
+  }
+
+  .button-notification {
+    @include button;
+  }
+
+  .button-power {
+    @include button;
+  }
 }
