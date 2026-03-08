@@ -1,6 +1,7 @@
-$bg: #{'@theme_bg_color'};
-$bg-alt: #{'@dark_bg_color'};
-$bg-urg: #{'@warning_bg_color'};
-$fg: #{'@theme_fg_color'};
-$fg-alt: #{'@dark_fg_color'};
-$ac: $fg;
+$background:        #{'@theme_bg_color'};
+$background-alt:    #{'@dark_bg_color'};
+$background-urgent: #{'@warning_bg_color'};
+$foreground:        #{'@theme_fg_color'};
+$foreground-alt:    #{'@dark_fg_color'};
+
+$base:              #{'@theme_base_color'};
