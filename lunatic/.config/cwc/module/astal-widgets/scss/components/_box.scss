@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+@mixin box {
+  border: none;
+  border-radius: 6px;
+  margin: 1px 4px;
+  padding: 4px;
+  background-color: $background-alt ;
+
+  icon {
+    font-size: 14px;
+    color: inherit;
+  }
+
+  label {
+    color: inherit;
+  }
+}
