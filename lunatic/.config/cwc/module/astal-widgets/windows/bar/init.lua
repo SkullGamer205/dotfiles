@@ -2,15 +2,16 @@ local App = require("astal.gtk3").App
 local Widget = require("astal.gtk3").Widget
 local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
-local launcher = require('widgets.bar.launcher')
-local tags = require('widgets.bar.tags')
-local player = require('widgets.bar.player')
-local clock = require('widgets.bar.clock')
-local notif = require('widgets.bar.notification')
-local battery = require('widgets.bar.battery')
-local wireless = require('widgets.bar.wireless')
-local audio = require('widgets.bar.audio')
-local power = require('widgets.bar.power')
+local widgetsDir = 'widgets.bar'
+local launcher   = require(widgetsDir .. '.launcher')
+local tags       = require(widgetsDir .. '.tags')
+local player     = require(widgetsDir .. '.player')
+local clock      = require(widgetsDir .. '.clock')
+local notif      = require(widgetsDir .. '.notification')
+local battery    = require(widgetsDir .. '.battery')
+local wireless   = require(widgetsDir .. '.wireless')
+local audio      = require(widgetsDir .. '.audio')
+local power      = require(widgetsDir .. '.power')
 
 return function(gdkmonitor)
     return Widget.Window({
