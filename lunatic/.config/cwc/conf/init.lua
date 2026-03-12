@@ -17,6 +17,8 @@ local conf = {
     -- xkb_variant                        = "colemak",
     -- xkb_layout                         = "us,de,fr",
     -- xkb_options                        = "grp:alt_shift_toggle,grp:caps_select",
+    xkb_layout                         = "us,ru",
+    xkb_options                        = "grp:alt_shift_toggle",
 
     -- client config --
     default_decoration_mode            = enum.decoration_mode.SERVER_SIDE,
