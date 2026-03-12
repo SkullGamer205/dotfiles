@@ -5,7 +5,6 @@ local cwc = cwc
 -- autostart app
 cwc.spawn_with_shell("swww-daemon")
 cwc.spawn_with_shell("playerctld daemon")
-cwc.spawn_with_shell("ibus start")
 
 local idle_cmd = "playerctl pause; cwctl screen --filter '*' set dpms false"
 local resume_cmd = "playerctl play; cwctl screen --filter='*' set dpms true"
