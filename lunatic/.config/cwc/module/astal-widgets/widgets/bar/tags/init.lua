@@ -30,7 +30,7 @@ end
 
 return function()
     local _tag_button = {}
-    for i = 1, 9 do
+    for i = 1, 4 do
         _tag_button[i] = tag_button(i)
     end
 
