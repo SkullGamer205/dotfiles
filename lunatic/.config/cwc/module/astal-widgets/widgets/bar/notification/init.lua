@@ -11,7 +11,7 @@ return function()
             end
         end,
         Widget.Icon({
-            icon = "notification-nactive",
+            icon = "notification-active",
         }),
     })
 end
