@@ -8,6 +8,7 @@ local tags       = require(widgetsDir .. '.tags')
 local player     = require(widgetsDir .. '.player')
 local clock      = require(widgetsDir .. '.clock')
 local notif      = require(widgetsDir .. '.notification')
+local tray       = require(widgetsDir .. '.tray')
 local xkb        = require(widgetsDir .. '.xkb')
 local wireless   = require(widgetsDir .. '.wireless')
 local audio      = require(widgetsDir .. '.audio')
@@ -50,6 +51,7 @@ return function(gdkmonitor)
                 valign = "END",
                 halign = "END",
                 vertical = true,
+                tray(),
                 xkb(),
                 -- audio(),
                 wireless(),
