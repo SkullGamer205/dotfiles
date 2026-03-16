@@ -1,4 +1,5 @@
 -- Add directories
+local configDir_CwC = ((os.getenv("XDG_CONFIG_HOME")) or (os.getenv("HOME") .. "/.config")) .. "/cwc"
 local configDir_Astal = configDir_CwC .. "/module/astal-widgets"
 package.path = package.path .. ";" .. configDir_Astal .. "/?.lua;" .. configDir_Astal .. "/?/init.lua"
 
