@@ -1,0 +1,19 @@
+@use "sass:color";
+@use "../abstracts" as *;
+@use "../components/button" as *;
+@use "../components/box" as *;
+
+$border-width: 1px;
+$border-radius: 0.5em;
+
+.tray {
+  color: $foreground;
+
+  .box {
+    background-color: $background;
+    border: $border-width solid $base02;
+    border-radius: $border-radius;
+    margin: 8px;
+    padding: 8px;
+  }
+}
