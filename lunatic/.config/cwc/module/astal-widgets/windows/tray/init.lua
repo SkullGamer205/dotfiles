@@ -24,6 +24,7 @@ return function(gdkmonitor)
     local tray_box = function()
         return Widget.Box({
             name = "box-tray",
+            class_name = "box",
             vertical = true,
     
             bind(tray, "items"):as(function(items)
@@ -47,14 +48,13 @@ return function(gdkmonitor)
     tray_window = function()
         return Widget.Window({
             name = "TrayBox",
+            class_name = "tray",
             application = App,
             gdkmonitor = gdkmonitor,
             anchor = Anchor.BOTTOM + Anchor.RIGHT,
             exclusivity = "IGNORE",
             visible = false,
-            Widget.Box({
                 tray_box()
-            })
         })
     end
 
