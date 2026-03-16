@@ -38,6 +38,10 @@ $border-radius: 0.5em;
     @include button;
   }
 
+  .button-tray {
+    @include button;
+  }
+
   .box-xkb {
     @include box;
     font-weight: bold;
