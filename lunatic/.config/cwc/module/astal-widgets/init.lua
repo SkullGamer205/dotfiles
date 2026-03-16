@@ -1,11 +1,6 @@
 -- Add directories
-local configDir_CwC = ((os.getenv("XDG_CONFIG_HOME")) or (os.getenv("HOME") .. "/.config")) .. "/cwc"
 local configDir_Astal = configDir_CwC .. "/module/astal-widgets"
-local cwcDir = "/usr/share/cwc/lib"
-
-package.path = package.path .. ";" .. configDir_CwC .. "/?.lua;" .. configDir_CwC .. "/?/init.lua"
 package.path = package.path .. ";" .. configDir_Astal .. "/?.lua;" .. configDir_Astal .. "/?/init.lua"
-package.path = package.path .. ";" .. cwcDir .. "/?.lua;" .. cwcDir .. "/?/init.lua"
 
 -- Main libraries
 pcall(require, "luarocks.loader")
@@ -17,7 +12,9 @@ Debug.info("App", "Starting astal-bar")
 
 local astal = require("astal")
 local App = require("astal.gtk3.app")
-local AstalBar = require("windows.bar")
+
+local AstalBar  = require("windows.bar")
+local AstalTray = require("windows.tray")
 
 Debug.info("App", "Components loaded successfully")
 
@@ -61,7 +58,8 @@ App:start {
             end
     
             local windows = {
-               AstalBar(monitor)
+               AstalBar(monitor),
+               AstalTray(monitor)
             }
     
             for name, window in pairs(windows) do
