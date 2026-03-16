@@ -8,26 +8,36 @@ local Variable = Astal.Variable
 
 return function()
     local tray = Tray.get_default()
-
-    return Widget.Button({
-        class_name="button-tray",
-        on_click_release = function(_, event)
-            if event.button == "PRIMARY" then
-                local tray_box = App:get_window("TrayBox")
-                if tray_box then
-                    if not tray_box:get_visible() then
-                        tray_box:show()
-                    else
-                        tray_box:hide()
+    
+    tray_button = bind(tray, "items"):as(function(items)
+    local traybox = App:get_window("TrayBox")
+        if #items > 0 then
+            return Widget.Button({
+                class_name = "button-tray",
+                on_click_release = function(_, event)
+                    if event.button == "PRIMARY" then
+                        if traybox then
+                            if not traybox:get_visible() then
+                                traybox:show()
+                            else
+                                traybox:hide()
+                            end
+                        end
                     end
-                end
+                end,
+                
+                Widget.Label({
+                    label = #items
+                })
+            })
+        else
+            if traybox then
+                traybox:hide()
             end
-        end,
+            
+            return nil
+        end
+    end)
 
-        Widget.Label({
-            label = bind(tray, "items"):as(function(items)
-                return #items
-            end)
-        }),
-    })
+    return tray_button
 end
