@@ -52,7 +52,7 @@ return function(gdkmonitor)
             application = App,
             gdkmonitor = gdkmonitor,
             anchor = Anchor.BOTTOM + Anchor.RIGHT,
-            exclusivity = "IGNORE",
+            exclusivity = "NORMAL",
             visible = false,
                 tray_box()
         })
