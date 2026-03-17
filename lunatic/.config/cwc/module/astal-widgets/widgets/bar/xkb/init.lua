@@ -16,6 +16,11 @@ return function()
         end,
 
         Widget.Label({
+            setup = function(self)
+                self:hook(self, "destroy", function()
+                    xkb_layout:drop()
+                end)
+            end,
             label = bind(xkb_layout):as(function(current)
                 return current
             end),

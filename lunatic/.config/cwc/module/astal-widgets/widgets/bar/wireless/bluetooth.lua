@@ -19,6 +19,13 @@ return function()
     }
 
     return Widget.Box({
+        setup = function(self)
+            self:hook(self, "destroy", function()
+                bt.adapter:drop()
+                bt.devices:drop()
+            end)
+        end,
+        
         name = "Bluetooth",
         class_name = "box-bluetooth",
         bt.adapter:as(
