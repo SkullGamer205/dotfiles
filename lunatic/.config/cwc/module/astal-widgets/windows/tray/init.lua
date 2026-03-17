@@ -1,17 +1,17 @@
 local astal  = require("astal")
-local Astal  = require("astal.gtk3").Astal
-local Anchor = require("astal.gtk3").Astal.WindowAnchor
+local astal3 = require("astal.gtk3")
+local Astal  = astal3.Astal
+local Widget = astal3.Widget
+local Anchor = astal3.Astal.WindowAnchor
 
 local App    = require("astal.gtk3.app")
 local Apps   = astal.require("AstalApps")
 
-local Widget = require("astal.gtk3").Widget
-
 local Tray   = astal.require("AstalTray")
 local map    = require("lib.common").map
-local bind = astal.bind
+local bind   = astal.bind
 
-local Debug = require("lib.debug")
+local Debug  = require("lib.debug")
 
 return function(gdkmonitor)
     if not gdkmonitor then
@@ -48,7 +48,7 @@ return function(gdkmonitor)
     tray_window = function()
         return Widget.Window({
             name = "TrayBox",
-            class_name = "tray",
+            class_name = "subwindow",
             application = App,
             gdkmonitor = gdkmonitor,
             anchor = Anchor.BOTTOM + Anchor.RIGHT,
