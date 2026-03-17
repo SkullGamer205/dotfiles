@@ -1,0 +1,23 @@
+@use "sass:color";
+@use "../abstracts" as *;
+@use "../components/button" as *;
+@use "../components/box" as *;
+
+$border-width: 1px;
+$border-radius: 0.5em;
+
+.subwindow {
+  color: $foreground;
+
+  .box {
+    background-color: $background;
+    border: $border-width solid $base02;
+    border-radius: $border-radius;
+    margin: 120px 0;
+    padding: calc($border-radius / 2);
+  }
+
+  .button {
+    @include button;
+  }
+}
