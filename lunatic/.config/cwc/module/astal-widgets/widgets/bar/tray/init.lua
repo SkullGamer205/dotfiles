@@ -6,6 +6,8 @@ local Tray  = Astal.require("AstalTray")
 local bind = Astal.bind
 local Variable = Astal.Variable
 
+local Debug = require("lib.debug")
+
 return function()
     local tray = Tray.get_default()
     
@@ -22,6 +24,8 @@ return function()
                             else
                                 traybox:hide()
                             end
+                        else
+                            Debug.error("TrayButton",  "Unable to open TrayBox")
                         end
                     end
                 end,
