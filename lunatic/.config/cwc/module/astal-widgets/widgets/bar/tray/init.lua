@@ -28,7 +28,11 @@ return function()
                 
                 Widget.Label({
                     label = #items
-                })
+                }),
+
+                on_destroy = function()
+                    traybox:destroy()
+                end
             })
         else
             if traybox then
