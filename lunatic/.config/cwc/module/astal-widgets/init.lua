@@ -14,8 +14,9 @@ Debug.info("App", "Starting astal-bar")
 local astal = require("astal")
 local App = require("astal.gtk3.app")
 
-local AstalBar  = require("windows.bar")
-local AstalTray = require("windows.tray")
+local AstalBar   = require("windows.bar")
+local AstalTray  = require("windows.tray")
+local AstalPower = require("windows.power")
 
 Debug.info("App", "Components loaded successfully")
 
@@ -60,7 +61,8 @@ App:start {
     
             local windows = {
                AstalBar(monitor),
-               AstalTray(monitor)
+               AstalTray(monitor),
+               AstalPower(monitor)
             }
     
             for name, window in pairs(windows) do
