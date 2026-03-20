@@ -5,21 +5,26 @@ local Debug = require("lib.debug")
 
 
 return function()
+    local current_window = nil
+
+    local function toggle_window()
+        local powerbox = App:get_window("PowerBox")
+        if powerbox then
+            if not powerbox:get_visible() then
+                powerbox:show()
+            else
+                powerbox:hide() 
+            end
+        else
+            Debug.error("PowerButton", "Unable to open PowerBox")
+        end
+    end
 
     return Widget.Button({
         class_name = "button-power",
         on_click_release = function(_, event)
-            local powerbox = App:get_window("PowerBox")
             if event.button == "PRIMARY" then
-                if powerbox then
-                    if not powerbox:get_visible() then
-                        powerbox:show()
-                    else
-                        powerbox:hide() 
-                    end
-                else
-                    Debug.error("PowerButton", "Unable to open PowerBox")
-                end
+                toggle_window()
             end
         end,
 
