@@ -56,7 +56,7 @@ return function(gdkmonitor)
                 -- audio(),
                 wireless(),
                 battery(),
-                power(),
+                power(gdkmonitor),
             })
         })
     })

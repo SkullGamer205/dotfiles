@@ -39,12 +39,14 @@ local function power_button(props)
     })
 end
 
-return function(gdkmonitor)
+local PowerWindow = {}
+
+function PowerWindow.new(gdkmonitor)
     if not gdkmonitor then
         Debug.error("PowerBox", "No monitor available")
         return nil
     end
-
+    local power_window
     local buttons = {}
     local btns = {
         [1] = {icon = "system-shutdown-symbolic",       cmd = "loginctl poweroff"},
@@ -62,18 +64,18 @@ return function(gdkmonitor)
         })
     end
 
-    power_window = function()
-        return Widget.Window({
-            name = "PowerBox",
-            class_name = "subwindow",
-            application = App,
+    power_window = Widget.Window({
             gdkmonitor = gdkmonitor,
+            -- name = "PowerBox",
+            class_name = "subwindow",
+            -- application = App,
             anchor = Anchor.BOTTOM + Anchor.RIGHT,
             exclusivity = "NORMAL",
             visible = false,
             power_box(buttons)
         })
-    end
 
-    return power_window()
+    return power_window
 end
+
+return PowerWindow
