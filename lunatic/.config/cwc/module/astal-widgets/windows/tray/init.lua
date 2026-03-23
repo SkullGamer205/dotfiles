@@ -4,9 +4,6 @@ local Astal  = astal3.Astal
 local Widget = astal3.Widget
 local Anchor = astal3.Astal.WindowAnchor
 
-local App    = require("astal.gtk3.app")
-local Apps   = astal.require("AstalApps")
-
 local Tray   = astal.require("AstalTray")
 local map    = require("lib.common").map
 local bind   = astal.bind
