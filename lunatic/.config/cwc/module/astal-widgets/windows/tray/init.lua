@@ -13,15 +13,19 @@ local bind   = astal.bind
 
 local Debug  = require("lib.debug")
 
-return function(gdkmonitor)
+local TrayWindow = {}
+
+function TrayWindow.new(gdkmonitor)
     if not gdkmonitor then
         Debug.Error("TrayBox", "No monitor available")
         return nil
     end
 
+    local tray_window
+
     local tray = Tray.get_default()
 
-    local tray_box = function()
+    local function tray_box()
         return Widget.Box({
             name = "box-tray",
             class_name = "box",
@@ -30,8 +34,8 @@ return function(gdkmonitor)
             bind(tray, "items"):as(function(items)
                 return map(items, function(item)
                     return Widget.MenuButton({
-                        tooltip_markup  = bind(item, "tooltip_markup"),
                         use_popover     = false,
+                        tooltip_markup  = bind(item, "tooltip_markup"),
                         menu_model      = bind(item, "menu_model"),
                         action_group    = bind(item, "action-group"):as(function(ag)
                             return { "dbusmenu", ag }
@@ -45,18 +49,18 @@ return function(gdkmonitor)
         })
     end
 
-    tray_window = function()
-        return Widget.Window({
-            name = "TrayBox",
+    tray_window = Widget.Window({
+            -- name = "TrayBox",
             class_name = "subwindow",
-            application = App,
+            -- application = App,
             gdkmonitor = gdkmonitor,
             anchor = Anchor.BOTTOM + Anchor.RIGHT,
             exclusivity = "NORMAL",
             visible = false,
                 tray_box()
         })
-    end
 
-    return tray_window()
+    return tray_window
 end
+
+return TrayWindow

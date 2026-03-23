@@ -15,7 +15,7 @@ local astal = require("astal")
 local App = require("astal.gtk3.app")
 
 local AstalBar   = require("windows.bar")
-local AstalTray  = require("windows.tray")
+-- local AstalTray  = require("windows.tray")
 -- local AstalPower = require("windows.power")
 
 Debug.info("App", "Components loaded successfully")
@@ -60,8 +60,8 @@ App:start {
             end
     
             local windows = {
-               AstalBar(monitor),
-               AstalTray(monitor)
+               AstalBar(monitor)
+               -- AstalTray(monitor)
                -- AstalPower(monitor)
             }
     
