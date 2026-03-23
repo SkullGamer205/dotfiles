@@ -33,7 +33,7 @@ return function(gdkmonitor)
                 class_name = "box-left",
                 halign = "START",
                 vertical = true,
-                launcher(),
+                launcher(gdkmonitor),
                 tags(),
             }),
             
