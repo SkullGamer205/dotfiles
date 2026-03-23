@@ -3,9 +3,6 @@
 @use "../components/button" as *;
 @use "../components/box" as *;
 
-$border-width: 1px;
-$border-radius: 0.5em;
-
 .bar {
   color: $foreground; 
 

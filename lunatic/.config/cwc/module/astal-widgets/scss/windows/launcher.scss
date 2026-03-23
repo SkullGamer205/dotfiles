@@ -2,12 +2,15 @@
 @use "../abstracts" as *;
 @use "../components/button" as *;
 @use "../components/box" as *;
+@use "../components/background-box" as *;
+
+$border-width: 1px;
+$border-radius: 0.5em;
 
 .subwindow {
   color: $foreground;
 
-  .subwindow-box {
-    @include box;
+  .box {
     background-color: $background;
     border: $border-width solid $base02;
     border-radius: $border-radius;
@@ -15,24 +18,15 @@
     padding: calc($border-radius / 2);
   }
 
-  .launcher-box {
+  .button {
+    @include button;
+  }
+
+  .background-box {
     @include background-box;
     border: $border-width solid $base02;
     border-radius: $border-radius;
     margin: 312px 0;
-  }
-
-  .box {
-    @include box;
-    background-color: $background;     
-  }
-
-  .box-outline {
-    @include box-outline;
-    background-color: $background;     
-  }
-
-  .button {
-    @include button;
+    padding: calc($border-radius / 2);
   }
 }
