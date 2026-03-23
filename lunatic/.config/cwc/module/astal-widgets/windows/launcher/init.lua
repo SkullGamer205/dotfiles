@@ -19,22 +19,43 @@ function CurrentWindow.new(gdkmonitor)
 
     local function launcher_box()
         return Widget.CenterBox({
+            -- Background
             class_name = "launcher-box",
             css = string.format("background-image: url('%s')", "./oiai.png"),
-            Widget.Box({
-                width_request = 256,
-                height_request = 384,
-            }),
+
+            -- NEED FUNCTION TO GET MONITOR WIDTH/HEIGHT
+            width_request = 768,
+            height_request = 432,
             
+            -- Right Box
             Widget.Box({
                 class_name = "box-outline",
                 vertical = true,
+                halign = "END",
+                
+                width_request = 352,
+                -- Search
                 Widget.Box({
                     Widget.Entry({
+                        hexpand = true,
+
+                        -- MAYBE ADD TRANSLATION STRINGS?
                         placeholder_text = "Search...",
+                    }),
+
+                    -- Clean Button
+                    Widget.Button({
+                        Widget.Icon({
+                            icon = "edit-clear",
+                        })
                     })
                 }),
+
+                -- List
                 Widget.Box({
+                    Widget.Scrollable({
+                        vexpand = true,
+                    })
                 }),
             }),
         })
