@@ -4,23 +4,10 @@ local Variable  = require("astal").Variable
 
 local Debug = require("lib.debug")
 
-
 return function(gdkmonitor)
     local current_window = nil
     local window_visible = Variable(false)
 
-    -- local function toggle_window()
-    --     local powerbox = App:get_window("PowerBox")
-    --     if powerbox then
-    --         if not powerbox:get_visible() then
-    --             powerbox:show()
-    --         else
-    --             powerbox:hide() 
-    --         end
-    --     else
-    --         Debug.error("PowerButton", "Unable to open PowerBox")
-    --     end
-    -- end
     local function toggle_window(gdkmonitor)
         if window_visible:get() and current_window then
             current_window:hide()

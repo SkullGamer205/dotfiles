@@ -51,7 +51,7 @@ return function(gdkmonitor)
                 valign = "END",
                 halign = "END",
                 vertical = true,
-                tray(),
+                tray(gdkmonitor),
                 xkb(),
                 -- audio(),
                 wireless(),
