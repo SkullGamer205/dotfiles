@@ -23,6 +23,7 @@ return function(gdkmonitor)
         gdkmonitor = gdkmonitor,
         anchor = Anchor.TOP + Anchor.RIGHT + Anchor.BOTTOM,
         exclusivity = "EXCLUSIVE",
+        layer = "BACKGROUND",
 
         Widget.CenterBox({
             class_name = "centerbox",
