@@ -18,10 +18,25 @@ function CurrentWindow.new(gdkmonitor)
     local window
 
     local function launcher_box()
-        return Widget.Box({
-            Widget.Entry({
-                text = "Test",
-            })
+        return Widget.CenterBox({
+            class_name = "launcher-box",
+            css = string.format("background-image: url('%s')", "./oiai.png"),
+            Widget.Box({
+                width_request = 256,
+                height_request = 384,
+            }),
+            
+            Widget.Box({
+                class_name = "box-outline",
+                vertical = true,
+                Widget.Box({
+                    Widget.Entry({
+                        placeholder_text = "Search...",
+                    })
+                }),
+                Widget.Box({
+                }),
+            }),
         })
     end
 
@@ -29,7 +44,7 @@ function CurrentWindow.new(gdkmonitor)
         class_name = "subwindow",
         gdkmonitor = gdkmonitor,
         anchor = Anchor.TOP + Anchor.BOTTOM,
-        exclusivity = "IGNORE",
+        exclusivity = "NORMAL",
         layer = "OVERLAY",
         keymode = "ON_DEMAND",
         visible = false,

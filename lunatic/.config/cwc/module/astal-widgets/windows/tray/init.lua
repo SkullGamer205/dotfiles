@@ -25,7 +25,7 @@ function TrayWindow.new(gdkmonitor)
     local function tray_box()
         return Widget.Box({
             name = "box-tray",
-            class_name = "box",
+            class_name = "subwindow-box",
             vertical = true,
     
             bind(tray, "items"):as(function(items)

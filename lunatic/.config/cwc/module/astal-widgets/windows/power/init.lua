@@ -14,7 +14,7 @@ local Debug  = require("lib.debug")
 
 local power_box = function(p)
     return Widget.Box({
-        class_name = "box",
+        class_name = "subwindow-box",
         expand   = false,
         vertical = true,
         table.unpack(p)
