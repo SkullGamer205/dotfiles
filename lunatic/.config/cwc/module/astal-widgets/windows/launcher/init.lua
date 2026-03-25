@@ -4,6 +4,7 @@ local Astal3    = require("astal.gtk3")
 local Widget    = Astal3.Widget
 local Anchor    = Astal3.Astal.WindowAnchor
 local Gdk       = Astal3.Gdk
+local Variable  = Astal.Variable
 
 local Debug     = require("lib.debug")
 
@@ -18,6 +19,21 @@ function CurrentWindow.new(gdkmonitor)
     local window
 
     local function launcher_box()
+        local apps
+        local app_list = Variable({})
+
+        local entry = Widget.Entry({
+            hexpand = true,
+            -- MAYBE ADD TRANSLATION STRINGS?
+            placeholder_text = "Search...",
+        })
+
+        local entry_cleaner = Widget.Button({
+            Widget.Icon({
+                icon = "edit-clear",
+            })
+        })
+
         return Widget.CenterBox({
             -- Background
             class_name = "launcher-box",
@@ -32,23 +48,12 @@ function CurrentWindow.new(gdkmonitor)
                 class_name = "box-outline",
                 vertical = true,
                 halign = "END",
-                
                 width_request = 352,
+
                 -- Search
                 Widget.Box({
-                    Widget.Entry({
-                        hexpand = true,
-
-                        -- MAYBE ADD TRANSLATION STRINGS?
-                        placeholder_text = "Search...",
-                    }),
-
-                    -- Clean Button
-                    Widget.Button({
-                        Widget.Icon({
-                            icon = "edit-clear",
-                        })
-                    })
+                    entry, 
+                    entry_cleaner,
                 }),
 
                 -- List
