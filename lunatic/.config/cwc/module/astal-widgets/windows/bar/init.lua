@@ -42,7 +42,7 @@ return function(gdkmonitor)
                 class_name = "box-right",
                 vertical = true,
                 player(),
-                clock(),
+                clock(gdkmonitor),
                 notif(),
             }),
 
