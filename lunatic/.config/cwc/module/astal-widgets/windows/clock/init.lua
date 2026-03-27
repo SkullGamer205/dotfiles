@@ -46,7 +46,7 @@ function CurrentWindow.new(gdkmonitor)
                 vertical = true,
                 halign = "CENTER",
                     Time("%H\n%M", "font-size: 400%; font-weight: 800;"),
-                    Time("%S", "font-size: 200%; font-weight: 400;"),
+                    Time("%S", "font-size: 250%; font-weight: 600;"),
             })
         })
     end
@@ -58,8 +58,10 @@ function CurrentWindow.new(gdkmonitor)
         exclusivity = "NORMAL",
         layer = "OVERLAY",
         visible = false,
-
-        clock_box(),
+        Widget.Box({
+            class_name = "box-outline",
+            clock_box(),
+        })
     })
 
     return window
