@@ -7,23 +7,26 @@ local GLib = Astal.require("GLib")
 local Gtk  = lgi.require("Gtk", "3.0")
 local bind = Astal.bind
 
+local Debug = require("lib.debug")
+
 local function Time(format)
-    local function update_time(a)        
+    local function update_time(label)        
         local success, datetime = pcall(function()
             return GLib.DateTime.new_now_local():format(format)
         end)
 
-        if succsess and datetime then
-            a:set_label(datetime)
+        if success and datetime then
+            label:set_label(datetime)
+        else
+            Debug.Error("Time", "Cannot get GLib.DateTime")
         end
     end
-
-    update_time()
 
     local time_label = Widget.Label({
         setup = function(self)
             GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1, function()
-                self:set_label(GLib.DateTime.new_now_local():format(format))
+                -- self:set_label(GLib.DateTime.new_now_local():format(format))
+                update_time(self)
                 return true
             end)
         end,
