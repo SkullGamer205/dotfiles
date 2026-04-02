@@ -1,5 +1,3 @@
-local Astal     = require("astal")
-local App       = require("astal.gtk3.app")
 local Widget    = require("astal.gtk3").Widget
 
 local lgi  = require("lgi")
