@@ -3,8 +3,8 @@ local App       = require("astal.gtk3.app")
 local Widget    = require("astal.gtk3").Widget
 
 local lgi  = require("lgi")
-local GLib = Astal.require("GLib")
-local Gtk  = lgi.require("Gtk", "3.0")
+local GLib = lgi.require('GLib', '2.0')
+local Gtk  = lgi.require('Gtk', '3.0')
 
 local Debug = require("lib.debug")
 
