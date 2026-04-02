@@ -5,7 +5,6 @@ local Widget    = require("astal.gtk3").Widget
 local lgi  = require("lgi")
 local GLib = Astal.require("GLib")
 local Gtk  = lgi.require("Gtk", "3.0")
-local bind = Astal.bind
 
 local Debug = require("lib.debug")
 
@@ -25,7 +24,6 @@ local function Time(format)
     local time_label = Widget.Label({
         setup = function(self)
             GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1, function()
-                -- self:set_label(GLib.DateTime.new_now_local():format(format))
                 update_time(self)
                 return true
             end)
