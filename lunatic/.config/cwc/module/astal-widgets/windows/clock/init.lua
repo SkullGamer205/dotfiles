@@ -1,5 +1,4 @@
 local Widget    = require("astal.gtk3").Widget
-local Anchor    = require("astal.gtk3").Astal.WindowAnchor
 
 local lgi       = require('lgi')
 local GLib      = lgi.require('GLib', '2.0')
@@ -8,8 +7,8 @@ local Gtk       = lgi.require('Gtk', '3.0')
 local Debug     = require("lib.debug")
 
 local function DateTime(format, ...)
-    local defines = {...}
 
+    local defines = {...}
     local success, datetime = pcall(function()
         local dt = GLib.DateTime.new_now_local()
 
@@ -30,27 +29,7 @@ local function DateTime(format, ...)
     end
 end
 
-local function Time(format, css)
-    local function update_t(label)
-        if DateTime(format) then
-            label:set_label(DateTime(format))
-        end
-    end
-
-    local t_label = Widget.Label({
-        css = css or nil,
-        setup = function(self)
-            GLib.timeout_add(GLib.PRIORITY_DEFAULT, 500, function()
-                update_t(self)
-                return true
-            end)
-        end,
-    })
-
-    return t_label
-end
-
-local function Calendar(format, ...)
+local function DateTime_Label(format, css, timeout, ...)
     local defines = {...} or nil
 
     local function update_t(label)
@@ -62,7 +41,7 @@ local function Calendar(format, ...)
     local t_label = Widget.Label({
         css = css or nil,
         setup = function(self)
-            GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function()
+            GLib.timeout_add(GLib.PRIORITY_DEFAULT, timeout, function()
                 update_t(self)
                 return true
             end)
@@ -88,18 +67,20 @@ function CurrentWindow.new(gdkmonitor)
             vexpand = true,
             halign = "CENTER",
             valign = "CENTER",
-            Time("%H\n%M", "font-size: 500%; font-weight: 800;"),
-            Time("%S", "font-size: 250%; font-weight: 600;"),
+            children = {
+                DateTime_Label("%H\n%M", "font-size: 500%; font-weight: 800;", 500),
+                DateTime_Label("%S", "font-size: 250%; font-weight: 600;", 500),
+            },
         })
     end
 
     local function calendar_box()
         local c_buttons = {}
 
-        local function c_date_button(i, css)
+        local function c_date_button(i, style)
             return Widget.Button({
-                class_name = css or nil,
-                Calendar("%a, %d", function(a) return a:add_days(i - 2) end),
+                class_name = style or "button",
+                DateTime_Label("%a, %d", nil, 1000, function(a) return a:add_days(i - 2) end),
 
                 on_click_release = function(_, event)
                     if event.button == "PRIMARY" then
@@ -110,34 +91,35 @@ function CurrentWindow.new(gdkmonitor)
         end
 
         for i = 1, 7 do 
-            
-        c_buttons[i] = c_date_button(i)
+            local now        = GLib.DateTime.new_now_local()
+            local first_date = now:add_days(i - 2) 
+            local is_today   = first_date:get_day_of_year() == now:get_day_of_year()
 
-        -- Highlight current day
-            if GLib.DateTime.new_now_local():add_days(i - 2):get_day_of_year() == GLib.DateTime.new_now_local():get_day_of_year() then
-                c_buttons[i] = c_date_button(i, "button-active")
-            else
-                c_buttons[i] = c_date_button(i, "button")
-            end
+            local style = is_today and "button-active" or "button"
+            c_buttons[#c_buttons + 1] = c_date_button(i, style) 
         end
 
         return Widget.Box({
             vertical = true,
-            table.unpack(c_buttons)
+            halign = "CENTER",
+            valign = "CENTER",
+            children = {table.unpack(c_buttons)}
         })
     end
 
     window = Widget.Window({
         gdkmonitor = gdkmonitor,
         class_name = "subwindow",
-        anchor = Anchor.RIGHT,
+        anchor = "RIGHT",
         exclusivity = "NORMAL",
         layer = "OVERLAY",
         visible = false,
         Widget.Box({
             class_name = "box-outline",
-            clock_box(),
-            calendar_box(),
+            children = {
+                clock_box(),
+                calendar_box(),
+            }
         })
     })
 
