@@ -1,14 +1,10 @@
-local Astal     = require("astal")
-local Astal3    = require("astal.gtk3")
-
-local Widget    = Astal3.Widget
-local Anchor    = Astal3.Astal.WindowAnchor
+local Widget    = require("astal.gtk3").Widget
+local Anchor    = require("astal.gtk3").Astal.WindowAnchor
 
 local lgi       = require('lgi')
 local GLib      = lgi.require('GLib', '2.0')
 local Gtk       = lgi.require('Gtk', '3.0')
 
-local bind      = Astal.bind
 local Debug     = require("lib.debug")
 
 local function DateTime(format, ...)
@@ -142,7 +138,6 @@ function CurrentWindow.new(gdkmonitor)
             class_name = "box-outline",
             clock_box(),
             calendar_box(),
-            -- Calendar("%a, %d", function(a) return a:add_days(-1) end),
         })
     })
 
