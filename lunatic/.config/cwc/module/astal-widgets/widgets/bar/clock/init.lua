@@ -6,16 +6,23 @@ local Gtk  = lgi.require('Gtk', '3.0')
 
 local Debug = require("lib.debug")
 
-local function Time(format)
-    local function update_time(label)        
-        local success, datetime = pcall(function()
-            return GLib.DateTime.new_now_local():format(format)
-        end)
+local function DateTime(format)
+    local success, datetime = pcall(function()
+        return GLib.DateTime.new_now_local():format(format)
+    end)
 
-        if success and datetime then
-            label:set_label(datetime)
-        else
-            Debug.Error("Time", "Cannot get GLib.DateTime")
+    if success and datetime then
+        return datetime
+    else
+        Debug.Error("Time", "Cannot get GLib.DateTime")
+        return nil
+    end
+end
+
+local function Time(format)
+    local function update_time(label)
+        if DateTime(format) then
+            label:set_label(DateTime(format))
         end
     end
 
@@ -30,6 +37,7 @@ local function Time(format)
 
     return time_label
 end
+
 
 return function(gdkmonitor)
     local current_window = nil
