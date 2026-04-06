@@ -32,7 +32,7 @@ end
 local function DateTime_Label(format, css, timeout, ...)
     local defines = {...} or nil
 
-    local function update_t(label)
+    local function update_time(label)
         if DateTime(format, table.unpack(defines)) then
             label:set_label(DateTime(format, table.unpack(defines)))
         end
@@ -42,7 +42,7 @@ local function DateTime_Label(format, css, timeout, ...)
         css = css or nil,
         setup = function(self)
             GLib.timeout_add(GLib.PRIORITY_DEFAULT, timeout, function()
-                update_t(self)
+                update_time(self)
                 return true
             end)
         end,
@@ -107,6 +107,94 @@ function CurrentWindow.new(gdkmonitor)
         })
     end
 
+    local function weather_box()
+        local function current_geo()
+            return Widget.Box({
+                class_name = "box",
+                hexpand = true,
+                Widget.Icon({
+                    icon = "gps", 
+                    css = "font-size: 150%; font-weight: 600;",
+                }),
+                Widget.Label({
+                    halign = "CENTER",
+                    label = "Москва",
+                    css = "font-size: 150%; font-weight: 600;",
+                })
+            })
+        end
+        
+        local function current_weather()
+            return Widget.Box({
+                Widget.Box({
+                    class_name = "box",
+                    Widget.Icon({
+                        icon = "weather-clouds",
+                        css = "font-size: 400%;",
+                    }),
+                }),
+                Widget.Box({
+                    class_name = "box",
+                    vertical = true,
+                    Widget.Label({
+                        css = "font-size: 400%; font-weight: 800;",
+                        label = "0^C"
+                    }),
+                    Widget.Label({
+                        label = "Ощущается как 0^C"
+                    })
+                }),
+            })
+        end
+
+        local function hourly_forecast()
+            local h_forecasts = {}
+
+            local function h_forecast(i)
+                return Widget.Box({
+                    vexpand = true,
+                    vertical = true,
+                    class_name = "box",
+                    Widget.Label({
+                        label = string.format("%d:00", i),
+                    }),
+                    Widget.Icon({
+                        icon = "weather-clouds",
+                    }),
+                    Widget.Label({
+                        label = "0^C",
+                    }),
+                })
+            end
+
+            for i = 1, 24 do 
+                h_forecasts[#h_forecasts + 1] = h_forecast(i - 1) 
+            end
+
+            return Widget.Box({
+                    class_name = "box",
+                Widget.Scrollable({
+                    expand = true,
+                    height_request = 64,
+                    Widget.Box({
+                        children = {table.unpack(h_forecasts)}
+                    })
+                }),
+            })
+        end
+
+        return Widget.Box({
+            vertical = true,
+            halign = "CENTER",
+            valign = "CENTER",
+            children = {
+                current_geo(),
+                current_weather(),
+                hourly_forecast(),
+            },
+        })
+    end
+
     window = Widget.Window({
         gdkmonitor = gdkmonitor,
         class_name = "subwindow",
@@ -117,8 +205,9 @@ function CurrentWindow.new(gdkmonitor)
         Widget.Box({
             class_name = "box-outline",
             children = {
-                clock_box(),
+                weather_box(),
                 calendar_box(),
+                clock_box(),
             }
         })
     })
