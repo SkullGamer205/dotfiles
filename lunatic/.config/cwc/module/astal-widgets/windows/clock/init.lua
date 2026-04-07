@@ -114,36 +114,74 @@ function CurrentWindow.new(gdkmonitor)
                 hexpand = true,
                 Widget.Icon({
                     icon = "gps", 
-                    css = "font-size: 150%; font-weight: 600;",
+                    css = "font-size: 100%; font-weight: 600;",
                 }),
                 Widget.Label({
                     halign = "CENTER",
                     label = "Москва",
-                    css = "font-size: 150%; font-weight: 600;",
+                    css = "font-size: 100%; font-weight: 400;",
                 })
             })
         end
         
         local function current_weather()
             return Widget.Box({
+                vertical = true,
+                class_name = "box",
                 Widget.Box({
-                    class_name = "box",
-                    Widget.Icon({
-                        icon = "weather-clouds",
-                        css = "font-size: 400%;",
+                    Widget.Box({
+                        Widget.Icon({
+                            icon = "weather-clouds",
+                            css = "font-size: 400%;",
+                        }),
+                    }),
+
+                    Widget.Box({
+                        vertical = true,
+                        Widget.Label({
+                            css = "font-size: 300%; font-weight: 600;",
+                            label = "0°C"
+                        }),
+                        Widget.Label({
+                            label = "Облачно"
+                        })
                     }),
                 }),
+
                 Widget.Box({
-                    class_name = "box",
-                    vertical = true,
-                    Widget.Label({
-                        css = "font-size: 400%; font-weight: 800;",
-                        label = "0^C"
+                    Widget.Box({
+                        vertical = true,
+                        class_name = "box",
+                        Widget.Icon({
+                            icon = "nil",
+                        }),
+                        Widget.Label({
+                            label = "0%",
+                        })
                     }),
-                    Widget.Label({
-                        label = "Ощущается как 0^C"
-                    })
-                }),
+
+                    Widget.Box({
+                        vertical = true,
+                        class_name = "box",
+                        Widget.Icon({
+                            icon = "temperature-normal",
+                        }),
+                        Widget.Label({
+                            label = "0°C",
+                        })
+                    }),
+
+                    Widget.Box({
+                        vertical = true,
+                        class_name = "box",
+                        Widget.Icon({
+                            icon = "weather-windy",
+                        }),
+                        Widget.Label({
+                            label = "0km/h",
+                        })
+                    }),
+                })
             })
         end
 
@@ -162,7 +200,7 @@ function CurrentWindow.new(gdkmonitor)
                         icon = "weather-clouds",
                     }),
                     Widget.Label({
-                        label = "0^C",
+                        label = "0°C",
                     }),
                 })
             end
