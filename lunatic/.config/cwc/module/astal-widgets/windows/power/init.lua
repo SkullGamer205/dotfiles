@@ -2,13 +2,9 @@ local astal  = require("astal")
 local astal3 = require("astal.gtk3")
 local Astal  = astal3.Astal
 local Widget = astal3.Widget
-local Anchor = astal3.Astal.WindowAnchor
 
 local App    = require("astal.gtk3.app")
 local Apps   = astal.require("AstalApps")
-
-local map    = require("lib.common").map
-local bind   = astal.bind
 
 local Debug  = require("lib.debug")
 
@@ -66,10 +62,8 @@ function PowerWindow.new(gdkmonitor)
 
     power_window = Widget.Window({
             gdkmonitor = gdkmonitor,
-            -- name = "PowerBox",
             class_name = "subwindow",
-            -- application = App,
-            anchor = Anchor.BOTTOM + Anchor.RIGHT,
+            anchor = 20,
             exclusivity = "NORMAL",
             visible = false,
             power_box(buttons)
