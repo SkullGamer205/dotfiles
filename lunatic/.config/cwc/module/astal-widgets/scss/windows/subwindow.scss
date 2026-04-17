@@ -24,7 +24,11 @@
 
   .box {
     @include box;
-    background-color: $background;     
+    background-color: $background-alt;     
+  }
+
+  .calendar-box {
+    @include box;
   }
 
   .box-outline {
@@ -35,4 +39,11 @@
   .button {
     @include button;
   }
+
+  .button-active {
+    @include button;
+    background-color: $foreground;     
+    color: $background;
+  }
+
 }
