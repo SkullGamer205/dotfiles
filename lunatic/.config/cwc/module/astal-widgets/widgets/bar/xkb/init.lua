@@ -2,6 +2,10 @@ local Astal = require('astal')
 local Widget = require('astal.gtk3').Widget
 local Variable = Astal.Variable
 
+local lgi  = require("lgi")
+local GLib = lgi.require('GLib', '2.0')
+local Gtk  = lgi.require('Gtk', '3.0')
+
 local bind = Astal.bind
 
 return function()
