@@ -3,11 +3,10 @@ local GLib = lgi.require('GLib')
 local Gtk  = lgi.require('Gtk', '3.0')
 
 local function Time(format)
-    local label = os.date(format)
-    local time_label = Gtk.Label.new(label)
+    local time_label = Gtk.Label.new(os.date(format))
 
     local function update_func()
-        time_label:set_text(label)
+        time_label:set_text(os.date(format))
         return true
     end
 
