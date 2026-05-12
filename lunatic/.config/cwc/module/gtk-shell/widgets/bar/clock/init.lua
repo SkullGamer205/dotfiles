@@ -15,8 +15,7 @@ local function Time(format)
 end
 
 return function()
-    local clock_box = Gtk.Box()
-    clock_box:add(Time("%H\n%M"))
-
-    return clock_box
+    local clock_button = Gtk.Button{Time("%H\n%M")}
+    return clock_button
 end
+
