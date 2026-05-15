@@ -13,12 +13,14 @@ return function()
     local middle_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
     local bottom_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
 
+    middle_widgets:add(clock())
+
     local bar_mainbox = Gtk.Box({
         orientation = Gtk.Orientation.VERTICAL,
     })
-    -- bar_mainbox:set_start_widget()
-    bar_mainbox:set_center_widget(clock())
-    -- bar_mainbox:set_end_widget()
+    bar_mainbox:pack_start(top_widgets, false, false, 0)
+    bar_mainbox:set_center_widget(middle_widgets, false, false, 0)
+    bar_mainbox:pack_end(bottom_widgets, false, false, 0)
 
     return bar_mainbox
 end
