@@ -6,15 +6,23 @@ local Gtk = lgi.require("Gtk", "3.0")
 local LayerShell = lgi.require("GtkLayerShell")
 
 local widgetsDir = 'widgets.bar'
-local clock = require(widgetsDir .. '.clock.init')
-local power = require(widgetsDir .. '.power.init')
+local launcher      = require(widgetsDir .. '.launcher.init')
+local player        = require(widgetsDir .. '.player.init')
+local clock         = require(widgetsDir .. '.clock.init')
+local notification  = require(widgetsDir .. '.notification.init')
+local power         = require(widgetsDir .. '.power.init')
 
 return function()
     local    top_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
     local middle_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
     local bottom_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
 
+    top_widgets:add(launcher())
+
+    middle_widgets:add(player())
     middle_widgets:add(clock())
+    middle_widgets:add(notification())
+    
     bottom_widgets:add(power())
 
     local bar_mainbox = Gtk.Box({
