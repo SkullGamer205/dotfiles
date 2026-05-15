@@ -7,6 +7,7 @@ local LayerShell = lgi.require("GtkLayerShell")
 
 local widgetsDir = 'widgets.bar'
 local clock = require(widgetsDir .. '.clock.init')
+local power = require(widgetsDir .. '.power.init')
 
 return function()
     local    top_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
@@ -14,6 +15,7 @@ return function()
     local bottom_widgets = Gtk.Box.new(Gtk.Orientation.VERTICAL, 0)
 
     middle_widgets:add(clock())
+    bottom_widgets:add(power())
 
     local bar_mainbox = Gtk.Box({
         orientation = Gtk.Orientation.VERTICAL,
