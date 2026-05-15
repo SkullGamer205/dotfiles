@@ -1,3 +1,11 @@
+-- Add directories
+local configDir_CwC = ((os.getenv("XDG_CONFIG_HOME")) or (os.getenv("HOME") .. "/.config")) .. "/cwc"
+local configDir_GtkShell = configDir_CwC .. "/module/gtk-shell"
+package.path = package.path .. ";" .. configDir_GtkShell .. "/?.lua;" .. configDir_CwC .. "/?/init.lua"
+
+-- Main libraries
+pcall(require, "luarocks.loader")
+
 -- gtk-layer-shell
 -- ffi
 -- poloz-z/candy-shell :: main.lua
