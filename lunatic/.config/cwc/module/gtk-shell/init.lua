@@ -37,12 +37,13 @@ function app:on_startup()
     local bar_box = WindowBar()
 
     local bar_win = Gtk.ApplicationWindow({
+        title = appTitle,
         application = self,
         child = bar_box,
     })
 
     LayerShell.init_for_window(bar_win)
-    LayerShell.set_layer(bar_win,  LayerShell.Layer.TOP)
+    LayerShell.set_layer(bar_win,  LayerShell.Layer.BOTTOM)
     LayerShell.set_anchor(bar_win, LayerShell.Edge.LEFT,  false)
     LayerShell.set_anchor(bar_win, LayerShell.Edge.RIGHT,  true)
     LayerShell.set_anchor(bar_win, LayerShell.Edge.TOP,    true)
