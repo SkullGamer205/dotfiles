@@ -7,8 +7,24 @@ local function BaseButton()
         icon_name = 'system-shutdown-symbolic'
     })
 
+    local current_window = nil
+    local window_visible = false
+    
     local toggle_window = function()
-        print("PowerButton: Work In Progress")
+        if current_window and window_visible then
+            current_window:hide()
+            window_visible = false
+        else
+            if not current_window then
+                local CurrentWindow = require('windows.power.init')
+                current_window = CurrentWindow.new()
+            end
+            if current_window then
+                current_window:show_all()
+            end
+            window_visible = true
+        end
+        -- print("PowerButton: Work In Progress")
     end
 
     local power_box = Gtk.Box({ power_icon })
