@@ -7,8 +7,23 @@ local function BaseButton()
         icon_name = 'system-search'
     })
 
+    local current_window = nil
+    local window_visible = false
+    
     local toggle_window = function()
-        print("LauncherButton: Work In Progress")
+        if current_window and window_visible then
+            current_window:hide()
+            window_visible = false
+        else
+            if not current_window then
+                local CurrentWindow = require('windows.launcher.init')
+                current_window = CurrentWindow.new()
+            end
+            if current_window then
+                current_window:show_all()
+            end
+            window_visible = true
+        end
     end
 
     local launcher_box = Gtk.Box({ launcher_icon })
