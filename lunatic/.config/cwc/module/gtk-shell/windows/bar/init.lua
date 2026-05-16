@@ -12,6 +12,7 @@ local player        = require(widgetsDir .. '.player.init')
 local clock         = require(widgetsDir .. '.clock.init')
 local notification  = require(widgetsDir .. '.notification.init')
 local tray          = require(widgetsDir .. '.tray.init')
+local xkb_layout    = require(widgetsDir .. '.xkb.init')
 local power         = require(widgetsDir .. '.power.init')
 
 return function()
@@ -26,6 +27,7 @@ return function()
     middle_widgets:add(clock())
     middle_widgets:add(notification())
     
+    bottom_widgets:add(xkb_layout())
     bottom_widgets:add(tray())
     bottom_widgets:add(power())
 
