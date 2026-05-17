@@ -12,6 +12,16 @@ pcall(require, "luarocks.loader")
 local ffi = require("ffi")
 ffi.C = ffi.load("gtk-layer-shell")
 
+-- Debug lib
+local Debug = require('lib.debug')
+Debug.set_config({
+    log_to_file = true,
+    log_to_console = true,
+    log_level = Debug.LEVELS.DEBUG,
+})
+
+Debug.info('Lunatic Shell', 'Initialization...')
+
 -- Base libs
 local lgi = require('lgi')
 local GLib = lgi.require("GLib")
@@ -21,6 +31,8 @@ local LayerShell = lgi.require("GtkLayerShell")
 
 -- Modules
 local WindowBar = require("windows.bar.init")
+
+Debug.info('Lunatic Shell', 'Base libs loaded succesfully')
 
 -- Init Application
 local appID = "io.codeberg.akira25.lunatic-shell.Lua.Gtk3.Shell"
@@ -59,3 +71,4 @@ function app:on_activate()
 end
 
 return app:run(arg)
+
