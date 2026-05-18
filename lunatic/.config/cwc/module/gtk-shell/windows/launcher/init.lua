@@ -35,12 +35,12 @@ local LauncherWindow = {}
 function LauncherWindow.new()
     launcher_window = Gtk.Window({
         title = "LauncherWindow",
-        window_position = Gtk.WindowPosition.MOUSE,
         launcher_box
     })
 
     LayerShell.init_for_window(launcher_window)
     LayerShell.set_layer(launcher_window,  LayerShell.Layer.TOP)
+    LayerShell.set_keyboard_interactivity(launcher_window,  true)
     return launcher_window
 end
 
