@@ -5,5 +5,5 @@ return {
     shift   = 'Shift',
     ctrl    = 'Control',
 
-    modkey  = super or 'Mod4'
+    modkey  = require('config.user').modkey or 'Mod4'
 }
