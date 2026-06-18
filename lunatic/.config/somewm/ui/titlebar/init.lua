@@ -1,0 +1,3 @@
+return {
+    normal = require(... .. '.normal')
+}
