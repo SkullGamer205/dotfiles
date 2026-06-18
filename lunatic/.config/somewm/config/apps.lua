@@ -2,9 +2,9 @@
 -- This is used later as the default terminal and editor to run.
 
 local apps = {}
-    apps.terminal    = foot
+    apps.terminal    = 'foot'
     apps.editor      = os.getenv('EDITOR') or 'vi'
-    apps.editor_cmd  = terminal .. "-e " .. editor
+    apps.editor_cmd  = apps.terminal .. " -e " .. apps.editor
 
     -- Menubar configuration
     require('menubar').utils.terminal = apps.terminal -- Set the terminal for applications that require it

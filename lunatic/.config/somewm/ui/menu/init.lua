@@ -2,7 +2,7 @@ local awful     = require('awful')
 local beautiful = require('beautiful')
 
 local apps = require('config.apps')
-local hk_popup = awful.require('hotkeys_popup')
+local hk_popup = require('awful.hotkeys_popup')
 
 -- @DOC_MENU@
 -- Create a launcher widget and a main menu
