@@ -18,7 +18,7 @@ menu.somewm = {
 
 menu.main = awful.menu({
     items = {
-        { "awesome", menu.somewm, beautiful.awesome_icon },
+        { "somewm", menu.somewm, beautiful.awesome_icon },
         { "open terminal", apps.terminal }
     }
 })
