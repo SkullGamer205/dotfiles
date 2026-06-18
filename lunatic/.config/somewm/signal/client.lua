@@ -4,7 +4,7 @@ client.connect_signal('request::titlebars', function(c)
     -- If a client expressly says not to draw titlebars on it, just don't.
     if c.requests_no_titlebar then return end
 
-    requirre('ui.titlebar').normal(c)
+    require('ui.titlebar').normal(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
