@@ -5,6 +5,8 @@ require('awful.hotkeys_popup.keys')
 local mod = require('binds.mod')
 local modkey = mod.modkey
 
+local apps = require('config.apps')
+
 -- @DOC_GLOBAL_KEYBINDINGS@
 
 -- General Awesome keys
@@ -31,7 +33,7 @@ awful.keyboard.append_global_keybindings({
                   }
               end,
               {description = "lua execute prompt", group = "SomeWM"}),
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(apps.terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),

@@ -71,12 +71,6 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- Initialize lockscreen (must be after beautiful.init)
 require("lockscreen").init()
 
--- @DOC_DEFAULT_APPLICATIONS@
--- This is used later as the default terminal and editor to run.
-terminal = "foot"
-editor = os.getenv("EDITOR") or "vi"
-editor_cmd = terminal .. " -e " .. editor
-
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
