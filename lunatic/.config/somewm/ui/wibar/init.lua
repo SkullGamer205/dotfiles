@@ -7,9 +7,10 @@ return function(s)
     s.mypromptbox = module.promptbox()
     -- Create the wibox
     s.mywibox = awful.wibar({
-        expand   = "none",
-        position = "right",
         screen   = s,
+        position = "right",
+        stretch  = false,
+        height   = 512,
 
         -- @DOC_SETUP_WIDGETS@
         widget   = {
@@ -17,6 +18,7 @@ return function(s)
             { -- Left widgets
                 layout = wibox.layout.fixed.vertical,
                 module.launcher(s),
+                module.layoutbox(s),
                 module.taglist(s),
                 s.mypromptbox,
             },
@@ -26,7 +28,6 @@ return function(s)
                 layout = wibox.layout.fixed.vertical,
                 module.kbd_layout(),
                 wibox.widget.systray(),
-                module.layoutbox(s),
             },
         }
     })
