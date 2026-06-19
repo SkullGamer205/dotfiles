@@ -1,3 +1,4 @@
+local wibox = require('wibox')
 local awful = require('awful')
 
 local mod = require('binds.mod')
@@ -9,6 +10,7 @@ return function(s)
     return awful.widget.taglist({
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
+        layout = wibox.layout.fixed.vertical,
         buttons = {
             awful.button({ }, 1, function(t) t:view_only() end),
             awful.button({ modkey }, 1, function(t)
