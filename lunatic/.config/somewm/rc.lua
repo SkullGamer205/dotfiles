@@ -6,13 +6,7 @@ pcall(require, "luarocks.loader")
 -- @DOC_REQUIRE_SECTION@
 -- Standard awesome library
 local gears = require("gears")
-local awful = require("awful")
-require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
 -- Theme handling library
-local beautiful = require("beautiful")
--- Notification library
 local naughty = require("naughty")
 -- require("awful.hotkeys_popup.keys")
 
@@ -57,13 +51,13 @@ if awesome.x11_fallback_info then
 end
 -- }}}
 
--- {{{ Variable definitions
--- @DOC_LOAD_THEME@
--- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+require("awful.autofocus")
 
 -- Initialize lockscreen (must be after beautiful.init)
 require("lockscreen").init()
+
+-- Themes
+require('theme')
 
 -- Signals
 require('signal')
@@ -74,6 +68,3 @@ require('binds')
 -- Rules
 require('config.rules')
 
--- {{{ Notifications
-
--- }}}
