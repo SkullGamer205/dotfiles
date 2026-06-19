@@ -8,24 +8,24 @@ return function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({
         expand   = "none",
-        position = "right",
+        position = "top",
         screen   = s,
 
         -- @DOC_SETUP_WIDGETS@
         widget   = {
-            layout = wibox.layout.align.vertical,
+            layout = wibox.layout.align.horizontal,
             { -- Left widgets
-                layout = wibox.layout.fixed.vertical,
+                layout = wibox.layout.fixed.horizontal,
                 module.launcher(s),
                 module.taglist(s),
                 s.mypromptbox,
             },
-            -- module.tasklist(s), -- Middle widget
-                module.clock(),
+            module.tasklist(s), -- Middle widget
             { -- Right widgets
-                layout = wibox.layout.fixed.vertical,
+                layout = wibox.layout.fixed.horizontal,
                 module.kbd_layout(),
                 wibox.widget.systray(),
+                module.clock(),
                 module.layoutbox(s),
             },
         }
