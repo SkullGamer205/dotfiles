@@ -36,7 +36,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         end
     else
         -- Create all tags and attach layouts to each of them
-        awful.tag(require('config.user').tags, s, require('config.user').default_layout)
+        awful.tag(require('config.user').tags, s, awful.layout.layouts[1])
     end
 
     -- Attach a wibar to each screen

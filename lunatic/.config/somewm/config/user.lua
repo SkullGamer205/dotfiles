@@ -4,11 +4,12 @@ local awful = require('awful')
 return {
     modkey = "Mod4",
 
-    tags = { '1', '2', '3', '4', '5', '6', '7', '8', '9' },
+    tags = { '1', '2', '3', '4', '5', '6', '7', '8' },
 
     layouts = {
         awful.layout.suit.floating,
         awful.layout.suit.tile,
+        awful.layout.suit.carousel,
         awful.layout.suit.tile.left,
         awful.layout.suit.tile.bottom,
         awful.layout.suit.tile.top,
@@ -20,7 +21,5 @@ return {
         awful.layout.suit.max.fullscreen,
         awful.layout.suit.magnifier,
         awful.layout.suit.corner.nw,
-    },
-
-    default_layout = awful.layout.layouts[1]
+    }
 }
