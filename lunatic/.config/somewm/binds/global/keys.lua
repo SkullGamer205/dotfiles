@@ -22,8 +22,6 @@ awful.keyboard.append_global_keybindings({
               {description = "reload awesome", group = "SomeWM"}),
     awful.key({ modkey, mod.shift }, "q", awesome.quit,
               {description = "quit awesome", group = "SomeWM"}),
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
-              {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey, mod.shift }, "Escape", function() awesome.lock() end,
               {description = "lock screen", group = "SomeWM"}),
     awful.key({ modkey }, "x",
@@ -99,20 +97,63 @@ awful.keyboard.append_global_keybindings({
               {description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)  end,
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, mod.shift }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
+    awful.key({ modkey, mod.shift }, "h",     function ()
+        if awful.layout.get(awful.screen.focused()).name == "carousel" then
+            awful.layout.suit.carousel.consume_window(1)
+        else
+            awful.tag.incnmaster( 1, nil, true)
+        end
+    end,
               {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, mod.shift }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact(0.05)   end,
+              {description = "increase master width factor", group = "layout"}),
+    awful.key({ modkey, mod.shift }, "l",     function ()
+        if awful.layout.get(awful.screen.focused()).name == "carousel" then
+            awful.layout.suit.carousel.consume_window(-1)
+        else
+            awful.tag.incnmaster(-1, nil, true)
+        end
+    end,
               {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, mod.ctrl  }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
+    awful.key({ modkey, mod.ctrl  }, "h",     function ()
+        if awful.layout.get(awful.screen.focused()).name == "carousel" then
+            awful.layout.suit.carousel.adjust_column_width(-0.05)
+        else
+            awful.tag.incncol( 1, nil, true)
+        end
+    end,
               {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, mod.ctrl  }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
+    awful.key({ modkey, mod.ctrl  }, "l",     function ()
+        if awful.layout.get(awful.screen.focused()).name == "carousel" then
+            awful.layout.suit.carousel.adjust_column_width(-0.05)
+        else
+            awful.tag.incncol(-1, nil, true)
+        end
+    end,
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, mod.shift }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+})
+
+-- Carousel-only keybinds
+
+awful.keyboard.append_global_keybindings({
+    awful.key({modkey             }, 'bracketright', function() 
+        awful.layout.suit.carousel.cycle_column_width()
+    end,{description = 'cycle column width', group = 'carousel'}),
+    awful.key({modkey, mod.shift  }, 'e', function() 
+        awful.layout.suit.carousel.expel_window()
+    end,{description = 'expel window to new column', group = 'carousel'}),
+    -- awful.key({modkey             }, 'h', function() 
+    --     awful.layout.suit.carousel.adjust_column_width(-0.125)
+    -- end,{description = 'narrow column', group = 'carousel'})
+    -- awful.key({modkey             }, 'l', function() 
+    --     awful.layout.suit.carousel.adjust_column_width(0.125)
+    -- end,{description = 'widen column column', group = 'carousel'})
 })
 
 -- @DOC_NUMBER_KEYBINDINGS@
