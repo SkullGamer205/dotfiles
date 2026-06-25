@@ -12,6 +12,9 @@ M.image = function(image, id, color, highlight_color)
         id     = id or nil,
         halign = 'center',
         valign = 'center',
+        resize = true,
+        upscale = true,
+        -- downscale = true,
     })
 
     widget:connect_signal('mouse::enter', function(c)
