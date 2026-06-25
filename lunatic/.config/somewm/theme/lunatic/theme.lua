@@ -76,6 +76,17 @@ theme.menu_height = dpi(16)
 theme.menu_width = dpi(128)
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 
+-- Shadows
+theme.shadow_enabled        = true
+theme.shadow_radius         = 0
+theme.shadow_opacity        = 0.5
+theme.shadow_offset_x       = 10
+theme.shadow_offset_y       = 10
+theme.shadow_clip           = false
+
+-- Disable shadow for panels/wiboxes
+theme.shadow_drawin_enabled = false
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
