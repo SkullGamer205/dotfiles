@@ -3,7 +3,7 @@ local beautiful  = require('beautiful')
 
 local SimpleWidgets = require('utils.simple_widgets')
 
-local icon      = SimpleWidgets.image(beautiful.launcher_icon, nil, beautiful.fg_normal, beautiful.palette.magenta)
+local icon      = SimpleWidgets.image(beautiful.launcher_icon, nil, beautiful.fg_normal, beautiful.bg_focus)
 local widget    = SimpleWidgets.square(icon, beautiful.bg_normal)
 
 widget:add_button(awful,button({}, 1, function()

@@ -10,7 +10,7 @@ return function(s)
         screen   = s,
         position = "right",
         stretch  = false,
-        height   = 512,
+        height   = 720,
 
 
         -- @DOC_SETUP_WIDGETS@
@@ -29,6 +29,7 @@ return function(s)
                 layout = wibox.layout.fixed.vertical,
                 module.kbd_layout(),
                 wibox.widget.systray(),
+                module.power(s),
             },
         }
     })
