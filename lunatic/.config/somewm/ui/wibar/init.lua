@@ -12,6 +12,7 @@ return function(s)
         stretch  = false,
         height   = 512,
 
+
         -- @DOC_SETUP_WIDGETS@
         widget   = {
             layout = wibox.layout.align.vertical,

@@ -2,8 +2,7 @@ local beautiful = require('beautiful')
 local wibox     = require('wibox')
 local awful     = require('awful')
 local gears     = require('gears')
-local cairo   = require('lgi').cairo
-
+local cairo     = require('lgi').cairo
 
 local mod = require('binds.mod')
 local modkey = mod.modkey
@@ -53,13 +52,13 @@ return function(s)
         local color
          
         if      tag.selected then
-            color = beautiful.fg_focus
+            color = beautiful.taglist_fg_focus
         elseif  tag.urgent then
             color = beautiful.bg_urgent
         elseif  #tag:clients() > 0 then
             color = beautiful.fg_normal
         else
-            color = beautiful.bg_focus
+            color = beautiful.taglist_bg_focus
         end
 
         ico.image       = gears.color.recolor_image(dot, color)
@@ -85,7 +84,6 @@ return function(s)
                 -- margins = 2,
                 {
                     widget = wibox.widget.imagebox,
-                    -- icon   = ,
                     id = 'icon_role',
                 },
             },
