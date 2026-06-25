@@ -141,6 +141,7 @@ theme.titlebar_maximized_button_focus_active    = themes_path .. "titlebar/maxim
 theme.wallpaper                                 = themes_path .. "background.png"
 
 -- You can use your own layout icons like this:
+theme.layout_carousel                           = themes_path .. "layouts/carousel.svg"
 theme.layout_fairh                              = themes_path .. "layouts/fairhw.png"
 theme.layout_fairv                              = themes_path .. "layouts/fairvw.png"
 theme.layout_floating                           = themes_path .. "layouts/floatingw.png"
@@ -160,6 +161,14 @@ theme.layout_cornerse                           = themes_path .. "layouts/corner
 
 -- Launcher
 theme.launcher_icon                             = themes_path .. 'icons/search.svg'
+
+-- Power
+theme.power_shutdown                            = themes_path .. 'icons/system-shutdown.svg'
+theme.power_reboot                              = themes_path .. 'icons/system-reboot.svg'
+theme.power_suspend                             = themes_path .. 'icons/system-suspend.svg'
+theme.power_logout                              = themes_path .. 'icons/system-log-out.svg'
+theme.power_lockscreen                          = themes_path .. 'icons/system-lock-screen.svg'
+theme.power_hibernate                           = themes_path .. 'icons/system-hibernate.svg'
 
 -- Generate Awesome icon:
 theme.awesome_icon                              = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="115.77953"
+   height="96"
+   viewBox="0 0 115.77953 96"
+   sodipodi:docname="icons8-view-carousel-96.png"
+   inkscape:version="0.0"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.78222656"
+     inkscape:cx="-329.18851"
+     inkscape:cy="118.25218"
+     inkscape:window-width="1900"
+     inkscape:window-height="1022"
+     inkscape:window-x="8"
+     inkscape:window-y="8"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="115.77953"
+       height="96"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1"
+     transform="translate(-6.1102354,-16)">
+    <image
+       width="128"
+       height="128"
+       preserveAspectRatio="none"
+       style="display:none;image-rendering:optimizeSpeed"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB&#10;7ElEQVR4nO2dQU4kQQwE8yHLmbcvGmk/tiDgA4mQ5rKIaQuqje3aCClvY7knA6GqS48EAAAAAAAA&#10;AABwLneSLpJeJbl5XiX9kXSvjcp/bFCsv5in67OP59KgTH8zD9qACf92fCMv2gAPz3iqCzQCZmc8&#10;1QV6BwFH5/iI3QU4+x4RneO/+oDTEpF+j7gkPaCHZOX7PfzEOX7lAT0gK9/vlHtE5gN6QLL7SV9Q&#10;XaARMDsRCBAClubdPNn9pC+oLtAImJ0IBAgBS/Nunux+0hdUF2gEzE4EAoSApXk3T3Y/6QuqCzQC&#10;ZicCAULA0rybJ7uf9AXVBRoBsxOBACFgad7Nk91P+oLqAo2A2YlAgBCwNO/mye4nfUF1gUbA7EQg&#10;QAhYmnfzZPeTvqC6QCNgdiIQIAQszbt5svtJX1BdoBEwOxEIEAKW5t082f2kL6gu0AiYnQgECAFL&#10;826e7H7SF1QXaATMTgQChICleTdPdj/pC6oLNAJmJwIB2lwAL2w65mj2WSfw/gI6BNzmaPa3TuD+&#10;+gI6BHzOrbm/kn7pJO6uL6B7fwcaAv7l4+dfrn/5p5W/yu4C2lNdoBEwO+OpLtD/u4DJP+DwrA2I&#10;7hFunFPO8dVE9wg3zann+GqO7hFulnbneAAAAAAAAAAA0Ba8Aess012Rxee9AAAAAElFTkSuQmCC&#10;&#10;"
+       id="image1" />
+    <rect
+       style="fill:#000000;stroke:none;stroke-width:4;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect1"
+       width="64"
+       height="96"
+       x="32"
+       y="16" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3.77953;stroke-linejoin:round;stroke-miterlimit:8;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect1-2"
+       width="16"
+       height="80"
+       x="104"
+       y="24" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3.77953;stroke-linejoin:round;stroke-miterlimit:8;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect1-2-6"
+       width="16"
+       height="80"
+       x="8"
+       y="24" />
+  </g>
+</svg>
