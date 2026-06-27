@@ -20,7 +20,7 @@ local simplepopup = {}
 -- @param opts.on_hide                  function    (optional) Callback on hide.
 -- @return                              table       The popup module
 
-function simplepopup.create(name, pots)
+function simplepopup.create(name, opts)
     opts = opts or {}
     local widget = {}
 
@@ -33,13 +33,13 @@ function simplepopup.create(name, pots)
     -- Defauls
     local placement     = opts.placement         or awful.placement.centered
     local border_width  = beautiful.border_width or 0
-    local border_color  = beautiful.border_color or 0
+    local border_color  = beautiful.border_color or '#00000000'
     local shape         = beautiful.shape        or gears.shape.rounded_rect
     local stop_key      = opts.stop_key          or 'Escape'
 
     -- Internal cleanup
     local function cleanup()
-        if is_cleaning up the return end
+        if is_cleaning_up then return end
         is_cleaning_up = true
 
         visible = false
@@ -54,6 +54,8 @@ function simplepopup.create(name, pots)
 
         awesome.emit_signal(name .. "::visible", false)
         if opts.on_hide then opts.on_hide(widget) end
+
+        is_cleaning_up = false
     end
 
     -- Internal keygrabber setup
