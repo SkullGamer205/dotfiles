@@ -22,9 +22,9 @@ local function create_button(option, index)
     local is_selected = index == selected_index
 
     local icon_widget = SimpleIcon(option.icon, {
-        main_color      = beautiful.fg_normal,
         highlight_color = beautiful.bg_focus,
-        width       = beautiful.font:match("%d+$") * 8,
+        main_color      = is_selected and beautiful.bg_focus or beautiful.fg_normal,
+        width           = beautiful.font:match("%d+$") * 8,
     })
 
     local text_widget = wibox.widget({
@@ -60,32 +60,88 @@ local function create_power_widget()
     end
 
     return wibox.widget({
-        widget  = wibox.container.background,
+        widget  = wibox.container.place,
+        halign  = 'center',
+        valign  = 'center',
         {
-            widget  = wibox.container.place,
-            halign  = 'center',
-            valign  = 'center',
+            widget          = wibox.container.background,
+            bg              = beautiful.bg_normal,
+            border_color    = beautiful.border_color_active,
+            border_width    = beautiful.border_width * 2,
             {
-                layout  = wibox.layout.fixed.vertical,
-                spacing = 32,
-                -- Title
+                widget  = wibox.container.margin,
+                margins = 32,
                 {
-                    widget  = wibox.widget.textbox,
-                    halign  = 'center',
-                    text    = 'Hello World',
-                },
-                {
-                    layout = wibox.layout.fixed.horizontal,
-                    table.unpack(buttons),
-                },
+                    layout  = wibox.layout.fixed.vertical,
+                    spacing = 32,
+                    -- Title
+                    {
+                        widget  = wibox.widget.textbox,
+                        halign  = 'center',
+                        text    = 'What you would like to do?',
+                        font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match("%d+$") * 2
+                    },
+        
+                    -- Buttons
+                    {
+                        layout = wibox.layout.fixed.horizontal,
+                        table.unpack(buttons),
+                    },
+        
+                    -- Hint
+                    {
+                        widget  = wibox.widget.textbox,
+                        halign  = 'center',
+                        text    = 'Press Escape to cancel',
+                        font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match("%d+$") - 2
+                    },
+                }
             },
-        }
+        },
     })
+end
+
+local function execute_selected(w)
+    if options[selected_index] then
+        w:hide()
+        options[selected_index].command()
+    end
 end
 
 local powermenu = SimplePopup('powermenu', {
     main_widget = create_power_widget,
     placement   = awful.placement.maximize,
+
+    on_show     = function() selected_index = 1 end,
+
+    keypressed_callback = function(w, key, _)
+        if      key == "Return" then
+            w.hide()
+            execute_selected()
+        elseif  key == "Left" then 
+            selected_index = math.max(1, selected_index - 1)
+            w.refresh()
+        elseif  key == "Right" then 
+            selected_index = math.min(#options, selected_index + 1)
+            w.refresh()
+        else
+            -- Check for shortcut keys
+            for i, option in pairs(options) do
+                if key == option.key then
+                    selected_index = i
+                    w.refresh()
+                    
+                    gears.timer.start_new(0.15, function()
+                        execute_selected()
+                        return false
+                    end)
+
+                    w.hide()
+                    return
+                end
+            end
+        end
+    end,
 })
 
 return powermenu
