@@ -7,6 +7,8 @@ local gears     = require('gears')
 -- @param w                     function    Some widget.
 -- @param opts                  table       Configuration and callbacks.
 -- @param opts.id               string      (optional) Widget identificator (used for modifying).
+-- @param opts.width            intenger    (optional) Box width.
+-- @param opts.height           intenger    (optional) Box height.
 -- @param opts.margin           intenger    (optional) Size of margins (in pixels).
 -- @param opts.main_color       string      (optional) Base background color.
 -- @param opts.highlight_color  string      (optional) Color when mouse hovering  over an box.
@@ -21,15 +23,19 @@ local simplebox = {}
         -- Defaults
         local id                = opts.id               or nil
         local margin            = opts.margin           or 0
+        local width             = opts.width            or nil
+        local height            = opts.height           or width
         local main_color        = opts.main_color       or nil
         local highlight_color   = opts.highlight_color  or main_color
         local f_left_click      = opts.on_clicked       or nil
         local f_right_click     = opts.on_right_clicked or nil
 
         local widget = wibox.widget({
-            widget  = wibox.container.background,
-            shape   = gears.shape.rectangle,
-            bg      = main_color,
+            widget          = wibox.container.background,
+            shape           = gears.shape.rectangle,
+            bg              = main_color,
+            forced_width    = width,
+            forced_height   = height,
             {
                 widget      = wibox.container.margin,
                 margins     = margin,
