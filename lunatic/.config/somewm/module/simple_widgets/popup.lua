@@ -99,7 +99,10 @@ function simplepopup.create(name, opts)
                 border_width    = border_width,
                 border_color    = border_color,
                 shape           = shape,
-                bg              = '#00000000'   -- transparent
+                bg              = '#00000000',   -- transparent
+
+                maximum_width   = s.geometry.width,
+                maximum_height  = s.geometry.height,
             })
         end
 
