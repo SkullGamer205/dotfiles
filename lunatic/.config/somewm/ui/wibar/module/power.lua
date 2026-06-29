@@ -11,8 +11,8 @@ local icon      = SimpleIcon.create_icon(beautiful.power_shutdown, {
 })
 
 local widget = SimpleBox.create_box(icon, {
-    main_color = beautiful.bg_normal,
-    on_clicked = function() PowerMenu.toggle() end
+    main_color      = beautiful.bg_normal,
+    on_clicked      = function() PowerMenu.toggle() end
 })
 
 return function()
