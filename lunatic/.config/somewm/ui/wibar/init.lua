@@ -1,5 +1,6 @@
-local awful = require('awful')
-local wibox = require('wibox')
+local awful     = require('awful')
+local beautiful = require('beautiful')
+local wibox     = require('wibox')
 
 local module = require(... .. '.module')
 
@@ -11,8 +12,9 @@ return function(s)
         position = "right",
         stretch  = false,
         height   = 720,
-
-
+        margins = {
+            right = beautiful.useless_gap,
+        },
         -- @DOC_SETUP_WIDGETS@
         widget   = {
             layout = wibox.layout.align.vertical,
