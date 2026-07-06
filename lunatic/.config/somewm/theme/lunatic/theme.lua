@@ -17,7 +17,7 @@ local theme = {}
 
 
 -- Font
-theme.font_name     = 'Roboto'
+theme.font_name     = 'Departure Mono'
 theme.font_size     = 10
 theme.font          = theme.font_name .. ' ' .. theme.font_size
 
@@ -152,7 +152,7 @@ theme.titlebar_maximized_button_focus_active    = themes_path .. "titlebar/maxim
 theme.wallpaper                                 = themes_path .. "background.png"
 
 -- You can use your own layout icons like this:
-theme.layout_carousel                           = themes_path .. "layouts/carousel.svg"
+theme.layout_carousel                           = gears.color.recolor_image(themes_path .. "layouts/carousel.svg",theme.fg_normal)
 theme.layout_fairh                              = themes_path .. "layouts/fairhw.png"
 theme.layout_fairv                              = themes_path .. "layouts/fairvw.png"
 theme.layout_floating                           = themes_path .. "layouts/floatingw.png"
