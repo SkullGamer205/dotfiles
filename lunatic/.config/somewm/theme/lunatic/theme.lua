@@ -26,10 +26,10 @@ theme.font          = theme.font_name .. ' ' .. theme.font_size
 
 -- Colors
 
-theme.palette = {
+theme.palette       = user_config.palette or {
     background      = '#1d1f21',
     foreground      = '#c5c8c6',
-    
+
     black           = '#1d1f21',
     red             = '#cc6666',
     green           = '#b5bd68',
@@ -64,7 +64,7 @@ theme.fg_minimize           = theme.palette.background
 
 -- Borders
 theme.useless_gap           = dpi(4)
-theme.border_width          = dpi(2)
+theme.border_width          = dpi(4)
 theme.border_color_normal   = theme.palette.background
 theme.border_color_active   = theme.palette.foreground
 theme.border_color_marked   = theme.palette.yellow
@@ -74,8 +74,8 @@ theme.taglist_bg_focus      = '#444444'
 theme.taglist_fg_focus      = theme.palette.magenta
 
 -- Menu
-theme.menu_height = dpi(16)
-theme.menu_width = dpi(128)
+theme.menu_height = dpi(theme.font_size) * 1.6
+theme.menu_width  = dpi(theme.font_size) * 16
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 
 -- Shadows

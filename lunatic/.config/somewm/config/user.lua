@@ -26,5 +26,28 @@ return {
     font = {
         name = 'PixelCode',
         size = '10',
+    },
+
+    palette = {
+        background      = '#1d1f21',
+        foreground      = '#c5c8c6',
+        
+        black           = '#1d1f21',
+        red             = '#cc6666',
+        green           = '#b5bd68',
+        yellow          = '#f0c674',
+        blue            = '#81a2b5',
+        magenta         = '#b294bb',
+        cyan            = '#8abeb7',
+        white           = '#c5c8c6',
+    
+        bright_black    = '#373b41',
+        bright_red      = '#d54e53',
+        bright_green    = '#b9ca4a',
+        bright_yellow   = '#e7c547',
+        bright_blue     = '#7aa6da',
+        bright_magenta  = '#c397d8',
+        bright_cyan     = '#70c0b1',
+        bright_white    = '#eaeaea',
     }
 }
