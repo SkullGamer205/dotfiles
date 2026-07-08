@@ -3,7 +3,6 @@ local awful = require('awful')
 -- Specify user preferences for SomeWM's behavior
 return {
     modkey = "Mod4",
-
     -- tags = { '1', '2', '3', '4', '5', '6', '7', '8' },
     tags = { '1', '2', '3', '4'},
 
@@ -22,5 +21,10 @@ return {
         -- awful.layout.suit.max.fullscreen,
         -- awful.layout.suit.magnifier,
         -- awful.layout.suit.corner.nw,
+    },
+
+    font = {
+        name = 'PixelCode',
+        size = '10',
     }
 }

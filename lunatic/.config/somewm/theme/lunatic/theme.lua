@@ -13,12 +13,14 @@ local gfs = gears.filesystem
 local themes_path = string.match(gfs.get_configuration_dir(), '^(/?.-)/*$') .. '/theme/lunatic/'
 -- local themes_path = gfs.get_themes_dir()
 
+local user_config = require('config.user')
+
 local theme = {}
 
 
 -- Font
-theme.font_name     = 'Departure Mono'
-theme.font_size     = 10
+theme.font_name     = user_config.font.name or 'sans'
+theme.font_size     = user_config.font.size or 8
 theme.font          = theme.font_name .. ' ' .. theme.font_size
 
 
