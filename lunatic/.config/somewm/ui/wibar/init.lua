@@ -2,7 +2,7 @@ local awful     = require('awful')
 local beautiful = require('beautiful')
 local wibox     = require('wibox')
 
-local module = require(... .. '.module')
+local module = require('ui.widgets')
 
 return function(s)
     s.mypromptbox = module.promptbox()
@@ -29,7 +29,7 @@ return function(s)
                 module.clock(),
             { -- Right widgets
                 layout = wibox.layout.fixed.vertical,
-                module.kbd_layout(),
+                module.kbd(),
                 wibox.widget.systray(),
                 module.power(s),
             },
