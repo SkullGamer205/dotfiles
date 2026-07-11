@@ -25,4 +25,12 @@ nvim, zsh, fzf, zoxide, npm, fastfetch, tealdeer (tldr)
 
 wayland, wayland-protocols, wayland-utils 
 -->
+
+|**Fonts**|**Links**|
+|:---------:|:--------------|
+|Fixedsys Excelsion|[(Github)](https://github.com/kika/fixedsys)|
+|Cairopixel|[(itch.io)](https://ggbot.itch.io/cairopixel-font)|
+|Galmuri|[(Github)](https://github.com/quiple/galmuri) [(Site)](https://quiple.dev/font/galmuri)|
+|Unifont|[(Github)](https://github.com/multitheftauto/unifont) [(Site)](https://unifoundry.com/unifont/index.html)|
+|SerenityOS Emoji Font|[(Github)](https://github.com/linusg/serenityos-emoji-font) [(Site)](https://linusg.github.io/serenityos-emoji-font/)|
 <p align="center">Last Edit: 2026.07.11</p>
