@@ -1,3 +1,4 @@
 return {
-    normal = require(... .. '.normal')
+    normal = require(... .. '.normal'),
+    minimal = require(... .. '.minimal')
 }
