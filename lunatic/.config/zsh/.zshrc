@@ -76,5 +76,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# export LUA_PATH='/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;/usr/lib/lua/5.4/?.lua;/usr/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/akira25/.local/share/luarocks/share/lua/5.4/?.lua;/home/akira25/.local/share/luarocks/share/lua/5.4/?/init.lua'
+# export LUA_CPATH='/usr/lib/lua/5.4/?.so;/usr/lib/lua/5.4/loadall.so;./?.so;/home/akira25/.local/share/luarocks/lib/lua/5.4/?.so'
+export PATH='/home/akira25/.local/share/luarocks/bin:/home/akira25/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/akira25/.local/bin:/home/akira25/Applications/usr/bin'
+
 # Sources
 source "$HOME/.config/zsh/custom_widgets/cheatsheets.zsh"
