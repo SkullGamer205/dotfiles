@@ -1,3 +1,0 @@
-return {
-    global = require(... .. '.global')
-}

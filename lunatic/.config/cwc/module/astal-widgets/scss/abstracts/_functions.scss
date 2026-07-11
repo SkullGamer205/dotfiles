@@ -1,9 +1,0 @@
-@use "sass:string";
-
-@function to-rem($px) {
-  @return math.div($px, 16px) * 1rem;
-}
-
-@function gtkalpha($color, $alpha) {
-  @return string.unquote("alpha(#{$color},#{$alpha})");
-}
