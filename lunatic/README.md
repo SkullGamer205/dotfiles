@@ -1,4 +1,4 @@
-[🔙 Back](https://github.com/SkullGamer205/dotfiles/blob/stow-master/README.md#lunatic) 
+[🔙 Back](../README.md#lunatic) 
 
 # <div align="center">Lunatic</div>
 ### <div align="center">SomeWM Rice.</div>  
