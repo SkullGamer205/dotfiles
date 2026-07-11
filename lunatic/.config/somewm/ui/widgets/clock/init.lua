@@ -1,6 +1,9 @@
 local wibox = require('wibox')
 local gears = require('gears')
 
+local SimpleBox     = require('module.simple_widgets.box').create_box
+local ClockWidget   = require(... .. '.widget')
+
 local function Time(format)
     -- Make a simple widget
     local time_widget = wibox.widget({
@@ -26,7 +29,11 @@ local function Time(format)
     -- return widget
     return time_widget
 end
-    
+
+local widget = SimpleBox(Time('%H\n%M'), {
+    on_clicked      = function() ClockWidget.toggle() end
+})
+
 return function()
-    return Time('%H\n%M\n%S')
+    return widget
 end
