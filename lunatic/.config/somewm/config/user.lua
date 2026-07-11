@@ -24,8 +24,8 @@ return {
     },
 
     font = {
-        name = 'PixelCode',
-        size = '10',
+        name = 'Fixedsys Excelsior',
+        size = '12',
     },
 
     -- Everforest dark
