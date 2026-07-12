@@ -18,7 +18,8 @@
 |**WM**|[SomeWM](https://github.com/trip-zip/somewm)|
 |**Shell**|[Zsh](https://www.zsh.org/)|
 |**Editor**|[NeoVim](https://github.com/neovim/neovim)|
-<!-- |**Terminal**|[Urxvt](https://github.com/exg/rxvt-unicode)| -->
+<!-- |**Icon Theme**|[Pixora](https://github.com/tsora1603/pixora-icons)| -->
+<!-- |**Terminal**|[WezTerm](https://github.com/wezterm/wezterm)| -->
 
 <!--
 nvim, zsh, fzf, zoxide, npm, fastfetch, tealdeer (tldr)
@@ -33,4 +34,15 @@ wayland, wayland-protocols, wayland-utils
 |Galmuri|[(Github)](https://github.com/quiple/galmuri) [(Site)](https://quiple.dev/font/galmuri)|
 |Unifont|[(Github)](https://github.com/multitheftauto/unifont) [(Site)](https://unifoundry.com/unifont/index.html)|
 |SerenityOS Emoji Font|[(Github)](https://github.com/linusg/serenityos-emoji-font) [(Site)](https://linusg.github.io/serenityos-emoji-font/)|
+
+# Sources
+- [awesome-from-scratch](https://github.com/trip-zip/awesome-from-scratch) by trip-zip
+- HoNamDuong's [dotfiles](https://github.com/HoNamDuong/.dotfiles)
+- [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets) by streetturtle
+
+<!-- - [Awesome-Freedesktop](https://github.com/lcpz/awesome-freedesktop) by lcpz -->
+
+# Roadmap
+[Here](issues/1)
+
 <p align="center">Last Edit: 2026.07.11</p>
