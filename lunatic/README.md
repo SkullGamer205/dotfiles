@@ -43,6 +43,6 @@ wayland, wayland-protocols, wayland-utils
 <!-- - [Awesome-Freedesktop](https://github.com/lcpz/awesome-freedesktop) by lcpz -->
 
 # Roadmap
-[Here](issues/1)
+[Here](../../issues/1)
 
 <p align="center">Last Edit: 2026.07.11</p>
