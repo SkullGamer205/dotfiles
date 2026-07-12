@@ -19,7 +19,10 @@
 |**Shell**|[Zsh](https://www.zsh.org/)|
 |**Editor**|[NeoVim](https://github.com/neovim/neovim)|
 <!-- |**Icon Theme**|[Pixora](https://github.com/tsora1603/pixora-icons)| -->
+<!-- |**Icon Theme**|[Pixelitos](https://github.com/ItsZariep/pixelitos-icon-theme)| -->
 <!-- |**Terminal**|[WezTerm](https://github.com/wezterm/wezterm)| -->
+<!-- |**Cursor**|[Pixel Cursors](https://github.com/mikaeladev/pixel-cursors) -->
+<!-- |**Cusror**|[Pixel-Linux-Cursor](https://github.com/da0ab/Pixel-Linux-Cursor)| -->
 
 <!--
 nvim, zsh, fzf, zoxide, npm, fastfetch, tealdeer (tldr)
@@ -36,7 +39,7 @@ wayland, wayland-protocols, wayland-utils
 |SerenityOS Emoji Font|[(Github)](https://github.com/linusg/serenityos-emoji-font) [(Site)](https://linusg.github.io/serenityos-emoji-font/)|
 
 # Sources
-- [awesome-from-scratch](https://github.com/trip-zip/awesome-from-scratch) by trip-zip
+- [awesome-from-scratch](https://github.com/trip-zip/awesome-from-scratch) by trip-zip ([SomeWM](https://github.com/trip-zip/somewm) developer)
 - HoNamDuong's [dotfiles](https://github.com/HoNamDuong/.dotfiles)
 - [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets) by streetturtle
 
