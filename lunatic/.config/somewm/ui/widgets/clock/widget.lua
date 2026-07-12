@@ -35,16 +35,14 @@ local function create_clock_widget()
         halign  = 'right',
         valign  = 'center',
         {
-            widget          = wibox.container.baclground,
+            widget          = wibox.container.background,
             bg              = beautiful.bg_normal,
             border_color    = beautiful.border_color_active,
             border_width    = beautiful.border_width,
             {
-                widget  = wibox.layout.fixed.horizontal,
+                layout  = wibox.layout.fixed.horizontal,
                 -- Clock
-                {
-                    SimpleBox(clock_widget('%H\n%M\n%S'))
-                },
+                SimpleBox(clock_widget('%H\n%M\n%S'))
                 -- Weather
                 -- {},
             }
