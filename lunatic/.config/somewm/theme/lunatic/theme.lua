@@ -49,33 +49,58 @@ theme.palette       = user_config.palette or {
     bright_white    = '#eaeaea',
 }
 
+theme.colors = {
+    background      = theme.palette.background,
+    foreground      = theme.palette.foreground,
+
+    primary         = theme.palette.green,
+
+    secondary       = theme.palette.bright_black,
+
+    low             = theme.palette.green,
+
+    medium          = theme.palette.yellow,
+
+    high            = theme.palette.red,
+}
+
 -- Background
-theme.bg_normal             = theme.palette.background
-theme.bg_focus              = theme.palette.magenta
-theme.bg_urgent             = theme.palette.red
-theme.bg_minimize           = theme.palette.bright_black
+theme.bg_normal             = theme.colors.secondary
+theme.bg_focus              = theme.colors.primary
+theme.bg_urgent             = theme.colors.high
+theme.bg_minimize           = theme.colors.secondary
 theme.bg_systray            = theme.bg_normal
 
 -- Foreground
-theme.fg_normal             = theme.palette.foreground
-theme.fg_focus              = theme.palette.background
-theme.fg_urgent             = theme.palette.background
-theme.fg_minimize           = theme.palette.background
+theme.fg_normal             = theme.colors.foreground
+theme.fg_focus              = theme.colors.background
+theme.fg_urgent             = theme.colors.background
+theme.fg_minimize           = theme.colors.background
 
 -- Borders
 theme.useless_gap           = dpi(4)
-theme.border_width          = dpi(4)
-theme.border_color_normal   = theme.palette.background
-theme.border_color_active   = theme.palette.foreground
-theme.border_color_marked   = theme.palette.yellow
+theme.border_width          = dpi(2)
+theme.border_color_normal   = theme.colors.secondary
+theme.border_color_active   = theme.colors.foreground
+theme.border_color_marked   = theme.colors.medium
+theme.borded_color_urgent   = theme.colors.high
 
 -- Taglist
 theme.taglist_bg_focus      = '#444444'
-theme.taglist_fg_focus      = theme.palette.magenta
+theme.taglist_fg_focus      = theme.colors.primary
+
+-- Generate taglist squares:
+-- local taglist_square_size = dpi(4)
+-- theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+-- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+
+-- Or disable them
+theme.taglist_squares_sel   = nil
+theme.taglist_squares_unsel = nil
 
 -- Menu
-theme.menu_height = dpi(theme.font_size) * 1.6
-theme.menu_width  = dpi(theme.font_size) * 16
+theme.menu_height = dpi(theme.font_size) * 1.5
+theme.menu_width  = dpi(theme.font_size) * 12
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 
 -- Shadows
@@ -89,6 +114,15 @@ theme.shadow_clip           = false
 -- Disable shadow for panels/wiboxes
 theme.shadow_drawin_enabled = false
 
+-- Hotkeys
+theme.hotkeys_font              = theme.font
+theme.hotkeys_modifiers_fg      = theme.colors.primary
+theme.hotkeys_label_fg          = theme.colors.secondary
+theme.hotkeys_description_font  = theme.font
+theme.hotkeys_border_width      = theme.border_width
+theme.hotkeys_border_color      = theme.colors.primary
+theme.hotkeys_group_margin      = dpi(6) * 4
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -101,14 +135,6 @@ theme.shadow_drawin_enabled = false
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
--- Generate taglist squares:
--- local taglist_square_size = dpi(4)
--- theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
--- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
-
--- Or disable them
-theme.taglist_squares_sel   = nil
-theme.taglist_squares_unsel = nil
 -- Variables set for theming notifications:
 -- notification_font
 -- notification_[bg|fg]
@@ -194,7 +220,7 @@ theme.icon_theme = 'Colloid-Dark'
 rnotification.connect_signal("request::rules", function()
   rnotification.append_rule({
     rule = { urgency = "critical" },
-    properties = { bg = theme.palette.red, fg = theme.palette.foreground },
+    properties = { bg = theme.colors.high, fg = theme.colors.foreground },
   })
 end)
 
