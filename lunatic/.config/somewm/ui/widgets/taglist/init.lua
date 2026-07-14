@@ -26,21 +26,18 @@ return function(s)
     }
 
     -- Tag icon
-    local tag_dot = function(color)
+    local tag_dot = function(color, width)
         local surface = cairo.ImageSurface.create(cairo.Format.ARGB32, 32, 32)
         local cr      = cairo.Context(surface)
 
         cr:set_source_rgba(0, 0, 0, 0)
         cr:paint()
 
-        local width, height = 32, 32
-        local cx, cy        = width / 2, height / 2
-        local crad          = math.min(width, height) / 3
-        local start_angle   = 0
-        local end_angle     = 2 * math.pi
+        local width         = width or 16
+        local cw            = (32 - width) / 2
 
         cr:set_source(gears.color(color))
-        cr:arc(cx, cy, crad, start_angle, end_angle)
+        cr:rectangle(cw, cw, width, width)
         cr:fill()
         return surface
     end    
@@ -48,20 +45,22 @@ return function(s)
     -- Function to update tag widget
     local update_tag = function(widget, tag, index, taglist)
         local ico       = widget:get_children_by_id('icon_role')[1]
-        local dot       = tag_dot()
+        local width     = 10
         local color
          
         if      tag.selected then
             color = beautiful.taglist_fg_focus
+            width = width * 2
         elseif  tag.urgent then
             color = beautiful.bg_urgent
         elseif  #tag:clients() > 0 then
             color = beautiful.fg_normal
+            width = width * 1.5
         else
             color = beautiful.taglist_bg_focus
         end
 
-        ico.image       = gears.color.recolor_image(dot, color)
+        ico.image       = gears.color.recolor_image(tag_dot(_, width), color)
     end
 
     -- @TASKLIST_BUTTON@
