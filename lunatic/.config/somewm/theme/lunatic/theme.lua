@@ -100,8 +100,21 @@ theme.border_color_marked   = theme.colors.medium
 theme.borded_color_urgent   = theme.colors.high
 
 -- Taglist
-theme.taglist_bg_focus      = theme.colors.secondary
+theme.taglist_bg_empty      = theme.colors.background
+theme.taglist_fg_empty      = theme.colors.background
+
+theme.taglist_bg_occupied   = theme.taglist_bg_empty
+theme.taglist_fg_occupied   = theme.colors.foreground
+
+-- Dynamic tags. Skip
+-- theme.taglist_bg_volatile   =
+-- theme.taglist_fg_volatile   =
+
+theme.taglist_bg_focus      = theme.taglist_bg_empty
 theme.taglist_fg_focus      = theme.colors.primary
+
+theme.taglist_bg_urgent     = theme.taglist_bg_empty
+theme.taglist_fg_urgent     = theme.palette.high
 
 -- Generate taglist squares:
 -- local taglist_square_size = dpi(4)

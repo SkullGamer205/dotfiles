@@ -52,12 +52,12 @@ return function(s)
             color = beautiful.taglist_fg_focus
             width = width * 2
         elseif  tag.urgent then
-            color = beautiful.bg_urgent
+            color = beautiful.taglist_fg_urgent
         elseif  #tag:clients() > 0 then
-            color = beautiful.fg_normal
+            color = beautiful.taglist_fg_occupied
             width = width * 1.5
         else
-            color = beautiful.taglist_bg_focus
+            color = beautiful.taglist_fg_empty
         end
 
         ico.image       = gears.color.recolor_image(tag_dot(_, width), color)
@@ -65,29 +65,34 @@ return function(s)
 
     -- @TASKLIST_BUTTON@
     -- Create a taglist widget
-    return awful.widget.taglist({
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        layout  = wibox.layout.fixed.vertical,
-        style   = {
+    return wibox.widget({
+        widget  = wibox.container.background,
+        bg      = beautiful.colors.secondary,
+
+        awful.widget.taglist({
+            screen  = s,
+            filter  = awful.widget.taglist.filter.all,
+            layout  = wibox.layout.fixed.vertical,
+            style   = {
             shape   = gears.shape.circle,
-        },
-
-        buttons = taglist_buttons,
-
-        widget_template = {
-            widget  = wibox.container.background,
-            -- id      = 'background_role',
-            {
-                widget  = wibox.container.margin,
-                -- margins = 2,
-                {
-                    widget = wibox.widget.imagebox,
-                    id = 'icon_role',
-                },
             },
-        create_callback = update_tag,
-        update_callback = update_tag,
-        },
+
+            buttons = taglist_buttons,
+
+            widget_template = {
+                widget  = wibox.container.background,
+                -- id      = 'background_role',
+                {
+                    widget  = wibox.container.margin,
+                    -- margins = 2,
+                    {
+                        widget = wibox.widget.imagebox,
+                        id = 'icon_role',
+                        },
+                },
+            create_callback = update_tag,
+            update_callback = update_tag,
+            },
+        })
     })
-end
+    end
