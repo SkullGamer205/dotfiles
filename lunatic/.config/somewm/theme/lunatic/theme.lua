@@ -4,16 +4,17 @@
 
 -- Libs
 
-local theme_assets = require("beautiful.theme_assets")
-local xresources = require("beautiful.xresources")
+local theme_assets  = require("beautiful.theme_assets")
+local xresources    = require("beautiful.xresources")
 local rnotification = require("ruled.notification")
-local dpi = xresources.apply_dpi
-local gears = require('gears')
-local gfs = gears.filesystem
-local themes_path = string.match(gfs.get_configuration_dir(), '^(/?.-)/*$') .. '/theme/lunatic/'
+local dpi           = xresources.apply_dpi
+local gears         = require('gears')
+local gfs           = gears.filesystem
+local themes_path   = string.match(gfs.get_configuration_dir(), '^(/?.-)/*$') .. '/theme/lunatic/'
+local ucolor        = require('utils.color')
 -- local themes_path = gfs.get_themes_dir()
 
-local user_config = require('config.user')
+local user_config   = require('config.user')
 
 local theme = {}
 
@@ -26,7 +27,7 @@ theme.font          = theme.font_name .. ' ' .. theme.font_size
 
 -- Colors
 
-theme.palette       = user_config.palette or {
+theme.palette       = setmetatable(user_config.palette or {
     background      = '#1d1f21',
     foreground      = '#c5c8c6',
 
@@ -47,25 +48,35 @@ theme.palette       = user_config.palette or {
     bright_magenta  = '#c397d8',
     bright_cyan     = '#70c0b1',
     bright_white    = '#eaeaea',
-}
+}, ucolor.palette_metatable)
 
 theme.colors = {
     background      = theme.palette.background,
     foreground      = theme.palette.foreground,
 
     primary         = theme.palette.green,
+    primary_dull    = theme.palette.green_60, 
+    primary_dark    = theme.palette.green_30, 
 
-    secondary       = theme.palette.bright_black,
+    secondary       = theme.palette.background_60,
+    secondary_dull  = theme.palette.background_45,
+    secondary_dark  = theme.palette.foreground_30,
 
-    low             = theme.palette.green,
+    low             = theme.palette.green   ,
+    low_dull        = theme.palette.green_60,
+    low_dark        = theme.palette.green_30,
 
-    medium          = theme.palette.yellow,
+    medium          = theme.palette.yellow   ,
+    medium_dull     = theme.palette.yellow_60,
+    medium_dark     = theme.palette.yellow_30,
 
-    high            = theme.palette.red,
+    high            = theme.palette.red   ,
+    high_dull       = theme.palette.red_60,
+    high_dark       = theme.palette.red_30,
 }
 
 -- Background
-theme.bg_normal             = theme.colors.secondary
+theme.bg_normal             = theme.colors.background
 theme.bg_focus              = theme.colors.primary
 theme.bg_urgent             = theme.colors.high
 theme.bg_minimize           = theme.colors.secondary
@@ -86,7 +97,7 @@ theme.border_color_marked   = theme.colors.medium
 theme.borded_color_urgent   = theme.colors.high
 
 -- Taglist
-theme.taglist_bg_focus      = '#444444'
+theme.taglist_bg_focus      = theme.colors.secondary
 theme.taglist_fg_focus      = theme.colors.primary
 
 -- Generate taglist squares:
