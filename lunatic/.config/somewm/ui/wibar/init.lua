@@ -11,13 +11,14 @@ return function(s)
         screen   = s,
         position = "right",
         stretch  = false,
-        height   = 720,
+        height   = beautiful.wibar_height,
         margins = {
             right = beautiful.useless_gap,
         },
         -- @DOC_SETUP_WIDGETS@
         widget   = {
             layout = wibox.layout.align.vertical,
+            expand = 'outside',
             { -- Left widgets
                 layout = wibox.layout.fixed.vertical,
                 module.launcher(s),
@@ -26,7 +27,12 @@ return function(s)
                 s.mypromptbox,
             },
             -- module.tasklist(s), -- Middle widget
+            {
+                layout = wibox.container.place,
+                halign = 'center',
+                valign = 'center',
                 module.clock(),
+            },    
             { -- Right widgets
                 layout = wibox.layout.fixed.vertical,
                 module.kbd(),

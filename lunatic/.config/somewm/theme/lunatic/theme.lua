@@ -75,6 +75,9 @@ theme.colors = {
     high_dark       = theme.palette.red_30,
 }
 
+-- Default gaps & margins
+theme.gap_default           = dpi(2)
+
 -- Background
 theme.bg_normal             = theme.colors.background
 theme.bg_focus              = theme.colors.primary
@@ -89,8 +92,8 @@ theme.fg_urgent             = theme.colors.background
 theme.fg_minimize           = theme.colors.background
 
 -- Borders
-theme.useless_gap           = dpi(4)
-theme.border_width          = dpi(2)
+theme.useless_gap           = theme.gap_default * 2
+theme.border_width          = theme.gap_default
 theme.border_color_normal   = theme.colors.secondary
 theme.border_color_active   = theme.colors.foreground
 theme.border_color_marked   = theme.colors.medium
@@ -132,7 +135,14 @@ theme.hotkeys_label_fg          = theme.colors.secondary
 theme.hotkeys_description_font  = theme.font
 theme.hotkeys_border_width      = theme.border_width
 theme.hotkeys_border_color      = theme.colors.primary
-theme.hotkeys_group_margin      = dpi(6) * 4
+theme.hotkeys_group_margin      = theme.gap_default * 10
+
+-- Notification
+theme.notification_spacing      = theme.gap_default * 5
+
+-- Wibar
+theme.wibar_width               = theme.font_size * 2
+theme.wibar_height              = 720
 
 -- There are other variable sets
 -- overriding the default one when
