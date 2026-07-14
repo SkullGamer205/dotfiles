@@ -60,7 +60,7 @@ theme.colors = {
 
     secondary       = theme.palette.background_60,
     secondary_dull  = theme.palette.background_45,
-    secondary_dark  = theme.palette.foreground_30,
+    secondary_dark  = theme.palette.background_30,
 
     low             = theme.palette.green   ,
     low_dull        = theme.palette.green_60,
@@ -101,7 +101,7 @@ theme.borded_color_urgent   = theme.colors.high
 
 -- Taglist
 theme.taglist_bg_empty      = theme.colors.background
-theme.taglist_fg_empty      = theme.colors.background
+theme.taglist_fg_empty      = theme.colors.secondary
 
 theme.taglist_bg_occupied   = theme.taglist_bg_empty
 theme.taglist_fg_occupied   = theme.colors.foreground
@@ -154,7 +154,7 @@ theme.hotkeys_group_margin      = theme.gap_default * 10
 theme.notification_spacing      = theme.gap_default * 5
 
 -- Wibar
-theme.wibar_width               = theme.font_size * 2
+theme.wibar_width               = (theme.font_size * 2) + (theme.gap_default * 2)
 theme.wibar_height              = 720
 
 -- There are other variable sets

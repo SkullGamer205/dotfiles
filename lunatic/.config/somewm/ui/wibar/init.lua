@@ -8,37 +8,48 @@ return function(s)
     s.mypromptbox = module.promptbox()
     -- Create the wibox
     s.mywibox = awful.wibar({
-        screen   = s,
-        position = "right",
-        stretch  = false,
-        height   = beautiful.wibar_height,
-        margins = {
-            right = beautiful.useless_gap,
+        screen          = s,
+        position        = "right",
+        stretch         = false,
+        width           = beautiful.wibar_width,
+        height          = beautiful.wibar_height,
+
+        border_width    = beautiful.border_width,
+        border_color    = beautiful.colors.foreground,
+        margins         = {
+            right       = beautiful.useless_gap,
         },
         -- @DOC_SETUP_WIDGETS@
         widget   = {
-            layout = wibox.layout.align.vertical,
-            expand = 'outside',
-            { -- Left widgets
-                layout = wibox.layout.fixed.vertical,
-                module.launcher(s),
-                module.layoutbox(s),
-                module.taglist(s),
-                s.mypromptbox,
-            },
-            -- module.tasklist(s), -- Middle widget
+            widget  = wibox.container.margin,
+            margins = beautiful.gap_default,
             {
-                layout = wibox.container.place,
-                halign = 'center',
-                valign = 'center',
-                module.clock(),
-            },    
-            { -- Right widgets
-                layout = wibox.layout.fixed.vertical,
-                module.kbd(),
-                wibox.widget.systray(),
-                module.power(s),
-            },
+                layout = wibox.layout.align.vertical,
+                expand = 'outside',
+                { -- Left widgets
+                    layout = wibox.layout.fixed.vertical,
+                    spacing = beautiful.gap_default,
+                    module.launcher(s),
+                    module.layoutbox(s),
+                    module.taglist(s),
+                    s.mypromptbox,
+                },
+                -- module.tasklist(s), -- Middle widget
+                {
+                    layout = wibox.container.place,
+                    spacing = beautiful.gap_default,
+                    halign = 'center',
+                    valign = 'center',
+                    module.clock(),
+                },    
+                { -- Right widgets
+                    layout = wibox.layout.fixed.vertical,
+                    spacing = beautiful.gap_default,
+                    module.kbd(),
+                    wibox.widget.systray(),
+                    module.power(s),
+                },
+            }
         }
     })
 end

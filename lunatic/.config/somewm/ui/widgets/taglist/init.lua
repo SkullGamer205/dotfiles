@@ -67,7 +67,7 @@ return function(s)
     -- Create a taglist widget
     return wibox.widget({
         widget  = wibox.container.background,
-        bg      = beautiful.colors.secondary,
+        -- bg      = beautiful.colors.secondary,
 
         awful.widget.taglist({
             screen  = s,
