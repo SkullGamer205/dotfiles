@@ -1,5 +1,6 @@
-local wibox = require('wibox')
-local gears = require('gears')
+local beautiful = require('beautiful')
+local wibox     = require('wibox')
+local gears     = require('gears')
 
 local SimpleBox     = require('module.simple_widgets.box').create_box
 local ClockWidget   = require(... .. '.widget')
@@ -31,6 +32,7 @@ local function Time(format)
 end
 
 local widget = SimpleBox(Time('%H\n%M'), {
+    main_color      = beautiful.colors.secondary,
     on_clicked      = function() ClockWidget.toggle() end
 })
 

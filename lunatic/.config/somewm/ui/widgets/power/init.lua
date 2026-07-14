@@ -7,11 +7,12 @@ local PowerMenu     = require(... .. '.widget')
 
 local icon      = SimpleIcon.create_icon(beautiful.power_shutdown, {
     main_color      = beautiful.fg_normal,
-    highlight_color = beautiful.bg_focus
+    highlight_color = beautiful.bg_normal
 })
 
 local widget = SimpleBox.create_box(icon, {
-    main_color      = beautiful.bg_normal,
+    main_color      = beautiful.colors.secondary,
+    highlight_color = beautiful.bg_focus,
     on_clicked      = function() PowerMenu.toggle() end
 })
 
