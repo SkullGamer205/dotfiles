@@ -25,8 +25,8 @@ local function create_button(option, index)
     local is_selected = index == selected_index
 
     local icon_widget = SimpleIcon(option.icon, {
-        highlight_color = beautiful.bg_focus,
-        main_color      = is_selected and beautiful.bg_focus or beautiful.colors_light,
+        highlight_color = beautiful.colors.primary,
+        main_color      = is_selected and beautiful.colors.primary or beautiful.fg_normal,
         width           = beautiful.font:match("%d+$") * 8,
     })
 
@@ -48,8 +48,8 @@ local function create_button(option, index)
     })
 
     local button = SimpleBox(widget, {
-        main_color      = beautiful.colors_background_light,
-        highlight_color = beautiful.fg_focus,
+        main_color      = beautiful.bg_normal,
+        highlight_color = beautiful.bg_focus,
         on_clicked  = option.command,
     })
 
