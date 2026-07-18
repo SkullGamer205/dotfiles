@@ -27,28 +27,40 @@ theme.font          = theme.font_name .. ' ' .. theme.font_size
 
 -- Colors
 
-theme.palette       = setmetatable(user_config.palette or {
-    background      = '#1d1f21',
-    foreground      = '#c5c8c6',
 
-    black           = '#1d1f21',
-    red             = '#cc6666',
-    green           = '#b5bd68',
-    yellow          = '#f0c674',
-    blue            = '#81a2b5',
-    magenta         = '#b294bb',
-    cyan            = '#8abeb7',
-    white           = '#c5c8c6',
+theme.palette       = user_config.palette or {
+    -- Base24 One-Dark Theme
 
-    bright_black    = '#373b41',
-    bright_red      = '#d54e53',
-    bright_green    = '#b9ca4a',
-    bright_yellow   = '#e7c547',
-    bright_blue     = '#7aa6da',
-    bright_magenta  = '#c397d8',
-    bright_cyan     = '#70c0b1',
-    bright_white    = '#eaeaea',
-}, ucolor.palette_metatable)
+    -- Base00-07
+    base00      = '#282c34', -- [ BG ] Default
+    base01      = '#3f4451', -- [ BG ] Lighter
+    base02      = '#4f5666', -- [ BG ] Selection
+    base03      = '#545862', -- [ BG ] Highlight
+    base04      = '#9196a1', -- [ FG ] Dark
+    base05      = '#abb2bf', -- [ FG ] Default
+    base06      = '#e6e6e6', -- [ FG ] Light
+    base07      = '#ffffff', -- [ FG ] Lightest
+
+    -- Base08-0E
+    base08      = '#e05561', -- [ RED     ] Normal
+    base09      = '#d18f52', -- [ ORANGE  ] Normal
+    base0A      = '#42b3c2', -- [ YELLOW  ] Normal
+    base0B      = '#4aa5f0', -- [ GREEN   ] Normal
+    base0C      = '#c162de', -- [ CYAN    ] Normal
+    base0D      = '#4aa5f0', -- [ BLUE    ] Normal
+    base0E      = '#c162de', -- [ MAGENTA ] Normal
+    base0F      = '#bf4034', -- [ BROWN   ] Normal
+
+    -- Base10-17
+    base10      = '#21252b', -- [ BG ]      Darker
+    base11      = '#181a1f', -- [ BG ]      Darkest
+    base12      = '#ff616e', -- [ RED     ] Bright
+    base13      = '#f0a45d', -- [ YELLOW  ] Bright
+    base14      = '#a5e075', -- [ GREEN   ] Bright
+    base15      = '#4cd1e0', -- [ CYAN    ] Bright
+    base16      = '#4dc4ff', -- [ BLUE    ] Bright
+    base17      = '#de73ff', -- [ MAGENTA ] Bright
+}
 
 theme.colors = {
     background      = theme.palette.background,
