@@ -63,28 +63,25 @@ theme.palette       = user_config.palette or {
 }
 
 theme.colors = {
-    background      = theme.palette.background,
-    foreground      = theme.palette.foreground,
+    background          = theme.palette.base00,
+    background_light    = theme.palette.base01,
+    background_dark     = theme.palette.base10,
 
-    primary         = theme.palette.green,
-    primary_dull    = theme.palette.green_60, 
-    primary_dark    = theme.palette.green_30, 
 
-    secondary       = theme.palette.background_60,
-    secondary_dull  = theme.palette.background_45,
-    secondary_dark  = theme.palette.background_30,
+    foreground          = theme.palette.base05,
+    foreground_light    = theme.palette.base06,
+    foreground_dark     = theme.palette.base14,
 
-    low             = theme.palette.green   ,
-    low_dull        = theme.palette.green_60,
-    low_dark        = theme.palette.green_30,
+    primary             = theme.palette.base0B,
 
-    medium          = theme.palette.yellow   ,
-    medium_dull     = theme.palette.yellow_60,
-    medium_dark     = theme.palette.yellow_30,
+    low                 = theme.palette.base0B,
+    low_light           = theme.palette.base14,
 
-    high            = theme.palette.red   ,
-    high_dull       = theme.palette.red_60,
-    high_dark       = theme.palette.red_30,
+    medium              = theme.palette.base0A,
+    medium_light        = theme.palette.base13,
+
+    high                = theme.palette.base08,
+    high_light          = theme.palette.base12,
 }
 
 -- Default gaps & margins
@@ -94,26 +91,26 @@ theme.gap_default           = dpi(2)
 theme.bg_normal             = theme.colors.background
 theme.bg_focus              = theme.colors.primary
 theme.bg_urgent             = theme.colors.high
-theme.bg_minimize           = theme.colors.secondary
+theme.bg_minimize           = theme.colors.background_dark
 theme.bg_systray            = theme.bg_normal
 
 -- Foreground
 theme.fg_normal             = theme.colors.foreground
-theme.fg_focus              = theme.colors.background
-theme.fg_urgent             = theme.colors.background
+theme.fg_focus              = theme.colors.foreground_light
+theme.fg_urgent             = theme.colors.high_light
 theme.fg_minimize           = theme.colors.background
 
 -- Borders
 theme.useless_gap           = theme.gap_default * 2
 theme.border_width          = theme.gap_default
-theme.border_color_normal   = theme.colors.secondary
+theme.border_color_normal   = theme.colors.background_light
 theme.border_color_active   = theme.colors.foreground
 theme.border_color_marked   = theme.colors.medium
 theme.borded_color_urgent   = theme.colors.high
 
 -- Taglist
 theme.taglist_bg_empty      = theme.colors.background
-theme.taglist_fg_empty      = theme.colors.secondary
+theme.taglist_fg_empty      = theme.colors.background_dark
 
 theme.taglist_bg_occupied   = theme.taglist_bg_empty
 theme.taglist_fg_occupied   = theme.colors.foreground
@@ -156,7 +153,7 @@ theme.shadow_drawin_enabled = false
 -- Hotkeys
 theme.hotkeys_font              = theme.font
 theme.hotkeys_modifiers_fg      = theme.colors.primary
-theme.hotkeys_label_fg          = theme.colors.secondary
+theme.hotkeys_label_fg          = theme.colors.background_dark
 theme.hotkeys_description_font  = theme.font
 theme.hotkeys_border_width      = theme.border_width
 theme.hotkeys_border_color      = theme.colors.primary
