@@ -6,11 +6,11 @@ local SimpleBox     = require('module.simple_widgets.box')
 
 local icon      = SimpleIcon.create_icon(beautiful.launcher_icon, {
     main_color      = beautiful.fg_normal,
-    highlight_color = beautiful.bg_normal,
+    highlight_color = beautiful.fg_focus,
 })
 
 local widget    = SimpleBox.create_box(icon, {
-    main_color      = beautiful.colors.secondary,
+    main_color      = beautiful.colors.background_light,
     highlight_color = beautiful.bg_focus,
 })
 

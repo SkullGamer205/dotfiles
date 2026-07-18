@@ -32,7 +32,7 @@ local function Time(format)
 end
 
 local widget = SimpleBox(Time('%H\n%M'), {
-    main_color      = beautiful.colors.secondary,
+    main_color      = beautiful.colors.background_light,
     on_clicked      = function() ClockWidget.toggle() end
 })
 

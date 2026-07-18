@@ -15,7 +15,7 @@ return function(s)
         height          = beautiful.wibar_height,
 
         border_width    = beautiful.border_width,
-        border_color    = beautiful.colors.foreground,
+        border_color    = beautiful.colors.background_light,
         margins         = {
             right       = beautiful.useless_gap,
         },

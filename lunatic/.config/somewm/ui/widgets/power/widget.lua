@@ -7,6 +7,9 @@ local SimplePopup   = require('module.simple_widgets.popup').create
 local SimpleIcon    = require('module.simple_widgets.image').create_icon
 local SimpleBox     = require('module.simple_widgets.box').create_box
 
+-- For different lua versions
+local unpack        = table.unpack or unpack
+
 local options = {
     {name = 'Poweroff',     icon = beautiful.power_shutdown,    key = 'p',    command = function() awful.spawn('loginctl poweroff')          end},
     {name = 'Reboot',       icon = beautiful.power_reboot,      key = 'r',    command = function() awful.spawn('loginctl reboot')            end},
@@ -23,7 +26,7 @@ local function create_button(option, index)
 
     local icon_widget = SimpleIcon(option.icon, {
         highlight_color = beautiful.bg_focus,
-        main_color      = is_selected and beautiful.bg_focus or beautiful.fg_normal,
+        main_color      = is_selected and beautiful.bg_focus or beautiful.colors_light,
         width           = beautiful.font:match("%d+$") * 8,
     })
 
@@ -45,7 +48,8 @@ local function create_button(option, index)
     })
 
     local button = SimpleBox(widget, {
-        main_color  = beautiful.bg_normal,
+        main_color      = beautiful.colors_background_light,
+        highlight_color = beautiful.fg_focus,
         on_clicked  = option.command,
     })
 
@@ -85,7 +89,7 @@ local function create_power_widget()
                     -- Buttons
                     {
                         layout = wibox.layout.fixed.horizontal,
-                        table.unpack(buttons),
+                        unpack(buttons),
                     },
         
                     -- Hint

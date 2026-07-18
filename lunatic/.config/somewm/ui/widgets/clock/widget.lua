@@ -26,7 +26,10 @@ local function clock_widget(format)
         callback    = update_func,
     })
 
-    return clock_widget
+    return SimpleBox(clock_widget, {
+        main_color          = beautiful.colors.background_light,
+        margin              = 2,
+    })
 end
 
 local function calendar_widget()
@@ -54,7 +57,7 @@ local function calendar_widget()
         end
 
         return SimpleBox(text_widget(i), {
-            main_color          = beautiful.bg_normal,
+            main_color          = beautiful.colors.background_light,
             highlight_color     = beautiful.bg_focus,
             margin              = 2,
         })
@@ -87,12 +90,7 @@ local function create_clock_widget()
             {
                 layout  = wibox.layout.fixed.horizontal,
                 -- Clock
-                SimpleBox(clock_widget('%H\n%M\n%S'),
-                {
-                    -- main_color = beautiful.bg_focus,
-                    margin     = 8,
-                }
-            ),
+                clock_widget('%H\n%M\n%S'),
                 calendar_widget(),
                 -- Weather
                 -- {},
