@@ -1,0 +1,31 @@
+--- a/gtkrc     2026-07-26 19:43:40.641688034 +1000
++++ b/gtkrc     2026-07-26 21:02:25.161738103 +1000
+@@ -1,16 +1,19 @@
++# Base16 {{scheme-name}} for Nashvile96's gtk2 theme
++# By {{scheme-author}}
++
+ ### Base colors ###
+ gtk_color_scheme = 
+-"fg_color:#EBDBB2\
+-bg_color:#282828\
+-disabled_fg_color:#7c6f64\
+-base_color:#1D1D1D\
+-text_color:#EBDBB2\
+-selected_bg_color:#3c3836\
+-selected_fg_color:#f5e2a7\
+-tooltip_bg_color:#282828\
+-tooltip_fg_color:#D5C4A1"
++"fg_color:#{{base05-hex}}\
++bg_color:#{{base01-hex}}\
++disabled_fg_color:#{{base03-hex}}\
++base_color:#{{base00-hex}}\
++text_color:#{{base05-hex}}\
++selected_bg_color:#{{base02-hex}}\
++selected_fg_color:#{{base07-hex}}\
++tooltip_bg_color:#{{base01-hex}}\
++tooltip_fg_color:#{{base04-hex}}"
+ ### Begin ###
+ 
+ include "paned.rc"
+ include "scrollbar.rc" 
+ include "scale.rc"

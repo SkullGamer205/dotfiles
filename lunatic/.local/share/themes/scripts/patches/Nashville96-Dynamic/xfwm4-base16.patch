@@ -1,0 +1,73 @@
+--- a/themerc	2026-08-02 03:19:32.635026081 +1000
++++ b/themerc	2026-08-02 03:21:51.664664051 +1000
+@@ -3,47 +3,50 @@
+ # License: GPL-3.0+
+ # Changed from Chicago95
+ 
++# Base16 {{scheme-name}} for Nashvile96's xfwm4 theme
++# By {{scheme-author}}
++
+ #activetitle
+-active_color_1=#282828
+-active_color_2=#282828
++active_color_1=#{{base01-hex}}
++active_color_2=#{{base01-hex}}
+ 
+ #inactivetitle
+-inactive_color_1=#1d2021
+-inactive_color_2=#1d2021
++inactive_color_1=#{{base00-hex}}
++inactive_color_2=#{{base00-hex}}
+ 
+ #titletext
+-active_text_color=#ebdbb2
++active_text_color=#{{base05-hex}}
+ 
+ #inactivetitletext
+-inactive_text_color=#a89984
++inactive_text_color=#{{base03-hex}}
+ 
+ #buttonface
+-active_mid_1=#282828
+-inactive_mid_1=#282828
++active_mid_1=#{{base01-hex}}
++inactive_mid_1=#{{base01-hex}}
+ 
+ #buttonLight
+-active_hilight_1=#282828
+-inactive_hilight_1=#282828
++active_hilight_1=#{{base01-hex}}
++inactive_hilight_1=#{{base01-hex}}
+ 
+ #buttonhilight
+-active_hilight_2=#3c3c3c
+-inactive_hilight_2=#3c3c3c
++active_hilight_2=#{{base02-hex}}
++inactive_hilight_2=#{{base02-hex}}
+ 
+ #activeborder
+-active_border_color=#bdae93
+-inactive_border_color=#282828
++active_border_color=#{{base04-hex}}
++inactive_border_color=#{{base01-hex}}
+ 
+ #buttonShadow
+-active_shadow_2=#1b1b1b
+-inactive_shadow_2=#1b1b1b
++active_shadow_2=#{{base00-hex}}
++inactive_shadow_2=#{{base00-hex}}
+ 
+ #buttonDKShadow
+-active_shadow_1=#404040
+-inactive_shadow_1=#404040
++active_shadow_1=#{{base02-hex}}
++inactive_shadow_1=#{{base02-hex}}
+ 
+ #buttontext
+-active_mid_2=#ebdbb2
+-inactive_mid_2=#ebdbb2
++active_mid_2=#{{base05-hex}}
++inactive_mid_2=#{{base05-hex}}
+ 
+ #button_layout=O|HMC
+ button_offset=2
