@@ -133,7 +133,24 @@ patch_theme() {
     # Make color palette
     echo "[INFO] Creating a theme palette ..."
     palette_file="$theme_dir/palette.xpm"
-    magick -size 1x1 $(printf 'xc:%s ' $palette) +append "$palette_file"
+    # magick -size 1x1 $(printf 'xc:%s ' $palette) +append "$palette_file"
+    printf "$palette" | head -n 16 | awk '
+    BEGIN {
+        print "/* XPM */"
+        print "static char * palette[] = {"
+        print "/* columns rows colors chars-per-pixel */"
+        print "\"16 1 16 1 \","
+        split("abcdefghijklmnop", chars, "")
+    }
+    {
+        print "\"" chars[NR] " c " $1 "\","
+        pixels = pixels chars[NR]
+    }
+    END {
+        print "/* pixels */"
+        print "\"" pixels "\""
+        print "};"
+    }' > "$palette_file"
 
     export SCRIPT_DIR palette_file
 
@@ -147,8 +164,7 @@ patch_theme() {
         '
 
     echo "[INFO] Converting to template ... "
-    # Здесь можно использовать простой -name '*.xpm', так как нас интересуют только они, 
-    # а предыдущий parallel уже гарантированно завершился.
+
     find "$src_dir" -type f -name '*.xpm' -print0 | \
         parallel -0 --jobs 50% --halt soon,fail=1 '
             # Stage 3: Convert to template
@@ -163,14 +179,14 @@ Nashville96() {
     theme_name_old='Nashville96-Gruvbox'
     theme_name='Nashville96-Dynamic'
     theme_dir='Themes'
-    palette='#1D2021 
+    palette='#1D2021
+    #282828
     #3C3836 
     #504945 
-    #665C54 
-    #BDAE93 
-    #D5C4A1 
-    #EBDBB2 
-    #FBF1C7 
+    #bdae93
+    #ebdbb2
+    #fbf1c7
+    #f9f5d7
     #FB4934 
     #FE8019 
     #FABD2F 

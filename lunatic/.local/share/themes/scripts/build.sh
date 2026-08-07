@@ -15,9 +15,25 @@ extract_colors() {
     color_file="$theme_dir/gtk-3.0/gtk.css"
     echo "[INFO] grabbing color palette from gtk-3.0.css ..."
     if [ -f "$color_file" ]; then
-        palette=$(grep -oP "#([0-9a-fA-F]{3}){1,2}\b" "$color_file")
-        printf "$palette"
-        convert +append -size 1x1 \"$(printf 'xc:%s ' $palette)\" "$palette_file"
+        # palette=$(grep -oP "#([0-9a-fA-F]{3}){1,2}\b" "$color_file" | head -n 16)
+        # convert +append -size 1x1 \"$(printf 'xc:%s ' $palette)\" "$palette_file"
+        grep -oP "#([0-9a-fA-F]{3}){1,2}\b" "$color_file" | head -n 16 | awk '
+        BEGIN {
+            print "/* XPM */"
+            print "static char * palette[] = {"
+            print "/* columns rows colors chars-per-pixel */"
+            print "\"16 1 16 1 \","
+            split("abcdefghijklmnop", chars, "")
+        }
+        {
+            print "\"" chars[NR] " c " $1 "\","
+            pixels = pixels chars[NR]
+        }
+        END {
+            print "/* pixels */"
+            print "\"" pixels "\""
+            print "};"
+        }' > "$palette_file"
     fi
 }
 
@@ -34,17 +50,17 @@ convert_to_pic() {
         parallel -0 --jobs 50% --halt soon,fail=1 '
             # Stage 4: Convert templates to pictures
             "$SCRIPT_DIR/convert.sh" --colorize       "$palette_file" {}
-            # "$SCRIPT_DIR/convert.sh" --pic                            {}
+            "$SCRIPT_DIR/convert.sh" --pic                            {}
 
             # Stage 5: Clean
-            # "$SCRIPT_DIR/convert.sh" --clean {}
+            "$SCRIPT_DIR/convert.sh" --clean {}
     '
 
     echo "[INFO] Move icons"
     cp -r "$assets_dir"/* "$theme_dir"
 
-    echo "[INFO] Move icons"
-    # rm -r "$assets_dir"
+    echo "[INFO] Remove icons"
+    rm -r "$assets_dir"
 }
 
 Nashville96() {
