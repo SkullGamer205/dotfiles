@@ -68,6 +68,11 @@ Nashville96() {
     build_theme
 }
 
+Miami26() {
+    theme_name='Miami26-Dynamic'
+    build_theme
+}
+
 Raleigh() {
     theme_name="Raleigh-Dynamic"
     build_theme
@@ -88,6 +93,7 @@ Options:
 
 case  "$1" in
     '--Nashville96') Nashville96 ; exit ;;
+    '--Miami26') Miami26         ; exit ;;
     '--Raleigh') Raleigh         ; exit ;;
     '--help') help               ; exit ;;
     *) help                      ; exit ;;

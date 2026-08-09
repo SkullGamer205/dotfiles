@@ -1,0 +1,29 @@
+--- a/gtkrc	2026-08-09 23:26:09.547761241 +1000
++++ b/gtkrc	2026-08-09 23:27:34.970613302 +1000
+@@ -1,14 +1,17 @@
++# Base16 {{scheme-name}} for Miami26's gtk2 theme
++# By {{scheme-author}}
++
+ ### Base colors ###
+ gtk_color_scheme = 
+-"fg_color: #DADADA\
+-bg_color: #1B1B1C\
+-disabled_fg_color: #5B5B5D\
+-base_color: #161617\
+-text_color: #DADADA\
+-selected_bg_color: #333335\
+-selected_fg_color: #5B5B5D\
+-tooltip_bg_color: #1B1B1C\
+-tooltip_fg_color: #DADADA"
++"fg_color: #{{base05-hex}}\
++bg_color: #{{base01-hex}}\
++disabled_fg_color: #{{base03-hex}}\
++base_color: #{{base00-hex}}\
++text_color: #{{base05-hex}}\
++selected_bg_color: #{{base03-hex}}\
++selected_fg_color: #{{base07-hex}}\
++tooltip_bg_color: #{{base01-hex}}\
++tooltip_fg_color: #{{base05-hex}}"
+ ### Begin ###
+ 
+ include "paned.rc"

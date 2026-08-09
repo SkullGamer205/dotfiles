@@ -64,8 +64,8 @@ patch_theme() {
     echo "[INFO] Copying icons into '.src' directory ..."
 
 
-    declare -a components=("gtk-2.0" "gtk-3.0" "xfwm4" "metacity-1" "openbox-3")
-    declare -a source_files=("gtkrc" "gtk.css" "themerc" "metacity-theme-1.xml" "themerc")
+    declare -a components=("gtk-2.0" "gtk-3.0" "gtk-4.0" "xfwm4" "metacity-1" "openbox-3")
+    declare -a source_files=("gtkrc" "gtk.css" "gtk.css" "themerc" "metacity-theme-1.xml" "themerc")
 
     for i in "${!components[@]}"; do
         component="${components[$i]}"
@@ -199,11 +199,37 @@ Nashville96() {
     patch_theme
 }
 
-Raleigh() {
-    src=thesquash/gtk-theme-raleigh
-    theme_name_old='Raleigh'
-    theme_name='Raleigh-Dynamic'
-    theme_dir='theme'
+Miami26() {
+    src=dhampirave/Miami26/tree/Miami26
+    theme_name_old='Miami26'
+    theme_name='Miami26-Dynamic'
+    theme_dir='Themes'
+    palette='#161617
+    #1B1B1C
+    #282829
+    #333335
+    #5B5B5D
+    #DADADA
+    #606060
+    #8C8C8C
+
+    #FA5252
+    #FF922B
+    #FFD43B
+    #94D82D
+    #51CF66
+    #4DABF7
+    #A5D8FF
+    #FA5252'
+    get_theme
+    patch_theme
+}
+
+Greymond() {
+    src=parhelion22/xfce-theme-greymond
+    theme_name_old='Greymond'
+    theme_name='Greymond-Dynamic'
+    theme_dir='src'
     get_theme
     patch_theme
 }
@@ -216,6 +242,7 @@ Usage:
 
 Options:
     --Nashville96       Install & Convert Nashville96
+    --Miami26           Install & Convert Miami26    
     --Raleigh           Install & Convert Raleigh
     --help              Shows this text
     '
@@ -223,7 +250,8 @@ Options:
 
 case "$1" in
     '--Nashville96')    Nashville96 ; exit ;;
-    '--Raleigh')        Raleigh     ; exit ;;
+    '--Miami26')        Miami26     ; exit ;;
+    '--Greymond')       Greymond    ; exit ;;
     '--help')           help        ; exit ;;
     *)                  help        ; exit ;;
 esac
