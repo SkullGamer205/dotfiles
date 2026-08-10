@@ -11,7 +11,6 @@ local dpi           = xresources.apply_dpi
 local gears         = require('gears')
 local gfs           = gears.filesystem
 local themes_path   = string.match(gfs.get_configuration_dir(), '^(/?.-)/*$') .. '/theme/lunatic/'
-local ucolor        = require('utils.color')
 -- local themes_path = gfs.get_themes_dir()
 
 local user_config   = require('config.user')
