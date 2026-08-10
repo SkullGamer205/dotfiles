@@ -73,8 +73,8 @@
 +@define-color selected_inactive_bg_color @base07; 
 +@define-color selected_inactive_fg_color @base02; 
 +@define-color tooltip_bg_color @base01; /* Windows Theme: infowindow, Tooltip background color */ 
-+@define-color tooltip_bg_shade @base03; /* Windows Theme: infotext, sometimes text hinting? */
-+@define-color tooltip_fg_color @base05; /* Windows Theme: infotext */
++@define-color tooltip_bg_shade @base02; /* Windows Theme: infotext, sometimes text hinting? */
++@define-color tooltip_fg_color @base04; /* Windows Theme: infotext */
 +@define-color bg_bright @base00; /* Windows Theme: window, White inner window/text areas */
  @define-color bg_shade shade(@bg_color, 0.66); 
  @define-color bg_dark shade(@bg_color, 0.13); 
@@ -87,7 +87,7 @@
 +@define-color border_color @base01; /* Window Theme: buttonface */
 +@define-color border_bright @base02; /* Windows Theme: buttonlight */
 +@define-color border_light @base01; /* Windows Theme: buttonhilight */
-+@define-color border_dark @base03; /* Windows Theme: buttondkshadow */
++@define-color border_dark @base02; /* Windows Theme: buttondkshadow */
 +@define-color border_shade shade (@base01, 0.66); /* Windows Theme: buttonshadow */
 +@define-color border_shade_dark shade(@base01, 0.13); 
  @define-color outline_color @text_color; 

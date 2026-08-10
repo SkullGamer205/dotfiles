@@ -57,6 +57,18 @@ get_theme() {
     fi
 }
 
+prepatch() {
+    theme_dir="$HOME/.local/share/themes/$theme_name"
+    declare -a components=("gtk-2.0" "gtk-3.0" "gtk-4.0" "xfwm4" "metacity-1" "openbox-3")
+    
+    echo "[INFO] Prepatching theme ..."
+    echo "[INFO] Delete '.' from dirs ..."
+
+    for i in "${!components[@]}"; do
+        mv ".${components[$i]}" "${components[$i]}"
+    done
+}
+
 patch_theme() {
     theme_dir="$HOME/.local/share/themes/$theme_name"
     src_dir="$theme_dir/.src"
@@ -212,7 +224,6 @@ Miami26() {
     #DADADA
     #606060
     #8C8C8C
-
     #FA5252
     #FF922B
     #FFD43B
@@ -230,7 +241,11 @@ Greymond() {
     theme_name_old='Greymond'
     theme_name='Greymond-Dynamic'
     theme_dir='src'
+    palette='
+
+    '
     get_theme
+    prepatch
     patch_theme
 }
 
@@ -243,7 +258,7 @@ Usage:
 Options:
     --Nashville96       Install & Convert Nashville96
     --Miami26           Install & Convert Miami26    
-    --Raleigh           Install & Convert Raleigh
+    --Greymond          Install & Convert Greymond
     --help              Shows this text
     '
 }
