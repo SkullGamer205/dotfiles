@@ -1,11 +1,15 @@
 {
     "logo" : {
+        "position"  : "top",
         "type"	    : "file",
-	"source"    : "$XDG_CONFIG_HOME/fastfetch/snowflake.txt",
-	"color"	    : {
-	    "1"		: "blue"
-	  	}
-	},
+	    "source"    : "$XDG_CONFIG_HOME/fastfetch/Jokerge.txt",
+        "color"     : {
+            "1"     : "#FFFFFF"
+        },
+        "padding"   : {
+            "left"  : 4
+        }
+    },
 
     "display" : {
 	"separator" : " :: "
@@ -17,7 +21,7 @@
 	  {
 		"type"    : "title",
 		"key"     : " ",
-	   	"format"  : ":: {#1;32}{user-name}{#}@{#3;32}{host-name}{#} ::"
+	   	"format"  : "     {#38;5;1}{#48;5;9}▀{#}{#38;5;2}{#48;5;10}▀{#}{#38;5;3}{#48;5;11}▀{#}{#38;5;4}{#48;5;12}▀{#} {#1;32}{user-name}{#}@{#3;32}{host-name}{#} {#38;5;5}{#48;5;13}▀{#}{#38;5;6}{#48;5;14}▀{#}{#38;5;7}{#48;5;15}▀{#}{#38;5;8}{#48;5;16}▀{#}"
 	  },
 	  
 	  {
@@ -27,65 +31,58 @@
 
 	  {
 		"type"    : "kernel",
-		"key"     : "KRN",
+		"key"     : "  KRN",
 		"format"  : "{release}, arch: {arch}"
 	  },
 	  
 	  {
 		"type"    : "packages",
-		"key"     : "PKG"
+		"key"     : "  PKG"
 	  },
 
 
 	  {
 		"type"    : "wm",
-		"key"     : " WM"
+		"key"     : "   WM"
 	  },
 
 	  {
 		"type"    : "terminal",
-		"key"     : "TRM",
+		"key"     : "  TRM",
 		"format"  : "{exe}"
 	  },
 
 
 	  {
 		"type"    : "cpu",
-		"key"     : "CPU",
+		"key"     : "  CPU",
 		"format"  : "{name}"
 	  },
 
 
 	  {
 		"type"    : "gpu",
-		"key"     : "GPU",
+		"key"     : "  GPU",
 		"format"  : "{name}"
 	  },
 
 
 	  {
 		"type"    : "memory",
-		"key"     : "MEM",
+		"key"     : "  MEM",
 		"format"  : "{used} / {total}"
 	  },
 
 
 	  {
 		"type"    : "disk",
-		"key"     : "DSK",
+		"key"     : "  DSK",
 		"format"  : "({mountpoint}): {size-used} / {size-total}"
 	  },
 
 	  {
 		"type"    : "custom",
 		"key"	  : " "
-	  },
-
-	  {
-		"type"    : "custom",
-		"key"	  : " ",
-		"format"  : "{#31}██ {#32}██ {#33}██ {#34}██ {#35}██ {#36}██ {#37}██ {#38}██{#}"
 	  }
-
   ]
 }
