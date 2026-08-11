@@ -225,7 +225,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "titlebar/maxim
 theme.titlebar_maximized_button_normal_active   = themes_path .. "titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active    = themes_path .. "titlebar/maximized_focus_active.png"
 
-theme.wallpaper                                 = themes_path .. "tileg-wallpaper.xpm"
+theme.wallpaper                                 = themes_path .. "tiled-wallpaper.xpm"
 
 -- You can use your own layout icons like this:
 theme.layout_carousel                           = gears.color.recolor_image(themes_path .. "layouts/carousel.svg",theme.fg_normal)

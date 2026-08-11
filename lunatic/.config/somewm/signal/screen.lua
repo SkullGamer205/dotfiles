@@ -51,12 +51,12 @@ screen.connect_signal("request::wallpaper", function(s)
             widget = wibox.container.tile,
             valign = "center",
             halign = "center",
-            tiled  = false,
+            tiled  = true,
             {
                 widget    = wibox.widget.imagebox,
                 image     = beautiful.wallpaper,
-                upscale   = true,
-                downscale = true
+                upscale   = false,
+                downscale = false
             },
         }
     }
