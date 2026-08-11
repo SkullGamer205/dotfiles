@@ -24,8 +24,8 @@ return {
     },
 
     font = {
-        name = 'Fixedsys Excelsior',
-        size = '12',
+        name = 'CozetteCrossedSeven',
+        size = '10',
     },
 
     -- Base24 Everforest Theme
