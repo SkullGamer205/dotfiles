@@ -1,0 +1,75 @@
+--- a/themerc	2026-08-10 02:15:18.214489661 +1000
++++ b/themerc	2026-08-10 02:15:22.160839034 +1000
+@@ -3,47 +3,52 @@
+ # License: GPL-3.0+
+ # Changed from Chicago95
+ 
++# scheme style:   base16
++# scheme name:    {{scheme-name}}
++# scheme variant: dark
++# scheme author:  {{scheme-author}}
++
+ #activetitle
+-active_color_1= #1B1B1C
+-active_color_2= #1B1B1C
++active_color_1= #{{base01-hex}}
++active_color_2= #{{base01-hex}}
+ 
+ #inactivetitle
+-inactive_color_1= #161617
+-inactive_color_2= #161617
++inactive_color_1= #{{base00-hex}}
++inactive_color_2= #{{base00-hex}}
+ 
+ #titletext
+-active_text_color= #DADADA
++active_text_color= #{{base05-hex}}
+ 
+ #inactivetitletext
+-inactive_text_color= #BFBFBF
++inactive_text_color= #{{base04-hex}}
+ 
+ #buttonface
+-active_mid_1= #1B1B1C
+-inactive_mid_1= #1B1B1C
++active_mid_1= #{{base01-hex}}
++inactive_mid_1= #{{base01-hex}}
+ 
+ #buttonLight
+-active_hilight_1= #1B1B1C
+-inactive_hilight_1= #1B1B1C
++active_hilight_1= #{{base01-hex}}
++inactive_hilight_1= #{{base01-hex}}
+ 
+ #buttonhilight
+-active_hilight_2= #333335
+-inactive_hilight_2= #333335
++active_hilight_2= #{{base03-hex}}
++inactive_hilight_2= #{{base03-hex}}
+ 
+ #activeborder
+-active_border_color= #1B1B1C
+-inactive_border_color= #1B1B1C
++active_border_color= #{{base01-hex}}
++inactive_border_color= #{{base01-hex}}
+ 
+ #buttonShadow
+-active_shadow_2= #161617
+-inactive_shadow_2= #161617
++active_shadow_2= #{{base00-hex}}
++inactive_shadow_2= #{{base00-hex}}
+ 
+ #buttonDKShadow
+-active_shadow_1= #282829
+-inactive_shadow_1= #282829
++active_shadow_1= #{{base02-hex}}
++inactive_shadow_1= #{{base02-hex}}
+ 
+ #buttontext
+-active_mid_2= #DADADA
+-inactive_mid_2= #DADADA
++active_mid_2= #{{base05-hex}}
++inactive_mid_2= #{{base05-hex}}
+ 
+ #button_layout=O|HMC
+ button_offset=1

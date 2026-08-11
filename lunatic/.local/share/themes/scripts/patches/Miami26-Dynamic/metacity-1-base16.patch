@@ -1,0 +1,151 @@
+--- a/metacity-theme-1.xml	2026-08-10 02:07:39.530809180 +1000
++++ b/metacity-theme-1.xml	2026-08-10 02:07:33.508935767 +1000
+@@ -21,6 +21,13 @@
+ Notes: Modified from WinME theme by Perberos.
+ 
+ -->
++
++<!--
++// scheme style: base16
++// scheme name: {{scheme-name}}
++// scheme variant: dark
++// scheme author: {{scheme-author}}
++-->
+ <metacity_theme>
+ 	<info>
+ 		<name>Chicago 95</name>
+@@ -86,34 +93,34 @@
+ 		<piece position="left_edge">
+ 			<draw_ops>
+ 				<rectangle color="gtk:bg[NORMAL]" x="0" y="0" width="width" height="height" filled="true"/>
+-				<line color="#242427" x1="1" y1="0" x2="1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="1" y1="0" x2="1" y2="height" width="1"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<piece position="right_edge">
+ 			<draw_ops>
+ 				<rectangle color="gtk:bg[NORMAL]" x="0" y="0" width="width" height="height" filled="true"/>
+-				<line color="#242427" x1="width-2" y1="0" x2="width-2" y2="height" width="1"/>
+-				<line color="#1b1b1c" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="width-2" y1="0" x2="width-2" y2="height" width="1"/>
++				<line color="#{{base01-hex}}" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<piece position="bottom_edge">
+ 			<draw_ops>
+ 				<rectangle color="gtk:bg[NORMAL]" x="0" y="0" width="width" height="height" filled="true"/>
+-				<line color="#242427" x1="1" y1="height-2" x2="width" y2="height-2" width="1"/>
+-				<line color="#1b1b1c" x1="0" y1="height-1" x2="width" y2="height-1" width="1"/>
+-				<line color="#242427" x1="1" y1="0" x2="1" y2="height-2" width="1"/>
+-				<line color="#1b1b1c" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
+-				<line color="#242427" x1="width-2" y1="0" x2="width-2" y2="height-2" width="1"/>
++				<line color="#{{base02-hex}}" x1="1" y1="height-2" x2="width" y2="height-2" width="1"/>
++				<line color="#{{base01-hex}}" x1="0" y1="height-1" x2="width" y2="height-1" width="1"/>
++				<line color="#{{base02-hex}}" x1="1" y1="0" x2="1" y2="height-2" width="1"/>
++				<line color="#{{base01-hex}}" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="width-2" y1="0" x2="width-2" y2="height-2" width="1"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<piece position="titlebar">
+ 			<draw_ops>
+ 				<rectangle color="gtk:bg[NORMAL]" x="0" y="0" width="width" height="height" filled="true"/>
+-				<line color="#242427" x1="1" y1="1" x2="1" y2="height" width="1"/>
+-				<line color="#242427" x1="1" y1="1" x2="width-2" y2="1" width="1"/>
+-				<line color="#1b1b1c" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
+-				<line color="#242427" x1="width-2" y1="1" x2="width-2" y2="height" width="1"/>
+-                <rectangle color="#1b1b1c" x="4" y="4" width="width-8" height="height-5" filled="true"/>
++				<line color="#{{base02-hex}}" x1="1" y1="1" x2="1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="1" y1="1" x2="width-2" y2="1" width="1"/>
++				<line color="#{{base01-hex}}" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="width-2" y1="1" x2="width-2" y2="height" width="1"/>
++                <rectangle color="#{{base01-hex}}" x="4" y="4" width="width-8" height="height-5" filled="true"/>
+ 			</draw_ops>
+ 		</piece>
+ 
+@@ -159,7 +166,7 @@
+ 		</button>
+ 		<piece position="title">
+ 			<draw_ops>
+-				<title x="3" y="2" color="#dadada"/>
++				<title x="3" y="2" color="#{{base05-hex}}"/>
+ 			</draw_ops>
+ 		</piece>
+ 	</frame_style>
+@@ -167,7 +174,7 @@
+ 	<frame_style name="normal(maximized)_focused_style" geometry="borderless_geometry" parent="normal_focused_style">
+ 		<piece position="titlebar">
+ 			<draw_ops>
+-                <rectangle color="#1b1b1c" x="0" y="0" width="width-0" height="height-0" filled="true"/>
++                <rectangle color="#{{base01-hex}}" x="0" y="0" width="width-0" height="height-0" filled="true"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<button function="maximize" state="normal">
+@@ -186,17 +193,17 @@
+ 	<frame_style name="normal_unfocused_style" geometry="normal_geometry" parent="normal_focused_style">
+ 		<piece position="titlebar">
+ 			<draw_ops>
+-				<rectangle color="#1b1b1c" x="0" y="0" width="width" height="height" filled="true"/>
+-				<line color="#242427" x1="1" y1="1" x2="1" y2="height" width="1"/>
+-				<line color="#242427" x1="1" y1="1" x2="width-2" y2="1" width="1"/>
+-				<line color="#1b1b1c" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
+-				<line color="#242427" x1="width-2" y1="1" x2="width-2" y2="height" width="1"/>
+-                <rectangle color="#161617" x="4" y="4" width="width-8" height="height-5" filled="true"/>
++				<rectangle color="#{{base01-hex}}" x="0" y="0" width="width" height="height" filled="true"/>
++				<line color="#{{base02-hex}}" x1="1" y1="1" x2="1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="1" y1="1" x2="width-2" y2="1" width="1"/>
++				<line color="#{{base01-hex}}" x1="width-1" y1="0" x2="width-1" y2="height" width="1"/>
++				<line color="#{{base02-hex}}" x1="width-2" y1="1" x2="width-2" y2="height" width="1"/>
++                <rectangle color="#{{base00-hex}}" x="4" y="4" width="width-8" height="height-5" filled="true"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<piece position="title">
+ 			<draw_ops>
+-				<title x="3" y="2" color="#5B5B5D"/>
++				<title x="3" y="2" color="#{{base04-hex}}"/>
+ 			</draw_ops>
+ 		</piece>
+ 	</frame_style>
+@@ -204,7 +211,7 @@
+ 	<frame_style name="normal(maximized)_unfocused_style" geometry="borderless_geometry" parent="normal_unfocused_style">
+ 		<piece position="titlebar">
+ 			<draw_ops>
+-                <rectangle color="#161617" x="0" y="0" width="width-0" height="height-0" filled="true"/>
++                <rectangle color="#{{base00-hex}}" x="0" y="0" width="width-0" height="height-0" filled="true"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<button function="maximize" state="normal">
+@@ -218,11 +225,11 @@
+ 		<piece position="entire_background">
+ 			<draw_ops>
+ 				<rectangle color="gtk:bg[NORMAL]" x="0" y="0" width="width" height="height" filled="true"/>
+-				<rectangle color="#dadada" x="1" y="1" width="width-3" height="height-3" filled="false"/>
+-				<line color="#dadada" x1="width-2" y1="1" x2="width-2" y2="height-3"/>
+-				<line color="#dadada" x1="1" y1="height-2" x2="width-2" y2="height-2"/>
+-				<line color="#1b1b1c" x1="width-1" y1="0" x2="width-1" y2="height-1"/>
+-				<line color="#dadada" x1="0" y1="height-1" x2="width-1" y2="height-1"/>
++				<rectangle color="#{{base05-hex}}" x="1" y="1" width="width-3" height="height-3" filled="false"/>
++				<line color="#{{base05-hex}}" x1="width-2" y1="1" x2="width-2" y2="height-3"/>
++				<line color="#{{base05-hex}}" x1="1" y1="height-2" x2="width-2" y2="height-2"/>
++				<line color="#{{base01-hex}}" x1="width-1" y1="0" x2="width-1" y2="height-1"/>
++				<line color="#{{base05-hex}}" x1="0" y1="height-1" x2="width-1" y2="height-1"/>
+ 			</draw_ops>
+ 		</piece>
+ 
+@@ -236,7 +243,7 @@
+ 
+ 		<piece position="title">
+ 			<draw_ops>
+-				<title x="3" y="2" color="#dadada"/>
++				<title x="3" y="2" color="#{{base05-hex}}"/>
+ 			</draw_ops>
+ 		</piece>
+ 
+@@ -259,7 +266,7 @@
+ 	<frame_style name="utility_unfocused_style" geometry="utility_geometry" parent="utility_focused_style">
+ 		<piece position="titlebar">
+ 			<draw_ops>
+-                <rectangle color="#8C8C8C" x="0" y="0" width="width-0" height="height-0" filled="true"/>
++                <rectangle color="#{{base07-hex}}" x="0" y="0" width="width-0" height="height-0" filled="true"/>
+ 			</draw_ops>
+ 		</piece>
+ 		<piece position="title">

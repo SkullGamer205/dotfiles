@@ -1,0 +1,51 @@
+--- a/gtk.css	2026-08-09 23:06:23.975455145 +1000
++++ b/gtk.css	2026-08-09 23:08:45.534993605 +1000
+@@ -19,30 +19,30 @@
+ */
+ 
+ /*# scheme style: base16
+-  # scheme name: Gruvbox Dark 
++  # scheme name: {{scheme-name}}
+   # scheme variant: dark
+-  # scheme author: donfaustinocortizone/donfaustino
++  # scheme author: {{scheme-author}}
+ */
+ 
+ /* Background & Foreground */
+-@define-color base00 #272e33 ; /* Background */
+-@define-color base01 #2e383c ; 
+-@define-color base02 #414b50 ;
+-@define-color base03 #859289 ;
+-@define-color base04 #9da9a0 ; /* Foreground */
+-@define-color base05 #d3c6aa ;
+-@define-color base06 #edeada ;
+-@define-color base07 #fffbef ;
++@define-color base00 #{{base00-hex}} ; /* Background */
++@define-color base01 #{{base01-hex}} ; 
++@define-color base02 #{{base02-hex}} ;
++@define-color base03 #{{base03-hex}} ;
++@define-color base04 #{{base04-hex}} ; /* Foreground */
++@define-color base05 #{{base05-hex}} ;
++@define-color base06 #{{base06-hex}} ;
++@define-color base07 #{{base07-hex}} ;
+ 
+ /* Colors */
+-@define-color base08 #e67e80 ; /*        Red */
+-@define-color base09 #e69875 ; /*     Orange */
+-@define-color base0A #dbbc7f ; /*     Yellow */
+-@define-color base0B #a7c080 ; /*      Green */
+-@define-color base0C #83c092 ; /*       Cyan */
+-@define-color base0D #7fbbb3 ; /*       Blue */
+-@define-color base0E #d699b6 ; /*     Purple */
+-@define-color base0F #9da9a0 ; /*      Brown */
++@define-color base08 #{{base08-hex}} ; /*        Red */
++@define-color base09 #{{base09-hex}} ; /*     Orange */
++@define-color base0A #{{base0A-hex}} ; /*     Yellow */
++@define-color base0B #{{base0B-hex}} ; /*      Green */
++@define-color base0C #{{base0C-hex}} ; /*       Cyan */
++@define-color base0D #{{base0D-hex}} ; /*       Blue */
++@define-color base0E #{{base0E-hex}} ; /*     Purple */
++@define-color base0F #{{base0F-hex}} ; /*      Brown */
+ 
+ /* default color scheme */
+ @define-color bg_color @base01; /* Window Theme: buttonface */

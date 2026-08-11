@@ -1,0 +1,42 @@
+--- a/gtk.css	2026-08-09 23:50:55.067679564 +1000
++++ b/gtk.css	2026-08-09 23:50:59.269758479 +1000
+@@ -15,23 +15,23 @@
+ /* Background & Foreground */
+ 
+ /* Colors */
+-@define-color base00 #161617 ; /* Background */
+-@define-color base01 #1B1B1C ; 
+-@define-color base02 #282829 ;
+-@define-color base03 #333335 ;
+-@define-color base04 #5B5B5D ; /* Foreground */
+-@define-color base05 #DADADA ;
+-@define-color base06 #606060 ;
+-@define-color base07 #8C8C8C ;
++@define-color base00 #{{base00-hex}} ; /* Background */
++@define-color base01 #{{base01-hex}} ; 
++@define-color base02 #{{base02-hex}} ;
++@define-color base03 #{{base03-hex}} ;
++@define-color base04 #{{base04-hex}} ; /* Foreground */
++@define-color base05 #{{base05-hex}} ;
++@define-color base06 #{{base06-hex}} ;
++@define-color base07 #{{base07-hex}} ;
+                                                 
+-@define-color base08 #FA5252 ; /*        Red */                 
+-@define-color base09 #FF922B ; /*     Orange */
+-@define-color base0A #FFD43B ; /*     Yellow */
+-@define-color base0B #94D820 ; /*      Green */
+-@define-color base0C #51Cf66 ; /*       Cyan */
+-@define-color base0D #4DABF7 ; /*       Blue */
+-@define-color base0E #A5D8FF ; /*     Purple */
+-@define-color base0F #FA5252 ; /*      Brown */
++@define-color base08 #{{base08-hex}} ; /*        Red */                 
++@define-color base09 #{{base09-hex}} ; /*     Orange */
++@define-color base0A #{{base0A-hex}} ; /*     Yellow */
++@define-color base0B #{{base0B-hex}} ; /*      Green */
++@define-color base0C #{{base0C-hex}} ; /*       Cyan */
++@define-color base0D #{{base0D-hex}} ; /*       Blue */
++@define-color base0E #{{base0E-hex}} ; /*     Purple */
++@define-color base0F #{{base0F-hex}} ; /*      Brown */
+ 
+ /* default color scheme */
+ @define-color bg_color @base01; /* Window Theme: buttonface */

@@ -1,0 +1,177 @@
+--- a/gtk.css	2026-08-09 23:11:29.556847198 +1000
++++ b/gtk.css	2026-08-09 23:11:36.399137775 +1000
+@@ -6,67 +6,78 @@
+   # author: matthewmx86 (author of Redmond97)
+ */
+ 
+-/* color codes */
+-@define-color color_a #1B1B1C;
+-@define-color color_b #DADADA;
+-@define-color color_c #282829;
+-@define-color color_d #333335;
+-@define-color color_f #161617;
+-@define-color color_g #8C8C8C;
+-@define-color color_h #5B5B5D;
+-@define-color color_i #4E4E4E;
+-@define-color color_j #A5D8FF;
+-@define-color color_k #4DABF7;
+-@define-color color_l #51CF66;
+-@define-color color_m #FF922B;
+-@define-color color_n #FA5252;
++/*# scheme style: base16
++  # scheme name: Default Dark
++  # scheme variant: dark
++  # scheme author DHAMPIRAVE
++*/
++
++/* Background & Foreground */
+ 
++/* Colors */
++@define-color base00 #161617 ; /* Background */
++@define-color base01 #1B1B1C ; 
++@define-color base02 #282829 ;
++@define-color base03 #333335 ;
++@define-color base04 #5B5B5D ; /* Foreground */
++@define-color base05 #DADADA ;
++@define-color base06 #606060 ;
++@define-color base07 #8C8C8C ;
++                                                
++@define-color base08 #FA5252 ; /*        Red */                 
++@define-color base09 #FF922B ; /*     Orange */
++@define-color base0A #FFD43B ; /*     Yellow */
++@define-color base0B #94D820 ; /*      Green */
++@define-color base0C #51Cf66 ; /*       Cyan */
++@define-color base0D #4DABF7 ; /*       Blue */
++@define-color base0E #A5D8FF ; /*     Purple */
++@define-color base0F #FA5252 ; /*      Brown */
+ 
+ /* default color scheme */
+-@define-color bg_color @color_a; /* Window Theme: buttonface */
+-@define-color fg_color @color_b; /* Windows Theme: windowtext */
+-@define-color panel_fg_color @color_b;
+-@define-color panel_fg_color_bright @color_f;
+-@define-color base_color @color_a; 
+-@define-color text_color @color_b; /* Windows Theme: windowtext (any white area text)*/
+-@define-color text_color_@color_b;
+-@define-color selected_bg_color @color_c; /* Windows Theme: hilight */
+-@define-color selected_fg_color @color_g; /* Windows Theme: hilighttext */
+-@define-color selected_inactive_bg_color @color_g; 
+-@define-color selected_inactive_fg_color @color_c; 
+-@define-color tooltip_bg_color @color_a; /* Windows Theme: infowindow, Tooltip background color */ 
+-@define-color tooltip_bg_shade @color_d; /* Windows Theme: infotext, sometimes text hinting? */
+-@define-color tooltip_fg_color @color_b; /* Windows Theme: infotext */
+-@define-color bg_bright @color_f; /* Windows Theme: window, White inner window/text areas */
++@define-color bg_color @base01; /* Window Theme: buttonface */
++@define-color fg_color @base05; /* Windows Theme: windowtext */
++@define-color panel_fg_color @base05;
++@define-color panel_fg_color_bright @base00;
++@define-color base_color @base01; 
++@define-color text_color @base05; /* Windows Theme: windowtext (any white area text)*/
++@define-color text_color_@base05;
++@define-color selected_bg_color @base02; /* Windows Theme: hilight */
++@define-color selected_fg_color @base07; /* Windows Theme: hilighttext */
++@define-color selected_inactive_bg_color @base07; 
++@define-color selected_inactive_fg_color @base02; 
++@define-color tooltip_bg_color @base01; /* Windows Theme: infowindow, Tooltip background color */ 
++@define-color tooltip_bg_shade @base02; /* Windows Theme: infotext, sometimes text hinting? */
++@define-color tooltip_fg_color @base04; /* Windows Theme: infotext */
++@define-color bg_bright @base00; /* Windows Theme: window, White inner window/text areas */
+ @define-color bg_shade shade(@bg_color, 0.66); 
+ @define-color bg_dark shade(@bg_color, 0.13); 
+-@define-color border_color @color_a; /* Window Theme: buttonface */
+-@define-color border_bright @color_c; /* Windows Theme: buttonlight */
+-@define-color border_light @color_a; /* Windows Theme: buttonhilight */
+-@define-color border_dark @color_d; /* Windows Theme: buttondkshadow */
+-@define-color border_shade @color_f; /* Windows Theme: buttonshadow */
+-@define-color border_shade_dark #000; 
++@define-color border_color @base01; /* Window Theme: buttonface */
++@define-color border_bright @base02; /* Windows Theme: buttonlight */
++@define-color border_light @base01; /* Windows Theme: buttonhilight */
++@define-color border_dark @base02; /* Windows Theme: buttondkshadow */
++@define-color border_shade shade (@base01, 0.66); /* Windows Theme: buttonshadow */
++@define-color border_shade_dark shade(@base01, 0.13); 
+ @define-color outline_color @text_color; 
+ @define-color font_color @text_color; /* Windows Theme: windowtext (any white area text)*/
+ @define-color font_bright @text_color; 
+-@define-color disabled_font_shadow @color_i; /* Windows Theme: buttonhilight, testing confirmed this is what Windows 95 Uses for this setting */
+-@define-color disabled_font @color_h; /* Windows Theme: buttonshadow, testing confirmed this is what Windows 95 Uses for this setting */
+-@define-color icon_shadow black;
+-@define-color icon_shadow_bright white;
+-@define-color menu_text_color @color_b; /* Windows Theme: menutext */
+-@define-color menu_bg_color @color_a;       /* Windows Theme: menu, applied to 'menu' and 'menubar' */
+-@define-color button_text_color @color_b; /* Windows Theme: buttontext */
+-@define-color button_bg_color @color_a; /* Windows Theme: buttonface */
+-@define-color scrollbar_trough_bg_color @color_c; /* Window theme: scrollbar, also controls task bar background color, per windows 95 themes */
++@define-color disabled_font_shadow @base02; /* Windows Theme: buttonhilight, testing confirmed this is what Windows 95 Uses for this setting */
++@define-color disabled_font @base03; /* Windows Theme: buttonshadow, testing confirmed this is what Windows 95 Uses for this setting */
++@define-color icon_shadow @base04;
++@define-color icon_shadow_bright @base00;
++@define-color menu_text_color @base05; /* Windows Theme: menutext */
++@define-color menu_bg_color @base01;       /* Windows Theme: menu, applied to 'menu' and 'menubar' */
++@define-color button_text_color @base05; /* Windows Theme: buttontext */
++@define-color button_bg_color @base01; /* Windows Theme: buttonface */
++@define-color scrollbar_trough_bg_color @base02; /* Window theme: scrollbar, also controls task bar background color, per windows 95 themes */
+ @define-color scrollbar_bg_color @button_bg_color; /* Window theme: (scrollbar) buttonface */
+ @define-color scrollbar_solid_color @bg_color; /* Window Theme: Scrollbar, this is only if you want the scrollbar trough solid color */
+-@define-color window_title_bg_color @color_a; /* Windows Theme: activetitle */
+-@define-color window_title_text_color @color_b;  /* Windows Theme: titletext */
+-@define-color inactive_title_bg_color @color_f; /* Windows Theme: inactivetitle */
+-@define-color inactive_title_text_color @color_h; /* Windows Theme: inactivetitletext */
++@define-color window_title_bg_color @base01; /* Windows Theme: activetitle */
++@define-color window_title_text_color @base05;  /* Windows Theme: titletext */
++@define-color inactive_title_bg_color @base00; /* Windows Theme: inactivetitle */
++@define-color inactive_title_text_color @base04; /* Windows Theme: inactivetitletext */
+ 
+ /* selection outline */
+-@define-color selected_outline @color_h; /* Selection button outline/frame color */
++@define-color selected_outline @base03; /* Selection button outline/frame color */
+ 
+ /* dark color scheme */
+ @define-color dark_bg_color @bg_color;
+@@ -83,24 +94,24 @@
+ @define-color theme_tooltip_fg_color @tooltip_fg_color;
+ 
+ /*Nemo Desktop shadow fix*/
+-@define-color desktop_item_fg #ffffff;
++@define-color desktop_item_fg @base06;
+ @define-color desktop_item_selected_fg shade(@theme_selected_fg_color, 0.8);
+-@define-color desktop_item_text_shadow alpha(black, 0.8);
++@define-color desktop_item_text_shadow alpha(@base00, 0.8);
+ 
+ /* misc colors used by gtk+ */
+ @define-color info_fg_color @fg_color;
+ @define-color info_bg_color @bg_color;
+ @define-color warning_fg_color @bg_color;
+-@define-color warning_bg_color @color_m;
++@define-color warning_bg_color @base0A;
+ @define-color question_fg_color @info_fg_color;
+ @define-color question_bg_color @info_bg_color;
+ @define-color error_fg_color @bg_color;
+-@define-color error_bg_color @color_n;
+-@define-color link_color @color_j; /* Windows Theme: hottrackingcolor */
+-@define-color link_color_shadow @color_k;
+-@define-color success_color @color_l;
+-@define-color warning_color @color_m;
+-@define-color error_color @color_n;
++@define-color error_bg_color @base08;
++@define-color link_color @base09; /* Windows Theme: hottrackingcolor */
++@define-color link_color_shadow alpha(@base09, 0.8);
++@define-color success_color @base0B;
++@define-color warning_color @base0A;
++@define-color error_color @base08;
+ 
+ /* osd */
+ @define-color osd_base @dark_bg_color;
+@@ -147,9 +158,9 @@
+ @define-color whisker_menu_logo @bg_shade;
+ 
+ /* XFCE desktop icon colours*/
+-@define-color xfd_icon_backdrop @color_c;
+-@define-color xfd_icon_text @color_g;
+-@define-color xfd_rubberband_outline @color_c;
++@define-color xfd_icon_backdrop @base02;
++@define-color xfd_icon_text @base07;
++@define-color xfd_rubberband_outline @base02;
+ 
+ /* Nautilus desktop icon text colour */
+ @define-color nautilus_icon_text @base_color;

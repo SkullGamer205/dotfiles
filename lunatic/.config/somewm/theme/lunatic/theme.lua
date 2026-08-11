@@ -88,7 +88,7 @@ theme.gap_default           = dpi(2)
 
 -- Background
 theme.bg_normal             = theme.colors.background
-theme.bg_focus              = theme.colors.primary
+theme.bg_focus              = theme.colors.background_light
 theme.bg_urgent             = theme.colors.high
 theme.bg_minimize           = theme.colors.background_dark
 theme.bg_systray            = theme.bg_normal
@@ -136,6 +136,12 @@ theme.taglist_squares_unsel = nil
 -- Menu
 theme.menu_height = dpi(theme.font_size) * 1.5
 theme.menu_width  = dpi(theme.font_size) * 12
+
+theme.menu_fg_normal = theme.colors.foreground
+theme.menu_bg_normal = theme.colors.background
+theme.menu_fg_focus  = theme.bg_normal
+theme.menu_bg_focus  = theme.colors.primary
+
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 
 -- Shadows
@@ -252,7 +258,7 @@ theme.power_lockscreen                          = themes_path .. 'icons/system-l
 theme.power_hibernate                           = themes_path .. 'icons/system-hibernate.svg'
 
 -- Generate Awesome icon:
-theme.awesome_icon                              = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
+theme.awesome_icon                              = theme_assets.awesome_icon(theme.menu_height, theme.colors.primary, theme.bg_focus)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
