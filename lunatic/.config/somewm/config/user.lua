@@ -32,13 +32,13 @@ return {
     palette     = {
     -- Base00-07
     base00      = '#272e33', -- [ BG ] Default
-    base01      = '#343f44', -- [ BG ] Lighter
-    base02      = '#3d484d', -- [ BG ] Selection
-    base03      = '#56635f', -- [ BG ] Highlight
-    base04      = '#9196a1', -- [ FG ] Dark
+    base01      = '#2e383c', -- [ BG ] Lighter
+    base02      = '#414b50', -- [ BG ] Selection
+    base03      = '#4f5b58', -- [ BG ] Highlight
+    base04      = '#9da9a0', -- [ FG ] Dark
     base05      = '#d3c6aa', -- [ FG ] Default
-    base06      = '#e6e6e6', -- [ FG ] Light
-    base07      = '#ffffff', -- [ FG ] Lightest
+    base06      = '#edeada', -- [ FG ] Light
+    base07      = '#fffbef', -- [ FG ] Lightest
 
     -- Base08-0E
     base08      = '#e67e80', -- [ RED     ] Normal
