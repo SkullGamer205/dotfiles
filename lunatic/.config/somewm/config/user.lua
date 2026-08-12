@@ -45,18 +45,44 @@ return {
     
     -- OUTPUTS
     outputs = {
+        -- Virtual machine
         ['Virtual-1'] = {
             resolution      = {1920, 1080, 60}, -- Width, Height, Rate
             adaptive_sync   = false,
             scale           = 1.0,
             position        = {0, 0},
         },
+
+        -- Virtual display
         ['WL-1'] = {
-            resolution      = {640, 480, 60}, -- Width, Height, Rate
+            resolution      = {640, 480, 60},
             adaptive_sync   = false,
             scale           = 1.0,
             position        = {0, 0},
         },
+        
+        -- Real displays
+        ['eDP-1'] = {
+            resolution      = {1920, 1080, 75},
+            adaptive_sync   = false,
+            scale           = 1.0,
+            position        = {0, 0},
+        },
+        
+        ['HDMI-A-1'] = {
+            resolution      = {1920, 1080, 75},
+            adaptive_sync   = false,
+            scale           = 1.0,
+            position        = {1920, 0},
+        },
+        
+        ['DP-1'] = {
+            resolution      = {1920, 1080, 60},
+            adaptive_sync   = false,
+            scale           = 1.0,
+            position        = {3840, 0},
+        },
+
     },
 
     -- KEYBOARD
