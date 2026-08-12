@@ -2,31 +2,8 @@ local awful = require('awful')
 
 -- Specify user preferences for SomeWM's behavior
 return {
-    modkey = "Mod4",
-    -- tags = { '1', '2', '3', '4', '5', '6', '7', '8' },
-    tags = { '1', '2', '3', '4'},
 
-    layouts = {
-        awful.layout.suit.carousel,
-        awful.layout.suit.floating,
-        -- awful.layout.suit.spiral.dwindle,
-        -- awful.layout.suit.tile,
-        -- awful.layout.suit.tile.left,
-        -- awful.layout.suit.tile.bottom,
-        -- awful.layout.suit.tile.top,
-        -- awful.layout.suit.fair,
-        -- awful.layout.suit.fair.horizontal,
-        -- awful.layout.suit.spiral,
-        -- awful.layout.suit.max,
-        -- awful.layout.suit.max.fullscreen,
-        -- awful.layout.suit.magnifier,
-        -- awful.layout.suit.corner.nw,
-    },
-
-    font = {
-        name = 'CozetteCrossedSeven',
-        size = '10',
-    },
+    -- THEME
 
     -- Base24 Everforest Theme
     palette     = {
@@ -59,5 +36,51 @@ return {
     base15      = '#35A77C', -- [ CYAN    ] Bright
     base16      = '#3A94C5', -- [ BLUE    ] Bright
     base17      = '#DF69BA', -- [ MAGENTA ] Bright
-    }
+    },
+
+    font = {
+        name = 'CozetteCrossedSeven',
+        size = '10',
+    },
+    
+    -- OUTPUTS
+    outputs = {
+        ['Virtual-1'] = {
+            resolution      = {1920, 1080, 60}, -- Width, Height, Rate
+            adaptive_sync   = false,
+            scale           = 1.0,
+            position        = {0, 0},
+        },
+        ['WL-1'] = {
+            resolution      = {640, 480, 60}, -- Width, Height, Rate
+            adaptive_sync   = false,
+            scale           = 1.0,
+            position        = {0, 0},
+        },
+    },
+
+    -- KEYBOARD
+    modkey = "Mod4",
+    -- tags = { '1', '2', '3', '4', '5', '6', '7', '8' },
+
+    -- TAGS
+    tags = { '1', '2', '3', '4'},
+
+    -- LAYOUTS
+    layouts = {
+        awful.layout.suit.carousel,
+        awful.layout.suit.floating,
+        -- awful.layout.suit.spiral.dwindle,
+        -- awful.layout.suit.tile,
+        -- awful.layout.suit.tile.left,
+        -- awful.layout.suit.tile.bottom,
+        -- awful.layout.suit.tile.top,
+        -- awful.layout.suit.fair,
+        -- awful.layout.suit.fair.horizontal,
+        -- awful.layout.suit.spiral,
+        -- awful.layout.suit.max,
+        -- awful.layout.suit.max.fullscreen,
+        -- awful.layout.suit.magnifier,
+        -- awful.layout.suit.corner.nw,
+    },
 }

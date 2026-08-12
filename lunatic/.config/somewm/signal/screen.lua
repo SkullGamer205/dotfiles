@@ -1,6 +1,22 @@
 local awful     = require('awful')
 local beautiful = require('beautiful')
 local wibox     = require('wibox')
+local outputs   = require('config.user').outputs
+
+output.connect_signal("added", function(o)
+    for o in output do
+        if outputs[o.name] then
+            local current_output = output.get_by_name(o.name)
+            current_output.mode = {
+                width   = outputs[o.name].resolution[1],
+                height  = outputs[o.name].resolution[2],
+                refresh = outputs[o.name].resolution[3],
+            }
+
+            current_output.scale = outputs[o.name].scale
+        end
+    end
+end)
 
 --- Attach tags and widgets to all screens.
 screen.connect_signal("request::desktop_decoration", function(s)
