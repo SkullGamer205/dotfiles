@@ -1,3 +1,5 @@
+-- Some function grabbed from this file:  raw.githubusercontent.com/sewergweller/gwileful/refs/heads/master/ui/launcher/init.lua
+
 -- Launcher
 local wibox         = require('wibox')
 local awful         = require('awful')

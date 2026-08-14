@@ -26,7 +26,7 @@
 
 <!--
 nvim, zsh, fzf, zoxide, npm, fastfetch, tealdeer (tldr)
-
+qt6gtk2
 wayland, wayland-protocols, wayland-utils 
 -->
 
@@ -42,10 +42,10 @@ wayland, wayland-protocols, wayland-utils
 - [awesome-from-scratch](https://github.com/trip-zip/awesome-from-scratch) by trip-zip ([SomeWM](https://github.com/trip-zip/somewm) developer)
 - HoNamDuong's [dotfiles](https://github.com/HoNamDuong/.dotfiles)
 - [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets) by streetturtle
-
+- [gwileful](https://github.com/sewergweller/gwileful) by sewergweller
 <!-- - [Awesome-Freedesktop](https://github.com/lcpz/awesome-freedesktop) by lcpz -->
 
 # Roadmap
 [Here](../../../../issues/1)
 
-<p align="center">Last Edit: 2026.07.11</p>
+<p align="center">Last Edit: 2026.08.15</p>
