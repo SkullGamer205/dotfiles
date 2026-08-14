@@ -15,6 +15,7 @@ local simplepopup = {}
 --
 --
 -- @param opts.stop_key                 string      (optional) (default: 'Escape') Key to dismiss.
+-- @param opts.enable_keygrabber        boolean     (optional) (default: 'true') Enable  keygrabber (needed for opts.stop_key).
 -- @param opts.keypressed_callback      function    (optional) Handles keys. Signature: function(widget, key, modifiers)
 -- @param opts.on_show                  function    (optional) Callback on show
 -- @param opts.on_hide                  function    (optional) Callback on hide.
@@ -31,11 +32,13 @@ function simplepopup.create(name, opts)
     local is_cleaning_up    = false
 
     -- Defauls
-    local placement     = opts.placement         or awful.placement.centered
-    local border_width  = beautiful.border_width or 0
-    local border_color  = beautiful.border_color or '#00000000'
-    local shape         = beautiful.shape        or gears.shape.rounded_rect
-    local stop_key      = opts.stop_key          or 'Escape'
+    local placement         = opts.placement            or awful.placement.centered
+    local border_width      = beautiful.border_width    or 0
+    local border_color      = beautiful.border_color    or '#00000000'
+    local shape             = beautiful.shape           or gears.shape.rounded_rect
+    local stop_key          = opts.stop_key             or 'Escape'
+    local enable_keygrabber = opts.enable_keygrabber    or true
+
 
     -- Internal cleanup
     local function cleanup()
@@ -111,8 +114,8 @@ function simplepopup.create(name, opts)
         popup.widget = opts.main_widget()
         popup.visible = true
         visible = true
-
-        start_keygrabber()
+        
+        if opts.enable_keygrabber == true then start_keygrabber() end
 
         awesome.emit_signal(name .. "::visible", true)
     end
