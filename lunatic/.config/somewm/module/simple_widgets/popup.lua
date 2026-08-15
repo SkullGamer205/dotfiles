@@ -114,8 +114,8 @@ function simplepopup.create(name, opts)
         popup.widget = opts.main_widget()
         popup.visible = true
         visible = true
-        
-        if opts.enable_keygrabber == true then start_keygrabber() end
+         
+        if opts.enable_keygrabber ~= false then start_keygrabber() end
 
         awesome.emit_signal(name .. "::visible", true)
     end
