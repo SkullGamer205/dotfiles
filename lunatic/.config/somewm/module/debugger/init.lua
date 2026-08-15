@@ -59,7 +59,7 @@ end
 local function format_message(level, module, message, ...)
     local formatted_msg = string.format(message, ...)
     local color         = LEVEL_COLORS[level] or ""
-    return string.format("%s[%s] [%s] [%s] %s%s\n" color, timestamp(), level, module, formatted_msg, COLORS.RESET)
+    return string.format("%s[%s] [%s] [%s] %s%s\n", color, timestamp(), level, module, formatted_msg, COLORS.RESET)
 end
 
 local function write_to_file(msg)
