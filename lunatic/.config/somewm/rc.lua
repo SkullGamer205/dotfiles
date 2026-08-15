@@ -3,6 +3,8 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+local Debugger = require('module.debugger')
+
 -- @DOC_REQUIRE_SECTION@
 -- Standard awesome library
 local gears = require("gears")
@@ -50,7 +52,7 @@ if awesome.x11_fallback_info then
     end)
 end
 -- }}}
-
+Debugger.info("SomeWM", "Loading user modules")
 require("awful.autofocus")
 
 -- Initialize lockscreen (must be after beautiful.init)
@@ -67,4 +69,4 @@ require('binds')
 
 -- Rules
 require('config.rules')
-
+Debugger.info("SomeWM", "User modules loaded successfully")
