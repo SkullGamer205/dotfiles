@@ -2,6 +2,7 @@
 local awful     = require('awful')
 local beautiful = require('beautiful')
 local gears     = require('gears')
+local Debugger  = require('module.debugger')
 
 -- Simple Popups
 local simplepopup = {}
@@ -42,27 +43,35 @@ function simplepopup.create(name, opts)
 
     -- Internal cleanup
     local function cleanup()
-        if is_cleaning_up then return end
+        if is_cleaning_up then
+            Debugger.warn("PopupWidget", "(" .. name .. ") Popup is currently cleaning. Ignoring")
+            return
+        end
         is_cleaning_up = true
+        Debugger.debug("PopupWidget", "(" .. name .. ") Cleaning ...")
 
         visible = false
         if keygrabber then
             keygrabber:stop()
             keygrabber = nil
+            Debugger.debug("PopupWidget", "(" .. name .. ") Keygrabber stopped")
         end
 
         if popup then
             popup.visible = false
+            Debugger.debug("PopupWidget", "(" .. name .. ") Hiding ...")
         end
 
         awesome.emit_signal(name .. "::visible", false)
         if opts.on_hide then opts.on_hide(widget) end
 
         is_cleaning_up = false
+        Debugger.debug("PopupWidget", "(" .. name .. ") Done")
     end
 
     -- Internal keygrabber setup
     local function start_keygrabber()
+        Debugger.debug("PopupWidget", "(" .. name .. ") Keygrabber started")
         keygrabber = awful.keygrabber({
             autostart       = true,
             stop_key        = stop_key,
@@ -79,14 +88,20 @@ function simplepopup.create(name, opts)
     -- Refresh popup widget
     function widget.refresh()
         if popup then
+            Debugger.debug("PopupWidget", "(" .. name .. ") Refreshing ...")
             if opts.on_refresh then opts.on_refresh(widget) end
             popup.widget = opts.main_widget()
+            Debugger.debug("PopupWidget", "(" .. name .. ") Done")
         end
     end
 
     -- Show popup
     function widget.show()
-        if visible then return end
+        if visible then
+            Debugger.warn("PopupWidget", "(" .. name .. ") Popup is currently visible. Ignoring.")
+            return
+        end
+        Debugger.debug("PopupWidget", "(" .. name .. ") Showing popup")
 
         if opts.on_show then opts.on_show(widget) end
 
