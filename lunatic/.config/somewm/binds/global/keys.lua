@@ -143,8 +143,8 @@ local g_keys = {
     {{ modkey, mod.ctrl  }, "n"                  , global_helpers.client_restore_minimized                      , "Resrore minimized window"    , "Client"      },
 
     -- Layout
-    {{ modkey,           }, "Space"              , function() awful.layout.inc( 1) end                          , "Select next"                 , "Layout"      }, 
-    {{ modkey, mod.shift }, "Space"              , function() awful.layout.inc(-1) end                          , "Select previous"             , "Layout"      },
+    {{ modkey, mod.shift }, "Space"              , function() awful.layout.inc( 1) end                          , "Select next"                 , "Layout"      }, 
+    {{ modkey, mod.ctrl  }, "Space"              , function() awful.layout.inc(-1) end                          , "Select previous"             , "Layout"      },
 
     {{ modkey,           }, "h"                  , function() awful.tag.incmwfact(-0.05) end                    , "Decrease master with factor" , "Layout"      }, 
     {{ modkey,           }, "l"                  , function() awful.tag.incmwfact( 0.05) end                    , "Increase master with factor" , "Layout"      },  
