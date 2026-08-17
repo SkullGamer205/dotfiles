@@ -60,7 +60,7 @@ local layout_helpers = {
         else
             awful.tag.incncol( 1, nil, true)
         end
-    end
+    end,
     
     decrease_column_numbers = function()
         if awful.layout.get(awful.screen.focused()).name == "carousel" then
@@ -68,7 +68,7 @@ local layout_helpers = {
         else
             awful.tag.incncol(-1, nil, true)
         end
-    end
+    end,
 }
 
 local media_helpers = {

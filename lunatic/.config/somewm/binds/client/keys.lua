@@ -13,25 +13,25 @@ local local_helpers = {
     toggle_maximized = function(c)
         c.maximized = not c.maximized
         c:raise()
-    end
+    end,
     
     toggle_maximized_v = function(c)
         c.maximized_vertical = not c.maximized_vertical
         c:raise()
-    end
+    end,
 
     toggle_maximized_h = function(c)
         c.maximized_horizontal = not c.maximized_horizontal
         c:raise()
-    end
+    end,
 
     minimize = function(c)
         c.minimized = true
-    end
+    end,
 
     toggle_on_top = function(c)
         c.ontop = not c.ontop
-    end
+    end,
 }
 
 -- @DOC_CLIENT_KEYBINDINGS@
