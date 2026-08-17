@@ -55,5 +55,5 @@ local c_keys = {
 }
 
 client.connect_signal("request::default_keybindings", function()
-  awful.keyboard.append_client_keybindings(table_to_keybinding(c_keys))
+  awful.keyboard.append_client_keybindings(helpers.table_to_keybinding(c_keys))
 end)

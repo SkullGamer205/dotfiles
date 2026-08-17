@@ -122,7 +122,7 @@ local g_keys = {
     -- Launcher
     {{ modkey,  }, "Return"                      , function() awful.spawn(apps.terminal) end                    , "Open terminal"               , "Launcher"    }, 
     {{ modkey,  }, "r"                           , function() awful.screen.focused().mypromptbox:run() end      , "Run prompt"                  , "Launcher"    }, 
-    {{ modkey,  }, "p"                           , menubar.show()                                               , "Show titlebar"               , "Launcher"    }, 
+    -- {{ modkey,  }, "p"                           , menubar.show()                                               , "Show titlebar"               , "Launcher"    }, 
 
     -- Tag
     {{ modkey,  }, "Left"                        , awful.tag.viewprev                                           , "View previous"               , "Tag"         }, 
