@@ -158,7 +158,7 @@ local g_keys = {
     {{ modkey, mod.shift }, "e"                  , function() awful.layout.suit.carousel.expel_window() end     , "Expel window to new column"  , "Carousel"    },
 }
 
-awful.keyboard.append_global_keybindings(table_to_keybinding(g_keys))
+awful.keyboard.append_global_keybindings(helpers.table_to_keybinding(g_keys))
 
 -- @DOC_NUMBER_KEYBINDINGS@
 awful.keyboard.append_global_keybindings({
