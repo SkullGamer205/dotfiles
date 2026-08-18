@@ -22,7 +22,8 @@ local simplebox = {}
         
         -- Defaults
         local id                = opts.id               or nil
-        local margin            = opts.margin           or 0
+        local inner_margin      = opts.inner_margin     or 2
+        local outer_margin      = opts.outer_margin     or 2
         local width             = opts.width            or nil
         local height            = opts.height           or width
         local main_color        = opts.main_color       or nil
@@ -31,15 +32,19 @@ local simplebox = {}
         local f_right_click     = opts.on_right_clicked or nil
 
         local widget = wibox.widget({
-            widget          = wibox.container.background,
-            shape           = gears.shape.rectangle,
-            bg              = main_color,
-            forced_width    = width,
-            forced_height   = height,
+            widget      = wibox.container.margin,
+            margins     = outer_margin,
             {
-                widget      = wibox.container.margin,
-                margins     = margin,
-                w,
+                widget          = wibox.container.background,
+                shape           = gears.shape.rectangle,
+                bg              = main_color,
+                forced_width    = width,
+                forced_height   = height,
+                {
+                    widget      = wibox.container.margin,
+                    margins     = inner_margin,
+                    w,
+                },
             },
             buttons = {
                 awful.button({ }, 1, f_left_click),
