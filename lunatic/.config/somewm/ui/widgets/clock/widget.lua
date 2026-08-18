@@ -6,31 +6,7 @@ local gears             = require('gears')
 local SimplePopup       = require('module.simple_widgets.popup').create
 local SimpleBox         = require('module.simple_widgets.box').create_box
 
-local function clock_widget(format)
-    local clock_widget = wibox.widget({
-        widget  = wibox.widget.textbox,
-        align   = 'center',
-        valign  = 'center',
-        text    = '',
-        font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 4
-    })
-
-    local function update_func()
-        clock_widget:set_text('' .. os.date(format))
-    end
-
-    gears.timer({
-        timeout     = 1,
-        autostart   = true,
-        call_now    = true,
-        callback    = update_func,
-    })
-
-    return SimpleBox(clock_widget, {
-        main_color          = beautiful.colors.background_light,
-        margin              = 2,
-    })
-end
+local modules           = require('ui.widgets.clock.modules')
 
 local function calendar_widget()
     local cal_buttons  = {}
@@ -59,7 +35,6 @@ local function calendar_widget()
         return SimpleBox(text_widget(i), {
             main_color          = beautiful.colors.background_light,
             highlight_color     = beautiful.bg_focus,
-            margin              = 2,
         })
     end
 
@@ -90,7 +65,7 @@ local function create_clock_widget()
             {
                 layout  = wibox.layout.fixed.horizontal,
                 -- Clock
-                clock_widget('%H\n%M\n%S'),
+                modules.clock('%H\n%M\n%S'),
                 calendar_widget(),
                 -- Weather
                 -- {},
