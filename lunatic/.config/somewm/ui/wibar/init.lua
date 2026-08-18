@@ -22,7 +22,7 @@ return function(s)
         -- @DOC_SETUP_WIDGETS@
         widget   = {
             widget  = wibox.container.margin,
-            margins = beautiful.gap_default,
+            -- margins = beautiful.gap_default,
             {
                 layout = wibox.layout.align.vertical,
                 expand = 'outside',
@@ -47,6 +47,7 @@ return function(s)
                     spacing = beautiful.gap_default,
                     module.kbd(),
                     wibox.widget.systray(),
+                    module.battery(s),
                     module.power(s),
                 },
             }
