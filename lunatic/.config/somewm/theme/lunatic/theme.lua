@@ -142,7 +142,7 @@ theme.menu_bg_normal = theme.colors.background
 theme.menu_fg_focus  = theme.bg_normal
 theme.menu_bg_focus  = theme.colors.primary
 
-theme.menu_submenu_icon = themes_path .. "default/submenu.png"
+theme.menu_submenu_icon = themes_path .. "icons/launcher/arrow.png"
 
 -- Shadows
 theme.shadow_enabled        = true
@@ -247,7 +247,7 @@ theme.layout_cornersw                           = themes_path .. "layouts/corner
 theme.layout_cornerse                           = themes_path .. "layouts/cornersew.png"
 
 -- Launcher
-theme.launcher_icon                             = themes_path .. 'icons/search.svg'
+theme.launcher_icon                             = themes_path .. 'icons//launcher/find.png'
 
 -- Power
 theme.power_shutdown                            = themes_path .. 'icons/system-shutdown.svg'
