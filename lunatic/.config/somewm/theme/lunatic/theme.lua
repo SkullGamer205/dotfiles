@@ -257,6 +257,18 @@ theme.power_logout                              = themes_path .. 'icons/system-l
 theme.power_lockscreen                          = themes_path .. 'icons/system-lock-screen.svg'
 theme.power_hibernate                           = themes_path .. 'icons/system-hibernate.svg'
 
+-- Battery
+theme.battery_health                            = themes_path .. 'icons/battery/battery-health.png'
+theme.battery_loops                             = themes_path .. 'icons/battery/battery-loops.png'
+theme.battery_volt                              = themes_path .. 'icons/battery/battery-volt.png'
+theme.battery_watt                              = themes_path .. 'icons/battery/battery-watt.png'
+theme.battery_full                              = themes_path .. 'icons/battery/battery-full.png'
+theme.battery_good                              = themes_path .. 'icons/battery/battery-good.png'
+theme.battery_low                               = themes_path .. 'icons/battery/battery-low.png'
+theme.battery_full_charging                     = themes_path .. 'icons/battery/battery-full-charging.png'
+theme.battery_good_charging                     = themes_path .. 'icons/battery/battery-good-charging.png'
+theme.battery_low_charging                      = themes_path .. 'icons/battery/battery-low-charging.png'
+
 -- Generate Awesome icon:
 theme.awesome_icon                              = theme_assets.awesome_icon(theme.menu_height, theme.colors.primary, theme.bg_focus)
 
