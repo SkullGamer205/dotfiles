@@ -155,7 +155,7 @@ function _Apps.open(w)
       end,
       -- When all else is done.
       done_callback = function()
-         w.hide()
+          w.hide()
       end
    })
 end
