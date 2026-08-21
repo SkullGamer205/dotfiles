@@ -43,7 +43,7 @@ wayland, wayland-protocols, wayland-utils
 - HoNamDuong's [dotfiles](https://github.com/HoNamDuong/.dotfiles)
 - [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets) by streetturtle
 - [gwileful](https://github.com/sewergweller/gwileful) by sewergweller
-<!-- - [Awesome-Freedesktop](https://github.com/lcpz/awesome-freedesktop) by lcpz -->
+- [Awesome-Freedesktop](https://github.com/lcpz/awesome-freedesktop) by lcpz
 
 # Roadmap
 [Here](../../../../issues/1)
