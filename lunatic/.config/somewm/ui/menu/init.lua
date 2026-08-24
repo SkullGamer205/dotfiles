@@ -44,11 +44,11 @@ menu.main = freedesktop.menu.build({
     sub_menu = "All Apps",
     icon     = beautiful.launcher_all_apps,
     after  = {
-        { "Quick Apps"          , menu.favorites },
+        { "Quick Apps"          , menu.favorites        , beautiful.launcher_favorites },
         menu.placeholder        ,
-        { "Styles"              , menu.customize },
-        { "SomeWM"              , menu.somewm, beautiful.awesome_icon },
-        { "Goodbye"             , menu.power },
+        { "Styles"              , menu.customize        , beautiful.launcher_style },
+        { "SomeWM"              , menu.somewm           , beautiful.awesome_icon },
+        { "Goodbye"             , menu.power            , beautiful.launcher_exit },
     },
 })
 
