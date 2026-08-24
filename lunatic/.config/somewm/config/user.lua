@@ -85,9 +85,17 @@ return {
 
     },
 
+    -- INPUTS
+    keyboard    = {
+        layout      = "us,ru",
+        variant     = "",
+        options     = "",
+        model       = "",
+        set_repeat  = {30, 300},        -- rate, delay
+    },
+
     -- KEYBOARD
     modkey = "Mod4",
-    -- tags = { '1', '2', '3', '4', '5', '6', '7', '8' },
 
     -- TAGS
     tags = { '1', '2', '3', '4'},

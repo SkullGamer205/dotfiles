@@ -69,4 +69,5 @@ require('binds')
 
 -- Rules
 require('config.rules')
+require('config.input')
 Debugger.info("SomeWM", "User modules loaded successfully")
