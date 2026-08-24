@@ -39,8 +39,9 @@ return {
     },
 
     font = {
-        name = 'CozetteCrossedSeven',
-        size = '10',
+        -- name = 'CozetteCrossedSeven',
+        name = 'Fairfax',
+        size = '9',
     },
     
     -- OUTPUTS
@@ -90,7 +91,7 @@ return {
         layout      = "us,ru",
         variant     = "",
         options     = "",
-        model       = "",
+        -- model       = "",
         set_repeat  = {30, 300},        -- rate, delay
     },
 
