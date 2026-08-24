@@ -9,7 +9,7 @@ local BatteryWidget     = require(... .. ".widget")
 local icon = SimpleIcon.create_icon(beautiful.battery_full)
 
 local widget = SimpleBox.create_box(icon, {
-    main_color      = beautiful.colors_background_light,
+    main_color      = beautiful.colors.background_light,
     highlight_color = beautiful.bg_focus,
     on_clicked      = function() BatteryWidget.toggle() end
 })
