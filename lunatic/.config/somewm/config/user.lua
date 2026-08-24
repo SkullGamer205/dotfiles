@@ -117,4 +117,11 @@ return {
         -- awful.layout.suit.magnifier,
         -- awful.layout.suit.corner.nw,
     },
+
+    -- Screenshots
+    shots = {
+        directory   = os.getenv("HOME") .. "/media/screenshots/",
+        notify      = true,
+
+    }
 }
