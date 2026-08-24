@@ -22,7 +22,7 @@ local function cal_date_button(i)
             halign = 'center',
             valign = 'center',
             text   = os.date('%d (%a)', current_time + ((- 2 + i) * day)),
-            font   = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 1.25
+            font   = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 1.5
         })
     end
 
