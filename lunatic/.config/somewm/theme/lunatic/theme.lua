@@ -247,7 +247,11 @@ theme.layout_cornersw                           = themes_path .. "layouts/corner
 theme.layout_cornerse                           = themes_path .. "layouts/cornersew.png"
 
 -- Launcher
-theme.launcher_icon                             = themes_path .. 'icons//launcher/find.png'
+theme.launcher_icon                             = themes_path .. 'icons/launcher/find.png'
+theme.launcher_exit                             = themes_path .. 'icons/launcher/exit.png'
+theme.launcher_all_apps                         = themes_path .. 'icons/launcher/all-apps.png'
+theme.launcher_favorites                        = themes_path .. 'icons/launcher/favorites.png'
+theme.launcher_style                            = themes_path .. 'icons/launcher/styles.png'
 
 -- Power
 theme.power_shutdown                            = themes_path .. 'icons/system-shutdown.svg'
