@@ -58,11 +58,12 @@ end
 -- Use MenuBar parsing utils to build a menu for Awesome
 -- @return awful.menu
 function menu.build(args)
-    local args       = args or {}
-    local before     = args.before or {}
-    local after      = args.after or {}
-    local skip_items = args.skip_items or {}
-    local sub_menu   = args.sub_menu or false
+    local args          = args or {}
+    local before        = args.before or {}
+    local after         = args.after or {}
+    local skip_items    = args.skip_items or {}
+    local sub_menu      = args.sub_menu or false
+    local icon          = args.icon or nil
 
     local result     = {}
     local _menu      = awful_menu({ items = before })
@@ -104,7 +105,7 @@ function menu.build(args)
 
         -- Add menu item to hold the generated menu
         if sub_menu then
-            result = {{sub_menu, result}}
+            result = {{sub_menu, result, icon}}
         end
 
         -- Add items to menu
