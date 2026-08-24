@@ -42,6 +42,7 @@ menu.power = {
 
 menu.main = freedesktop.menu.build({
     sub_menu = "All Apps",
+    icon     = beautiful.launcher_all_apps,
     after  = {
         { "Quick Apps"          , menu.favorites },
         menu.placeholder        ,
