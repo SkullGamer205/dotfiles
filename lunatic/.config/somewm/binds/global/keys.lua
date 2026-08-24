@@ -10,6 +10,7 @@ local mod = require('binds.mod')
 local modkey = mod.modkey
 
 local apps = require('config.apps')
+local user = require('config.user')
 
 local global_helpers = {
     lua_prompt_run = function()
@@ -71,6 +72,13 @@ local layout_helpers = {
     end,
 }
 
+local change_kbd_layout = function()
+    local layouts = awful.widget.keyboardlayout.get_groups_from_group_names(
+        awesome.xkb_get_group_names())
+    local current = awesome.xkb_get_layout_group()
+    awesome.xkb_set_layout_group((current + 1) % #layouts)
+end
+
 local media_helpers = {
   raise_volume = function()
     awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
@@ -87,6 +95,41 @@ local media_helpers = {
   toggle_micro = function()
     awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle")
   end,
+}
+
+local shot_helpers = {
+    screenshot = function(interactive)
+        local interactive = interactive or false
+        local directory   = user.shots.directory or os.getenv("HOME") .. "/screenshots/"
+        local notifty     = user.shots.notify or false
+
+        local s = awful.screenshot({
+            interactive = interactive,
+            directory   = directory,
+        })
+
+        -- Snipping
+        s:connect_signal("snipping::start", function(self)
+            if self._private.frame then
+                self._private.imagebox.visible = false
+                self._private.frame.bg = "#00000040"
+                self._private.frame.surface_scale = 1.0
+            end
+        end)
+
+        -- Notify
+        if notify == true then
+            s:connect_signal("file::saved", function(self, path)
+                naughty.notify {
+                    title = "Screenshot saved",
+                    text = path,
+                    timeout = 3,
+                }
+            end)
+        end
+
+        s:refresh()
+    end,
 }
 
 -- @DOC_GLOBAL_KEYBINDINGS@
@@ -108,8 +151,10 @@ local g_keys = {
     {{          }, "XF86MonBrightnessDown"       , function() awful.spawn("brightnessctl s 5%-") end            , "Decrease brightness"         , "Media"       },
     {{          }, "XF86MonBrightnessUp"         , function() awful.spawn("brightnessctl s +5%") end            , "Increase brightness"         , "Media"       },
 
-    {{           }, "Print"                      , nil                                                          , "Make screenshoot"            , "Other"       },
-    {{ mod.shift }, "Print"                      , nil                                                          , "Make screenshoot area"       , "Other"       },
+    -- {{           }, "Print"                      , shot_helpers.screenshot(false)                               , "Make screenshoot"            , "Other"       },
+    -- {{ mod.shift }, "Print"                      , shot_helpers.screenshot(true)                                , "Make screenshoot area"       , "Other"       },
+    
+    {{           }, "CapsLock"                   , change_kbd_layout()                                          , "Change keyboard layout"      , "Other"       },
 
     -- SomeWM
     {{ modkey,  }, "s"                           , hotkeys_popup.show_help                                      , "Show help"                   , "SomeWM"      }, 
