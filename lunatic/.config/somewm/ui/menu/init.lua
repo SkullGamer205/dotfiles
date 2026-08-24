@@ -20,9 +20,9 @@ menu.somewm = {
 }
 
 menu.favorites = {
-    menu.placeholder,
-    { "   W. I. P."},
-    menu.placeholder,
+    { "Terminal"            , apps.terminal },
+    { "Explorer"            , apps.fileman  },
+    { "Browser"             , apps.browser  },
 }
 
 menu.customize = {
@@ -41,17 +41,13 @@ menu.power = {
 }
 
 menu.main = freedesktop.menu.build({
-    before = {
-        { "SomeWM"              , menu.somewm, beautiful.awesome_icon },
-        menu.placeholder        ,
-        { "Favorites"           , menu.favorites },
-    },
     sub_menu = "All Apps",
     after  = {
-        { "Customize"           , menu.customize },
-        { "Open terminal"       , apps.terminal },
+        { "Quick Apps"          , menu.favorites },
         menu.placeholder        ,
-        { "Power"               , menu.power },
+        { "Styles"              , menu.customize },
+        { "SomeWM"              , menu.somewm, beautiful.awesome_icon },
+        { "Goodbye"             , menu.power },
     },
 })
 
