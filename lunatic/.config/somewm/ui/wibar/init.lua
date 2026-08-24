@@ -40,7 +40,12 @@ return function(s)
                     spacing = beautiful.gap_default,
                     halign = 'center',
                     valign = 'center',
-                    module.clock(),
+                    {
+                        widget = wibox.layout.align.vertical,
+                        module.music(),
+                        module.clock(),
+                        module.notifications(),
+                    }
                 },    
                 { -- Right widgets
                     layout = wibox.layout.fixed.vertical,
