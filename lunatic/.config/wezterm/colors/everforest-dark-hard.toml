@@ -1,0 +1,43 @@
+# base16: Everforest Dark Hard
+
+[colors]
+
+background      = "#272e33"
+foreground      = "#d3c6aa"
+
+cursor_bg       = "#d3c6aa"
+cursor_border   = "#d3c6aa"
+cursor_fg       = "#272e33"
+
+selection_bg    = "#d3c6aa"
+selection_fg    = "#414b50"
+
+ansi            = [
+    "#272e33",  # Black    (00)  
+    "#e67e80",  # Maroon   (08)
+    "#a7c080",  # Green    (0B)
+    "#dbbc7f",  # Olive    (0A)
+    "#83c092",  # Navy     (0D)
+    "#d699b6",  # Purple   (0E)
+    "#7fbbb3",  # Teal     (0C)
+    "#d3c6aa"   # Silver   (05)
+]
+
+brights         = [
+    "#4f5b58",  # Grey     (03)
+    "#f85552",  # Red      (12)
+    "#f57d26",  # Lime     (14)
+    "#dfa000",  # Yellow   (13)
+    "#3a94c5",  # Blue     (16)
+    "#df69ba",  # Fuchisia (17)
+    "#35a77c",  # Aqua     (15)
+    "#fffbef"   # White    (07)
+]
+
+[colors.indexed]
+16 = "#e69875"  #          (09)
+17 = "#e67e80"  #          (0F)
+18 = "#2e383c"  #          (01)
+19 = "#414b50"  #          (02)
+20 = "#9da9a0"  #          (04)
+21 = "#edeada"  #          (06)
