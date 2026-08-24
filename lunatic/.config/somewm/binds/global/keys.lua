@@ -154,7 +154,7 @@ local g_keys = {
     -- {{           }, "Print"                      , shot_helpers.screenshot(false)                               , "Make screenshoot"            , "Other"       },
     -- {{ mod.shift }, "Print"                      , shot_helpers.screenshot(true)                                , "Make screenshoot area"       , "Other"       },
     
-    {{           }, "CapsLock"                   , change_kbd_layout()                                          , "Change keyboard layout"      , "Other"       },
+    {{           }, "Caps_Lock"                  , change_kbd_layout()                                          , "Change keyboard layout"      , "Other"       },
 
     -- SomeWM
     {{ modkey,  }, "s"                           , hotkeys_popup.show_help                                      , "Show help"                   , "SomeWM"      }, 
