@@ -246,6 +246,12 @@ theme.layout_cornerne                           = themes_path .. "layouts/corner
 theme.layout_cornersw                           = themes_path .. "layouts/cornersww.png"
 theme.layout_cornerse                           = themes_path .. "layouts/cornersew.png"
 
+-- Notification
+theme.notifications_empty_icon                  = themes_path .. "icons/notifications/notifications-empty.png"
+
+-- Music
+theme.music_icon                                = themes_path .. "icons/music/music.png"
+
 -- Launcher
 theme.launcher_icon                             = themes_path .. 'icons/launcher/find.png'
 theme.launcher_exit                             = themes_path .. 'icons/launcher/exit.png'
