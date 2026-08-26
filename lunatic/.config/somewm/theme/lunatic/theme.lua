@@ -20,7 +20,7 @@ local theme = {}
 
 -- Font
 theme.font_name     = user_config.font.name or 'sans'
-theme.font_size     = user_config.font.size or 8
+theme.font_size     = dpi(user_config.font.size) or dpi(8)
 theme.font          = theme.font_name .. ' ' .. theme.font_size
 
 
@@ -134,7 +134,7 @@ theme.taglist_squares_sel   = nil
 theme.taglist_squares_unsel = nil
 
 -- Menu
-theme.menu_height = dpi(theme.font_size) * 1.5
+theme.menu_height = dpi(theme.font_size) * 2
 theme.menu_width  = dpi(theme.font_size) * 12
 
 theme.menu_fg_normal = theme.colors.foreground
@@ -168,7 +168,7 @@ theme.hotkeys_group_margin      = theme.gap_default * 10
 theme.notification_spacing      = theme.gap_default * 5
 
 -- Wibar
-theme.wibar_width               = (theme.font_size * 2) + (theme.gap_default * 2)
+theme.wibar_width               = (theme.font_size * 2) + (theme.gap_default * 3)
 theme.wibar_height              = 720
 
 -- There are other variable sets
