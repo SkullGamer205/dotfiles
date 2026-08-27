@@ -3,6 +3,11 @@ local beautiful = require('beautiful')
 local wibox     = require('wibox')
 
 local module = require('ui.widgets')
+local separator = require('module.simple_widgets.separator').create("horizontal",
+{       color   = beautiful.colors.background_light,
+        -- margins = { vertical = beautiful.useless_gap },
+        width   = beautiful.border_width,
+})
 
 return function(s)
     s.mypromptbox = module.promptbox()
@@ -30,8 +35,10 @@ return function(s)
                     layout = wibox.layout.fixed.vertical,
                     spacing = beautiful.gap_default,
                     module.launcher(s),
+                    separator,
                     module.layoutbox(s),
                     module.taglist(s),
+                    separator,
                     s.mypromptbox,
                 },
                 -- module.tasklist(s), -- Middle widget
@@ -50,9 +57,10 @@ return function(s)
                 { -- Right widgets
                     layout = wibox.layout.fixed.vertical,
                     spacing = beautiful.gap_default,
-                    module.kbd(),
                     wibox.widget.systray(),
+                    module.kbd(),
                     module.battery(s),
+                    separator,
                     module.power(s),
                 },
             }
