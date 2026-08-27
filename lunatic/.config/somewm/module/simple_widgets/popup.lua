@@ -17,6 +17,7 @@ local simplepopup = {}
 --
 -- @param opts.stop_key                 string      (optional) (default: 'Escape') Key to dismiss.
 -- @param opts.enable_keygrabber        boolean     (optional) (default: 'true') Enable  keygrabber (needed for opts.stop_key).
+-- @param opts.enable_mousegrabber      boolean     (optional) (default: 'true') Enable  mousegrabber (needed for hiding widget when clicked out of area).
 -- @param opts.keypressed_callback      function    (optional) Handles keys. Signature: function(widget, key, modifiers)
 -- @param opts.on_show                  function    (optional) Callback on show
 -- @param opts.on_hide                  function    (optional) Callback on hide.
@@ -33,12 +34,13 @@ function simplepopup.create(name, opts)
     local is_cleaning_up    = false
 
     -- Defauls
-    local placement         = opts.placement            or awful.placement.centered
-    local border_width      = beautiful.border_width    or 0
-    local border_color      = beautiful.border_color    or '#00000000'
-    local shape             = beautiful.shape           or gears.shape.rounded_rect
-    local stop_key          = opts.stop_key             or 'Escape'
-    local enable_keygrabber = opts.enable_keygrabber    or true
+    local placement           = opts.placement            or awful.placement.centered
+    local border_width        = beautiful.border_width    or 0
+    local border_color        = beautiful.border_color    or '#00000000'
+    local shape               = beautiful.shape           or gears.shape.rounded_rect
+    local stop_key            = opts.stop_key             or 'Escape'
+    local enable_keygrabber   = opts.enable_keygrabber    or true
+    local enable_mousegrabber = opts.enable_mousegrabber  or true
 
 
     -- Internal cleanup
@@ -71,18 +73,55 @@ function simplepopup.create(name, opts)
 
     -- Internal keygrabber setup
     local function start_keygrabber()
-        Debugger.debug("PopupWidget", "(" .. name .. ") Keygrabber started")
-        keygrabber = awful.keygrabber({
-            autostart       = true,
-            stop_key        = stop_key,
-            stop_callback   = cleanup,
+        if opts.enable_keygrabber ~= false then
+            Debugger.debug("PopupWidget", "(" .. name .. ") Keygrabber started")
+            keygrabber = awful.keygrabber({
+                autostart       = true,
+                stop_key        = stop_key,
+                stop_callback   = cleanup,
+    
+                keypressed_callback = function(_, modifiers, key, _)
+                    if opts.keypressed_callback then
+                        opts.keypressed_callback(widget, key, modifiers)
+                    end
+                end,
+            })
+        else 
+            Debugger.debug("PopupWidget", "(" .. name .. ") Keygrabber disabled")
+        end
+    end
 
-            keypressed_callback = function(_, modifiers, key, _)
-                if opts.keypressed_callback then
-                    opts.keypressed_callback(widget, key, modifiers)
+    local function start_mousegrabber() 
+        if opts.enable_mousegrabber ~= false then
+            Debugger.debug("PopupWidget", "(" .. name .. ") Mousegrabber started")
+            local click_outside = awful.button({}, 1, function()
+                local coords     = require('mouse')
+                
+                if not visible then return end
+    
+                local coords    = mouse.coords()
+                local geo       = popup:geometry()
+    
+                local outside   =
+                    coords.x < geo.x or coords.x > geo.x + geo.width  or
+                    coords.y < geo.y or coords.y > geo.y + geo.height
+    
+                if outside then
+                    cleanup()
+                    awful.mouse.remove_global_mousebinding(click_outside)
                 end
-            end,
-        })
+            end)
+            
+            popup:connect_signal("property::visible", function(w)
+                if w.visible then
+                    awful.mouse.append_global_mousebinding(click_outside)
+                    else
+                    awful.mouse.remove_global_mousebinding(click_outside)
+                end
+            end)     
+        else
+            Debugger.debug("PopupWidget", "(" .. name .. ") Mousegrabber disabled")
+        end
     end
 
     -- Refresh popup widget
@@ -130,7 +169,8 @@ function simplepopup.create(name, opts)
         popup.visible = true
         visible = true
          
-        if opts.enable_keygrabber ~= false then start_keygrabber() end
+        start_keygrabber()
+        start_mousegrabber()
 
         awesome.emit_signal(name .. "::visible", true)
     end
