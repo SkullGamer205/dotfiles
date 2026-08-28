@@ -41,17 +41,12 @@ _Widgets.entries = wibox.widget({
 
 local function create_launcher_widget()
     return wibox.widget({
-        widget  = wibox.container.place,
-        halign  = center,
-        valign  = center,
+        widget      = wibox.container.background,
+        bg          = beautiful.bg_normal,
         {
-            widget      = wibox.container.background,
-            bg          = beautiful.bg_normal,
-            {
-                layout  = wibox.layout.fixed.vertical,
-                _Widgets.search_bar,
-                _Widgets.entries,
-            }
+            layout  = wibox.layout.fixed.vertical,
+            _Widgets.search_bar,
+            _Widgets.entries,
         }
     })
 end
@@ -163,7 +158,7 @@ end
 
 local launchermenu = SimplePopup('launchermenu', {
     main_widget         = create_launcher_widget,
-    placement           = awful.placement.maximize,
+    placement           = awful.placement.centered,
     enable_keygrabber   = false,
 
     on_show     = function(w) _Apps.open(w) end,
