@@ -5,7 +5,6 @@ local awful         = require('awful')
 
 local SimpleIcon    = require('module.simple_widgets.image').create_icon
 local SimpleBox     = require('module.simple_widgets.box').create_box
-local SimplePopup   = require('module.simple_widgets.popup').create
 
 local function main_battery_widget()
     local bat_icon  = SimpleIcon(beautiful.battery_full, {
@@ -81,28 +80,16 @@ local function battery_stats()
     return widget
 end
 
-local function create_widget()
-    return wibox.widget({
-        widget  = wibox.container.place,
-        halign  = 'right',
-        valign  = 'center',
+return function()
+        return wibox.widget({
+        widget          = wibox.container.background,
+        bg              = beautiful.bg_normal,
+        border_color    = beautiful.border_color_active,
+        border_width    = beautiful.border_width,
         {
-            widget          = wibox.container.background,
-            bg              = beautiful.bg_normal,
-            border_color    = beautiful.border_color_active,
-            border_width    = beautiful.border_width,
-            {
-                layout  = wibox.layout.fixed.horizontal,
-                main_battery_widget(),
-                battery_stats(),
-            }
+            layout  = wibox.layout.fixed.horizontal,
+            main_battery_widget(),
+            battery_stats(),
         }
     })
 end
-
-local powermenu = SimplePopup('batterymenu', {
-    main_widget = create_widget,
-    placement   = awful.placement.maximize,
-})
-
-return powermenu

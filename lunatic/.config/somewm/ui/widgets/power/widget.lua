@@ -64,43 +64,38 @@ local function create_power_widget()
     end
 
     return wibox.widget({
-        widget  = wibox.container.place,
-        halign  = 'center',
-        valign  = 'center',
+        widget          = wibox.container.background,
+        bg              = beautiful.bg_normal,
+        border_color    = beautiful.border_color_active,
+        border_width    = beautiful.border_width * 2,
         {
-            widget          = wibox.container.background,
-            bg              = beautiful.bg_normal,
-            border_color    = beautiful.border_color_active,
-            border_width    = beautiful.border_width * 2,
+            widget  = wibox.container.margin,
+            margins = 32,
             {
-                widget  = wibox.container.margin,
-                margins = 32,
+                layout  = wibox.layout.fixed.vertical,
+                spacing = 32,
+                -- Title
                 {
-                    layout  = wibox.layout.fixed.vertical,
-                    spacing = 32,
-                    -- Title
-                    {
-                        widget  = wibox.widget.textbox,
-                        halign  = 'center',
-                        text    = 'What you would like to do?',
-                        font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match("%d+$") * 2
-                    },
-        
-                    -- Buttons
-                    {
-                        layout = wibox.layout.fixed.horizontal,
-                        unpack(buttons),
-                    },
-        
-                    -- Hint
-                    {
-                        widget  = wibox.widget.textbox,
-                        halign  = 'center',
-                        text    = 'Press Escape to cancel',
-                        font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match("%d+$") - 2
-                    },
-                }
-            },
+                    widget  = wibox.widget.textbox,
+                    halign  = 'center',
+                    text    = 'What you would like to do?',
+                    font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match("%d+$") * 2
+                },
+    
+                -- Buttons
+                {
+                    layout = wibox.layout.fixed.horizontal,
+                    unpack(buttons),
+                },
+    
+                -- Hint
+                {
+                    widget  = wibox.widget.textbox,
+                    halign  = 'center',
+                    text    = 'Press Escape to cancel',
+                    font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match("%d+$") - 2
+                },
+            }
         },
     })
 end
@@ -114,14 +109,14 @@ end
 
 local powermenu = SimplePopup('powermenu', {
     main_widget = create_power_widget,
-    placement   = awful.placement.maximize,
+    placement   = awful.placement.centered,
 
     on_show     = function() selected_index = 1 end,
 
     keypressed_callback = function(w, key, _)
         if      key == "Return" then
             w.hide()
-            execute_selected()
+            execute_selected(w)
         elseif  key == "Left" then 
             selected_index = math.max(1, selected_index - 1)
             w.refresh()
@@ -136,7 +131,7 @@ local powermenu = SimplePopup('powermenu', {
                     w.refresh()
                     
                     gears.timer.start_new(0.15, function()
-                        execute_selected()
+                        execute_selected(w)
                         return false
                     end)
 

@@ -1,8 +1,10 @@
 local beautiful = require('beautiful')
+local awful     = require('awful')
 local wibox     = require('wibox')
 local gears     = require('gears')
 
 local SimpleBox     = require('module.simple_widgets.box').create_box
+local SimplePopup   = require('module.simple_widgets.popup').create
 local ClockWidget   = require(... .. '.widget')
 
 local function Time(format)
@@ -31,11 +33,17 @@ local function Time(format)
     return time_widget
 end
 
-local widget = SimpleBox(Time('%H\n%M'), {
-    main_color      = beautiful.colors.background_light,
-    on_clicked      = function() ClockWidget.toggle() end
-})
 
-return function()
+return function(s)
+    local popup = SimplePopup('clockmenu', {
+        main_widget = ClockWidget,
+        placement   = ( awful.placement.under_mouse + awful.placement.no_offscreen ),
+    })
+    
+    local widget = SimpleBox(Time('%H\n%M'), {
+        main_color      = beautiful.colors.background_light,
+        on_clicked      = function() popup.toggle() end
+    })
+   
     return widget
 end
