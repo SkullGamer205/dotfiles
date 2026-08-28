@@ -165,7 +165,7 @@ theme.hotkeys_border_color      = theme.colors.primary
 theme.hotkeys_group_margin      = theme.gap_default * 10
 
 -- Notification
-theme.notification_spacing      = theme.gap_default * 5
+theme.notification_spacing      = theme.gap_default * 4
 
 -- Wibar
 theme.wibar_width               = (theme.font_size * 2) + (theme.gap_default * 3)
