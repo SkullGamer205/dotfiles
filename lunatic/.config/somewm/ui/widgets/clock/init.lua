@@ -41,8 +41,8 @@ return function(s)
     })
     
     local widget = SimpleBox(Time('%H\n%M'), {
-        main_color      = beautiful.colors.background_light,
-        on_clicked      = function() popup.toggle() end
+        bg_main     = beautiful.colors.background_light,
+        on_clicked  = { left = function() popup.toggle() end }
     })
    
     return widget

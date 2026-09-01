@@ -26,7 +26,7 @@ local function main_battery_widget()
     })
 
     return SimpleBox(widget, {
-        main_color      = beautiful.colors.background_light,
+        bg_main  = beautiful.colors.background_light,
     })
 end
 
@@ -55,7 +55,7 @@ local function battery_stats()
         })
 
         return SimpleBox(widget, {
-            main_color      = beautiful.colors.background_light,
+            bg_main  = beautiful.colors.background_light,
         })
     end
 

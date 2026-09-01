@@ -2,7 +2,6 @@
 local awful             = require('awful')
 local beautiful         = require('beautiful')
 local wibox             = require('wibox')
-local gears             = require('gears')
 local SimpleBox         = require('module.simple_widgets.box').create_box
 
 local modules           = require('ui.widgets.clock.modules')

@@ -12,9 +12,9 @@ local icon      = SimpleIcon.create_icon(beautiful.launcher_icon, {
 })
 
 local widget    = SimpleBox.create_box(icon, {
-    main_color      = beautiful.colors.background_light,
-    highlight_color = beautiful.bg_focus,
-    on_clicked      = function() LauncherWidget.toggle() end
+    bg_main     = beautiful.colors.background_light,
+    bg_hover    = beautiful.bg_focus,
+    on_clicked  = { left = function() LauncherWidget.toggle() end }
 })
 
 return function()

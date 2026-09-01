@@ -48,9 +48,10 @@ local function create_button(option, index)
     })
 
     local button = SimpleBox(widget, {
-        main_color      = beautiful.bg_normal,
-        highlight_color = beautiful.bg_focus,
-        on_clicked  = option.command,
+        bg_main     = beautiful.bg_normal,
+        bg_hover    = beautiful.bg_focus,
+        fg_main     = beautiful.fg_normal,
+        on_clicked  = { left = option.command },
     })
 
     return button

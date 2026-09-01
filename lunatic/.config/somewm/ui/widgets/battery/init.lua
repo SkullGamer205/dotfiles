@@ -17,9 +17,9 @@ return function(s)
     local icon = SimpleIcon.create_icon(beautiful.battery_full)
     
     local widget = SimpleBox.create_box(icon, {
-        main_color      = beautiful.colors.background_light,
-        highlight_color = beautiful.bg_focus,
-        on_clicked      = function() popup.toggle() end
+        bg_main     = beautiful.colors.background_light,
+        bg_hover    = beautiful.bg_focus,
+        on_clicked  = { left = function() popup.toggle() end }
     })
     
     return widget

@@ -26,6 +26,6 @@ return function(format)
     })
 
     return SimpleBox(clock_widget, {
-        main_color          = beautiful.colors.background_light,
+        bg_main = beautiful.colors.background_light,
     })
 end
