@@ -249,6 +249,9 @@ theme.layout_cornerse                           = themes_path .. "layouts/corner
 -- Notification
 theme.notifications_empty_icon                  = themes_path .. "icons/notifications/notifications-empty.png"
 
+-- Keyboard
+theme.keyboard                                  = themes_path .. "icons/keyboard.png"
+
 -- Music
 theme.music_icon                                = themes_path .. "icons/music/music.png"
 

@@ -8,7 +8,9 @@ local SimpleBox  = require('module.simple_widgets.box').create_box
 return function()
     -- Keyboard map indicator and switcher
     local current_kbd_layout = awful.widget.keyboardlayout()
-    local icon               = SimpleIcon(beautiful.battery_volt)
+    local icon               = SimpleIcon(beautiful.keyboard,{
+        main_color           = beautiful.fg_normal,
+    })
 
     local widget             = wibox.widget({
         layout = wibox.layout.fixed.vertical,
