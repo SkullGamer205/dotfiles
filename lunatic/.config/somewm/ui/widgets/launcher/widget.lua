@@ -156,7 +156,7 @@ function _Apps.open(w)
 end
 
 
-local launchermenu = SimplePopup('launchermenu', {
+return SimplePopup('launchermenu', {
     main_widget         = create_launcher_widget,
     placement           = awful.placement.centered,
     enable_keygrabber   = false,
@@ -164,4 +164,3 @@ local launchermenu = SimplePopup('launchermenu', {
     on_show     = function(w) _Apps.open(w) end,
 })
 
-return launchermenu
