@@ -33,22 +33,18 @@ return function()
     local widget             = wibox.widget({
         layout = wibox.layout.fixed.vertical,
         icon,
-        {
-            widget  = wibox.container.place,
-            halign  = 'center',
-            valign  = 'center',
-            kbd_widget,
-        }
+        kbd_widget,
     })
 
     -- Switch layout
     local function change_kbd()
     end
 
-    -- Connect Signal
+    -- Connect Signals
     awesome.connect_signal("xkb::map_changed", update_kbd)
     awesome.connect_signal("xkb::group_changed", update_kbd)
 
+    -- First initialization
     update_kbd()
 
     return SimpleBox(widget, {
