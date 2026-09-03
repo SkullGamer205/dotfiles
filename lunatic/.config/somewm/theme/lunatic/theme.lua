@@ -263,12 +263,12 @@ theme.launcher_favorites                        = themes_path .. 'icons/launcher
 theme.launcher_style                            = themes_path .. 'icons/launcher/styles.png'
 
 -- Power
-theme.power_shutdown                            = themes_path .. 'icons/system-shutdown.svg'
-theme.power_reboot                              = themes_path .. 'icons/system-reboot.svg'
-theme.power_suspend                             = themes_path .. 'icons/system-suspend.svg'
-theme.power_logout                              = themes_path .. 'icons/system-log-out.svg'
-theme.power_lockscreen                          = themes_path .. 'icons/system-lock-screen.svg'
-theme.power_hibernate                           = themes_path .. 'icons/system-hibernate.svg'
+theme.power_shutdown                            = themes_path .. 'icons/power/shutdown.png'
+theme.power_reboot                              = themes_path .. 'icons/power/reboot.png'
+theme.power_suspend                             = themes_path .. 'icons/power/suspend.png'
+theme.power_logout                              = themes_path .. 'icons/power/log-out.png'
+theme.power_lockscreen                          = themes_path .. 'icons/power/lock.png'
+theme.power_hibernate                           = themes_path .. 'icons/power/hibernate.png'
 
 -- Battery
 theme.battery_health                            = themes_path .. 'icons/battery/battery-health.png'
