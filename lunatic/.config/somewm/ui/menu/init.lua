@@ -32,12 +32,12 @@ menu.customize = {
 }
 
 menu.power = {
-    { "Poweroff",       function() awful.spawn('loginctl poweroff')             end },
-    { "Reboot",         function() awful.spawn('loginctl reboot')               end },
-    { "Log out",        function() awful.spawn('loginctl kill-session self')    end },
-    { "Lock",           function() awful.spawn('loginctl losk-session self')    end },
-    { "Suspend",        function() awful.spawn('loginctl suspend')              end },
-    { "Hibernate",      function() awful.spawn('loginctl hibernate')            end },
+    { "Poweroff",   function() awful.spawn('loginctl poweroff')          end, beautiful.power_shutdown     },
+    { "Reboot",     function() awful.spawn('loginctl reboot')            end, beautiful.power_reboot       },
+    { "Log out",    function() awful.spawn('loginctl kill-session self') end, beautiful.power_logout       },
+    { "Lock",       function() awful.spawn('loginctl losk-session self') end, beautiful.power_lockscreen   },
+    { "Suspend",    function() awful.spawn('loginctl suspend')           end, beautiful.power_suspend      },
+    { "Hibernate",  function() awful.spawn('loginctl hibernate')         end, beautiful.power_hibernate    },
 }
 
 menu.main = freedesktop.menu.build({
