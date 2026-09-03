@@ -8,7 +8,7 @@ local SimpleBox         = require('module.simple_widgets.box').create_box
 return function(format)
     local clock_widget = wibox.widget({
         widget  = wibox.widget.textbox,
-        align   = 'center',
+        halign  = 'center',
         valign  = 'center',
         text    = '',
         font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 4

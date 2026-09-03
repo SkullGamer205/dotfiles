@@ -11,7 +11,7 @@ local function Time(format)
     -- Make a simple widget
     local time_widget = wibox.widget({
         widget  = wibox.widget.textbox,
-        align   = 'center',
+        halign  = 'center',
         valign  = 'center',
         text    = '',
     })
