@@ -30,14 +30,21 @@ return function()
         end
     end
 
-    local widget             = wibox.widget({
-        layout = wibox.layout.fixed.vertical,
+    local widget = wibox.widget({
+        layout   = wibox.layout.fixed.vertical,
         icon,
         kbd_widget,
     })
 
     -- Switch layout
-    local function change_kbd()
+    local function change_kbd(shift_idx)
+        local layouts = (awesome.xkb_get_group_names()):match("%d+$")
+        local current = awesome.xkb_get_layout_group()
+
+        local next_idx = (current + shift_idx) % layouts
+
+        awesome.xkb_set_layout_group(next_idx)
+        update_kbd()
     end
 
     -- Connect Signals
@@ -48,6 +55,7 @@ return function()
     update_kbd()
 
     return SimpleBox(widget, {
-        bg_main = beautiful.colors.background_light,
+        bg_main     = beautiful.colors.background_light,
+        on_clicked  = { left = function() change_kbd(1) end }
     })
 end
