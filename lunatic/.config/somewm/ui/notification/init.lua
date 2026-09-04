@@ -53,12 +53,14 @@ function _N.actions(n)
             {
                 widget  = wibox.container.margin,
                 margins = dpi(4),
-                widget  = wibox.container_place,
-                halign  = 'center',
                 {
-                    widget  = wibox.widget.textbox,
-                    font    = beautiful.font,
-                    id      = 'text_role'
+                    widget  = wibox.container.place,
+                    halign  = 'center',
+                    {
+                        widget  = wibox.widget.textbox,
+                        font    = beautiful.font,
+                        id      = 'text_role'
+                    }
                 }
             }
         }
@@ -95,12 +97,35 @@ return function(n)
       }
     })
 
-    local contentbox = wibox.widget({})
+    local contentbox = wibox.widget({
+        layout  = wibox.layout.align.vertical,
+        {
+            widget  = wibox.container.margin,
+            margins = dpi(12),
+            {
+                widget   = wibox.container.constraint,
+                strategy = 'max',
+                width    = dpi(280),
+                height   = dpi(250),
+                {
+                    layout  = wibox.layout.fixed.vertical,
+                    _N.body(n),
+                    {
+                        widget  = wibox.container.margin,
+                        margins = {top = dpi(4)},
+                        visible = #n.actions > 0,
+                        _N.actions(n)
+                    }
+                }
+            }
+        }
+    })
     
     local iconbox = wibox.widget({})
 
     local layout        = naughty.layout.box({
         notification    = n,
+        type            = "notification",
         cursor          = 'hand2',
         widget_template = {
             widget      = wibox.container.constraint,
@@ -121,7 +146,7 @@ return function(n)
                         iconbox,
                         separator,
                         {
-                            laoyut = wibox.layout.fixed.vertical,
+                            layout = wibox.layout.fixed.vertical,
                             titlebox,
                             contentbox,
                         }
@@ -131,7 +156,7 @@ return function(n)
         }
     })
 
-    local layout.buttons = {}
+    -- layout.buttons = {}
 
     return layout
 end

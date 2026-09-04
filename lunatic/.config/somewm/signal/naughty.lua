@@ -1,5 +1,3 @@
-local awful   = require('awful')
-local naughty = require('naughty')
 local ruled   = require('ruled')
 
 ruled.notification.connect_signal('request::rules', function()
@@ -7,12 +5,12 @@ ruled.notification.connect_signal('request::rules', function()
     ruled.notification.append_rule {
         rule       = { },
         properties = {
-            screen           = awful.screen.preferred,
             implicit_timeout = 5,
+            position         = 'bottom_right',
         }
     }
 end)
 
-naughty.connect_signal("request::display", function(n)
+require('naughty').connect_signal('request::display', function(n)
     require('ui.notification')(n)
 end)
