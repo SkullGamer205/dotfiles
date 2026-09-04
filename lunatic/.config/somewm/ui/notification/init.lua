@@ -71,8 +71,33 @@ return function(n)
     -- n.timeout = 5,
 
     local titlebox      = wibox.widget({
-        
+        widget = wibox.container.background,
+        bg     = beautiful.bg_normal,
+      {
+         widget  = wibox.container.margin,
+         margins = { bottom = dpi(1) },
+         {
+            widget = wibox.container.background,
+            bg     = beautiful.bg_focus,
+            {
+               widget  = wibox.container.margin,
+               margins = {
+                  top = dpi(8), bottom = dpi(8),
+                  left = dpi(12), right = dpi(12)
+               },
+               {
+                  widget = wibox.container.place,
+                  halign = 'center',
+                  _N.title(n)
+               }
+            }
+         }
+      }
     })
+
+    local contentbox = wibox.widget({})
+    
+    local iconbox = wibox.widget({})
 
     local layout        = naughty.layout.box({
         notification    = n,
