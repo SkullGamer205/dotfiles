@@ -102,7 +102,8 @@ return function(n)
     local layout        = naughty.layout.box({
         notification    = n,
         type            = "notification",
-        border_width    = 0,
+        border_width    = beautiful.border_width,
+        border_color    = beautiful.border_color_normal,
         widget_template = s_box({
             layout  = wibox.layout.fixed.horizontal,
             iconbox,
