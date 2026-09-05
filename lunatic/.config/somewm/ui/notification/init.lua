@@ -7,6 +7,7 @@ local naughty       = require('naughty')
 local dpi           = beautiful.xresources.apply_dpi
 
 local s_icon    = require('module.simple_widgets.image').create_icon
+local s_box     = require('module.simple_widgets.box').create_box
 local separator = require('module.simple_widgets.separator').create("vertical",
 {       color   = beautiful.colors.background_light,
         margin  = beautiful.useless_gap,
@@ -18,7 +19,9 @@ local _N = {}
 function _N.title(n)
     return wibox.widget({
         widget  = wibox.widget.textbox,
-        markup  = '<i>' .. ((n.title == nil or n.title == '') and 'SomeWM' or n.title) .. '</i>'
+        markup  = '<i>' .. ((n.title == nil or n.title == '') and 'SomeWM' or n.title) .. '</i>',
+        align   = 'center',
+        valign  = 'center',
     })
 end
 
@@ -47,22 +50,18 @@ function _N.actions(n)
             underline_selected  = false,
             bg_normal           = beautiful.bg_focus,
         },
-        widget_template = {
-            widget  = wibox.container.background,
-            bg      = beautiful.bg_normal,
-            {
-                widget  = wibox.container.margin,
-                margins = dpi(4),
-                {
-                    widget  = wibox.container.place,
-                    halign  = 'center',
-                    {
-                        widget  = wibox.widget.textbox,
-                        font    = beautiful.font,
-                        id      = 'text_role'
-                    }
-                }
-            }
+        widget_templage = {
+            s_box({
+                id      = 'text_role',
+                widget  = wibox.widget.textbox,
+                font    = beautiful.font,
+                align   = 'center',
+                valign  = 'center',
+            }, {
+                bg_main         = beautiful.bg_normal,
+                bg_hover        = beautiful.fg_normal,
+                outer_margin    = dpi(2),
+            })
         }
     })
 end
@@ -72,91 +71,56 @@ return function(n)
     --
     -- n.timeout = 5,
 
-    local titlebox      = wibox.widget({
-        widget = wibox.container.background,
-        bg     = beautiful.bg_normal,
-      {
-         widget  = wibox.container.margin,
-         margins = { bottom = dpi(1) },
-         {
-            widget = wibox.container.background,
-            bg     = beautiful.bg_focus,
-            {
-               widget  = wibox.container.margin,
-               margins = {
-                  top = dpi(8), bottom = dpi(8),
-                  left = dpi(12), right = dpi(12)
-               },
-               {
-                  widget = wibox.container.place,
-                  halign = 'center',
-                  _N.title(n)
-               }
-            }
-         }
-      }
-    })
-
-    local contentbox = wibox.widget({
-        layout  = wibox.layout.align.vertical,
-        {
-            widget  = wibox.container.margin,
-            margins = dpi(12),
-            {
-                widget   = wibox.container.constraint,
-                strategy = 'max',
-                width    = dpi(280),
-                height   = dpi(250),
-                {
-                    layout  = wibox.layout.fixed.vertical,
-                    _N.body(n),
-                    {
-                        widget  = wibox.container.margin,
-                        margins = {top = dpi(4)},
-                        visible = #n.actions > 0,
-                        _N.actions(n)
-                    }
-                }
-            }
-        }
+    local titlebox      = s_box(
+        _N.title(n), {
+        bg_main = beautiful.bg_focus,
     })
     
-    local iconbox = wibox.widget({})
+    local iconbox       = s_box(
+        _N.icon(n), { 
+        width           = dpi(48),
+        height          = dpi(48),
+        margins         = dpi(4),
+    })
 
+    local contentbox    = s_box({
+        layout  = wibox.layout.fixed.vertical,
+        _N.body(n),
+        {
+            widget  = wibox.container.margin,
+            margins = {top = dpi(4)},
+            visible = #n.actions > 0,
+            _N.actions(n)
+        }
+    }, {
+        constraint_type = 'max',
+        width           = dpi(280),
+        height          = dpi(280),
+        margins         = dpi(12),
+    })
+    
     local layout        = naughty.layout.box({
         notification    = n,
         type            = "notification",
-        cursor          = 'hand2',
-        widget_template = {
-            widget      = wibox.container.constraint,
-            strategy    = 'max',
-            width       = dpi(360),
-            height      = dpi(320),
+        border_width    = 0,
+        widget_template = s_box({
+            layout  = wibox.layout.fixed.horizontal,
+            iconbox,
+            separator,
             {
-                widget      = wibox.container.constraint,
-                strategy    = 'min',
-                width       = dpi(120),
-                {
-                    widget          = wibox.container.background,
-                    bg              = beautiful.bg_normal,
-                    border_width    = beautiful.border_width,
-                    border_color    = beautiful.border_color_normal,
-                    {
-                        layout  = wibox.layout.fixed.horizontal,
-                        iconbox,
-                        separator,
-                        {
-                            layout = wibox.layout.fixed.vertical,
-                            titlebox,
-                            contentbox,
-                        }
-                    }
-                }
+                layout = wibox.layout.fixed.vertical,
+                titlebox,
+                contentbox,
             }
-        }
+        }, {
+            constraint_type = 'min',
+            width           = dpi(128),
+            height          = dpi(16),
+            bg_main     = beautiful.bg_normal,
+        })
     })
 
-    -- layout.buttons = {}
+    layout.buttons = {}
 
     return layout
 end
