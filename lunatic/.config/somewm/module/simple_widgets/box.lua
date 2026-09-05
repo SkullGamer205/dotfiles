@@ -7,6 +7,7 @@ local gears     = require('gears')
 -- @param w                         function    Some widget.
 -- @param opts                      table       Configuration and callbacks.
 -- @param opts.id                   string      (optional) Widget identificator (used for modifying).
+-- @param opts.constraint_type      string      (optional) Constraint type ('min', 'max', 'exact')
 -- @param opts.width                intenger    (optional) Box width.
 -- @param opts.height               intenger    (optional) Box height.
 -- @param opts.margin               intenger    (optional) Size of margins (in pixels).
@@ -32,6 +33,9 @@ local simplebox = {}
         local id                = opts.id                           or nil
         local inner_margin      = opts.inner_margin                 or 2
         local outer_margin      = opts.outer_margin                 or 2
+
+        -- Size
+        local constraint_type   = opts.constraint_type              or 'exact'
         local width             = opts.width                        or nil
         local height            = opts.height                       or width
         
@@ -52,18 +56,22 @@ local simplebox = {}
             widget      = wibox.container.margin,
             margins     = outer_margin,
             {
-                widget          = wibox.container.background,
-                shape           = gears.shape.rectangle,
-                bg              = bg_main,
-                fg              = fg_main,
-                forced_width    = width,
-                forced_height   = height,
+                widget      = wibox.container.constraint,
+                strategy    = constraint_type,
+                width       = width,
+                height      = height,
                 {
-                    widget      = wibox.container.margin,
-                    margins     = inner_margin,
-                    -- table.unpack(widgets),
-                    widgets,
-                },
+                    widget          = wibox.container.background,
+                    shape           = gears.shape.rectangle,
+                    bg              = bg_main,
+                    fg              = fg_main,
+                    {
+                        widget      = wibox.container.margin,
+                        margins     = inner_margin,
+                        -- table.unpack(widgets),
+                        widgets,
+                    },
+                }
             },
             buttons = {
                 awful.button({ }, 1, action_left),
