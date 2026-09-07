@@ -1,22 +1,27 @@
 -- Battery
-local wibox         = require('wibox')
-local beautiful     = require('beautiful')
-local awful         = require('awful')
+local wibox           = require('wibox')
+local beautiful       = require('beautiful')
+local awful           = require('awful')
+local gears           = require('gears')
 
-local SimpleIcon    = require('module.simple_widgets.image').create_icon
-local SimpleBox     = require('module.simple_widgets.box').create_box
+local SimpleIcon      = require('module.simple_widgets.image').create_icon
+local SimpleBox       = require('module.simple_widgets.box').create_box
+
+local battery_module  = require('stats')
+
+local battery         = battery_module({})
+
+local bat_percentage = wibox.widget({
+    widget  = wibox.widget.textbox,
+    halign  = 'center',
+    valign  = 'center',
+    text    = nil,
+    font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 2
+})
 
 local function main_battery_widget()
     local bat_icon  = SimpleIcon(beautiful.battery_full, {
         width = 64,
-    })
-
-    local bat_percentage = wibox.widget({
-        widget  = wibox.widget.textbox,
-        halign  = 'center',
-        valign  = 'center',
-        text    = '100%',
-        font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 2
     })
 
     local widget = wibox.widget({
@@ -30,7 +35,7 @@ local function main_battery_widget()
     })
 end
 
-local function battery_stats()
+local function secondary_battery_widgets()
     -- Stat box
     local function stat_box(opts)
         opts = opts
@@ -80,8 +85,19 @@ local function battery_stats()
     return widget
 end
 
+
 return function()
-        return wibox.widget({
+    gears.timer({
+        timeout     = 30,
+        autostart   = true,
+        call_now    = true,
+        callback    = function()
+            local stats             = battery.update()
+            bat_percentage.text     = string.format("%s%%", stats.perc)
+        end
+    })
+
+    return wibox.widget({
         widget          = wibox.container.background,
         bg              = beautiful.bg_normal,
         border_color    = beautiful.border_color_active,
@@ -89,7 +105,7 @@ return function()
         {
             layout  = wibox.layout.fixed.horizontal,
             main_battery_widget(),
-            battery_stats(),
+            secondary_battery_widgets(),
         }
     })
 end
