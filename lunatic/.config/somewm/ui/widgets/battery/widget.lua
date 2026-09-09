@@ -7,7 +7,7 @@ local gears           = require('gears')
 local SimpleIcon      = require('module.simple_widgets.image').create_icon
 local SimpleBox       = require('module.simple_widgets.box').create_box
 
-local battery_module  = require('stats')
+local battery_module  = require('ui.widgets.battery.stats')
 
 local battery         = battery_module({})
 
@@ -17,6 +17,17 @@ local bat_percentage = wibox.widget({
     valign  = 'center',
     text    = nil,
     font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 2
+})
+
+-- 2. Create the timer ONCE at the module scope
+local battery_timer = gears.timer({
+    timeout     = 30,
+    autostart   = true,
+    call_now    = true,
+    callback    = function()
+        local stats = battery.update()
+        bat_percentage.text = string.format("%s%%", stats.perc)
+    end
 })
 
 local function main_battery_widget()
@@ -87,16 +98,6 @@ end
 
 
 return function()
-    gears.timer({
-        timeout     = 30,
-        autostart   = true,
-        call_now    = true,
-        callback    = function()
-            local stats             = battery.update()
-            bat_percentage.text     = string.format("%s%%", stats.perc)
-        end
-    })
-
     return wibox.widget({
         widget          = wibox.container.background,
         bg              = beautiful.bg_normal,
