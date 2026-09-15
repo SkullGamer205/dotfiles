@@ -30,12 +30,6 @@ return function()
         end
     end
 
-    local widget = wibox.widget({
-        layout   = wibox.layout.fixed.vertical,
-        icon,
-        kbd_widget,
-    })
-
     -- Switch layout
     local function change_kbd(shift_idx)
         local layouts = (awesome.xkb_get_group_names()):match("%d+$")
@@ -54,8 +48,9 @@ return function()
     -- First initialization
     update_kbd()
 
-    return SimpleBox(widget, {
+    return SimpleBox({icon, kbd_widget}, {
         bg_main     = beautiful.colors.background_light,
+        align       = "vertical",
         on_clicked  = { left = function() change_kbd(1) end }
     })
 end
