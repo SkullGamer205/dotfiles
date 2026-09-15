@@ -69,6 +69,7 @@ function simplepopup.create(name, opts)
         if opts.on_hide then opts.on_hide(widget) end
 
         is_cleaning_up = false
+        collectgarbage('collect')
         Debugger.debug("PopupWidget", "(" .. name .. ") Done")
     end
 
@@ -109,7 +110,7 @@ function simplepopup.create(name, opts)
     
                 if outside then
                     cleanup()
-                    awful.mouse.remove_global_mousebinding(click_outside)
+                    -- awful.mouse.remove_global_mousebinding()
                 end
             end)
             
