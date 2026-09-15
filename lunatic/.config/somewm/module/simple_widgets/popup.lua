@@ -13,8 +13,8 @@ local simplepopup = {}
 -- @param opts.main_widget              function    Return the wibox widget to display.
 -- @param opts.placement                function    (optional) (default: awful.placement.centered) Placement logic.
 -- @param opts.parent                   string      (optional) (default: nil) Needed for placement near another widget
---
---
+-- @param opts.border_width             intenger    (optional)
+-- @param opts.border_color             string      (optional)
 -- @param opts.stop_key                 string      (optional) (default: 'Escape') Key to dismiss.
 -- @param opts.enable_keygrabber        boolean     (optional) (default: 'true') Enable  keygrabber (needed for opts.stop_key).
 -- @param opts.enable_mousegrabber      boolean     (optional) (default: 'true') Enable  mousegrabber (needed for hiding widget when clicked out of area).
@@ -36,8 +36,8 @@ function simplepopup.create(name, opts)
     -- Defauls
     local placement           = opts.placement            or awful.placement.centered
     local parent              = opts.parent               or nil
-    local border_width        = beautiful.border_width    or 0
-    local border_color        = beautiful.border_color    or '#00000000'
+    local border_width        = opts.border_width         or beautiful.border_width    or 0
+    local border_color        = opts.border_color         or beautiful.border_color    or '#00000000'
     local shape               = beautiful.shape           or gears.shape.rectangle
     local stop_key            = opts.stop_key             or 'Escape'
     local enable_keygrabber   = opts.enable_keygrabber    or true
