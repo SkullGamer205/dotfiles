@@ -3,6 +3,8 @@ local wibox     = require('wibox')
 local beautiful = require('beautiful')
 local gears     = require('gears')
 
+local unpack    = table.unpack or unpack
+
 -- Module for creating wibox.widget (and button functional)
 -- @param w                         function    Some widget.
 -- @param opts                      table       Configuration and callbacks.
@@ -11,6 +13,7 @@ local gears     = require('gears')
 -- @param opts.width                intenger    (optional) Box width.
 -- @param opts.height               intenger    (optional) Box height.
 -- @param opts.margin               intenger    (optional) Size of margins (in pixels).
+-- @param opts.align                string      (optional) Widgets layout direction.
 -- @param opts.bg_main              string      (optional) Base background color.
 -- @param opts.bg_hover             string      (optional) Color when mouse hovering  over an box.
 -- @param opts.fg_main              string      (optional) Base foreground color.
@@ -23,7 +26,15 @@ local gears     = require('gears')
 -- Simple Widget
 local simplebox = {}
     function simplebox.create_box(w, opts)
-        local widgets = type(w) == "table" and w or { w }
+        -- Define widget(-s)
+        local widgets = {}
+        if type(w) == "table" and w[1] then
+            for _, widget in ipairs(w) do
+                table.insert(widgets, widget)
+            end
+        else
+            table.insert(widgets, w)
+        end
 
         opts                    = opts                  or {}
         opts.on_clicked         = opts.on_clicked       or {}
@@ -33,12 +44,15 @@ local simplebox = {}
         local id                = opts.id                           or nil
         local inner_margin      = opts.inner_margin                 or 2
         local outer_margin      = opts.outer_margin                 or 2
+        local align             = opts.align                        or "horizontal"
+
+        local is_horizontal     = (align == "horizontal")
 
         -- Size
         local constraint_type   = opts.constraint_type              or 'exact'
         local width             = opts.width                        or nil
         local height            = opts.height                       or width
-        
+
         -- Background
         local bg_main           = opts.bg_main                      or nil
         local bg_hover          = opts.bg_hover                     or bg_main
@@ -68,8 +82,10 @@ local simplebox = {}
                     {
                         widget      = wibox.container.margin,
                         margins     = inner_margin,
-                        -- table.unpack(widgets),
-                        widgets,
+                        {
+                            layout  = is_horizontal and wibox.layout.fixed.horizontal or wibox.layout.fixed.vertical,
+                            unpack(widgets),
+                        }
                     },
                 }
             },
