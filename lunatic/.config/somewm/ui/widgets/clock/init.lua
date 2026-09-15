@@ -36,8 +36,10 @@ end
 
 return function(s)
     local popup = SimplePopup('clockmenu', {
-        main_widget = ClockWidget,
-        placement   = ( awful.placement.under_mouse + awful.placement.no_offscreen ),
+        main_widget   = ClockWidget,
+        placement     = ( awful.placement.under_mouse + awful.placement.no_offscreen ),
+        border_width  = beautiful.border_width,
+        border_color  = beautiful.border_color_active,
     })
     
     local widget = SimpleBox(Time('%H\n%M'), {
