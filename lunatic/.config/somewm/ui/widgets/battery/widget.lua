@@ -87,8 +87,6 @@ return function()
     return wibox.widget({
         widget          = wibox.container.background,
         bg              = beautiful.bg_normal,
-        border_color    = beautiful.border_color_active,
-        border_width    = beautiful.border_width,
         {
             layout  = wibox.layout.fixed.horizontal,
             main_box,

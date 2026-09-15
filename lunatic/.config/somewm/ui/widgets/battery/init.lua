@@ -9,8 +9,10 @@ local BatteryWidget     = require(... .. ".widget")
 
 return function(s)
     local popup = SimplePopup('batterymenu', {
-        main_widget = BatteryWidget,
-        placement   = (awful.placement.under_mouse + awful.placement.no_offscreen ),
+        main_widget   = BatteryWidget,
+        placement     = (awful.placement.under_mouse + awful.placement.no_offscreen ),
+        border_width  = beautiful.border_width,
+        border_color  = beautiful.border_color_active,
     })
     
     local icon = SimpleIcon.create_icon(beautiful.battery_full)
