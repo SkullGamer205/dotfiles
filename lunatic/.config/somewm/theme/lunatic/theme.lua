@@ -282,6 +282,9 @@ theme.battery_full_charging                     = themes_path .. 'icons/battery/
 theme.battery_good_charging                     = themes_path .. 'icons/battery/battery-good-charging.png'
 theme.battery_low_charging                      = themes_path .. 'icons/battery/battery-low-charging.png'
 
+-- Tray
+theme.systray_icon                              = themes_path .. 'icons/dot.png'
+
 -- Generate Awesome icon:
 theme.awesome_icon                              = theme_assets.awesome_icon(theme.menu_height, theme.colors.primary, theme.bg_focus)
 

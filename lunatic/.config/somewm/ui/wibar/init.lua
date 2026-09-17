@@ -57,7 +57,7 @@ return function(s)
                 { -- Right widgets
                     layout = wibox.layout.fixed.vertical,
                     spacing = beautiful.gap_default,
-                    wibox.widget.systray(),
+                    module.tray(s),
                     module.kbd(),
                     module.battery(s),
                     separator,
