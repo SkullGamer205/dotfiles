@@ -52,19 +52,9 @@ return function()
         },
     })
 
-    return wibox.widget({
-        widget          = wibox.container.background,
-        bg              = beautiful.bg_normal,
-        border_color    = beautiful.border_color_active,
-        border_width    = beautiful.border_width,
-        {
-            widget  = wibox.container.margin,
-            margins = 2,
-            {
-                layout  = wibox.layout.align.vertical,
-                header,
-                notif_list,
-            },
-        },
-    }) 
+    return SimpleBox({header, notif_list}, {
+        bg_main       = beautiful.bg_normal,
+        align         = "vertical",
+        inner_margin  = 2,
+    })
 end
