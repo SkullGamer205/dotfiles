@@ -40,29 +40,21 @@ local loops_box,  loops_text  = box_template({ icon = beautiful.battery_loops , 
 local volt_box,   volt_text   = box_template({ icon = beautiful.battery_volt  , color = beautiful.fg_normal, text =  'N/A' })
 local watt_box,   watt_text   = box_template({ icon = beautiful.battery_watt  , color = beautiful.fg_normal, text =  'N/A' })
 
-
--- Helper function to safely update the text inside a box_template
-local function update_text(box_widget, new_text)
-    -- get_children_by_id returns a TABLE. We must grab the first matching widget [1].
-    local text_widget = box_widget:get_children_by_id("text")[1]
-    if text_widget then
-        text_widget.text = new_text
-    end
+-- Update function
+local function update_function()
+    local stats = battery.update()
+    main_text.text   = string.format("%d%%"  , stats.perc)
+    health_text.text = string.format("%.1f%%", stats.capacity)
+    loops_text.text  = string.format("%d"    , stats.cycles)
+    volt_text.text   = string.format("%.2f"  , stats.rate_voltage / 1e6)
+    watt_text.text   = string.format("%.2f"  , stats.watt)
 end
 
--- 2. Create the timer ONCE at the module scope
-local battery_timer = gears.timer({
+gears.timer({
     timeout     = 30,
     autostart   = true,
     call_now    = true,
-    callback    = function()
-        local stats = battery.update()
-        main_text.text   = string.format("%s%%", stats.perc)
-        health_text.text = string.format("%s%%", stats.capacity)
-        loops_text.text  = stats.cycles or "N/A"
-        volt_text.text   = string.format("%.2f", stats.rate_voltage / 1e6)
-        watt_text.text   = string.format("%.2f", stats.watt)
-    end
+    callback    = update_function,
 })
 
 local function secondary_battery_widgets()

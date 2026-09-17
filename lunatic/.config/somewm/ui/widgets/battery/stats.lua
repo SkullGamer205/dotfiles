@@ -78,6 +78,7 @@ return function(args)
             energy_full         = 0,
             charge_full         = 0,
             charge_design       = 0,
+            cycles              = 0,
         }
         
         for i, battery in pairs(batteries) do
@@ -98,6 +99,8 @@ return function(args)
                 local charge_full       = tonumber(helpers.first_line(bstr .. "/charge_full"))          or 0
                 local charge_design     = tonumber(helpers.first_line(bstr .. "/charge_full_design"))   or 0
                
+                local cycles            = tonumber(helpers.first_line(bstr .. "/cycle_count")) or 0
+
                 bat_now.n_status[i]     = helpers.first_line(bstr .. "/status") or "N/A"
                 bat_now.n_perc[i]       = tonumber(helpers.first_line(bstr .. "vapacity")) or
                                             math.floor((energy_now / energy_full) * 100)
@@ -117,6 +120,7 @@ return function(args)
                 bat_sum.energy_full     = bat_sum.energy_full   + energy_full
                 bat_sum.charge_full     = bat_sum.charge_full   + charge_full
                 bat_sum.charge_design   = bat_sum.charge_design + charge_design
+                bat_sum.cycles          = bat_sum.cycles        + cycles
             end
         end
 
@@ -128,8 +132,9 @@ return function(args)
         bat_now.energy_full     = bat_sum.energy_full 
         bat_now.charge_full     = bat_sum.charge_full 
         bat_now.charge_design   = bat_sum.charge_design
+        bat_now.cycles          = bat_sum.cycles
 
-        bat_now.capacity = math.floor(math.min((bat_sum.charge_full / bat_sum.charge_design) * 100))
+        bat_now.capacity = math.min((bat_sum.charge_full / bat_sum.charge_design) * 100)
 
         -- When one of the battery is charging, others' status are either
         -- "Full", "Unknown" or "Charging". When the laptop is not plugged in,
