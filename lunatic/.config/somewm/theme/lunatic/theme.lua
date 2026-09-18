@@ -282,6 +282,17 @@ theme.battery_full_charging                     = themes_path .. 'icons/battery/
 theme.battery_good_charging                     = themes_path .. 'icons/battery/battery-good-charging.png'
 theme.battery_low_charging                      = themes_path .. 'icons/battery/battery-low-charging.png'
 
+-- Audio
+theme.sink_volume_high                          = themes_path .. 'icons/audio/speaker-volume-high.png'
+theme.sink_volume_medium                        = themes_path .. 'icons/audio/speaker-volume-medium.png'
+theme.sink_volume_low                           = themes_path .. 'icons/audio/speaker-volume-low.png'
+theme.sink_muted                                = themes_path .. 'icons/audio/speaker-muted.png'
+
+theme.source_volume_high                        = themes_path .. 'icons/audio/microphone-volume-high.png'
+theme.source_volume_medium                      = themes_path .. 'icons/audio/microphone-volume-medium.png'
+theme.source_volume_low                         = themes_path .. 'icons/audio/microphone-volume-low.png'
+theme.source_muted                              = themes_path .. 'icons/audio/microphone-muted.png'
+
 -- Tray
 theme.systray_icon                              = themes_path .. 'icons/dot.png'
 
