@@ -3,9 +3,9 @@ local wibox     = require('wibox')
 local beautiful = require('beautiful')
 local dpi       = beautiful.xresources.apply_dpi
 
-local sprtr = {}    
+local SimpleSeparator = {}    
 
-function sprtr.create(direction, opts)
+function SimpleSeparator.create(direction, opts)
     opts         = opts or {}
     opts.margins = opts.margins or {}
    
@@ -36,4 +36,4 @@ function sprtr.create(direction, opts)
     return separator
 end
 
-return sprtr
+return SimpleSeparator

@@ -4,9 +4,6 @@ local beautiful = require('beautiful')
 local gears     = require('gears')
 local Debugger  = require('module.debugger')
 
--- Simple Popups
-local simplepopup = {}
-
 --- Creates a pop-up module with standard lifecycle methods.
 -- @param name                          string      Identifer for the module (used in signals, e.g., "name::visible").
 -- @param opts                          table       Configuration and callbacks.
@@ -23,7 +20,10 @@ local simplepopup = {}
 -- @param opts.on_hide                  function    (optional) Callback on hide.
 -- @return                              table       The popup module
 
-function simplepopup.create(name, opts)
+-- Simple Popups
+local SimplePopup = {}
+
+function SimplePopup.create(name, opts)
     opts = opts or {}
     local widget = {}
 
@@ -206,4 +206,4 @@ function simplepopup.create(name, opts)
     return widget
 end
 
-return simplepopup
+return SimplePopup

@@ -24,8 +24,8 @@ local unpack    = table.unpack or unpack
 -- @param opts.on_clicked.right     function    (optional) Function after clicking on right mouse click.
 
 -- Simple Widget
-local simplebox = {}
-    function simplebox.create_box(w, opts)
+local SimpleBox = {}
+    function SimpleBox.create(w, opts)
         -- Define widget(-s)
         local widgets = {}
         if type(w) == "table" and w[1] then
@@ -107,4 +107,4 @@ local simplebox = {}
 
         return widget
     end
-return simplebox
+return SimpleBox
