@@ -2,11 +2,11 @@
 local beautiful      = require('beautiful')
 local awful          = require('awful')
 
-local simple         = 'module.simple_widgets'
-local s_box          = require(simple .. '.box'  ).create_box
-local s_icon         = require(simple .. '.image').create_icon
-local s_popup        = require(simple .. '.popup').create
-local AudioWidget    = require(... .. '.widget')
+local SimplifyWidgets   = require('module.simplify.widgets')
+local s_box             = SimplifyWidgets.box.create
+local s_icon            = SimplifyWidgets.icon.create
+local s_popup           = SimplifyWidgets.popup.create
+local AudioWidget       = require(... .. '.widget')
 
 return function(s)
     local popup = s_popup('volumemenu', {

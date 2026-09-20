@@ -3,8 +3,10 @@ local awful     = require('awful')
 local wibox     = require('wibox')
 local gears     = require('gears')
 
-local SimpleBox     = require('module.simple_widgets.box').create_box
-local SimplePopup   = require('module.simple_widgets.popup').create
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimplePopup       = SimplifyWidgets.popup.create
+
 local ClockWidget   = require(... .. '.widget')
 
 local function Time(format)

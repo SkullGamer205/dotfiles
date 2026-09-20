@@ -6,9 +6,11 @@ local naughty       = require('naughty')
 
 local dpi           = beautiful.xresources.apply_dpi
 
-local s_icon    = require('module.simple_widgets.image').create_icon
-local s_box     = require('module.simple_widgets.box').create_box
-local separator = require('module.simple_widgets.separator').create("vertical",
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleIcon            = SimplifyWidgets.icon.create
+local SimpleBox             = SimplifyWidgets.box.create
+
+local separator         = SimplifyWidgets.separator.create("vertical",
 {       color   = beautiful.colors.background_light,
         margin  = beautiful.useless_gap,
         width   = beautiful.border_width,
@@ -33,7 +35,7 @@ function _N.body(n)
 end
 
 function _N.icon(n)
-    return s_icon(n.icon, {
+    return SimpleIcon(n.icon, {
     })
 end
 
@@ -51,7 +53,7 @@ function _N.actions(n)
             bg_normal           = beautiful.bg_focus,
         },
         widget_templage = {
-            s_box({
+            SimpleBox({
                 id      = 'text_role',
                 widget  = wibox.widget.textbox,
                 font    = beautiful.font,
@@ -71,19 +73,19 @@ return function(n)
     --
     -- n.timeout = 5,
 
-    local titlebox      = s_box(
+    local titlebox      = SimpleBox(
         _N.title(n), {
         bg_main = beautiful.bg_focus,
     })
     
-    local iconbox       = s_box(
+    local iconbox       = SimpleBox(
         _N.icon(n), { 
         width           = dpi(48),
         height          = dpi(48),
         margins         = dpi(4),
     })
 
-    local contentbox    = s_box({
+    local contentbox    = SimpleBox({
         layout  = wibox.layout.fixed.vertical,
         _N.body(n),
         {
@@ -104,7 +106,7 @@ return function(n)
         type            = "notification",
         border_width    = beautiful.border_width,
         border_color    = beautiful.border_color_normal,
-        widget_template = s_box({
+        widget_template = SimpleBox({
             layout  = wibox.layout.fixed.horizontal,
             iconbox,
             separator,

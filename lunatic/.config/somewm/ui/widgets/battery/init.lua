@@ -2,9 +2,10 @@ local awful             = require("awful")
 local wibox             = require("wibox")
 local beautiful         = require("beautiful")
 
-local SimpleIcon        = require("module.simple_widgets.image")
-local SimpleBox         = require("module.simple_widgets.box")
-local SimplePopup       = require('module.simple_widgets.popup').create
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleIcon        = SimplifyWidgets.icon.create
+local SimplePopup       = SimplifyWidgets.popup.create
 local BatteryWidget     = require(... .. ".widget")
 
 return function(s)
@@ -15,9 +16,9 @@ return function(s)
         border_color  = beautiful.border_color_active,
     })
     
-    local icon = SimpleIcon.create_icon(beautiful.battery_full)
+    local icon = SimpleIcon(beautiful.battery_full)
     
-    return SimpleBox.create_box(icon, {
+    return SimpleBox(icon, {
         bg_main     = beautiful.colors.background_light,
         bg_hover    = beautiful.bg_focus,
         on_clicked  = { left = function() popup.toggle() end }

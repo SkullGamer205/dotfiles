@@ -1,12 +1,14 @@
 local awful      = require('awful')
 local beautiful  = require('beautiful')
 
-local SimplePopup   = require('module.simple_widgets.popup').create
-local SimpleIcon    = require('module.simple_widgets.image')
-local SimpleBox     = require('module.simple_widgets.box')
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleIcon        = SimplifyWidgets.icon.create
+local SimplePopup       = SimplifyWidgets.popup.create
+
 -- local MusicMenu     = require(... .. '.widget')
 
-local icon      = SimpleIcon.create_icon(beautiful.music_icon, {
+local icon      = SimpleIcon(beautiful.music_icon, {
     main_color      = beautiful.fg_normal,
     highlight_color = beautiful.fg_focus,
 })
@@ -17,7 +19,7 @@ return function()
         placement   = ( awful.placement.under_mouse + awful.placement.no_offscreen ),
     })
 
-    local widget = SimpleBox.create_box(icon, {
+    local widget = SimpleBox(icon, {
         bg_main     = beautiful.colors.background_light,
         bg_hover    = beautiful.bg_focus,
         on_clicked  = { left = function() popup.toggle() end }

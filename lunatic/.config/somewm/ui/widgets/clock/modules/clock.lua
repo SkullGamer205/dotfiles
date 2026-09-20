@@ -3,7 +3,7 @@ local wibox             = require('wibox')
 local beautiful         = require('beautiful')
 local gears             = require('gears')
 
-local SimpleBox         = require('module.simple_widgets.box').create_box
+local SimpleBox         = require('module.simplify.widgets').box.create
 
 return function(format)
     local clock_widget = wibox.widget({

@@ -2,8 +2,9 @@ local wibox      = require('wibox')
 local awful      = require('awful')
 local beautiful  = require('beautiful')
 
-local SimpleIcon = require('module.simple_widgets.image').create_icon
-local SimpleBox  = require('module.simple_widgets.box').create_box
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleIcon        = SimplifyWidgets.icon.create
 
 -- Keyboard map indicator and switcher
 return function()

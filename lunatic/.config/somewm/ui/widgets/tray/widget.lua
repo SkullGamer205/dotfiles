@@ -2,13 +2,13 @@
 local wibox     = require('wibox')
 local beautiful = require('beautiful')
 
-local s_box     = require('module.simple_widgets.box').create_box
+local SimpleBox     = require('module.simplify.widgets').box.create
 
 return function()
     local tray = wibox.widget.systray()
     tray:set_horizontal(true)
     tray:set_base_size(24)
-    return s_box({
+    return SimpleBox({
         tray
     }, {
         align           = "vertical",

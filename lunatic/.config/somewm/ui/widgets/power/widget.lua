@@ -3,9 +3,11 @@ local awful         = require('awful')
 local beautiful     = require('beautiful')
 local gears         = require('gears')
 local wibox         = require('wibox')
-local SimplePopup   = require('module.simple_widgets.popup').create
-local SimpleIcon    = require('module.simple_widgets.image').create_icon
-local SimpleBox     = require('module.simple_widgets.box').create_box
+
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleIcon        = SimplifyWidgets.icon.create
+local SimplePopup       = SimplifyWidgets.popup.create
 
 -- For different lua versions
 local unpack        = table.unpack or unpack

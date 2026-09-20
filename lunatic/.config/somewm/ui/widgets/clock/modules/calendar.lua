@@ -1,7 +1,7 @@
 -- Libs
 local wibox             = require('wibox')
 local beautiful         = require('beautiful')
-local SimpleBox         = require('module.simple_widgets.box').create_box
+local SimpleBox         = require('module.simplify.widgets').box.create
 
 local current_time = os.time()
 local day          = 24 * 60 * 60

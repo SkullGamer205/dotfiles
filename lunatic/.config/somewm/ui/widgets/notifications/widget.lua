@@ -4,8 +4,9 @@ local beautiful         = require('beautiful')
 local wibox             = require('wibox')
 local naughty           = require('naughty')
 
-local SimpleBox         = require('module.simple_widgets.box').create_box
-local SimpleIcon        = require('module.simple_widgets.image').create_icon
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleIcon        = SimplifyWidgets.icon.create
 
 return function()
     local notif_count   = wibox.widget({

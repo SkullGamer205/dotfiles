@@ -4,8 +4,9 @@ local beautiful       = require('beautiful')
 local awful           = require('awful')
 local gears           = require('gears')
 
-local SimpleIcon      = require('module.simple_widgets.image').create_icon
-local SimpleBox       = require('module.simple_widgets.box').create_box
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleIcon        = SimplifyWidgets.icon.create
 
 local battery_module  = require('ui.widgets.battery.stats')
 

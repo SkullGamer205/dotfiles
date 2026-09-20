@@ -3,10 +3,10 @@ local awful     = require('awful')
 local wibox     = require('wibox')
 local beautiful = require('beautiful')
 
-local simple    = 'module.simple_widgets'
-local s_icon    = require(simple .. '.image').create_icon
-local s_box     = require(simple .. '.box').create_box
-local s_sprt    = require(simple .. '.separator').create
+local SimplifyWidgets   = require('module.simplify.widgets')
+local s_icon            = SimplifyWidgets.icon.create
+local s_box             = SimplifyWidgets.box.create
+local s_sprt            = SimplifyWidgets.separator.create
 
 local _Audio = {}
 

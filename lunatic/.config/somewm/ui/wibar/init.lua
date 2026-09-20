@@ -3,7 +3,7 @@ local beautiful = require('beautiful')
 local wibox     = require('wibox')
 
 local module = require('ui.widgets')
-local separator = require('module.simple_widgets.separator').create("horizontal",
+local separator = require('module.simplify.widgets.separator').create("horizontal",
 {       color   = beautiful.colors.background_light,
         -- margins = { vertical = beautiful.useless_gap },
         width   = beautiful.border_width,
@@ -59,6 +59,7 @@ return function(s)
                     spacing = beautiful.gap_default,
                     module.tray(s),
                     module.kbd(),
+                    module.audio(s),
                     module.battery(s),
                     separator,
                     module.power(s),
