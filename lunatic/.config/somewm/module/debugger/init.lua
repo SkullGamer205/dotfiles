@@ -13,7 +13,7 @@ local Debugger = {}
 --@param config.max_file_size   intenger    Max log file size
 --@param config.log_level       string      Level of debugging
 
-local LOG_DIR   = gfs.get_xdg_data_home() .. "/somewm" 
+local LOG_DIR   = gfs.get_xdg_data_home() .. "/somewm/logs" 
 local LOG_FILE  = LOG_DIR .. "/somewm_log" .. os.date("%Y_%m_%d_%H_%M_%S") .. ".txt"
 
 local COLORS    = {
@@ -67,7 +67,7 @@ local function write_to_file(msg)
         return
     end
 
-    local file = io.popen(LOG_FILE, "a")
+    local file = io.open(LOG_FILE, "a")
     if file then
         file:write(msg)
         file:close()
