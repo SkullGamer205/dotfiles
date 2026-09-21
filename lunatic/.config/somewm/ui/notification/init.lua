@@ -9,6 +9,7 @@ local dpi           = beautiful.xresources.apply_dpi
 local SimplifyWidgets   = require('module.simplify.widgets')
 local SimpleIcon            = SimplifyWidgets.icon.create
 local SimpleBox             = SimplifyWidgets.box.create
+local SimpleText            = SimplifyWidgets.textbox
 
 local separator         = SimplifyWidgets.separator.create("vertical",
 {       color   = beautiful.colors.background_light,
@@ -19,18 +20,16 @@ local separator         = SimplifyWidgets.separator.create("vertical",
 local _N = {}
 
 function _N.title(n)
-    return wibox.widget({
-        widget  = wibox.widget.textbox,
+    return SimpleText.scrolling({
         markup  = '<i>' .. ((n.title == nil or n.title == '') and 'SomeWM' or n.title) .. '</i>',
-        align   = 'center',
-        valign  = 'center',
+        align = {'center', 'center'},
     })
 end
 
 function _N.body(n)
-    return wibox.widget({
-        widget  = wibox.widget.textbox,
-        text    = n.message,
+    return SimpleText.scrolling({
+        text        = n.message,
+        direction   = 'vertical',
     })
 end
 
