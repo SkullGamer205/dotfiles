@@ -6,16 +6,14 @@ local gears     = require('gears')
 local SimplifyWidgets   = require('module.simplify.widgets')
 local SimpleBox         = SimplifyWidgets.box.create
 local SimplePopup       = SimplifyWidgets.popup.create
+local SimpleText        = SimplifyWidgets.textbox.colored
 
 local ClockWidget   = require(... .. '.widget')
 
 local function Time(format)
     -- Make a simple widget
-    local time_widget = wibox.widget({
-        widget  = wibox.widget.textbox,
-        halign  = 'center',
-        valign  = 'center',
-        text    = '',
+    local time_widget = SimpleText({
+        align = {'center', 'center'}
     })
 
     -- Update function

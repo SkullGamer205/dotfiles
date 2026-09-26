@@ -3,17 +3,17 @@ local wibox             = require('wibox')
 local beautiful         = require('beautiful')
 local gears             = require('gears')
 
-local SimpleBox         = require('module.simplify.widgets').box.create
+local SimplifyWidgets   = require('module.simplify.widgets')
+local SimpleBox         = SimplifyWidgets.box.create
+local SimpleText        = SimplifyWidgets.textbox.colored
 
 return function(format)
-    local clock_widget = wibox.widget({
-        widget  = wibox.widget.textbox,
-        halign  = 'center',
-        valign  = 'center',
-        text    = '',
+
+    local clock_widget = SimpleText({
+        align = {'center', 'center'},
         font    = beautiful.font:match('[a-zA-Z ]+') .. beautiful.font:match('%d+$') * 4
     })
-
+    
     local function update_func()
         clock_widget:set_text('' .. os.date(format))
     end
