@@ -14,6 +14,44 @@ local SimpleTextbox = {}
 -- @param opts.align            table           (default: {nil, nil})   Text align
 -- @param opts.direction        string          (default: 'horizontal') Scroll direction
 -- @param opts.speed            intenger        (default: 50)           Scrolling speed
+
+function SimpleTextbox.colored(opts) 
+    opts            = opts              or {}
+    local text      = opts.text         or nil
+    local markup    = opts.markup       or nil
+    local font      = opts.font         or nil
+    local color     = opts.color        or nil
+    local align     = opts.align        or {nil, nil}
+
+    local widget    = wibox.widget({
+        widget      = wibox.container.background,
+        fg          = color,
+        {
+            widget      = wibox.widget.textbox,
+            markup      = markup,
+            text        = text,
+            font        = font,
+            align       = align[1],
+            valign      = align[2],
+            id          = 'text_role'
+        },
+
+        set_text        = function(self, new_text)
+            self:get_children_by_id('text_role')[1].text    = new_text
+        end,
+        
+        set_markup      = function(self, new_markup)
+            self:get_children_by_id('text_role')[1].markup  = new_markup
+        end,
+
+        set_color       = function(self, new_color)
+            self.fg     = new_color
+        end
+    })
+
+    return widget
+end
+
 function SimpleTextbox.scrolling(opts)
     opts            = opts              or {}
     local text      = opts.text         or nil
@@ -34,18 +72,14 @@ function SimpleTextbox.scrolling(opts)
         widget          = direction,
         speed           = speed,
         step_function   = wibox.container.scroll.step_functions.waiting_nonlinear_back_and_forth,
-        {
-            widget      = wibox.container.background,
-            fg          = color,
-            {
-                widget      = wibox.widget.textbox,
-                markup      = markup,
-                text        = text,
-                font        = font,
-                align       = align[1],
-                valign      = align[2],
-            }
-        }
+        
+        SimpleTextbox.colored({
+            text    = text,
+            markup  = markup,
+            font    = font,
+            color   = color,
+            align   = align,
+        })
     })
 
     return widget
