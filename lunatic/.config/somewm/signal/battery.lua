@@ -8,30 +8,7 @@ local gears     = require('gears')
 
 local debugger  = require('module.debugger')
 
-local helpers = {
-    -- get first line of a file
-    first_line = function(path)
-        local file, first = io.open(path, "rb"), nil
-        if file then
-            first = file:read("*l")
-            file:close()
-        end
-        return first
-    end,
-
-    -- list directory contents synchronously
-    list_dir = function(path)
-        local lines = {}
-        local file = io.popen("ls -1 " .. path)
-        if file then
-            for line in file:lines() do
-                lines[#lines + 1] = line
-            end
-            file:close()
-        end
-        return lines
-    end
-}
+local helpers   = require('module.simplify.utils.helpers')
 
 -- Table of current battery stats
 local bat_now = {
@@ -99,7 +76,7 @@ local function update()
             local cycles            = tonumber(helpers.first_line(bstr .. "/cycle_count")) or 0
 
             bat_now.n_status[i]     = helpers.first_line(bstr .. "/status") or "N/A"
-            bat_now.n_perc[i]       = tonumber(helpers.first_line(bstr .. "vapacity")) or
+            bat_now.n_perc[i]       = tonumber(helpers.first_line(bstr .. "capacity")) or
                                         math.floor((energy_now / energy_full) * 100)
             
             bat_sum.rate_current    = bat_sum.rate_current  + rate_current
