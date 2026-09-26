@@ -1,28 +1,25 @@
--- Battery
+-- Libs
 local wibox           = require('wibox')
 local beautiful       = require('beautiful')
 local awful           = require('awful')
 local gears           = require('gears')
 
+-- Simplify
 local SimplifyWidgets   = require('module.simplify.widgets')
 local SimpleBox         = SimplifyWidgets.box.create
 local SimpleIcon        = SimplifyWidgets.icon.create
+local SimpleText        = SimplifyWidgets.textbox.colored
 
--- local battery_module  = require('ui.widgets.battery.stats')
-
--- local battery         = battery_module({})
-
+-- Template Box
 local function box_template(opts)
     opts = opts or {}
     local icon  = SimpleIcon(opts.icon, {
          width = opts.width or 32,
          main_color = opts.color or nil,
      })
-     
-     local text_widget = wibox.widget({
-         widget  = wibox.widget.textbox,
-         halign  = 'center',
-         valign  = 'center',
+    
+     local text_widget = SimpleText({
+         align   = {'center', 'center'},
          text    = opts.text or 'N/A',
          font    = beautiful.font:match('[a-zA-Z ]+') .. (tonumber(beautiful.font:match('%d+$'))) * (opts.font_size or 1)
      })
@@ -35,36 +32,12 @@ local function box_template(opts)
      return box, text_widget
 end
 
+-- Values
 local main_box,   main_text   = box_template({ width = 64, font_size = 2, icon = beautiful.battery_full,     text = "N/A%" })
 local health_box, health_text = box_template({ icon = beautiful.battery_health, color = beautiful.fg_normal, text = 'N/A%' })
 local loops_box,  loops_text  = box_template({ icon = beautiful.battery_loops , color = beautiful.fg_normal, text =  'N/A' })
 local volt_box,   volt_text   = box_template({ icon = beautiful.battery_volt  , color = beautiful.fg_normal, text =  'N/A' })
 local watt_box,   watt_text   = box_template({ icon = beautiful.battery_watt  , color = beautiful.fg_normal, text =  'N/A' })
-
--- Update function
-local function update_stats(stats)
-    -- local stats = battery.update()
-    main_text.text   = string.format("%d%%"  , stats.perc)
-    health_text.text = string.format("%.1f%%", stats.capacity)
-    loops_text.text  = string.format("%d"    , stats.cycles)
-    volt_text.text   = string.format("%.2f"  , stats.rate_voltage / 1e6)
-    watt_text.text   = string.format("%.2f"  , stats.watt)
-end
-
--- 4. Listen for the global update signal from bat.lua
-awesome.connect_signal("battery::updated", update_stats)
-
--- 5. Request the current status immediately so the widget isn't blank on startup
--- (The battery module will reply by emitting "battery::status")
-awesome.connect_signal("battery::status", update_stats)
-awesome.emit_signal("battery::request_status")
-
--- gears.timer({
---     timeout     = 30,
---     autostart   = true,
---     call_now    = true,
---     callback    = update_function,
--- })
 
 local function secondary_battery_widgets()
     -- Stats
@@ -83,6 +56,17 @@ local function secondary_battery_widgets()
     return widget
 end
 
+-- Update function
+local function update_stats(stats)
+    main_text:set_text(string.format("%d%%"  , stats.perc))
+    health_text:set_text(string.format("%.1f%%", stats.capacity))
+    loops_text:set_text(string.format("%d"    , stats.cycles))
+    volt_text:set_text(string.format("%.2f"  , stats.rate_voltage / 1e6))
+    watt_text:set_text(string.format("%.2f"  , stats.watt))
+end
+
+-- Listen for global update signals
+awesome.connect_signal("battery::updated", update_stats)
 
 return function()
     return wibox.widget({
