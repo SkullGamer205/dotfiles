@@ -85,7 +85,6 @@ return function(n)
     })
 
     local contentbox    = SimpleBox({
-        layout  = wibox.layout.fixed.vertical,
         _N.body(n),
         {
             widget  = wibox.container.margin,
@@ -94,9 +93,10 @@ return function(n)
             _N.actions(n)
         }
     }, {
+        align           = 'vertical',
         constraint_type = 'max',
         width           = dpi(280),
-        height          = dpi(280),
+        height          = dpi(128),
         margins         = dpi(12),
     })
     
