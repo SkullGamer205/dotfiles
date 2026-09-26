@@ -65,7 +65,6 @@ local function get_batteries()
 end
 
 local function update()
-    debugger.debug("BatteryStats", "Update")
     -- Summary stats
     local bat_sum = {
         rate_current        = 0,
@@ -165,25 +164,23 @@ local function update()
 
     -- Broadcast data to ALL listeners
     awesome.emit_signal('battery::updated', bat_now)
+    debugger.debug("BatteryStats", "Updated")
 end
 
 -- Ability to listen for external requests
     -- Force Update
 awesome.connect_signal('battery::update', update)
-    
-    -- Get current status
-awesome.connect_signal("battery::request_status", function()
-    awesome.emit_signal("battery::status", bat_now)
+
+-- Listen for status requests with callback
+awesome.connect_signal("battery::status", function(callback)
+    debugger.debug("BatteryStats", "Emitted 'status' signal")
+    if type(callback) == "function" then
+        callback(bat_now)
+    end
 end)
 
-
 -- Initialize
-local function main(args)
-    args        = args              or {}
-    pspath      = args.pspath       or pspath
-    batteries   = args.batteries    or batteries
-    ac          = args.ac           or ac
-
+local function main()
     if #batteries == 0 then
         get_batteries()
     end
