@@ -31,7 +31,7 @@ function SimpleTextbox.colored(opts)
             markup      = markup,
             text        = text,
             font        = font,
-            align       = align[1],
+            halign      = align[1],
             valign      = align[2],
             id          = 'text_role'
         },
