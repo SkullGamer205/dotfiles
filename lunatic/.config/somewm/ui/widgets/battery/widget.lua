@@ -8,9 +8,9 @@ local SimplifyWidgets   = require('module.simplify.widgets')
 local SimpleBox         = SimplifyWidgets.box.create
 local SimpleIcon        = SimplifyWidgets.icon.create
 
-local battery_module  = require('ui.widgets.battery.stats')
+-- local battery_module  = require('ui.widgets.battery.stats')
 
-local battery         = battery_module({})
+-- local battery         = battery_module({})
 
 local function box_template(opts)
     opts = opts or {}
@@ -42,8 +42,8 @@ local volt_box,   volt_text   = box_template({ icon = beautiful.battery_volt  , 
 local watt_box,   watt_text   = box_template({ icon = beautiful.battery_watt  , color = beautiful.fg_normal, text =  'N/A' })
 
 -- Update function
-local function update_function()
-    local stats = battery.update()
+local function update_stats(stats)
+    -- local stats = battery.update()
     main_text.text   = string.format("%d%%"  , stats.perc)
     health_text.text = string.format("%.1f%%", stats.capacity)
     loops_text.text  = string.format("%d"    , stats.cycles)
@@ -51,12 +51,20 @@ local function update_function()
     watt_text.text   = string.format("%.2f"  , stats.watt)
 end
 
-gears.timer({
-    timeout     = 30,
-    autostart   = true,
-    call_now    = true,
-    callback    = update_function,
-})
+-- 4. Listen for the global update signal from bat.lua
+awesome.connect_signal("battery::updated", update_stats)
+
+-- 5. Request the current status immediately so the widget isn't blank on startup
+-- (The battery module will reply by emitting "battery::status")
+awesome.connect_signal("battery::status", update_stats)
+awesome.emit_signal("battery::request_status")
+
+-- gears.timer({
+--     timeout     = 30,
+--     autostart   = true,
+--     call_now    = true,
+--     callback    = update_function,
+-- })
 
 local function secondary_battery_widgets()
     -- Stats
