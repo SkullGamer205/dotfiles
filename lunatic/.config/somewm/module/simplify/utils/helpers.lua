@@ -21,13 +21,29 @@ function helpers.first_line(path)
     return first
 end
 
--- run a command and execute a function on its output line by line
-function helpers.line_callback(cmd, callback)
-    return spawn.with_line_callback(cmd, {
-        stdout = function (line)
-            callback(line)
-        end,
-    })
+
+function helpers.trim(str)
+    return string.match(str, "^%s*(.-)%s*$")
+end
+
+function helpers.split(string_to_split, separator)
+    if separator == nil then separator = "%s" end
+    local t = {}
+
+    for str in string.gmatch(string_to_split, "([^".. separator .."]+)") do
+        table.insert(t, str)
+    end
+
+    return t
+end
+
+-- Grabbed from streetturtle/awesome-wm-widgets pactl-widget/utils.lua
+function helpers.popen_return(cmd)
+    local handle = io.popen(cmd)
+    local result = handle:read("*a")
+    handle:close()
+
+    return result
 end
 
 -- list directory contents synchronously
