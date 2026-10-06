@@ -8,5 +8,6 @@ return {
     screen  = require(... .. '.screen'),
     naughty = require(... .. '.naughty'),
 
+    audio   = require(... .. '.audio'),
     battery = require(... .. '.battery')
 }
