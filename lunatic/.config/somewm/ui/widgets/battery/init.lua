@@ -6,6 +6,8 @@ local SimplifyWidgets   = require('module.simplify.widgets')
 local SimpleBox         = SimplifyWidgets.box.create
 local SimpleIcon        = SimplifyWidgets.icon.create
 local SimplePopup       = SimplifyWidgets.popup.create
+local SimpleText        = SimplifyWidgets.textbox.colored
+
 local BatteryWidget     = require(... .. ".widget")
 
 return function(s)
@@ -17,7 +19,13 @@ return function(s)
     })
     
     local icon = SimpleIcon(beautiful.battery_full)
-    
+
+    -- local function update(stats)
+    --     text:set_text(string.format("%d%%", stats.perc))
+    -- end
+
+    -- awesome.connect_signal('battery::updated', update)
+
     return SimpleBox(icon, {
         bg_main     = beautiful.colors.background_light,
         bg_hover    = beautiful.bg_focus,
