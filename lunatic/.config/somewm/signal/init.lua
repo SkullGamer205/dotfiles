@@ -9,5 +9,6 @@ return {
     naughty = require(... .. '.naughty'),
 
     audio   = require(... .. '.audio'),
-    battery = require(... .. '.battery')
+    battery = require(... .. '.battery'),
+    upower  = require(... .. '.upower')
 }
