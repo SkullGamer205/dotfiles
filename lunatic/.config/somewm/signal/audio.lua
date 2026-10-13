@@ -30,6 +30,7 @@ local function update()
     end
 
     -- Default devices
+    -- NEED TO FIX UNNECESSARY EXTRA LINE ("\n") in "helpers" function.
     local default_sink    = helpers.popen_return('pactl get-default-sink'  )
     local default_source  = helpers.popen_return('pactl get-default-source')
     local device, in_section, in_subsection
@@ -83,7 +84,8 @@ local function update()
                 
                 -- Get main device
                 if in_section == "main" and key == "name" then 
-                    device['is_default'] = (value == default_sink or value == default_source)
+                    -- NEED TO FIX UNNECASSARY EXTRA LINE ("\n") (Check line 34)
+                    device['is_default'] = (value .. "\n" == default_sink or value .. "\n" == default_source)
                 end
             end
         end
