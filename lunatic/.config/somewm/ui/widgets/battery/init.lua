@@ -20,10 +20,6 @@ return function(s)
     
     local icon = SimpleIcon(beautiful.battery_full)
 
-    -- local function update(stats)
-    --     text:set_text(string.format("%d%%", stats.perc))
-    -- end
-
     -- awesome.connect_signal('battery::updated', update)
 
     return SimpleBox(icon, {
