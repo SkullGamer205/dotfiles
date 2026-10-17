@@ -1,5 +1,4 @@
 -- Libs
-local awful     = require("awful")
 local gears     = require("gears")
 local debugger  = require("module.debugger")
 local helpers   = require("module.simplify.utils.helpers")
